@@ -16,6 +16,9 @@
 		E46FB52D1D4E305800661E13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E46FB52B1D4E305800661E13 /* LaunchScreen.storyboard */; };
 		E46FB5381D4E305800661E13 /* Rate_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E46FB5371D4E305800661E13 /* Rate_iOSTests.m */; };
 		E46FB5431D4E305800661E13 /* Rate_iOSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E46FB5421D4E305800661E13 /* Rate_iOSUITests.m */; };
+		E46FB5551D4E47CF00661E13 /* RatesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E46FB5541D4E47CF00661E13 /* RatesTableViewController.m */; };
+		E46FB5591D4E569B00661E13 /* lauch-bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E46FB5581D4E569B00661E13 /* lauch-bg.jpg */; };
+		E46FB55B1D4E583200661E13 /* luach-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E46FB55A1D4E583200661E13 /* luach-logo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,10 @@
 		E46FB53E1D4E305800661E13 /* Rate-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rate-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E46FB5421D4E305800661E13 /* Rate_iOSUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Rate_iOSUITests.m; sourceTree = "<group>"; };
 		E46FB5441D4E305800661E13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E46FB5531D4E47CF00661E13 /* RatesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatesTableViewController.h; sourceTree = "<group>"; };
+		E46FB5541D4E47CF00661E13 /* RatesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatesTableViewController.m; sourceTree = "<group>"; };
+		E46FB5581D4E569B00661E13 /* lauch-bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "lauch-bg.jpg"; sourceTree = "<group>"; };
+		E46FB55A1D4E583200661E13 /* luach-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "luach-logo.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +120,8 @@
 				E46FB52E1D4E305800661E13 /* Info.plist */,
 				E46FB5261D4E305800661E13 /* Rate_iOS.xcdatamodeld */,
 				E46FB51A1D4E305800661E13 /* Supporting Files */,
+				E46FB5531D4E47CF00661E13 /* RatesTableViewController.h */,
+				E46FB5541D4E47CF00661E13 /* RatesTableViewController.m */,
 			);
 			path = "Rate-iOS";
 			sourceTree = "<group>";
@@ -121,6 +130,8 @@
 			isa = PBXGroup;
 			children = (
 				E46FB51B1D4E305800661E13 /* main.m */,
+				E46FB5581D4E569B00661E13 /* lauch-bg.jpg */,
+				E46FB55A1D4E583200661E13 /* luach-logo.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -247,7 +258,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E46FB52D1D4E305800661E13 /* LaunchScreen.storyboard in Resources */,
+				E46FB55B1D4E583200661E13 /* luach-logo.png in Resources */,
 				E46FB52A1D4E305800661E13 /* Assets.xcassets in Resources */,
+				E46FB5591D4E569B00661E13 /* lauch-bg.jpg in Resources */,
 				E46FB5251D4E305800661E13 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,6 +288,7 @@
 			files = (
 				E46FB5221D4E305800661E13 /* ViewController.m in Sources */,
 				E46FB51F1D4E305800661E13 /* AppDelegate.m in Sources */,
+				E46FB5551D4E47CF00661E13 /* RatesTableViewController.m in Sources */,
 				E46FB51C1D4E305800661E13 /* main.m in Sources */,
 				E46FB5281D4E305800661E13 /* Rate_iOS.xcdatamodeld in Sources */,
 			);
@@ -418,9 +432,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Rate-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "pw.fczm.app.Rate-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -429,9 +445,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Rate-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "pw.fczm.app.Rate-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -500,6 +518,7 @@
 				E46FB5491D4E305800661E13 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E46FB54A1D4E305800661E13 /* Build configuration list for PBXNativeTarget "Rate-iOSTests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +527,7 @@
 				E46FB54C1D4E305800661E13 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E46FB54D1D4E305800661E13 /* Build configuration list for PBXNativeTarget "Rate-iOSUITests" */ = {
 			isa = XCConfigurationList;
@@ -516,6 +536,7 @@
 				E46FB54F1D4E305800661E13 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
