@@ -19,8 +19,29 @@
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     [super viewDidLoad];
-    self.tabBarController.tabBar.tintColor = [UIColor colorWithRed:0 green:187/255.0 blue:156/255.0 alpha:1.0];
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+}
+
+#pragma mark - UITableViewDataSource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    return 10;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"rateIdentifier"
+                                                                               forIndexPath:indexPath];
+    UIImageView *currencyImageView = (UIImageView *)[cell viewWithTag:1];
+    UILabel *codeLabel = (UILabel *)[cell viewWithTag:2];
+    UILabel *rateLabel = (UILabel *)[cell viewWithTag:3];
+    currencyImageView.image = [UIImage imageNamed:@"USD"];
+    codeLabel.text = @"USD";
+    rateLabel.text = @"0.1678";
+    return cell;
 }
 
 @end

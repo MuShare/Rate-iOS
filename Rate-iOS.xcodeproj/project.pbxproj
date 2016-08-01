@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		E46FB51C1D4E305800661E13 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E46FB51B1D4E305800661E13 /* main.m */; };
 		E46FB51F1D4E305800661E13 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E46FB51E1D4E305800661E13 /* AppDelegate.m */; };
-		E46FB5221D4E305800661E13 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E46FB5211D4E305800661E13 /* ViewController.m */; };
 		E46FB5251D4E305800661E13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E46FB5231D4E305800661E13 /* Main.storyboard */; };
 		E46FB5281D4E305800661E13 /* Rate_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E46FB5261D4E305800661E13 /* Rate_iOS.xcdatamodeld */; };
 		E46FB52A1D4E305800661E13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E46FB5291D4E305800661E13 /* Assets.xcassets */; };
@@ -19,6 +18,7 @@
 		E46FB5551D4E47CF00661E13 /* RatesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E46FB5541D4E47CF00661E13 /* RatesTableViewController.m */; };
 		E46FB5591D4E569B00661E13 /* lauch-bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E46FB5581D4E569B00661E13 /* lauch-bg.jpg */; };
 		E46FB55B1D4E583200661E13 /* luach-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E46FB55A1D4E583200661E13 /* luach-logo.png */; };
+		E496A7A01D4F095A003B0F1D /* MyProfileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E496A79F1D4F095A003B0F1D /* MyProfileTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,8 +43,6 @@
 		E46FB51B1D4E305800661E13 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E46FB51D1D4E305800661E13 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E46FB51E1D4E305800661E13 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E46FB5201D4E305800661E13 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E46FB5211D4E305800661E13 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E46FB5241D4E305800661E13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E46FB5271D4E305800661E13 /* Rate_iOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Rate_iOS.xcdatamodel; sourceTree = "<group>"; };
 		E46FB5291D4E305800661E13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,6 +58,8 @@
 		E46FB5541D4E47CF00661E13 /* RatesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatesTableViewController.m; sourceTree = "<group>"; };
 		E46FB5581D4E569B00661E13 /* lauch-bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "lauch-bg.jpg"; sourceTree = "<group>"; };
 		E46FB55A1D4E583200661E13 /* luach-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "luach-logo.png"; sourceTree = "<group>"; };
+		E496A79E1D4F095A003B0F1D /* MyProfileTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProfileTableViewController.h; sourceTree = "<group>"; };
+		E496A79F1D4F095A003B0F1D /* MyProfileTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProfileTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,18 +110,17 @@
 		E46FB5191D4E305800661E13 /* Rate-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				E496A79D1D4F0843003B0F1D /* Subscribe */,
+				E496A79C1D4F083E003B0F1D /* Me */,
+				E496A79B1D4F0831003B0F1D /* Rate */,
 				E46FB51D1D4E305800661E13 /* AppDelegate.h */,
 				E46FB51E1D4E305800661E13 /* AppDelegate.m */,
-				E46FB5201D4E305800661E13 /* ViewController.h */,
-				E46FB5211D4E305800661E13 /* ViewController.m */,
 				E46FB5231D4E305800661E13 /* Main.storyboard */,
 				E46FB5291D4E305800661E13 /* Assets.xcassets */,
 				E46FB52B1D4E305800661E13 /* LaunchScreen.storyboard */,
 				E46FB52E1D4E305800661E13 /* Info.plist */,
 				E46FB5261D4E305800661E13 /* Rate_iOS.xcdatamodeld */,
 				E46FB51A1D4E305800661E13 /* Supporting Files */,
-				E46FB5531D4E47CF00661E13 /* RatesTableViewController.h */,
-				E46FB5541D4E47CF00661E13 /* RatesTableViewController.m */,
 			);
 			path = "Rate-iOS";
 			sourceTree = "<group>";
@@ -152,6 +151,31 @@
 				E46FB5441D4E305800661E13 /* Info.plist */,
 			);
 			path = "Rate-iOSUITests";
+			sourceTree = "<group>";
+		};
+		E496A79B1D4F0831003B0F1D /* Rate */ = {
+			isa = PBXGroup;
+			children = (
+				E46FB5531D4E47CF00661E13 /* RatesTableViewController.h */,
+				E46FB5541D4E47CF00661E13 /* RatesTableViewController.m */,
+			);
+			name = Rate;
+			sourceTree = "<group>";
+		};
+		E496A79C1D4F083E003B0F1D /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				E496A79E1D4F095A003B0F1D /* MyProfileTableViewController.h */,
+				E496A79F1D4F095A003B0F1D /* MyProfileTableViewController.m */,
+			);
+			name = Me;
+			sourceTree = "<group>";
+		};
+		E496A79D1D4F0843003B0F1D /* Subscribe */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Subscribe;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,8 +310,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E46FB5221D4E305800661E13 /* ViewController.m in Sources */,
 				E46FB51F1D4E305800661E13 /* AppDelegate.m in Sources */,
+				E496A7A01D4F095A003B0F1D /* MyProfileTableViewController.m in Sources */,
 				E46FB5551D4E47CF00661E13 /* RatesTableViewController.m in Sources */,
 				E46FB51C1D4E305800661E13 /* main.m in Sources */,
 				E46FB5281D4E305800661E13 /* Rate_iOS.xcdatamodeld in Sources */,
