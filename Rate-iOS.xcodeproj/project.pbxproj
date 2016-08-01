@@ -19,6 +19,7 @@
 		E46FB5591D4E569B00661E13 /* lauch-bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E46FB5581D4E569B00661E13 /* lauch-bg.jpg */; };
 		E46FB55B1D4E583200661E13 /* luach-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E46FB55A1D4E583200661E13 /* luach-logo.png */; };
 		E496A7A01D4F095A003B0F1D /* MyProfileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E496A79F1D4F095A003B0F1D /* MyProfileTableViewController.m */; };
+		E49A351C1D4F35E70073E079 /* MeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E49A351B1D4F35E70073E079 /* MeTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		E46FB55A1D4E583200661E13 /* luach-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "luach-logo.png"; sourceTree = "<group>"; };
 		E496A79E1D4F095A003B0F1D /* MyProfileTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProfileTableViewController.h; sourceTree = "<group>"; };
 		E496A79F1D4F095A003B0F1D /* MyProfileTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProfileTableViewController.m; sourceTree = "<group>"; };
+		E49A351A1D4F35E70073E079 /* MeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeTableViewController.h; sourceTree = "<group>"; };
+		E49A351B1D4F35E70073E079 /* MeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +170,8 @@
 			children = (
 				E496A79E1D4F095A003B0F1D /* MyProfileTableViewController.h */,
 				E496A79F1D4F095A003B0F1D /* MyProfileTableViewController.m */,
+				E49A351A1D4F35E70073E079 /* MeTableViewController.h */,
+				E49A351B1D4F35E70073E079 /* MeTableViewController.m */,
 			);
 			name = Me;
 			sourceTree = "<group>";
@@ -245,6 +250,7 @@
 				TargetAttributes = {
 					E46FB5161D4E305800661E13 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 6ANM44X2CJ;
 					};
 					E46FB5321D4E305800661E13 = {
 						CreatedOnToolsVersion = 7.3;
@@ -311,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E46FB51F1D4E305800661E13 /* AppDelegate.m in Sources */,
+				E49A351C1D4F35E70073E079 /* MeTableViewController.m in Sources */,
 				E496A7A01D4F095A003B0F1D /* MyProfileTableViewController.m in Sources */,
 				E46FB5551D4E47CF00661E13 /* RatesTableViewController.m in Sources */,
 				E46FB51C1D4E305800661E13 /* main.m in Sources */,
@@ -455,11 +462,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Rate-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "pw.fczm.app.Rate-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -468,11 +478,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Rate-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "pw.fczm.app.Rate-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
