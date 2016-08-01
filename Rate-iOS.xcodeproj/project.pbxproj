@@ -20,6 +20,8 @@
 		E46FB55B1D4E583200661E13 /* luach-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E46FB55A1D4E583200661E13 /* luach-logo.png */; };
 		E496A7A01D4F095A003B0F1D /* MyProfileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E496A79F1D4F095A003B0F1D /* MyProfileTableViewController.m */; };
 		E49A351C1D4F35E70073E079 /* MeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E49A351B1D4F35E70073E079 /* MeTableViewController.m */; };
+		E49A351F1D4F4CCE0073E079 /* SubscribeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E49A351E1D4F4CCE0073E079 /* SubscribeTableViewController.m */; };
+		E49A35221D4F4CD90073E079 /* AddSubscribeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E49A35211D4F4CD90073E079 /* AddSubscribeTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,10 @@
 		E496A79F1D4F095A003B0F1D /* MyProfileTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProfileTableViewController.m; sourceTree = "<group>"; };
 		E49A351A1D4F35E70073E079 /* MeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeTableViewController.h; sourceTree = "<group>"; };
 		E49A351B1D4F35E70073E079 /* MeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeTableViewController.m; sourceTree = "<group>"; };
+		E49A351D1D4F4CCE0073E079 /* SubscribeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubscribeTableViewController.h; sourceTree = "<group>"; };
+		E49A351E1D4F4CCE0073E079 /* SubscribeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubscribeTableViewController.m; sourceTree = "<group>"; };
+		E49A35201D4F4CD90073E079 /* AddSubscribeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddSubscribeTableViewController.h; sourceTree = "<group>"; };
+		E49A35211D4F4CD90073E079 /* AddSubscribeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddSubscribeTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +185,10 @@
 		E496A79D1D4F0843003B0F1D /* Subscribe */ = {
 			isa = PBXGroup;
 			children = (
+				E49A351D1D4F4CCE0073E079 /* SubscribeTableViewController.h */,
+				E49A351E1D4F4CCE0073E079 /* SubscribeTableViewController.m */,
+				E49A35201D4F4CD90073E079 /* AddSubscribeTableViewController.h */,
+				E49A35211D4F4CD90073E079 /* AddSubscribeTableViewController.m */,
 			);
 			name = Subscribe;
 			sourceTree = "<group>";
@@ -318,9 +328,11 @@
 			files = (
 				E46FB51F1D4E305800661E13 /* AppDelegate.m in Sources */,
 				E49A351C1D4F35E70073E079 /* MeTableViewController.m in Sources */,
+				E49A35221D4F4CD90073E079 /* AddSubscribeTableViewController.m in Sources */,
 				E496A7A01D4F095A003B0F1D /* MyProfileTableViewController.m in Sources */,
 				E46FB5551D4E47CF00661E13 /* RatesTableViewController.m in Sources */,
 				E46FB51C1D4E305800661E13 /* main.m in Sources */,
+				E49A351F1D4F4CCE0073E079 /* SubscribeTableViewController.m in Sources */,
 				E46FB5281D4E305800661E13 /* Rate_iOS.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

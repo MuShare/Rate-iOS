@@ -1,26 +1,25 @@
 //
-//  MeTableViewController.m
+//  AddSubscribeTableViewController.m
 //  Rate-iOS
 //
 //  Created by lidaye on 8/1/16.
 //  Copyright © 2016 MuShare. All rights reserved.
 //
 
-#import "MeTableViewController.h"
+#import "AddSubscribeTableViewController.h"
 
-@interface MeTableViewController ()
+@interface AddSubscribeTableViewController ()
 
 @end
 
-@implementation MeTableViewController
+@implementation AddSubscribeTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
 }
 
-
-#pragma mark - Table view
+#pragma mark - Table view Delegate
 - (UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
@@ -29,6 +28,13 @@
     UIView *headerView = [[UIView alloc] init];
     [headerView setBackgroundColor:[UIColor clearColor]];
     return headerView;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    return 15;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
