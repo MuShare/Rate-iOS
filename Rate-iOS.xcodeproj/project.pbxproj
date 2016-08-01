@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12BBA0426BE3196BE73A55CB /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90484F32E9B3B223B0DBE339 /* Pods.framework */; };
+		E41451991D4F8AA000AFE672 /* RateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E41451981D4F8AA000AFE672 /* RateViewController.m */; };
 		E46FB51C1D4E305800661E13 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E46FB51B1D4E305800661E13 /* main.m */; };
 		E46FB51F1D4E305800661E13 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E46FB51E1D4E305800661E13 /* AppDelegate.m */; };
 		E46FB5251D4E305800661E13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E46FB5231D4E305800661E13 /* Main.storyboard */; };
@@ -42,6 +44,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		90484F32E9B3B223B0DBE339 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E41451911D4F88BD00AFE672 /* Rate-iOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Rate-iOS-Bridging-Header.h"; sourceTree = "<group>"; };
+		E41451971D4F8AA000AFE672 /* RateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RateViewController.h; sourceTree = "<group>"; };
+		E41451981D4F8AA000AFE672 /* RateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateViewController.m; sourceTree = "<group>"; };
 		E46FB5171D4E305800661E13 /* Rate-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rate-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E46FB51B1D4E305800661E13 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E46FB51D1D4E305800661E13 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -69,6 +75,8 @@
 		E49A351E1D4F4CCE0073E079 /* SubscribeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubscribeTableViewController.m; sourceTree = "<group>"; };
 		E49A35201D4F4CD90073E079 /* AddSubscribeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddSubscribeTableViewController.h; sourceTree = "<group>"; };
 		E49A35211D4F4CD90073E079 /* AddSubscribeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddSubscribeTableViewController.m; sourceTree = "<group>"; };
+		E8DE8CE261D3D91477792600 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		F0D8F75365DB741C707980DC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12BBA0426BE3196BE73A55CB /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +105,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		59BE1C6FCB63CAE5BF853C98 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E8DE8CE261D3D91477792600 /* Pods.debug.xcconfig */,
+				F0D8F75365DB741C707980DC /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CDD5B5040E8A36BAFCD556F2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				90484F32E9B3B223B0DBE339 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E46FB50E1D4E305800661E13 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +129,8 @@
 				E46FB5361D4E305800661E13 /* Rate-iOSTests */,
 				E46FB5411D4E305800661E13 /* Rate-iOSUITests */,
 				E46FB5181D4E305800661E13 /* Products */,
+				59BE1C6FCB63CAE5BF853C98 /* Pods */,
+				CDD5B5040E8A36BAFCD556F2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,17 +147,18 @@
 		E46FB5191D4E305800661E13 /* Rate-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				E496A79D1D4F0843003B0F1D /* Subscribe */,
 				E496A79C1D4F083E003B0F1D /* Me */,
 				E496A79B1D4F0831003B0F1D /* Rate */,
+				E496A79D1D4F0843003B0F1D /* Subscribe */,
+				E46FB51A1D4E305800661E13 /* Supporting Files */,
 				E46FB51D1D4E305800661E13 /* AppDelegate.h */,
 				E46FB51E1D4E305800661E13 /* AppDelegate.m */,
-				E46FB5231D4E305800661E13 /* Main.storyboard */,
 				E46FB5291D4E305800661E13 /* Assets.xcassets */,
-				E46FB52B1D4E305800661E13 /* LaunchScreen.storyboard */,
 				E46FB52E1D4E305800661E13 /* Info.plist */,
+				E46FB52B1D4E305800661E13 /* LaunchScreen.storyboard */,
+				E46FB5231D4E305800661E13 /* Main.storyboard */,
 				E46FB5261D4E305800661E13 /* Rate_iOS.xcdatamodeld */,
-				E46FB51A1D4E305800661E13 /* Supporting Files */,
+				E41451911D4F88BD00AFE672 /* Rate-iOS-Bridging-Header.h */,
 			);
 			path = "Rate-iOS";
 			sourceTree = "<group>";
@@ -167,6 +196,8 @@
 			children = (
 				E46FB5531D4E47CF00661E13 /* RatesTableViewController.h */,
 				E46FB5541D4E47CF00661E13 /* RatesTableViewController.m */,
+				E41451971D4F8AA000AFE672 /* RateViewController.h */,
+				E41451981D4F8AA000AFE672 /* RateViewController.m */,
 			);
 			name = Rate;
 			sourceTree = "<group>";
@@ -200,9 +231,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E46FB5471D4E305800661E13 /* Build configuration list for PBXNativeTarget "Rate-iOS" */;
 			buildPhases = (
+				2C097E777585CEE482AB3CD8 /* Check Pods Manifest.lock */,
 				E46FB5131D4E305800661E13 /* Sources */,
 				E46FB5141D4E305800661E13 /* Frameworks */,
 				E46FB5151D4E305800661E13 /* Resources */,
+				0778AFD77A87F91B6372E337 /* Embed Pods Frameworks */,
+				68DEAD435AE3AB71C2D771C8 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -321,11 +355,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0778AFD77A87F91B6372E337 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2C097E777585CEE482AB3CD8 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		68DEAD435AE3AB71C2D771C8 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E46FB5131D4E305800661E13 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E41451991D4F8AA000AFE672 /* RateViewController.m in Sources */,
 				E46FB51F1D4E305800661E13 /* AppDelegate.m in Sources */,
 				E49A351C1D4F35E70073E079 /* MeTableViewController.m in Sources */,
 				E49A35221D4F4CD90073E079 /* AddSubscribeTableViewController.m in Sources */,
@@ -472,8 +555,10 @@
 		};
 		E46FB5481D4E305800661E13 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8DE8CE261D3D91477792600 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Rate-iOS/Info.plist";
@@ -482,14 +567,18 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "pw.fczm.app.Rate-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Rate-iOS/Rate-iOS-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		E46FB5491D4E305800661E13 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0D8F75365DB741C707980DC /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Rate-iOS/Info.plist";
@@ -498,6 +587,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "pw.fczm.app.Rate-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Rate-iOS/Rate-iOS-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
