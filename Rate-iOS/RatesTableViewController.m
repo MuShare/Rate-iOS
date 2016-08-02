@@ -7,6 +7,7 @@
 //
 
 #import "RatesTableViewController.h"
+#import <SVGKit/SVGKit.h>
 
 @interface RatesTableViewController ()
 
@@ -36,12 +37,12 @@
     }
     UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"rateIdentifier"
                                                                                forIndexPath:indexPath];
-    UIImageView *currencyImageView = (UIImageView *)[cell viewWithTag:1];
+    SVGKFastImageView *currencyImageView = (SVGKFastImageView *)[cell viewWithTag:1];
     UILabel *codeLabel = (UILabel *)[cell viewWithTag:2];
     UILabel *rateLabel = (UILabel *)[cell viewWithTag:3];
-    currencyImageView.image = [UIImage imageNamed:@"USD"];
-    codeLabel.text = @"USD";
-    rateLabel.text = @"0.1678";
+    currencyImageView.image = [SVGKImage imageNamed:@"cn.svg"];
+    codeLabel.text = @"CNY";
+ 
     return cell;
 }
 
@@ -52,3 +53,4 @@
     return 0.1;
 }
 @end
+

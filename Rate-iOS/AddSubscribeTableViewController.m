@@ -15,6 +15,9 @@
 @implementation AddSubscribeTableViewController
 
 - (void)viewDidLoad {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
     [super viewDidLoad];
     
 }

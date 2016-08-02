@@ -45,6 +45,18 @@
     [self saveContext];
 }
 
+#pragma mark - AFNetworking
+@synthesize httpSessionManager = _httpSessionManager;
+
+- (AFHTTPSessionManager *)httpSessionManager {
+    if(_httpSessionManager != nil) {
+        return _httpSessionManager;
+    }
+    _httpSessionManager = [AFHTTPSessionManager manager];
+    _httpSessionManager.responseSerializer = [[AFCompoundResponseSerializer alloc] init];
+    return _httpSessionManager;
+}
+
 #pragma mark - Core Data stack
 
 @synthesize managedObjectContext = _managedObjectContext;

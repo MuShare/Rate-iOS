@@ -16,6 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _fromImageView.image = [SVGKImage imageNamed:@"cn.svg"];
+    _toImageView.image = [SVGKImage imageNamed:@"cn.svg"];
+    
     _historyLineChartView.delegate = self;//设置代理
     _historyLineChartView.xAxis.drawGridLinesEnabled = NO;//不绘制网格线
     _historyLineChartView.xAxis.labelPosition = XAxisLabelPositionBottom; //X轴的显示位置，默认是显示在上面的
