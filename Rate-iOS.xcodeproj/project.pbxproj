@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		12BBA0426BE3196BE73A55CB /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90484F32E9B3B223B0DBE339 /* Pods.framework */; };
 		E41451991D4F8AA000AFE672 /* RateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E41451981D4F8AA000AFE672 /* RateViewController.m */; };
+		E414519C1D502C6600AFE672 /* login-bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E414519B1D502C6600AFE672 /* login-bg.jpg */; };
+		E414519F1D502E8200AFE672 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E414519E1D502E8200AFE672 /* LoginViewController.m */; };
 		E46FB51C1D4E305800661E13 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E46FB51B1D4E305800661E13 /* main.m */; };
 		E46FB51F1D4E305800661E13 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E46FB51E1D4E305800661E13 /* AppDelegate.m */; };
 		E46FB5251D4E305800661E13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E46FB5231D4E305800661E13 /* Main.storyboard */; };
@@ -48,6 +50,9 @@
 		E41451911D4F88BD00AFE672 /* Rate-iOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Rate-iOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		E41451971D4F8AA000AFE672 /* RateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RateViewController.h; sourceTree = "<group>"; };
 		E41451981D4F8AA000AFE672 /* RateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateViewController.m; sourceTree = "<group>"; };
+		E414519B1D502C6600AFE672 /* login-bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "login-bg.jpg"; sourceTree = "<group>"; };
+		E414519D1D502E8200AFE672 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		E414519E1D502E8200AFE672 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		E46FB5171D4E305800661E13 /* Rate-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rate-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E46FB51B1D4E305800661E13 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E46FB51D1D4E305800661E13 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -169,6 +174,7 @@
 				E46FB51B1D4E305800661E13 /* main.m */,
 				E46FB5581D4E569B00661E13 /* lauch-bg.jpg */,
 				E46FB55A1D4E583200661E13 /* luach-logo.png */,
+				E414519B1D502C6600AFE672 /* login-bg.jpg */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -209,6 +215,8 @@
 				E496A79F1D4F095A003B0F1D /* MyProfileTableViewController.m */,
 				E49A351A1D4F35E70073E079 /* MeTableViewController.h */,
 				E49A351B1D4F35E70073E079 /* MeTableViewController.m */,
+				E414519D1D502E8200AFE672 /* LoginViewController.h */,
+				E414519E1D502E8200AFE672 /* LoginViewController.m */,
 			);
 			name = Me;
 			sourceTree = "<group>";
@@ -335,6 +343,7 @@
 				E46FB55B1D4E583200661E13 /* luach-logo.png in Resources */,
 				E46FB52A1D4E305800661E13 /* Assets.xcassets in Resources */,
 				E46FB5591D4E569B00661E13 /* lauch-bg.jpg in Resources */,
+				E414519C1D502C6600AFE672 /* login-bg.jpg in Resources */,
 				E46FB5251D4E305800661E13 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,6 +421,7 @@
 				E46FB51F1D4E305800661E13 /* AppDelegate.m in Sources */,
 				E49A351C1D4F35E70073E079 /* MeTableViewController.m in Sources */,
 				E49A35221D4F4CD90073E079 /* AddSubscribeTableViewController.m in Sources */,
+				E414519F1D502E8200AFE672 /* LoginViewController.m in Sources */,
 				E496A7A01D4F095A003B0F1D /* MyProfileTableViewController.m in Sources */,
 				E46FB5551D4E47CF00661E13 /* RatesTableViewController.m in Sources */,
 				E46FB51C1D4E305800661E13 /* main.m in Sources */,
@@ -581,9 +591,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = "Rate-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "pw.fczm.app.Rate-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
