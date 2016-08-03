@@ -272,7 +272,6 @@
 		E408AB9A1D51B0D300B34655 /* zw.svg in Resources */ = {isa = PBXBuildFile; fileRef = E408AA9A1D51B0D300B34655 /* zw.svg */; };
 		E408AB9B1D51B0D300B34655 /* zz.svg in Resources */ = {isa = PBXBuildFile; fileRef = E408AA9B1D51B0D300B34655 /* zz.svg */; };
 		E408AB9E1D51B51E00B34655 /* UserTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E408AB9D1D51B51E00B34655 /* UserTool.m */; };
-		E408ABA11D51C54500B34655 /* SubscriptionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E408ABA01D51C54500B34655 /* SubscriptionTableViewController.m */; };
 		E410EEB61D51E5D50077E1D9 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E410EEB51D51E5D50077E1D9 /* HelpViewController.m */; };
 		E41451991D4F8AA000AFE672 /* RateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E41451981D4F8AA000AFE672 /* RateViewController.m */; };
 		E414519F1D502E8200AFE672 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E414519E1D502E8200AFE672 /* LoginViewController.m */; };
@@ -291,6 +290,9 @@
 		E49A351F1D4F4CCE0073E079 /* SubscriptionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E49A351E1D4F4CCE0073E079 /* SubscriptionsTableViewController.m */; };
 		E49A35221D4F4CD90073E079 /* AddSubscribeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E49A35211D4F4CD90073E079 /* AddSubscribeTableViewController.m */; };
 		E4A95E521D5069CA002D0906 /* cn.svg in Resources */ = {isa = PBXBuildFile; fileRef = E4A95E511D5069CA002D0906 /* cn.svg */; };
+		E4E8129A1D521E50003DEE58 /* LanguagesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E812991D521E50003DEE58 /* LanguagesTableViewController.m */; };
+		E4EC8A8D1D5229B600CECF5D /* EditSubscriptionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4EC8A8C1D5229B600CECF5D /* EditSubscriptionTableViewController.m */; };
+		E4EC8A901D522DC900CECF5D /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4EC8A8F1D522DC900CECF5D /* FeedbackViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -584,8 +586,6 @@
 		E408AA9B1D51B0D300B34655 /* zz.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = zz.svg; sourceTree = "<group>"; };
 		E408AB9C1D51B51E00B34655 /* UserTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserTool.h; sourceTree = "<group>"; };
 		E408AB9D1D51B51E00B34655 /* UserTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTool.m; sourceTree = "<group>"; };
-		E408AB9F1D51C54500B34655 /* SubscriptionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubscriptionTableViewController.h; sourceTree = "<group>"; };
-		E408ABA01D51C54500B34655 /* SubscriptionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubscriptionTableViewController.m; sourceTree = "<group>"; };
 		E410EEB41D51E5D50077E1D9 /* HelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
 		E410EEB51D51E5D50077E1D9 /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
 		E41451911D4F88BD00AFE672 /* Rate-iOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Rate-iOS-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -621,6 +621,12 @@
 		E49A35201D4F4CD90073E079 /* AddSubscribeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddSubscribeTableViewController.h; sourceTree = "<group>"; };
 		E49A35211D4F4CD90073E079 /* AddSubscribeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddSubscribeTableViewController.m; sourceTree = "<group>"; };
 		E4A95E511D5069CA002D0906 /* cn.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cn.svg; sourceTree = "<group>"; };
+		E4E812981D521E50003DEE58 /* LanguagesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanguagesTableViewController.h; sourceTree = "<group>"; };
+		E4E812991D521E50003DEE58 /* LanguagesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanguagesTableViewController.m; sourceTree = "<group>"; };
+		E4EC8A8B1D5229B600CECF5D /* EditSubscriptionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditSubscriptionTableViewController.h; sourceTree = "<group>"; };
+		E4EC8A8C1D5229B600CECF5D /* EditSubscriptionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditSubscriptionTableViewController.m; sourceTree = "<group>"; };
+		E4EC8A8E1D522DC900CECF5D /* FeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackViewController.h; sourceTree = "<group>"; };
+		E4EC8A8F1D522DC900CECF5D /* FeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
 		E8DE8CE261D3D91477792600 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F0D8F75365DB741C707980DC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1064,6 +1070,10 @@
 				E414519E1D502E8200AFE672 /* LoginViewController.m */,
 				E410EEB41D51E5D50077E1D9 /* HelpViewController.h */,
 				E410EEB51D51E5D50077E1D9 /* HelpViewController.m */,
+				E4E812981D521E50003DEE58 /* LanguagesTableViewController.h */,
+				E4E812991D521E50003DEE58 /* LanguagesTableViewController.m */,
+				E4EC8A8E1D522DC900CECF5D /* FeedbackViewController.h */,
+				E4EC8A8F1D522DC900CECF5D /* FeedbackViewController.m */,
 			);
 			name = Me;
 			sourceTree = "<group>";
@@ -1075,8 +1085,8 @@
 				E49A351E1D4F4CCE0073E079 /* SubscriptionsTableViewController.m */,
 				E49A35201D4F4CD90073E079 /* AddSubscribeTableViewController.h */,
 				E49A35211D4F4CD90073E079 /* AddSubscribeTableViewController.m */,
-				E408AB9F1D51C54500B34655 /* SubscriptionTableViewController.h */,
-				E408ABA01D51C54500B34655 /* SubscriptionTableViewController.m */,
+				E4EC8A8B1D5229B600CECF5D /* EditSubscriptionTableViewController.h */,
+				E4EC8A8C1D5229B600CECF5D /* EditSubscriptionTableViewController.m */,
 			);
 			name = Subscribe;
 			sourceTree = "<group>";
@@ -1521,6 +1531,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E41451991D4F8AA000AFE672 /* RateViewController.m in Sources */,
+				E4E8129A1D521E50003DEE58 /* LanguagesTableViewController.m in Sources */,
 				E46FB51F1D4E305800661E13 /* AppDelegate.m in Sources */,
 				E408A98C1D51A83600B34655 /* Currency+CoreDataProperties.m in Sources */,
 				E49A351C1D4F35E70073E079 /* MeTableViewController.m in Sources */,
@@ -1533,11 +1544,12 @@
 				E408A9931D51A84700B34655 /* DaoTemplate.m in Sources */,
 				E4852F8C1D5093590039B79B /* InternetTool.m in Sources */,
 				E408A9921D51A84700B34655 /* DaoManager.m in Sources */,
-				E408ABA11D51C54500B34655 /* SubscriptionTableViewController.m in Sources */,
 				E46FB5551D4E47CF00661E13 /* RatesTableViewController.m in Sources */,
 				E46FB51C1D4E305800661E13 /* main.m in Sources */,
 				E49A351F1D4F4CCE0073E079 /* SubscriptionsTableViewController.m in Sources */,
+				E4EC8A901D522DC900CECF5D /* FeedbackViewController.m in Sources */,
 				E408A98D1D51A83600B34655 /* Currency.m in Sources */,
+				E4EC8A8D1D5229B600CECF5D /* EditSubscriptionTableViewController.m in Sources */,
 				E408A9961D51A88A00B34655 /* CurrencyDao.m in Sources */,
 				E408A9991D51AF3D00B34655 /* CurrenciesTableViewController.m in Sources */,
 				E46FB5281D4E305800661E13 /* Rate_iOS.xcdatamodeld in Sources */,
