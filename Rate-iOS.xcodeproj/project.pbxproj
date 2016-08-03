@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		12BBA0426BE3196BE73A55CB /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90484F32E9B3B223B0DBE339 /* Pods.framework */; };
 		E41451991D4F8AA000AFE672 /* RateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E41451981D4F8AA000AFE672 /* RateViewController.m */; };
-		E414519C1D502C6600AFE672 /* login-bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E414519B1D502C6600AFE672 /* login-bg.jpg */; };
 		E414519F1D502E8200AFE672 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E414519E1D502E8200AFE672 /* LoginViewController.m */; };
 		E46FB51C1D4E305800661E13 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E46FB51B1D4E305800661E13 /* main.m */; };
 		E46FB51F1D4E305800661E13 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E46FB51E1D4E305800661E13 /* AppDelegate.m */; };
@@ -20,8 +19,6 @@
 		E46FB5381D4E305800661E13 /* Rate_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E46FB5371D4E305800661E13 /* Rate_iOSTests.m */; };
 		E46FB5431D4E305800661E13 /* Rate_iOSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E46FB5421D4E305800661E13 /* Rate_iOSUITests.m */; };
 		E46FB5551D4E47CF00661E13 /* RatesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E46FB5541D4E47CF00661E13 /* RatesTableViewController.m */; };
-		E46FB5591D4E569B00661E13 /* lauch-bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E46FB5581D4E569B00661E13 /* lauch-bg.jpg */; };
-		E46FB55B1D4E583200661E13 /* luach-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E46FB55A1D4E583200661E13 /* luach-logo.png */; };
 		E4852F8C1D5093590039B79B /* InternetTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E4852F8B1D5093590039B79B /* InternetTool.m */; };
 		E496A7A01D4F095A003B0F1D /* MyProfileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E496A79F1D4F095A003B0F1D /* MyProfileTableViewController.m */; };
 		E49A351C1D4F35E70073E079 /* MeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E49A351B1D4F35E70073E079 /* MeTableViewController.m */; };
@@ -52,7 +49,6 @@
 		E41451911D4F88BD00AFE672 /* Rate-iOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Rate-iOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		E41451971D4F8AA000AFE672 /* RateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RateViewController.h; sourceTree = "<group>"; };
 		E41451981D4F8AA000AFE672 /* RateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateViewController.m; sourceTree = "<group>"; };
-		E414519B1D502C6600AFE672 /* login-bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "login-bg.jpg"; sourceTree = "<group>"; };
 		E414519D1D502E8200AFE672 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		E414519E1D502E8200AFE672 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		E46FB5171D4E305800661E13 /* Rate-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rate-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,8 +68,6 @@
 		E46FB5441D4E305800661E13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E46FB5531D4E47CF00661E13 /* RatesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatesTableViewController.h; sourceTree = "<group>"; };
 		E46FB5541D4E47CF00661E13 /* RatesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatesTableViewController.m; sourceTree = "<group>"; };
-		E46FB5581D4E569B00661E13 /* lauch-bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "lauch-bg.jpg"; sourceTree = "<group>"; };
-		E46FB55A1D4E583200661E13 /* luach-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "luach-logo.png"; sourceTree = "<group>"; };
 		E4852F8A1D5093590039B79B /* InternetTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InternetTool.h; sourceTree = "<group>"; };
 		E4852F8B1D5093590039B79B /* InternetTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InternetTool.m; sourceTree = "<group>"; };
 		E496A79E1D4F095A003B0F1D /* MyProfileTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProfileTableViewController.h; sourceTree = "<group>"; };
@@ -178,9 +172,6 @@
 			isa = PBXGroup;
 			children = (
 				E46FB51B1D4E305800661E13 /* main.m */,
-				E46FB5581D4E569B00661E13 /* lauch-bg.jpg */,
-				E46FB55A1D4E583200661E13 /* luach-logo.png */,
-				E414519B1D502C6600AFE672 /* login-bg.jpg */,
 				E4A95E511D5069CA002D0906 /* cn.svg */,
 			);
 			name = "Supporting Files";
@@ -356,11 +347,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E46FB52D1D4E305800661E13 /* LaunchScreen.storyboard in Resources */,
-				E46FB55B1D4E583200661E13 /* luach-logo.png in Resources */,
 				E4A95E521D5069CA002D0906 /* cn.svg in Resources */,
 				E46FB52A1D4E305800661E13 /* Assets.xcassets in Resources */,
-				E46FB5591D4E569B00661E13 /* lauch-bg.jpg in Resources */,
-				E414519C1D502C6600AFE672 /* login-bg.jpg in Resources */,
 				E46FB5251D4E305800661E13 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
