@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DaoManager.h"
 
 @interface RatesTableViewController : UITableViewController
+
+@property (nonatomic, strong) Currency *basedCurrency;
 
 @end

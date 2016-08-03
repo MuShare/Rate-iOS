@@ -7,9 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "InternetResponse.h"
+#import "AppDelegate.h"
 
-#define DoaminName @"rate.fczm.pw"
+
 
 @interface InternetTool : NSObject
+
++ (void)setRequestToken:(NSString *)token;
+
++ (AFHTTPSessionManager *)getSessionManager;
+
++ (NSString *)createUrl:(NSString *)relativePosition;
+
++ (NSDictionary *)getResponse:(id  _Nullable)responseObject;
 
 @end

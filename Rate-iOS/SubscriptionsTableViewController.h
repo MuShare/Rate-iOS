@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SubscribeTableViewController : UITableViewController
+@interface SubscriptionsTableViewController : UITableViewController
 
 @end

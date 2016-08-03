@@ -10,6 +10,8 @@
 #import <CoreData/CoreData.h>
 #import <AFNetworking/AFNetworking.h>
 
+#define DoaminName @"192.168.96.74:8080"
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;

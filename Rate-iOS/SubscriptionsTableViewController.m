@@ -6,14 +6,14 @@
 //  Copyright © 2016 MuShare. All rights reserved.
 //
 
-#import "SubscribeTableViewController.h"
+#import "SubscriptionsTableViewController.h"
 #import <SVGKit/SVGKit.h>
 
-@interface SubscribeTableViewController ()
+@interface SubscriptionsTableViewController ()
 
 @end
 
-@implementation SubscribeTableViewController
+@implementation SubscriptionsTableViewController
 
 - (void)viewDidLoad {
     if(DEBUG) {

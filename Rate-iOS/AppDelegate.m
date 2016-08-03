@@ -7,17 +7,29 @@
 //
 
 #import "AppDelegate.h"
+#import "UserTool.h"
+#import "InternetResponse.h"
+#import "CurrencyDao.h"
 
 @interface AppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation AppDelegate {
+    UserTool *user;
+}
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    user = [[UserTool alloc] init];
+    //Init AFHTTPSessionManager.
+    [self httpSessionManager];
+    //Init NSManagedObjectContext
+    [self managedObjectContext];
+    [self loadCurriencies];
     return YES;
 }
 
@@ -40,9 +52,56 @@
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    // Saves changes in the application's managed object context before the application terminates.
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
     [self saveContext];
+}
+
+
+#pragma mark - Service
+- (NSString *)createUrl:(NSString *)relativePosition {
+    NSString *url=[NSString stringWithFormat:@"http://%@/%@", DoaminName, relativePosition];
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+        NSLog(@"Request URL is: %@",url);
+    }
+    return url;
+}
+
+- (void)loadCurriencies {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+        NSLog(@"Currency rev is %ld.", user.currencyRev);
+    }
+    CurrencyDao *currencyDao = [[CurrencyDao alloc] initWithManagedObjectContext:_managedObjectContext];
+    NSString *lan = @"en";
+    [_httpSessionManager GET:[self createUrl:@"api/currencies"]
+                  parameters:@{
+                               @"lan": lan,
+                               @"rev": [NSNumber numberWithInteger:user.currencyRev]
+                               }
+                    progress:nil
+                     success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                         InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
+                         if([response statusOK]) {
+                             NSArray *objects = [response getResponseResult];
+                             for(NSObject *object in objects) {
+                                 [currencyDao saveOrUpdateWithJSONObject:object forLanguage:lan];
+                             }
+                             [self saveContext];
+                             //Set Based Currency Id if it is null
+                             if(user.basedCurrencyId == nil) {
+                                 Currency *basedCurrency = [currencyDao getByCode:@"USD" forLanguage:lan];
+                                 user.basedCurrencyId = basedCurrency.cid;
+                             }
+                         }
+                     }
+                     failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                         if(DEBUG) {
+                             NSLog(@"Server error: %@", error.localizedDescription);
+                         }
+                     }];
 }
 
 #pragma mark - AFNetworking
@@ -88,6 +147,10 @@
     
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"Rate_iOS.sqlite"];
+    if(DEBUG) {
+        NSLog(@"Persistent entity saved in %@", storeURL.absoluteString);
+    }
+    
     NSError *error = nil;
     NSString *failureReason = @"There was an error creating or loading the application's saved data.";
     if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
