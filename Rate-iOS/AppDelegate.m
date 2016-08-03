@@ -25,6 +25,7 @@
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     user = [[UserTool alloc] init];
+    
     //Init AFHTTPSessionManager.
     [self httpSessionManager];
     //Init NSManagedObjectContext

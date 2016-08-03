@@ -13,4 +13,12 @@
 @property (nonatomic) NSInteger currencyRev;
 @property (nonatomic, strong) NSString *basedCurrencyId;
 
+@property (nonatomic, strong) NSString *lan;
+
+@property (nonatomic, strong) NSString *email;
+@property (nonatomic, strong) NSString *telephone;
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *token;
+@property (nonatomic, strong) NSString *deviceToken;
+
 @end

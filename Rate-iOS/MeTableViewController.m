@@ -7,16 +7,22 @@
 //
 
 #import "MeTableViewController.h"
+#import "UserTool.h"
 
 @interface MeTableViewController ()
 
 @end
 
-@implementation MeTableViewController
+@implementation MeTableViewController {
+    UserTool *user;
+}
 
 - (void)viewDidLoad {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
     [super viewDidLoad];
-
+    user = [[UserTool alloc] init];
 }
 
 
@@ -43,6 +49,21 @@
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     return 0.1;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    //Bind click event for sign in/up or user profile cell.
+    if(indexPath.section == 0 && indexPath.row == 0) {
+        if(user.token == nil) {
+            [self performSegueWithIdentifier:@"loginSegue" sender:self];
+        } else {
+            [self performSegueWithIdentifier:@"profileSegue" sender:self];
+        }
+    }
+    
 }
 
 @end

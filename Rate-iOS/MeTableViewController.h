@@ -10,4 +10,8 @@
 
 @interface MeTableViewController : UITableViewController
 
+@property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
+@property (weak, nonatomic) IBOutlet UILabel *signOrNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *welcomeOrEmailLabel;
+
 @end

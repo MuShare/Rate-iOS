@@ -48,4 +48,7 @@
     return _basedCurrencyId;
 }
 
+@synthesize lan = _lan;
+
+
 @end

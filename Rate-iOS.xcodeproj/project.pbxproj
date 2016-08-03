@@ -273,6 +273,7 @@
 		E408AB9B1D51B0D300B34655 /* zz.svg in Resources */ = {isa = PBXBuildFile; fileRef = E408AA9B1D51B0D300B34655 /* zz.svg */; };
 		E408AB9E1D51B51E00B34655 /* UserTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E408AB9D1D51B51E00B34655 /* UserTool.m */; };
 		E408ABA11D51C54500B34655 /* SubscriptionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E408ABA01D51C54500B34655 /* SubscriptionTableViewController.m */; };
+		E410EEB61D51E5D50077E1D9 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E410EEB51D51E5D50077E1D9 /* HelpViewController.m */; };
 		E41451991D4F8AA000AFE672 /* RateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E41451981D4F8AA000AFE672 /* RateViewController.m */; };
 		E414519F1D502E8200AFE672 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E414519E1D502E8200AFE672 /* LoginViewController.m */; };
 		E46FB51C1D4E305800661E13 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E46FB51B1D4E305800661E13 /* main.m */; };
@@ -585,6 +586,8 @@
 		E408AB9D1D51B51E00B34655 /* UserTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTool.m; sourceTree = "<group>"; };
 		E408AB9F1D51C54500B34655 /* SubscriptionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubscriptionTableViewController.h; sourceTree = "<group>"; };
 		E408ABA01D51C54500B34655 /* SubscriptionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubscriptionTableViewController.m; sourceTree = "<group>"; };
+		E410EEB41D51E5D50077E1D9 /* HelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
+		E410EEB51D51E5D50077E1D9 /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
 		E41451911D4F88BD00AFE672 /* Rate-iOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Rate-iOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		E41451971D4F8AA000AFE672 /* RateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RateViewController.h; sourceTree = "<group>"; };
 		E41451981D4F8AA000AFE672 /* RateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateViewController.m; sourceTree = "<group>"; };
@@ -1059,6 +1062,8 @@
 				E49A351B1D4F35E70073E079 /* MeTableViewController.m */,
 				E414519D1D502E8200AFE672 /* LoginViewController.h */,
 				E414519E1D502E8200AFE672 /* LoginViewController.m */,
+				E410EEB41D51E5D50077E1D9 /* HelpViewController.h */,
+				E410EEB51D51E5D50077E1D9 /* HelpViewController.m */,
 			);
 			name = Me;
 			sourceTree = "<group>";
@@ -1519,6 +1524,7 @@
 				E46FB51F1D4E305800661E13 /* AppDelegate.m in Sources */,
 				E408A98C1D51A83600B34655 /* Currency+CoreDataProperties.m in Sources */,
 				E49A351C1D4F35E70073E079 /* MeTableViewController.m in Sources */,
+				E410EEB61D51E5D50077E1D9 /* HelpViewController.m in Sources */,
 				E49A35221D4F4CD90073E079 /* AddSubscribeTableViewController.m in Sources */,
 				E414519F1D502E8200AFE672 /* LoginViewController.m in Sources */,
 				E408AB9E1D51B51E00B34655 /* UserTool.m in Sources */,
