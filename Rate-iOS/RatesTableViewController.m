@@ -116,5 +116,8 @@
         [segue.destinationViewController setValue:selectedRate forKey:@"selectedRate"];
     }
 }
+- (IBAction)pushViewController:(id)sender {
+
+}
 @end
 

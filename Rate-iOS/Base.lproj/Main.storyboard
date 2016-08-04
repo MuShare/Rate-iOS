@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="nhL-iS-fpM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -67,10 +67,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I7T-Cj-F22" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="20" y="232" width="280" height="270"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="mvv-Rz-xc9">
                                 <rect key="frame" x="20" y="196" width="280" height="29"/>
                                 <segments>
@@ -88,6 +84,26 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I7T-Cj-F22" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="232" width="320" height="270"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="dragEnabled" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="scaleXEnabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="scaleYEnabled" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="pinchZoomEnabled" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="leftAxis.enabled" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="drawGridBackgroundEnabled" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="xAxis.enabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rightAxis.enabled" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="xAxis.labelPosition">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="descriptionText" value=""/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="legend.enabled" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="xAxis.drawGridLinesEnabled" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -96,12 +112,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Xe3-Xl-sfN" secondAttribute="trailing" constant="6" id="I78-Ee-Arb"/>
                             <constraint firstItem="I7T-Cj-F22" firstAttribute="top" secondItem="mvv-Rz-xc9" secondAttribute="bottom" constant="8" id="MRP-jS-gfK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fWP-d1-Qzp" secondAttribute="trailing" id="RVY-m6-SGP"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="I7T-Cj-F22" secondAttribute="leading" id="VkN-2P-ofT"/>
                             <constraint firstAttribute="trailingMargin" secondItem="mvv-Rz-xc9" secondAttribute="trailing" id="ZIX-LF-eVb"/>
                             <constraint firstAttribute="leadingMargin" secondItem="nUQ-H8-mEa" secondAttribute="leading" id="bFr-dq-D6n"/>
                             <constraint firstItem="PNR-d1-qlG" firstAttribute="centerX" secondItem="a09-VK-Akl" secondAttribute="centerX" id="cqU-qa-NAH"/>
-                            <constraint firstItem="Ox1-ko-wQe" firstAttribute="top" secondItem="I7T-Cj-F22" secondAttribute="bottom" constant="17" id="gao-hF-zYt"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="I7T-Cj-F22" secondAttribute="trailing" id="n8p-ql-Ah7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1RG-WK-mHg" secondAttribute="trailing" constant="6" id="oaG-s3-qPZ"/>
                             <constraint firstAttribute="leadingMargin" secondItem="mvv-Rz-xc9" secondAttribute="leading" id="tbZ-dk-q4c"/>
                         </constraints>
@@ -301,6 +314,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="rates_settings" id="wsh-D6-PlV">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="presentRightMenuViewController:" destination="a1n-ca-PdH" id="UHu-le-JyV"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -336,6 +352,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rnl-sw-cUt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-6357" y="-6180"/>
+        </scene>
+        <!--Menu Root View Controller-->
+        <scene sceneID="K4S-QW-9iY">
+            <objects>
+                <viewController storyboardIdentifier="menuRootViewController" id="Dsb-bN-8iQ" customClass="MenuRootViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="C4a-7k-9nV"/>
+                        <viewControllerLayoutGuide type="bottom" id="iSd-0x-5KC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="s9c-vu-1pb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VcZ-nP-Ar5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-7568" y="-4308"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="6DE-Zd-DTw">
+            <objects>
+                <viewController storyboardIdentifier="rightMenuViewController" id="QXp-9m-7Yh" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SQQ-b3-KAR"/>
+                        <viewControllerLayoutGuide type="bottom" id="bi6-pu-PNb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mCy-dG-cHW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KK7-MB-2um" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-7081" y="-3928"/>
         </scene>
         <!--Subscriptions-->
         <scene sceneID="nhf-Cz-6DR">
@@ -1139,7 +1191,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="Sh4-Mz-U0k">
             <objects>
-                <tabBarController id="nhL-iS-fpM" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="mainTabBarController" id="nhL-iS-fpM" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="DIF-7U-evB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1391,7 +1443,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="English" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ER-TN-aMl">
                                                     <rect key="frame" x="17" y="11" width="56" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -1407,7 +1459,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="简体中文" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JN3-YQ-TFb">
                                                     <rect key="frame" x="17" y="11" width="68" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -1423,7 +1475,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="繁體中文" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faV-Fb-jZF">
                                                     <rect key="frame" x="17" y="11" width="68" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -1439,7 +1491,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="日本語" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zf7-W5-Quy">
                                                     <rect key="frame" x="17" y="11" width="51" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>

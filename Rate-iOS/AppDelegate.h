@@ -10,7 +10,7 @@
 #import <CoreData/CoreData.h>
 #import <AFNetworking/AFNetworking.h>
 
-#define DoaminName @"192.168.96.74:8080"
+#define DoaminName @"rate.fczm.pw"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

@@ -276,6 +276,8 @@
 		E41451991D4F8AA000AFE672 /* RateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E41451981D4F8AA000AFE672 /* RateViewController.m */; };
 		E414519F1D502E8200AFE672 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E414519E1D502E8200AFE672 /* LoginViewController.m */; };
 		E44899981D52DA4600BDD71B /* CommonTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E44899971D52DA4600BDD71B /* CommonTool.m */; };
+		E448999E1D53470500BDD71B /* MenuRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E448999D1D53470500BDD71B /* MenuRootViewController.m */; };
+		E44899A01D534CA800BDD71B /* lauch-bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E448999F1D534CA800BDD71B /* lauch-bg.jpg */; };
 		E46FB51C1D4E305800661E13 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E46FB51B1D4E305800661E13 /* main.m */; };
 		E46FB51F1D4E305800661E13 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E46FB51E1D4E305800661E13 /* AppDelegate.m */; };
 		E46FB5251D4E305800661E13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E46FB5231D4E305800661E13 /* Main.storyboard */; };
@@ -290,7 +292,6 @@
 		E49A351C1D4F35E70073E079 /* MeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E49A351B1D4F35E70073E079 /* MeTableViewController.m */; };
 		E49A351F1D4F4CCE0073E079 /* SubscriptionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E49A351E1D4F4CCE0073E079 /* SubscriptionsTableViewController.m */; };
 		E49A35221D4F4CD90073E079 /* AddSubscribeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E49A35211D4F4CD90073E079 /* AddSubscribeTableViewController.m */; };
-		E4A95E521D5069CA002D0906 /* cn.svg in Resources */ = {isa = PBXBuildFile; fileRef = E4A95E511D5069CA002D0906 /* cn.svg */; };
 		E4E8129A1D521E50003DEE58 /* LanguagesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E812991D521E50003DEE58 /* LanguagesTableViewController.m */; };
 		E4EC8A8D1D5229B600CECF5D /* EditSubscriptionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4EC8A8C1D5229B600CECF5D /* EditSubscriptionTableViewController.m */; };
 		E4EC8A901D522DC900CECF5D /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4EC8A8F1D522DC900CECF5D /* FeedbackViewController.m */; };
@@ -596,6 +597,9 @@
 		E414519E1D502E8200AFE672 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		E44899961D52DA4600BDD71B /* CommonTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonTool.h; sourceTree = "<group>"; };
 		E44899971D52DA4600BDD71B /* CommonTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonTool.m; sourceTree = "<group>"; };
+		E448999C1D53470500BDD71B /* MenuRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuRootViewController.h; sourceTree = "<group>"; };
+		E448999D1D53470500BDD71B /* MenuRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuRootViewController.m; sourceTree = "<group>"; };
+		E448999F1D534CA800BDD71B /* lauch-bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "lauch-bg.jpg"; sourceTree = "<group>"; };
 		E46FB5171D4E305800661E13 /* Rate-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rate-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E46FB51B1D4E305800661E13 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E46FB51D1D4E305800661E13 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -623,7 +627,6 @@
 		E49A351E1D4F4CCE0073E079 /* SubscriptionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubscriptionsTableViewController.m; sourceTree = "<group>"; };
 		E49A35201D4F4CD90073E079 /* AddSubscribeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddSubscribeTableViewController.h; sourceTree = "<group>"; };
 		E49A35211D4F4CD90073E079 /* AddSubscribeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddSubscribeTableViewController.m; sourceTree = "<group>"; };
-		E4A95E511D5069CA002D0906 /* cn.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cn.svg; sourceTree = "<group>"; };
 		E4E812981D521E50003DEE58 /* LanguagesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanguagesTableViewController.h; sourceTree = "<group>"; };
 		E4E812991D521E50003DEE58 /* LanguagesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanguagesTableViewController.m; sourceTree = "<group>"; };
 		E4EC8A8B1D5229B600CECF5D /* EditSubscriptionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditSubscriptionTableViewController.h; sourceTree = "<group>"; };
@@ -1013,7 +1016,7 @@
 			children = (
 				E408A99B1D51B0D200B34655 /* flags */,
 				E46FB51B1D4E305800661E13 /* main.m */,
-				E4A95E511D5069CA002D0906 /* cn.svg */,
+				E448999F1D534CA800BDD71B /* lauch-bg.jpg */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1060,6 +1063,8 @@
 				E41451981D4F8AA000AFE672 /* RateViewController.m */,
 				E408A9971D51AF3D00B34655 /* CurrenciesTableViewController.h */,
 				E408A9981D51AF3D00B34655 /* CurrenciesTableViewController.m */,
+				E448999C1D53470500BDD71B /* MenuRootViewController.h */,
+				E448999D1D53470500BDD71B /* MenuRootViewController.m */,
 			);
 			name = Rate;
 			sourceTree = "<group>";
@@ -1281,6 +1286,7 @@
 				E408AAA01D51B0D300B34655 /* ai.svg in Resources */,
 				E408AAF71D51B0D300B34655 /* gp.svg in Resources */,
 				E408AB851D51B0D300B34655 /* tz.svg in Resources */,
+				E44899A01D534CA800BDD71B /* lauch-bg.jpg in Resources */,
 				E408AA9C1D51B0D300B34655 /* ad.svg in Resources */,
 				E408AB0D1D51B0D300B34655 /* is.svg in Resources */,
 				E408AB751D51B0D300B34655 /* sz.svg in Resources */,
@@ -1418,7 +1424,6 @@
 				E408AB491D51B0D300B34655 /* nr.svg in Resources */,
 				E408AB891D51B0D300B34655 /* un.svg in Resources */,
 				E408AB1A1D51B0D300B34655 /* kr.svg in Resources */,
-				E4A95E521D5069CA002D0906 /* cn.svg in Resources */,
 				E408AB051D51B0D300B34655 /* id.svg in Resources */,
 				E408AAD01D51B0D300B34655 /* cw.svg in Resources */,
 				E408AABC1D51B0D300B34655 /* bt.svg in Resources */,
@@ -1538,6 +1543,7 @@
 				E41451991D4F8AA000AFE672 /* RateViewController.m in Sources */,
 				E4E8129A1D521E50003DEE58 /* LanguagesTableViewController.m in Sources */,
 				E46FB51F1D4E305800661E13 /* AppDelegate.m in Sources */,
+				E448999E1D53470500BDD71B /* MenuRootViewController.m in Sources */,
 				E408A98C1D51A83600B34655 /* Currency+CoreDataProperties.m in Sources */,
 				E49A351C1D4F35E70073E079 /* MeTableViewController.m in Sources */,
 				E410EEB61D51E5D50077E1D9 /* HelpViewController.m in Sources */,

@@ -151,7 +151,7 @@
 }
 
 + (long)getUnixTimestamp:(NSDate *)date {
-    return (long)([[NSDate date] timeIntervalSince1970] * 1000);
+    return (long)([date timeIntervalSince1970] * 1000);
 }
 
 @end
