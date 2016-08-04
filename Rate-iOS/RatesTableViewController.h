@@ -12,6 +12,5 @@
 @interface RatesTableViewController : UITableViewController
 
 @property (nonatomic, strong) Currency *basedCurrency;
-- (IBAction)pushViewController:(id)sender;
 
 @end

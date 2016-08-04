@@ -85,7 +85,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I7T-Cj-F22" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="232" width="320" height="270"/>
+                                <rect key="frame" x="13" y="232" width="295" height="270"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="dragEnabled" value="NO"/>
@@ -104,6 +104,36 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="xAxis.drawGridLinesEnabled" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FVL-WQ-TVE">
+                                <rect key="frame" x="20" y="245" width="279" height="44"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KM7-t2-kU6">
+                                        <rect key="frame" x="1" y="0.0" width="41" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rate:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlg-JU-2Xi">
+                                        <rect key="frame" x="1" y="23" width="40" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gg3-LS-f65">
+                                        <rect key="frame" x="42" y="0.0" width="237" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rate Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E0V-Tj-kAt">
+                                        <rect key="frame" x="42" y="23" width="237" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -112,9 +142,12 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Xe3-Xl-sfN" secondAttribute="trailing" constant="6" id="I78-Ee-Arb"/>
                             <constraint firstItem="I7T-Cj-F22" firstAttribute="top" secondItem="mvv-Rz-xc9" secondAttribute="bottom" constant="8" id="MRP-jS-gfK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fWP-d1-Qzp" secondAttribute="trailing" id="RVY-m6-SGP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="I7T-Cj-F22" secondAttribute="trailing" constant="-8" id="T3t-nT-Sw9"/>
+                            <constraint firstItem="Ox1-ko-wQe" firstAttribute="top" secondItem="I7T-Cj-F22" secondAttribute="bottom" constant="17" id="XwT-8T-5sA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="mvv-Rz-xc9" secondAttribute="trailing" id="ZIX-LF-eVb"/>
                             <constraint firstAttribute="leadingMargin" secondItem="nUQ-H8-mEa" secondAttribute="leading" id="bFr-dq-D6n"/>
                             <constraint firstItem="PNR-d1-qlG" firstAttribute="centerX" secondItem="a09-VK-Akl" secondAttribute="centerX" id="cqU-qa-NAH"/>
+                            <constraint firstItem="I7T-Cj-F22" firstAttribute="leading" secondItem="a09-VK-Akl" secondAttribute="leadingMargin" constant="-7" id="dMU-eC-Wbz"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1RG-WK-mHg" secondAttribute="trailing" constant="6" id="oaG-s3-qPZ"/>
                             <constraint firstAttribute="leadingMargin" secondItem="mvv-Rz-xc9" secondAttribute="leading" id="tbZ-dk-q4c"/>
                         </constraints>
@@ -128,7 +161,10 @@
                         <outlet property="fromButton" destination="l2Y-z6-Qki" id="SWa-E1-Sga"/>
                         <outlet property="fromImageView" destination="713-Yw-h09" id="ahB-4m-fmA"/>
                         <outlet property="fromRateTextFiled" destination="Xe3-Xl-sfN" id="7fF-JN-bCs"/>
+                        <outlet property="historyDateLabel" destination="Gg3-LS-f65" id="J7m-ll-WIS"/>
+                        <outlet property="historyEntryView" destination="FVL-WQ-TVE" id="YNO-K0-SQ1"/>
                         <outlet property="historyLineChartView" destination="I7T-Cj-F22" id="6kx-1a-bB4"/>
+                        <outlet property="historyRateLebel" destination="E0V-Tj-kAt" id="dZ3-t5-j9u"/>
                         <outlet property="toButton" destination="K3S-3G-fId" id="nYn-xZ-EBC"/>
                         <outlet property="toImageView" destination="S5h-Bk-8ap" id="2rA-Si-033"/>
                         <outlet property="toRateTextFiled" destination="1RG-WK-mHg" id="ndz-3o-QXk"/>

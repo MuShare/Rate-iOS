@@ -84,7 +84,7 @@
 - (void)setDataCount {
     NSMutableArray *xVals = [[NSMutableArray alloc] init];
     for (int i = 0; i < rates.count; i++) {
-        [xVals addObject:[NSString stringWithFormat:@"%@", [CommonTool formateDate:start withFormat:DateFormatYearMonthDayShort]]];
+        [xVals addObject:[NSString stringWithFormat:@"%@", [CommonTool formateDate:start withFormat:DateFormatMonthDayShort]]];
         start = [CommonTool getDateAfterNextDays:1 fromDate:start];
     }
     
@@ -109,7 +109,7 @@
         set.drawCirclesEnabled = NO;
         //点击选中拐点的交互样式
         set.highlightEnabled = YES;//选中拐点,是否开启高亮效果(显示十字线)
-        set.highlightColor = [UIColor blueColor];//点击选中拐点的十字线的颜色
+        set.highlightColor = [UIColor colorWithRed:31/255.0 green:199/255.0 blue:149/255.0 alpha:1.0];//点击选中拐点的十字线的颜色
         //填充样式:渐变填充
         set.drawFilledEnabled = YES;//是否填充颜色
         NSArray *gradientColors = @[(id)[ChartColorTemplates colorFromString:@"#FFFFFFFF"].CGColor,
@@ -128,8 +128,15 @@
 #pragma mark - ChartViewDelegate
 - (void)chartValueSelected:(ChartViewBase *)chartView entry:(ChartDataEntry *)entry dataSetIndex:(NSInteger)dataSetIndex highlight:(ChartHighlight *)highlight {
     if(DEBUG) {
-         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+        NSLog(@"Selected chartDataEntry %@", entry);
     }
+    if(_historyEntryView.hidden) {
+        _historyEntryView.hidden = NO;
+    }
+    NSDate *date = [CommonTool getDateAfterNextDays:(int)(-entry.xIndex) fromDate:[NSDate date]];
+    _historyDateLabel.text = [NSString stringWithFormat:@"%@", [CommonTool formateDate:date withFormat:DateFormatYearMonthDayShort]];
+    _historyRateLebel.text = [NSString stringWithFormat:@"%g", entry.value];
 }
 
 #pragma mark - UITextFieldDelegate

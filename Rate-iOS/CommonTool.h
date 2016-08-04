@@ -7,11 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 #define DateFormatYearMonthDayHourMinutes @"yyyy-MM-dd HH:mm"
 #define DateFormatYearMonthDayHourMinutesSecond @"yyyy-MM-dd HH:mm:ss"
 #define DateFormatYearMonthDay @"yyyy-MM-dd"
 #define DateFormatYearMonthDayShort @"yy/MM/dd"
+#define DateFormatMonthDayShort @"MM/dd"
 #define DateFormatLocalMonth @"MMMM"
 #define DateFormatMonth @"MM"
 #define DateFormatDay @"dd"
@@ -42,5 +44,8 @@
 
 + (long)getUnixTimestamp:(NSDate *)date;
 + (NSDate *)dateWithUnixTimestamp:(long)timestamp;
+
+//将十六进制颜色转换为 UIColor 对象
++ (UIColor *)colorWithHexString:(NSString *)color;
 
 @end

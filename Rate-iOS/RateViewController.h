@@ -21,5 +21,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *fromRateTextFiled;
 @property (weak, nonatomic) IBOutlet UITextField *toRateTextFiled;
 @property (weak, nonatomic) IBOutlet LineChartView *historyLineChartView;
+@property (weak, nonatomic) IBOutlet UILabel *historyDateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *historyRateLebel;
+@property (weak, nonatomic) IBOutlet UIView *historyEntryView;
 
 @end

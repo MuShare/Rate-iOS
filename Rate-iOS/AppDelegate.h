@@ -10,7 +10,7 @@
 #import <CoreData/CoreData.h>
 #import <AFNetworking/AFNetworking.h>
 
-#define DoaminName @"rate.fczm.pw"
+#define DoaminName @"rate.mushare.cn"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
