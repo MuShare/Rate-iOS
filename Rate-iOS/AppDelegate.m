@@ -25,7 +25,7 @@
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     user = [[UserTool alloc] init];
-    
+    user.lan = @"en";
     //Init AFHTTPSessionManager.
     [self httpSessionManager];
     //Init NSManagedObjectContext
@@ -73,27 +73,29 @@
 - (void)loadCurriencies {
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
-        NSLog(@"Currency rev is %ld.", user.currencyRev);
+        NSLog(@"Currency revison is %ld.", user.currencyRev);
     }
     CurrencyDao *currencyDao = [[CurrencyDao alloc] initWithManagedObjectContext:_managedObjectContext];
-    NSString *lan = @"en";
     [_httpSessionManager GET:[self createUrl:@"api/currencies"]
                   parameters:@{
-                               @"lan": lan,
+                               @"lan": user.lan,
                                @"rev": [NSNumber numberWithInteger:user.currencyRev]
                                }
                     progress:nil
                      success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                          InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
                          if([response statusOK]) {
-                             NSArray *objects = [response getResponseResult];
-                             for(NSObject *object in objects) {
-                                 [currencyDao saveOrUpdateWithJSONObject:object forLanguage:lan];
+                             NSObject *result = [response getResponseResult];
+                             NSArray *currencies = [result valueForKey:@"currencies"];
+                             for(NSObject *currency in currencies) {
+                                 [currencyDao saveOrUpdateWithJSONObject:currency forLanguage:user.lan];
                              }
                              [self saveContext];
+                             //Set new currency revision.
+                             user.currencyRev = [[result valueForKey:@"revision"] intValue];
                              //Set Based Currency Id if it is null
                              if(user.basedCurrencyId == nil) {
-                                 Currency *basedCurrency = [currencyDao getByCode:@"USD" forLanguage:lan];
+                                 Currency *basedCurrency = [currencyDao getByCode:@"USD" forLanguage:user.lan];
                                  user.basedCurrencyId = basedCurrency.cid;
                              }
                          }

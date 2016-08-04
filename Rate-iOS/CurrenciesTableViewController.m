@@ -19,6 +19,7 @@
     UserTool *user;
     DaoManager *dao;
     NSArray *currencies;
+    Currency *selectedCurrency;
 }
 
 - (void)viewDidLoad {
@@ -51,9 +52,14 @@
     SVGKFastImageView *currencyImageView = (SVGKFastImageView *)[cell viewWithTag:1];
     UILabel *codeLabel = (UILabel *)[cell viewWithTag:2];
     UILabel *nameLabel = (UILabel *)[cell viewWithTag:3];
+    UIButton *favoriteButton = (UIButton *)[cell viewWithTag:4];
     currencyImageView.image = [SVGKImage imageNamed:[NSString stringWithFormat:@"%@.svg", currency.icon]];
     codeLabel.text = currency.code;
     nameLabel.text = currency.name;
+    [favoriteButton addTarget:self
+                       action:@selector(favoriteButtonClicked:)
+             forControlEvents:UIControlEventTouchUpInside];
+    favoriteButton.tag = indexPath.row;
     return cell;
 }
 
@@ -72,14 +78,12 @@
     }
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - Action
+- (void)favoriteButtonClicked:(UIButton *)sender {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    Currency *currency = [currencies objectAtIndex:sender.tag];
+    sender.highlighted = YES;
 }
-*/
-
 @end

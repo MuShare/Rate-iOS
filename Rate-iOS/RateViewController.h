@@ -10,7 +10,9 @@
 #import <SVGKit/SVGKit.h>
 #import "Rate-iOS-Bridging-Header.h"
 
-@interface RateViewController : UIViewController <ChartViewDelegate>
+@interface RateViewController : UIViewController <ChartViewDelegate, UITextFieldDelegate>
+
+@property (strong, nonatomic) NSObject *selectedRate;
 
 @property (weak, nonatomic) IBOutlet SVGKFastImageView *fromImageView;
 @property (weak, nonatomic) IBOutlet SVGKFastImageView *toImageView;

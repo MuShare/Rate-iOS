@@ -14,7 +14,7 @@
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    Currency *currency = [self getByCid:[object valueForKey:@"cid"]];
+    Currency *currency = [self getByCid:[object valueForKey:@"cid"] forLanguage:lan];
     NSLog(@"%@", self.context);
     if(currency == nil) {
         currency = [NSEntityDescription insertNewObjectForEntityForName:CurrencyEntityName
@@ -28,11 +28,19 @@
     return currency;
 }
 
-- (Currency *)getByCid:(NSString *)cid {
+- (Currency *)getByCid:(NSString *)cid forLanguage:(NSString *)lan {
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     return (Currency *)[self getByPredicate:[NSPredicate predicateWithFormat:@"cid=%@", cid]
+                             withEntityName:CurrencyEntityName];
+}
+
+- (Currency *)getByCode:(NSString *)code forLanguage:(NSString *)lan {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    return (Currency *)[self getByPredicate:[NSPredicate predicateWithFormat:@"code=%@ and lan=%@", code, lan]
                              withEntityName:CurrencyEntityName];
 }
 
@@ -45,11 +53,13 @@
                          orderBy:[NSSortDescriptor sortDescriptorWithKey:@"code" ascending:YES]];
 }
 
-- (Currency *)getByCode:(NSString *)code forLanguage:(NSString *)lan {
+- (NSArray *)findInCids:(NSArray *)cids forLanguage:(NSString *)lan {
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    return (Currency *)[self getByPredicate:[NSPredicate predicateWithFormat:@"code=%@ and lan=%@", code, lan]
-                             withEntityName:CurrencyEntityName];
+    return [self findByPredicate:[NSPredicate predicateWithFormat:@"cid IN %@ and lan=%@", cids, lan]
+                  withEntityName:CurrencyEntityName
+                         orderBy:[NSSortDescriptor sortDescriptorWithKey:@"code" ascending:YES]];
 }
+
 @end

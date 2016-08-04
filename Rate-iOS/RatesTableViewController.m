@@ -20,6 +20,8 @@
     AFHTTPSessionManager *manager;
     UserTool *user;
     DaoManager *dao;
+    NSArray *rates;
+    NSString *selectedRate;
 }
 
 - (void)viewDidLoad {
@@ -30,12 +32,32 @@
     manager = [InternetTool getSessionManager];
     user = [[UserTool alloc] init];
     dao = [[DaoManager alloc] init];
-    _basedCurrency = [dao.currencyDao getByCid:user.basedCurrencyId];
+    _basedCurrency = [dao.currencyDao getByCid:user.basedCurrencyId forLanguage:user.lan];
     
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    //Reset base currency name.
     [self.navigationItem.leftBarButtonItem setTitle:_basedCurrency.name];
+    //Reload rates values.
+    [manager GET:[InternetTool createUrl:@"api/rate/current"]
+      parameters:@{@"from": _basedCurrency.cid}
+        progress:nil
+         success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+             InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
+             if([response statusOK]) {
+                 rates = [[response getResponseResult] objectForKey:@"rates"];
+                 [self.tableView reloadData];
+             }
+         }
+         failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+             if(DEBUG) {
+                 NSLog(@"Server error: %@", error.localizedDescription);
+             }
+         }];
 }
 
 #pragma mark - UITableViewDataSource
@@ -43,7 +65,7 @@
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    return 3;
+    return rates.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -56,10 +78,12 @@
     UILabel *codeLabel = (UILabel *)[cell viewWithTag:2];
     UILabel *nameLabel = (UILabel *)[cell viewWithTag:3];
     UILabel *rateLabel = (UILabel *)[cell viewWithTag:4];
-    currencyImageView.image = [SVGKImage imageNamed:@"cn.svg"];
-    codeLabel.text = @"CNY";
-    nameLabel.text = @"Chinese Yuan";
-    rateLabel.text = @"12.34567";
+    NSObject *rate = [rates objectAtIndex:indexPath.row];
+    Currency *currency = [dao.currencyDao getByCid:[rate valueForKey:@"cid"] forLanguage:user.lan];
+    currencyImageView.image = [SVGKImage imageNamed:[NSString stringWithFormat:@"%@.svg", currency.icon]];
+    codeLabel.text = currency.code;
+    nameLabel.text = currency.name;
+    rateLabel.text = [NSString stringWithFormat:@"%@", [rate valueForKey:@"value"]];
     return cell;
 }
 
@@ -68,6 +92,15 @@
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     return 0.1;
+}
+
+#pragma mark - UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    selectedRate = [rates objectAtIndex:indexPath.row];
+    [self performSegueWithIdentifier:@"rateSegue" sender:self];
 }
 
 #pragma mark - Navigation
@@ -79,6 +112,8 @@
         [segue.destinationViewController setValue:@YES forKey:@"selectable"];
         //Tell Currencies Controller what attribute to set.
         [segue.destinationViewController setValue:@"basedCurrency" forKey:@"currencyAttributeName"];
+    } else if([segue.identifier isEqualToString:@"rateSegue"]) {
+        [segue.destinationViewController setValue:selectedRate forKey:@"selectedRate"];
     }
 }
 @end

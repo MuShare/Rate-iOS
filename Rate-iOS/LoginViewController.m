@@ -7,21 +7,19 @@
 //
 
 #import "LoginViewController.h"
+#import "CommonTool.h"
 
 @interface LoginViewController ()
 
 @end
 
-@implementation LoginViewController {
-    BOOL showPassword;
-}
+@implementation LoginViewController
 
 - (void)viewDidLoad {
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     [super viewDidLoad];
-    showPassword = NO;
 }
 
 - (BOOL)hidesBottomBarWhenPushed {
@@ -31,12 +29,40 @@
     return YES;
 }
 
+#pragma -mark UITextViewDelegate
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    
+}
+
+
+#pragma -mark Action
 - (IBAction)showPassword:(id)sender {
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    showPassword = !showPassword;
-    [_showPasswordButton setImage:[UIImage imageNamed:showPassword? @"login_password_show": @"login_password_hide"]
+    _passwordTextField.secureTextEntry = !_passwordTextField.secureTextEntry;
+    [_showPasswordButton setImage:[UIImage imageNamed:_passwordTextField.secureTextEntry? @"login_password_hide": @"login_password_show"]
                          forState:UIControlStateNormal];
+}
+
+- (IBAction)loginSubmit:(id)sender {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    _emailImageView.highlighted = ![CommonTool isAvailableEmail:_emailTextField.text];
+    _passwordImageView.highlighted = [_passwordTextField.text isEqualToString:@""];
+    if(_emailImageView.highlighted || _passwordImageView.highlighted) {
+        return;
+    }
+}
+
+- (IBAction)finishEdit:(id)sender {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    [sender resignFirstResponder];
 }
 @end

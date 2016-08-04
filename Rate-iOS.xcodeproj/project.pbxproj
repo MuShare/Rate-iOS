@@ -275,6 +275,7 @@
 		E410EEB61D51E5D50077E1D9 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E410EEB51D51E5D50077E1D9 /* HelpViewController.m */; };
 		E41451991D4F8AA000AFE672 /* RateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E41451981D4F8AA000AFE672 /* RateViewController.m */; };
 		E414519F1D502E8200AFE672 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E414519E1D502E8200AFE672 /* LoginViewController.m */; };
+		E44899981D52DA4600BDD71B /* CommonTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E44899971D52DA4600BDD71B /* CommonTool.m */; };
 		E46FB51C1D4E305800661E13 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E46FB51B1D4E305800661E13 /* main.m */; };
 		E46FB51F1D4E305800661E13 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E46FB51E1D4E305800661E13 /* AppDelegate.m */; };
 		E46FB5251D4E305800661E13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E46FB5231D4E305800661E13 /* Main.storyboard */; };
@@ -593,6 +594,8 @@
 		E41451981D4F8AA000AFE672 /* RateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateViewController.m; sourceTree = "<group>"; };
 		E414519D1D502E8200AFE672 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		E414519E1D502E8200AFE672 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		E44899961D52DA4600BDD71B /* CommonTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonTool.h; sourceTree = "<group>"; };
+		E44899971D52DA4600BDD71B /* CommonTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonTool.m; sourceTree = "<group>"; };
 		E46FB5171D4E305800661E13 /* Rate-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rate-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E46FB51B1D4E305800661E13 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E46FB51D1D4E305800661E13 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -1042,6 +1045,8 @@
 				E4852F8B1D5093590039B79B /* InternetTool.m */,
 				E408AB9C1D51B51E00B34655 /* UserTool.h */,
 				E408AB9D1D51B51E00B34655 /* UserTool.m */,
+				E44899961D52DA4600BDD71B /* CommonTool.h */,
+				E44899971D52DA4600BDD71B /* CommonTool.m */,
 			);
 			name = Tool;
 			sourceTree = "<group>";
@@ -1552,6 +1557,7 @@
 				E4EC8A8D1D5229B600CECF5D /* EditSubscriptionTableViewController.m in Sources */,
 				E408A9961D51A88A00B34655 /* CurrencyDao.m in Sources */,
 				E408A9991D51AF3D00B34655 /* CurrenciesTableViewController.m in Sources */,
+				E44899981D52DA4600BDD71B /* CommonTool.m in Sources */,
 				E46FB5281D4E305800661E13 /* Rate_iOS.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

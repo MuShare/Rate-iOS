@@ -14,10 +14,12 @@
 
 - (Currency *)saveOrUpdateWithJSONObject:(NSObject *)object forLanguage:(NSString *)lan;
 
-- (NSArray *)findByLanguage:(NSString *)lan;
-
-- (Currency *)getByCid:(NSString *)cid;
+- (Currency *)getByCid:(NSString *)cid forLanguage:(NSString *)lan;
 
 - (Currency *)getByCode:(NSString *)code forLanguage:(NSString *)lan;
+
+- (NSArray *)findByLanguage:(NSString *)lan;
+
+- (NSArray *)findInCids:(NSArray *)cids forLanguage:(NSString *)lan;
 
 @end

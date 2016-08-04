@@ -50,5 +50,16 @@
 
 @synthesize lan = _lan;
 
+- (void)setLan:(NSString *)lan {
+    _lan = lan;
+    [defaults setObject:lan forKey:NSStringFromSelector(@selector(lan))];
+}
+
+- (NSString *)lan {
+    if(_lan == nil) {
+        _lan = [defaults objectForKey:NSStringFromSelector(@selector(lan))];
+    }
+    return _lan;
+}
 
 @end
