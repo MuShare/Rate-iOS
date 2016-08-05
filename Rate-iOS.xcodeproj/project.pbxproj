@@ -293,6 +293,8 @@
 		E49A351F1D4F4CCE0073E079 /* SubscriptionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E49A351E1D4F4CCE0073E079 /* SubscriptionsTableViewController.m */; };
 		E49A35221D4F4CD90073E079 /* AddSubscribeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E49A35211D4F4CD90073E079 /* AddSubscribeTableViewController.m */; };
 		E4D057AA1D544BAC0003ADA4 /* LoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D057A91D544BAB0003ADA4 /* LoadingViewController.m */; };
+		E4D057BB1D5498EC0003ADA4 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D057BA1D5498EC0003ADA4 /* RegisterViewController.m */; };
+		E4D057BE1D54BF4C0003ADA4 /* AlertTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D057BD1D54BF4C0003ADA4 /* AlertTool.m */; };
 		E4E8129A1D521E50003DEE58 /* LanguagesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E812991D521E50003DEE58 /* LanguagesTableViewController.m */; };
 		E4EC8A8D1D5229B600CECF5D /* EditSubscriptionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4EC8A8C1D5229B600CECF5D /* EditSubscriptionTableViewController.m */; };
 		E4EC8A901D522DC900CECF5D /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4EC8A8F1D522DC900CECF5D /* FeedbackViewController.m */; };
@@ -632,6 +634,10 @@
 		E4D057A91D544BAB0003ADA4 /* LoadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingViewController.m; sourceTree = "<group>"; };
 		E4D057AD1D54586C0003ADA4 /* zh-Hans-CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans-CN"; path = "zh-Hans-CN.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		E4D057AE1D54586D0003ADA4 /* zh-Hans-CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans-CN"; path = "zh-Hans-CN.lproj/Main.strings"; sourceTree = "<group>"; };
+		E4D057B91D5498EC0003ADA4 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		E4D057BA1D5498EC0003ADA4 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		E4D057BC1D54BF4C0003ADA4 /* AlertTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertTool.h; sourceTree = "<group>"; };
+		E4D057BD1D54BF4C0003ADA4 /* AlertTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertTool.m; sourceTree = "<group>"; };
 		E4E812981D521E50003DEE58 /* LanguagesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanguagesTableViewController.h; sourceTree = "<group>"; };
 		E4E812991D521E50003DEE58 /* LanguagesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanguagesTableViewController.m; sourceTree = "<group>"; };
 		E4EC8A8B1D5229B600CECF5D /* EditSubscriptionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditSubscriptionTableViewController.h; sourceTree = "<group>"; };
@@ -699,12 +705,12 @@
 		E408A9871D51A81B00B34655 /* Dao */ = {
 			isa = PBXGroup;
 			children = (
+				E408A9941D51A88A00B34655 /* CurrencyDao.h */,
+				E408A9951D51A88A00B34655 /* CurrencyDao.m */,
 				E408A98E1D51A84700B34655 /* DaoManager.h */,
 				E408A98F1D51A84700B34655 /* DaoManager.m */,
 				E408A9901D51A84700B34655 /* DaoTemplate.h */,
 				E408A9911D51A84700B34655 /* DaoTemplate.m */,
-				E408A9941D51A88A00B34655 /* CurrencyDao.h */,
-				E408A9951D51A88A00B34655 /* CurrencyDao.m */,
 			);
 			name = Dao;
 			sourceTree = "<group>";
@@ -1047,6 +1053,8 @@
 		E4852F891D50932C0039B79B /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				E4D057BC1D54BF4C0003ADA4 /* AlertTool.h */,
+				E4D057BD1D54BF4C0003ADA4 /* AlertTool.m */,
 				E408A9831D519EBC00B34655 /* InternetResponse.h */,
 				E408A9841D519EBC00B34655 /* InternetResponse.m */,
 				E4852F8A1D5093590039B79B /* InternetTool.h */,
@@ -1062,16 +1070,16 @@
 		E496A79B1D4F0831003B0F1D /* Rate */ = {
 			isa = PBXGroup;
 			children = (
+				E408A9971D51AF3D00B34655 /* CurrenciesTableViewController.h */,
+				E408A9981D51AF3D00B34655 /* CurrenciesTableViewController.m */,
+				E4D057A81D544BAB0003ADA4 /* LoadingViewController.h */,
+				E4D057A91D544BAB0003ADA4 /* LoadingViewController.m */,
+				E448999C1D53470500BDD71B /* MenuRootViewController.h */,
+				E448999D1D53470500BDD71B /* MenuRootViewController.m */,
 				E46FB5531D4E47CF00661E13 /* RatesTableViewController.h */,
 				E46FB5541D4E47CF00661E13 /* RatesTableViewController.m */,
 				E41451971D4F8AA000AFE672 /* RateViewController.h */,
 				E41451981D4F8AA000AFE672 /* RateViewController.m */,
-				E408A9971D51AF3D00B34655 /* CurrenciesTableViewController.h */,
-				E408A9981D51AF3D00B34655 /* CurrenciesTableViewController.m */,
-				E448999C1D53470500BDD71B /* MenuRootViewController.h */,
-				E448999D1D53470500BDD71B /* MenuRootViewController.m */,
-				E4D057A81D544BAB0003ADA4 /* LoadingViewController.h */,
-				E4D057A91D544BAB0003ADA4 /* LoadingViewController.m */,
 			);
 			name = Rate;
 			sourceTree = "<group>";
@@ -1079,18 +1087,20 @@
 		E496A79C1D4F083E003B0F1D /* Me */ = {
 			isa = PBXGroup;
 			children = (
-				E496A79E1D4F095A003B0F1D /* MyProfileTableViewController.h */,
-				E496A79F1D4F095A003B0F1D /* MyProfileTableViewController.m */,
-				E49A351A1D4F35E70073E079 /* MeTableViewController.h */,
-				E49A351B1D4F35E70073E079 /* MeTableViewController.m */,
-				E414519D1D502E8200AFE672 /* LoginViewController.h */,
-				E414519E1D502E8200AFE672 /* LoginViewController.m */,
+				E4EC8A8E1D522DC900CECF5D /* FeedbackViewController.h */,
+				E4EC8A8F1D522DC900CECF5D /* FeedbackViewController.m */,
 				E410EEB41D51E5D50077E1D9 /* HelpViewController.h */,
 				E410EEB51D51E5D50077E1D9 /* HelpViewController.m */,
 				E4E812981D521E50003DEE58 /* LanguagesTableViewController.h */,
 				E4E812991D521E50003DEE58 /* LanguagesTableViewController.m */,
-				E4EC8A8E1D522DC900CECF5D /* FeedbackViewController.h */,
-				E4EC8A8F1D522DC900CECF5D /* FeedbackViewController.m */,
+				E414519D1D502E8200AFE672 /* LoginViewController.h */,
+				E414519E1D502E8200AFE672 /* LoginViewController.m */,
+				E49A351A1D4F35E70073E079 /* MeTableViewController.h */,
+				E49A351B1D4F35E70073E079 /* MeTableViewController.m */,
+				E496A79E1D4F095A003B0F1D /* MyProfileTableViewController.h */,
+				E496A79F1D4F095A003B0F1D /* MyProfileTableViewController.m */,
+				E4D057B91D5498EC0003ADA4 /* RegisterViewController.h */,
+				E4D057BA1D5498EC0003ADA4 /* RegisterViewController.m */,
 			);
 			name = Me;
 			sourceTree = "<group>";
@@ -1551,6 +1561,7 @@
 				E4E8129A1D521E50003DEE58 /* LanguagesTableViewController.m in Sources */,
 				E46FB51F1D4E305800661E13 /* AppDelegate.m in Sources */,
 				E448999E1D53470500BDD71B /* MenuRootViewController.m in Sources */,
+				E4D057BB1D5498EC0003ADA4 /* RegisterViewController.m in Sources */,
 				E408A98C1D51A83600B34655 /* Currency+CoreDataProperties.m in Sources */,
 				E49A351C1D4F35E70073E079 /* MeTableViewController.m in Sources */,
 				E410EEB61D51E5D50077E1D9 /* HelpViewController.m in Sources */,
@@ -1566,6 +1577,7 @@
 				E46FB51C1D4E305800661E13 /* main.m in Sources */,
 				E49A351F1D4F4CCE0073E079 /* SubscriptionsTableViewController.m in Sources */,
 				E4EC8A901D522DC900CECF5D /* FeedbackViewController.m in Sources */,
+				E4D057BE1D54BF4C0003ADA4 /* AlertTool.m in Sources */,
 				E408A98D1D51A83600B34655 /* Currency.m in Sources */,
 				E4EC8A8D1D5229B600CECF5D /* EditSubscriptionTableViewController.m in Sources */,
 				E4D057AA1D544BAC0003ADA4 /* LoadingViewController.m in Sources */,

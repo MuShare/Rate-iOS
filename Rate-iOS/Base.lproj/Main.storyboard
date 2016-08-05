@@ -1267,7 +1267,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mc2-B7-2OP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4566" y="-4862"/>
+            <point key="canvasLocation" x="-4566" y="-4901"/>
         </scene>
         <!--Me-->
         <scene sceneID="RnL-F3-TbC">
@@ -1803,7 +1803,7 @@
         <!--Sign up-->
         <scene sceneID="Cry-65-D0i">
             <objects>
-                <viewController id="cjE-Dy-Cta" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController id="cjE-Dy-Cta" customClass="RegisterViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="coc-gX-KeP"/>
                         <viewControllerLayoutGuide type="bottom" id="7pn-Hj-n28"/>
@@ -1815,55 +1815,67 @@
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ir5-eX-Z4m">
                                 <rect key="frame" x="0.0" y="86" width="320" height="243"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="register_email" translatesAutoresizingMaskIntoConstraints="NO" id="pB5-BQ-IHZ">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="register_email" highlightedImage="register_email_error" translatesAutoresizingMaskIntoConstraints="NO" id="pB5-BQ-IHZ">
                                         <rect key="frame" x="15" y="15" width="30" height="30"/>
                                     </imageView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ege-YX-nhz">
                                         <rect key="frame" x="59" y="10" width="250" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <connections>
+                                            <action selector="finishEdit:" destination="cjE-Dy-Cta" eventType="editingDidEndOnExit" id="z2J-0P-phK"/>
+                                        </connections>
                                     </textField>
                                     <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zfC-bq-Zxp">
                                         <rect key="frame" x="15" y="61" width="305" height="1"/>
                                         <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="register_telephone" translatesAutoresizingMaskIntoConstraints="NO" id="Tpy-a4-zs1">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="register_telephone" highlightedImage="register_telephone_error" translatesAutoresizingMaskIntoConstraints="NO" id="Tpy-a4-zs1">
                                         <rect key="frame" x="15" y="76" width="30" height="30"/>
                                     </imageView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Telephone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Aa9-jA-VdB">
                                         <rect key="frame" x="59" y="71" width="250" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <connections>
+                                            <action selector="finishEdit:" destination="cjE-Dy-Cta" eventType="editingDidEndOnExit" id="ALd-Py-SCz"/>
+                                        </connections>
                                     </textField>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bbn-SG-2ol">
                                         <rect key="frame" x="15" y="122" width="305" height="1"/>
                                         <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="login_username" translatesAutoresizingMaskIntoConstraints="NO" id="Q3Y-xh-Nml">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="login_username" highlightedImage="login_username_error" translatesAutoresizingMaskIntoConstraints="NO" id="Q3Y-xh-Nml">
                                         <rect key="frame" x="15" y="137" width="30" height="30"/>
                                     </imageView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xBk-b8-3G7">
                                         <rect key="frame" x="59" y="132" width="250" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <connections>
+                                            <action selector="finishEdit:" destination="cjE-Dy-Cta" eventType="editingDidEndOnExit" id="xsK-QU-OGd"/>
+                                        </connections>
                                     </textField>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WeT-F1-Djd">
                                         <rect key="frame" x="15" y="183" width="305" height="1"/>
                                         <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="login_password" translatesAutoresizingMaskIntoConstraints="NO" id="Etb-3F-Lxd">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="login_password" highlightedImage="login_password_error" translatesAutoresizingMaskIntoConstraints="NO" id="Etb-3F-Lxd">
                                         <rect key="frame" x="15" y="198" width="30" height="30"/>
                                     </imageView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Skd-rx-5Pk">
                                         <rect key="frame" x="59" y="193" width="212" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                                        <connections>
+                                            <action selector="finishEdit:" destination="cjE-Dy-Cta" eventType="editingDidEndOnExit" id="jlc-g2-f29"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lq4-EU-VUs">
                                         <rect key="frame" x="279" y="195" width="30" height="40"/>
                                         <state key="normal" image="login_password_hide"/>
                                         <connections>
-                                            <action selector="showPassword:" destination="cjE-Dy-Cta" eventType="touchUpInside" id="yEq-Ay-3DY"/>
+                                            <action selector="showPassword:" destination="cjE-Dy-Cta" eventType="touchUpInside" id="CXH-b1-2YK"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1872,6 +1884,25 @@
                                     <constraint firstAttribute="trailing" secondItem="zfC-bq-Zxp" secondAttribute="trailing" id="3bB-9R-hXa"/>
                                     <constraint firstItem="zfC-bq-Zxp" firstAttribute="leading" secondItem="Ir5-eX-Z4m" secondAttribute="leading" constant="15" id="Ok5-Xz-eXG"/>
                                     <constraint firstAttribute="trailing" secondItem="lq4-EU-VUs" secondAttribute="trailing" constant="11" id="cVM-HQ-6qR"/>
+                                </constraints>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yu2-QY-QxF">
+                                <rect key="frame" x="0.0" y="86" width="320" height="243"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="register_success" translatesAutoresizingMaskIntoConstraints="NO" id="Lh5-BZ-h7f">
+                                        <rect key="frame" x="85" y="31" width="150" height="150"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Register Success !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfI-Ec-ksG">
+                                        <rect key="frame" x="89" y="189" width="142" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.090196078431372548" green="0.68627450980392157" blue="0.54509803921568623" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Lh5-BZ-h7f" firstAttribute="centerX" secondItem="yu2-QY-QxF" secondAttribute="centerX" id="rm8-zf-tTg"/>
+                                    <constraint firstItem="xfI-Ec-ksG" firstAttribute="centerX" secondItem="yu2-QY-QxF" secondAttribute="centerX" id="z0T-M1-HMs"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u3I-Ci-rM2">
@@ -1885,21 +1916,45 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="registerSubmit:" destination="cjE-Dy-Cta" eventType="touchUpInside" id="gBK-Lz-pr2"/>
+                                </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="fog-Xl-S6f">
+                                <rect key="frame" x="280" y="355" width="20" height="20"/>
+                                <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="fog-Xl-S6f" secondAttribute="trailing" id="3tE-nb-ckZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yu2-QY-QxF" secondAttribute="trailing" constant="-20" id="4y5-lb-QBr"/>
                             <constraint firstItem="Ir5-eX-Z4m" firstAttribute="leading" secondItem="k2o-VY-fGs" secondAttribute="leadingMargin" constant="-20" id="4yB-T9-HQ4"/>
                             <constraint firstItem="u3I-Ci-rM2" firstAttribute="leading" secondItem="k2o-VY-fGs" secondAttribute="leadingMargin" constant="-7" id="8D6-Gp-TiO"/>
+                            <constraint firstItem="yu2-QY-QxF" firstAttribute="leading" secondItem="k2o-VY-fGs" secondAttribute="leadingMargin" constant="-20" id="KOP-9m-P5z"/>
                             <constraint firstAttribute="trailingMargin" secondItem="u3I-Ci-rM2" secondAttribute="trailing" constant="-8" id="aIe-WP-KN7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ir5-eX-Z4m" secondAttribute="trailing" constant="-20" id="jLX-Tl-MUh"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Sign up" id="SaW-My-DaT"/>
+                    <connections>
+                        <outlet property="emailImageView" destination="pB5-BQ-IHZ" id="dS6-dH-UUf"/>
+                        <outlet property="emailTextField" destination="Ege-YX-nhz" id="UM9-DS-Ecv"/>
+                        <outlet property="loadingActivityIndicatorView" destination="fog-Xl-S6f" id="uTD-H1-X7U"/>
+                        <outlet property="passwordImageView" destination="Etb-3F-Lxd" id="DQA-gx-msf"/>
+                        <outlet property="passwordTextField" destination="Skd-rx-5Pk" id="hSu-ZH-9Tc"/>
+                        <outlet property="registerSubmitButton" destination="u3I-Ci-rM2" id="bNj-TH-OwJ"/>
+                        <outlet property="registerSuccessView" destination="yu2-QY-QxF" id="Hav-IW-VKD"/>
+                        <outlet property="showPasswordButton" destination="lq4-EU-VUs" id="2fo-pZ-XYZ"/>
+                        <outlet property="telephoneImageView" destination="Tpy-a4-zs1" id="e3a-SH-AMb"/>
+                        <outlet property="telephoneTextField" destination="Aa9-jA-VdB" id="xaj-mh-ixU"/>
+                        <outlet property="usernameImageView" destination="Q3Y-xh-Nml" id="Sbg-G4-6hp"/>
+                        <outlet property="usernameTextField" destination="xBk-b8-3G7" id="mYW-Fh-37L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="see-6B-27u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4002" y="-4862"/>
+            <point key="canvasLocation" x="-4064" y="-4901"/>
         </scene>
         <!--Subscription-->
         <scene sceneID="a0I-yh-r4z">
@@ -2168,7 +2223,10 @@
         <image name="me_user" width="60" height="60"/>
         <image name="rates_settings" width="30" height="30"/>
         <image name="register_email" width="30" height="30"/>
+        <image name="register_email_error" width="30" height="30"/>
+        <image name="register_success" width="150" height="150"/>
         <image name="register_telephone" width="30" height="30"/>
+        <image name="register_telephone_error" width="30" height="30"/>
         <image name="search_link" width="30" height="30"/>
         <image name="subscribe_arrow" width="30" height="30"/>
         <image name="tab_me" width="30" height="30"/>

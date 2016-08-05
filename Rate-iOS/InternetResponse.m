@@ -26,6 +26,23 @@
     return self;
 }
 
+- (instancetype)initWithError:(NSError *)error {
+    if(DEBUG) {
+        NSLog(@"Running %@ ''%@", self.class, NSStringFromSelector(_cmd));
+    }
+    self = [super init];
+    if(self) {
+        _data = [NSJSONSerialization JSONObjectWithData:(NSData *)error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey]
+                                                options:NSJSONReadingAllowFragments
+                                                  error:nil];
+
+    }
+    if(DEBUG) {
+        NSLog(@"Get Error from server: %@", self.data);
+    }
+    return self;
+}
+
 - (BOOL)statusOK {
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
@@ -38,5 +55,12 @@
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     return [self.data valueForKey:@"result"];
+}
+
+- (int)errorCode {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    return [[self.data valueForKey:@"error_code"] intValue];
 }
 @end

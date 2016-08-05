@@ -29,7 +29,7 @@
     return YES;
 }
 
-#pragma -mark UITextViewDelegate
+#pragma - mark UITextViewDelegate
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
@@ -38,7 +38,7 @@
 }
 
 
-#pragma -mark Action
+#pragma - mark Action
 - (IBAction)showPassword:(id)sender {
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));

@@ -134,16 +134,15 @@ static const int historySearchDays[5] = {7, 30, 180, 365, 3*365};
 }
 
 #pragma mark - UITextFieldDelegate
-
 - (void)textFieldDidChange:(UITextField *)sender {
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     float value = [sender.text floatValue];
     if(sender == _fromRateTextFiled) {
-        _toRateTextFiled.placeholder = [NSString stringWithFormat:@"%f", value * currentRate];
+        _toRateTextFiled.placeholder = [NSString stringWithFormat:@"%.4f", value * currentRate];
     } else if(sender == _toRateTextFiled) {
-        _fromRateTextFiled.placeholder = [NSString stringWithFormat:@"%f", value / currentRate];
+        _fromRateTextFiled.placeholder = [NSString stringWithFormat:@"%.4f", value / currentRate];
     }
 }
 
@@ -190,7 +189,7 @@ static const int historySearchDays[5] = {7, 30, 180, 365, 3*365};
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     _fromRateTextFiled.placeholder = @"1";
-    _toRateTextFiled.placeholder = [NSString stringWithFormat:@"%f", currentRate];
+    _toRateTextFiled.placeholder = [NSString stringWithFormat:@"%.4f", currentRate];
 }
 
 - (void)loadHistory:(int)days {

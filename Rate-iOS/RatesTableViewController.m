@@ -83,7 +83,7 @@
     currencyImageView.image = [SVGKImage imageNamed:[NSString stringWithFormat:@"%@.svg", currency.icon]];
     codeLabel.text = currency.code;
     nameLabel.text = currency.name;
-    rateLabel.text = [NSString stringWithFormat:@"%@", [rate valueForKey:@"value"]];
+    rateLabel.text = [NSString stringWithFormat:@"%.4f", [[rate valueForKey:@"value"] floatValue]];
     return cell;
 }
 

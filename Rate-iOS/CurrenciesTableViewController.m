@@ -72,7 +72,7 @@
         //Save currency cid to sandbox.
         user.basedCurrencyId = currency.cid;
         //Back to last view controller.
-        UIViewController *controller=[self.navigationController.viewControllers objectAtIndex:self.navigationController.viewControllers.count-2];
+        UIViewController *controller = [self.navigationController.viewControllers objectAtIndex:self.navigationController.viewControllers.count-2];
         [controller setValue:currency forKey:_currencyAttributeName];
         [self.navigationController popViewControllerAnimated:YES];
     }
