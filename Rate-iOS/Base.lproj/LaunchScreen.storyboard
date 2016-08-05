@@ -25,6 +25,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_logo" translatesAutoresizingMaskIntoConstraints="NO" id="b59-Is-5LX">
                                 <rect key="frame" x="85" y="209" width="150" height="150"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="Evp-8j-viC"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="Gsv-By-hKr"/>
                                     <constraint firstAttribute="height" constant="150" id="WUj-Bv-Jon"/>
                                     <constraint firstAttribute="width" constant="150" id="nam-SG-rk0"/>
                                 </constraints>

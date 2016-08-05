@@ -292,6 +292,7 @@
 		E49A351C1D4F35E70073E079 /* MeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E49A351B1D4F35E70073E079 /* MeTableViewController.m */; };
 		E49A351F1D4F4CCE0073E079 /* SubscriptionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E49A351E1D4F4CCE0073E079 /* SubscriptionsTableViewController.m */; };
 		E49A35221D4F4CD90073E079 /* AddSubscribeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E49A35211D4F4CD90073E079 /* AddSubscribeTableViewController.m */; };
+		E4D057AA1D544BAC0003ADA4 /* LoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D057A91D544BAB0003ADA4 /* LoadingViewController.m */; };
 		E4E8129A1D521E50003DEE58 /* LanguagesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E812991D521E50003DEE58 /* LanguagesTableViewController.m */; };
 		E4EC8A8D1D5229B600CECF5D /* EditSubscriptionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4EC8A8C1D5229B600CECF5D /* EditSubscriptionTableViewController.m */; };
 		E4EC8A901D522DC900CECF5D /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4EC8A8F1D522DC900CECF5D /* FeedbackViewController.m */; };
@@ -627,6 +628,8 @@
 		E49A351E1D4F4CCE0073E079 /* SubscriptionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubscriptionsTableViewController.m; sourceTree = "<group>"; };
 		E49A35201D4F4CD90073E079 /* AddSubscribeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddSubscribeTableViewController.h; sourceTree = "<group>"; };
 		E49A35211D4F4CD90073E079 /* AddSubscribeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddSubscribeTableViewController.m; sourceTree = "<group>"; };
+		E4D057A81D544BAB0003ADA4 /* LoadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingViewController.h; sourceTree = "<group>"; };
+		E4D057A91D544BAB0003ADA4 /* LoadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingViewController.m; sourceTree = "<group>"; };
 		E4E812981D521E50003DEE58 /* LanguagesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanguagesTableViewController.h; sourceTree = "<group>"; };
 		E4E812991D521E50003DEE58 /* LanguagesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanguagesTableViewController.m; sourceTree = "<group>"; };
 		E4EC8A8B1D5229B600CECF5D /* EditSubscriptionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditSubscriptionTableViewController.h; sourceTree = "<group>"; };
@@ -1065,6 +1068,8 @@
 				E408A9981D51AF3D00B34655 /* CurrenciesTableViewController.m */,
 				E448999C1D53470500BDD71B /* MenuRootViewController.h */,
 				E448999D1D53470500BDD71B /* MenuRootViewController.m */,
+				E4D057A81D544BAB0003ADA4 /* LoadingViewController.h */,
+				E4D057A91D544BAB0003ADA4 /* LoadingViewController.m */,
 			);
 			name = Rate;
 			sourceTree = "<group>";
@@ -1561,6 +1566,7 @@
 				E4EC8A901D522DC900CECF5D /* FeedbackViewController.m in Sources */,
 				E408A98D1D51A83600B34655 /* Currency.m in Sources */,
 				E4EC8A8D1D5229B600CECF5D /* EditSubscriptionTableViewController.m in Sources */,
+				E4D057AA1D544BAC0003ADA4 /* LoadingViewController.m in Sources */,
 				E408A9961D51A88A00B34655 /* CurrencyDao.m in Sources */,
 				E408A9991D51AF3D00B34655 /* CurrenciesTableViewController.m in Sources */,
 				E44899981D52DA4600BDD71B /* CommonTool.m in Sources */,

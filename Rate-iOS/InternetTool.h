@@ -10,7 +10,7 @@
 #import "InternetResponse.h"
 #import "AppDelegate.h"
 
-
+#define DoaminName @"rate.mushare.cn"
 
 @interface InternetTool : NSObject
 

@@ -30,7 +30,8 @@
     [self httpSessionManager];
     //Init NSManagedObjectContext
     [self managedObjectContext];
-    [self loadCurriencies];
+    //Loading
+    [self setRootViewControllerWithIdentifer:@"loadingViewController"];
     return YES;
 }
 
@@ -73,55 +74,6 @@
 
 
 #pragma mark - Service
-- (NSString *)createUrl:(NSString *)relativePosition {
-    NSString *url=[NSString stringWithFormat:@"http://%@/%@", DoaminName, relativePosition];
-    if(DEBUG) {
-        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
-        NSLog(@"Request URL is: %@",url);
-    }
-    return url;
-}
-
-- (void)loadCurriencies {
-    if(DEBUG) {
-        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
-        NSLog(@"Currency revison is %ld.", user.currencyRev);
-    }
-    CurrencyDao *currencyDao = [[CurrencyDao alloc] initWithManagedObjectContext:_managedObjectContext];
-    [_httpSessionManager GET:[self createUrl:@"api/currencies"]
-                  parameters:@{
-                               @"lan": user.lan,
-                               @"rev": [NSNumber numberWithInteger:user.currencyRev]
-                               }
-                    progress:nil
-                     success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                         InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
-                         if([response statusOK]) {
-                             NSObject *result = [response getResponseResult];
-                             NSArray *currencies = [result valueForKey:@"currencies"];
-                             for(NSObject *currency in currencies) {
-                                 [currencyDao saveOrUpdateWithJSONObject:currency forLanguage:user.lan];
-                             }
-                             [self saveContext];
-                             //Set new currency revision.
-                             user.currencyRev = [[result valueForKey:@"revision"] intValue];
-                             //Set Based Currency Id if it is null
-                             if(user.basedCurrencyId == nil) {
-                                 Currency *basedCurrency = [currencyDao getByCode:@"USD" forLanguage:user.lan];
-                                 user.basedCurrencyId = basedCurrency.cid;
-                             }
-                             
-                             //Goto main page
-                             [self setRootViewControllerWithIdentifer:@"menuRootViewController"];
-                         }
-                     }
-                     failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                         if(DEBUG) {
-                             NSLog(@"Server error: %@", error.localizedDescription);
-                         }
-                     }];
-}
-
 - (void)setRootViewControllerWithIdentifer:(NSString *)identifer {
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));

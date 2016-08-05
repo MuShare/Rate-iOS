@@ -10,8 +10,6 @@
 #import <CoreData/CoreData.h>
 #import <AFNetworking/AFNetworking.h>
 
-#define DoaminName @"rate.mushare.cn"
-
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
@@ -25,6 +23,7 @@
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 
+- (void)setRootViewControllerWithIdentifer:(NSString *)identifer;
 
 @end
 

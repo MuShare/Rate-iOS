@@ -389,6 +389,59 @@
             </objects>
             <point key="canvasLocation" x="-6357" y="-6180"/>
         </scene>
+        <!--Loading View Controller-->
+        <scene sceneID="U8I-JF-mK9">
+            <objects>
+                <viewController storyboardIdentifier="loadingViewController" id="xS9-uJ-ATG" customClass="LoadingViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="agB-wN-G9x"/>
+                        <viewControllerLayoutGuide type="bottom" id="OcR-ci-AMt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yTa-RH-ytH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_logo" translatesAutoresizingMaskIntoConstraints="NO" id="OPU-TG-DCg">
+                                <rect key="frame" x="85" y="209" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="IXM-2q-0fU"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="LHV-tE-fdV"/>
+                                    <constraint firstAttribute="width" constant="150" id="Q6x-Q6-SVa"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="ufv-i5-Ayw"/>
+                                </constraints>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ECv-aB-KEs">
+                                <rect key="frame" x="150" y="504" width="20" height="20"/>
+                                <color key="color" red="0.13725490200000001" green="0.74509803919999995" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Cannot access to server, check your Internet!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sgK-Xj-rr5">
+                                <rect key="frame" x="20" y="503" width="280" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OcR-ci-AMt" firstAttribute="top" secondItem="ECv-aB-KEs" secondAttribute="bottom" constant="44" id="42D-UN-7oF"/>
+                            <constraint firstItem="OPU-TG-DCg" firstAttribute="centerX" secondItem="yTa-RH-ytH" secondAttribute="centerX" id="AkV-ru-yhz"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="sgK-Xj-rr5" secondAttribute="leading" id="Cdd-ek-cQH"/>
+                            <constraint firstItem="OPU-TG-DCg" firstAttribute="centerY" secondItem="yTa-RH-ytH" secondAttribute="centerY" id="NS2-pE-7mT"/>
+                            <constraint firstItem="OcR-ci-AMt" firstAttribute="top" secondItem="sgK-Xj-rr5" secondAttribute="bottom" constant="44" id="Ods-1b-9lG"/>
+                            <constraint firstItem="ECv-aB-KEs" firstAttribute="centerX" secondItem="yTa-RH-ytH" secondAttribute="centerX" id="Uhr-K5-tHe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sgK-Xj-rr5" secondAttribute="trailing" id="iuJ-LU-OTq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loadingActivityIndicatorView" destination="ECv-aB-KEs" id="eN7-hh-ATb"/>
+                        <outlet property="tipLabel" destination="sgK-Xj-rr5" id="ZGl-FJ-VB4"/>
+                        <segue destination="Dsb-bN-8iQ" kind="modal" identifier="menuRootSegue" modalTransitionStyle="crossDissolve" id="F57-An-Xbl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dms-RZ-00a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-8034" y="-4308"/>
+        </scene>
         <!--Menu Root View Controller-->
         <scene sceneID="K4S-QW-9iY">
             <objects>
@@ -402,6 +455,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="bQr-YI-dC2"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VcZ-nP-Ar5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
