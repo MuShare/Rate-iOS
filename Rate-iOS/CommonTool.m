@@ -151,8 +151,13 @@
     return [formatter stringFromDate:date];
 }
 
-+ (long)getUnixTimestamp:(NSDate *)date {
-    return (long)([date timeIntervalSince1970] * 1000);
++ (long long)getUnixTimestamp:(NSDate *)date {
+    return (long long)([date timeIntervalSince1970] * 1000);
+}
+
++ (NSDate *)dateWithUnixTimestamp:(long long)timestamp {
+    
+    return nil;
 }
 
 + (UIColor *)colorWithHexString:(NSString *)color {

@@ -7,7 +7,6 @@
 //
 
 #import "RateViewController.h"
-#import "DaoManager.h"
 #import "InternetTool.h"
 #import "UserTool.h"
 #import "CommonTool.h"
@@ -20,49 +19,197 @@
     DaoManager *dao;
     AFHTTPSessionManager *manager;
     UserTool *user;
-    Currency *fromCurrency;
-    Currency *toCurrency;
     float currentRate;
+    int selectedTimeIndex;
     NSArray *rates;
     NSDate *start;
 }
 
+static const int historySearchDays[5] = {7, 30, 180, 365, 3*365};
+
 - (void)viewDidLoad {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
     [super viewDidLoad];
     dao = [[DaoManager alloc] init];
     manager = [InternetTool getSessionManager];
     user = [[UserTool alloc] init];
+    _fromCurrency = [dao.currencyDao getByCid:user.basedCurrencyId forLanguage:user.lan];
+    _toCurrency = [dao.currencyDao getByCid:[_selectedRate valueForKey:@"cid"] forLanguage:user.lan];
     
-    currentRate = [[_selectedRate valueForKey:@"value"] floatValue];
-    
-    fromCurrency = [dao.currencyDao getByCid:user.basedCurrencyId forLanguage:user.lan];
-    toCurrency = [dao.currencyDao getByCid:[_selectedRate valueForKey:@"cid"] forLanguage:user.lan];
-    
-    _fromImageView.image = [SVGKImage imageNamed:[NSString stringWithFormat:@"%@.svg", fromCurrency.icon]];
-    _toImageView.image = [SVGKImage imageNamed:[NSString stringWithFormat:@"%@.svg", toCurrency.icon]];
-    [_fromButton setTitle:fromCurrency.code forState:UIControlStateNormal];
-    [_toButton setTitle:toCurrency.code forState:UIControlStateNormal];
-    _toRateTextFiled.placeholder = [NSString stringWithFormat:@"%f", currentRate];
-
-    [_fromRateTextFiled addTarget:self action:@selector(textFieldDidChange:)
-                 forControlEvents:UIControlEventEditingChanged];
-    [_toRateTextFiled addTarget:self action:@selector(textFieldDidChange:)
-                 forControlEvents:UIControlEventEditingChanged];
-    [self setCloseKeyboardAccessoryForSender:_fromRateTextFiled];
-    [self setCloseKeyboardAccessoryForSender:_toRateTextFiled];
-    
+    //Show history of last 7 days as default
+    selectedTimeIndex = 0;
     //Set chart
     _historyLineChartView.delegate = self;
     [_historyLineChartView animateWithXAxisDuration:0.5 yAxisDuration:1.0];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    [self refreshCurrency];
+    [_fromRateTextFiled addTarget:self action:@selector(textFieldDidChange:)
+                 forControlEvents:UIControlEventEditingChanged];
+    [_toRateTextFiled addTarget:self action:@selector(textFieldDidChange:)
+               forControlEvents:UIControlEventEditingChanged];
+    [self setCloseKeyboardAccessoryForSender:_fromRateTextFiled];
+    [self setCloseKeyboardAccessoryForSender:_toRateTextFiled];
     
+    //Load current rate
+    [self loadCurrent];
+
+    //Load history rate
+    [self loadHistory:historySearchDays[selectedTimeIndex]];
+}
+
+#pragma mark - Action
+
+- (IBAction)swapCurrency:(id)sender {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    //Swap currency info
+    Currency *tmpCurrency = _toCurrency;
+    _toCurrency = _fromCurrency;
+    _fromCurrency = tmpCurrency;
+    [self refreshCurrency];
+    //Swap rate value
+    NSString *tmpPlacehoder = _toRateTextFiled.placeholder;
+    _toRateTextFiled.placeholder = _fromRateTextFiled.placeholder;
+    _fromRateTextFiled.placeholder = tmpPlacehoder;
+    //Reload history data
+    [self loadHistory:historySearchDays[selectedTimeIndex]];
+}
+
+- (IBAction)changeDates:(id)sender {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    selectedTimeIndex = (int)[sender selectedSegmentIndex];
+    [self loadHistory:historySearchDays[selectedTimeIndex]];
+}
+
+#pragma mark - Navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    if ([segue.identifier isEqualToString:@"selectFromCurrencySegue"]) {
+        [segue.destinationViewController setValue:@YES forKey:@"selectable"];
+        [segue.destinationViewController setValue:@"fromCurrency" forKey:@"currencyAttributeName"];
+    } else if ([segue.identifier isEqualToString:@"selectToCurrencySegue"]) {
+        [segue.destinationViewController setValue:@YES forKey:@"selectable"];
+        [segue.destinationViewController setValue:@"toCurrency" forKey:@"currencyAttributeName"];
+    }
+}
+
+#pragma mark - ChartViewDelegate
+- (void)chartValueSelected:(ChartViewBase *)chartView entry:(ChartDataEntry *)entry dataSetIndex:(NSInteger)dataSetIndex highlight:(ChartHighlight *)highlight {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+        NSLog(@"Selected chartDataEntry %@", entry);
+    }
+    if(_historyEntryView.hidden) {
+        _historyEntryView.hidden = NO;
+    }
+    NSDate *date = [CommonTool getDateAfterNextDays:(int)(-entry.xIndex) fromDate:[NSDate date]];
+    _historyDateLabel.text = [NSString stringWithFormat:@"%@", [CommonTool formateDate:date withFormat:DateFormatYearMonthDayShort]];
+    _historyRateLebel.text = [NSString stringWithFormat:@"%g", entry.value];
+}
+
+- (void)chartScaled:(ChartViewBase *)chartView scaleX:(CGFloat)scaleX scaleY:(CGFloat)scaleY {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+        NSLog(@"chartScaled scaleX = %f, scaleY = %f", scaleX, scaleY);
+    }
+}
+
+- (void)chartTranslated:(ChartViewBase *)chartView dX:(CGFloat)dX dY:(CGFloat)dY {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+        NSLog(@"chartTranslated dX = %f, dY = %f", dX, dY);
+    }
+}
+
+#pragma mark - UITextFieldDelegate
+
+- (void)textFieldDidChange:(UITextField *)sender {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    float value = [sender.text floatValue];
+    if(sender == _fromRateTextFiled) {
+        _toRateTextFiled.placeholder = [NSString stringWithFormat:@"%f", value * currentRate];
+    } else if(sender == _toRateTextFiled) {
+        _fromRateTextFiled.placeholder = [NSString stringWithFormat:@"%f", value / currentRate];
+    }
+}
+
+#pragma mark - Service
+- (void)refreshCurrency {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+
+    _fromImageView.image = [SVGKImage imageNamed:[NSString stringWithFormat:@"%@.svg", _fromCurrency.icon]];
+    _toImageView.image = [SVGKImage imageNamed:[NSString stringWithFormat:@"%@.svg", _toCurrency.icon]];
+    [_fromButton setTitle:_fromCurrency.code forState:UIControlStateNormal];
+    _fromNameLabel.text = _fromCurrency.name;
+    _toNameLabel.text = _toCurrency.name;
+    [_toButton setTitle:_toCurrency.code forState:UIControlStateNormal];
+}
+
+- (void)loadCurrent {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    [manager GET:[InternetTool createUrl:@"api/rate/current"]
+      parameters:@{
+                    @"from": _fromCurrency.cid,
+                    @"to": _toCurrency.cid
+                   }
+        progress:nil
+         success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+             InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
+             if([response statusOK]) {
+                 currentRate = [[[response getResponseResult] objectForKey:@"rate"] floatValue];
+                 [self refreshCurrentRate];
+             }
+         }
+         failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+             if(DEBUG) {
+                 NSLog(@"Server error: %@", error.localizedDescription);
+             }
+         }];
+}
+
+- (void)refreshCurrentRate {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    _fromRateTextFiled.placeholder = @"1";
+    _toRateTextFiled.placeholder = [NSString stringWithFormat:@"%f", currentRate];
+}
+
+- (void)loadHistory:(int)days {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
     NSDate *end = [NSDate date];
-    start = [CommonTool getDateAfterNextDays:-30 fromDate:end];
+    start = [CommonTool getDateAfterNextDays:-days fromDate:end];
+    long long startTimestamp = [CommonTool getUnixTimestamp:start];
+    long long endTimpstamp = [CommonTool getUnixTimestamp:end];
+    if(DEBUG) {
+        NSLog(@"Loading history data from %@ to %@, %d days. Timestamp is (%lld, %lld)", start, end, days, startTimestamp, endTimpstamp);
+    }
     [manager GET:[InternetTool createUrl:@"api/rate/history"]
       parameters:@{
-                    @"from": fromCurrency.cid,
-                    @"to": toCurrency.cid,
-                    @"start": [NSNumber numberWithLong:[CommonTool getUnixTimestamp:start]],
-                    @"end": [NSNumber numberWithLong:[CommonTool getUnixTimestamp:end]]
+                   @"from": _fromCurrency.cid,
+                   @"to": _toCurrency.cid,
+                   @"start": [NSNumber numberWithLongLong:startTimestamp],
+                   @"end": [NSNumber numberWithLongLong:endTimpstamp]
                    }
         progress:nil
          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -77,7 +224,6 @@
                  NSLog(@"Server error: %@", error.localizedDescription);
              }
          }];
-    
     
 }
 
@@ -125,35 +271,6 @@
     }
 }
 
-#pragma mark - ChartViewDelegate
-- (void)chartValueSelected:(ChartViewBase *)chartView entry:(ChartDataEntry *)entry dataSetIndex:(NSInteger)dataSetIndex highlight:(ChartHighlight *)highlight {
-    if(DEBUG) {
-        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
-        NSLog(@"Selected chartDataEntry %@", entry);
-    }
-    if(_historyEntryView.hidden) {
-        _historyEntryView.hidden = NO;
-    }
-    NSDate *date = [CommonTool getDateAfterNextDays:(int)(-entry.xIndex) fromDate:[NSDate date]];
-    _historyDateLabel.text = [NSString stringWithFormat:@"%@", [CommonTool formateDate:date withFormat:DateFormatYearMonthDayShort]];
-    _historyRateLebel.text = [NSString stringWithFormat:@"%g", entry.value];
-}
-
-#pragma mark - UITextFieldDelegate
-
-- (void)textFieldDidChange:(UITextField *)sender {
-    if(DEBUG) {
-        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
-    }
-    float value = [sender.text floatValue];
-    if(sender == _fromRateTextFiled) {
-        _toRateTextFiled.placeholder = [NSString stringWithFormat:@"%f", value * currentRate];
-    } else if(sender == _toRateTextFiled) {
-        _fromRateTextFiled.placeholder = [NSString stringWithFormat:@"%f", value / currentRate];
-    }
-}
-
-#pragma mark - Service
 //为虚拟键盘设置关闭按钮
 - (void)setCloseKeyboardAccessoryForSender:(id)sender {
     if(DEBUG) {
@@ -195,6 +312,5 @@
         }
     }
 }
-
 
 @end

@@ -1,0 +1,318 @@
+
+/* Class = "UILabel"; text = "Code"; ObjectID = "05t-IS-Yku"; */
+"05t-IS-Yku.text" = "Code";
+
+/* Class = "UITextField"; placeholder = "1"; ObjectID = "1RG-WK-mHg"; */
+"1RG-WK-mHg.placeholder" = "1";
+
+/* Class = "UILabel"; text = "Sign in / Sign up"; ObjectID = "1h5-ez-roQ"; */
+"1h5-ez-roQ.text" = "登录 / 注册";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "2S3-QU-f51"; */
+"2S3-QU-f51.placeholder" = "密码";
+
+/* Class = "UIBarButtonItem"; title = "Sign up"; ObjectID = "2fa-KX-Kk3"; */
+"2fa-KX-Kk3.title" = "注册";
+
+/* Class = "UILabel"; text = "Currency Name"; ObjectID = "39M-NU-3F2"; */
+"39M-NU-3F2.text" = "Currency Name";
+
+/* Class = "UILabel"; text = "English"; ObjectID = "3ER-TN-aMl"; */
+"3ER-TN-aMl.text" = "English";
+
+/* Class = "UILabel"; text = "MuRate 1.0.0"; ObjectID = "3nm-y7-UyA"; */
+"3nm-y7-UyA.text" = "MuRate 1.0.0";
+
+/* Class = "UILabel"; text = "Enable Subscribe"; ObjectID = "4IB-tL-sB4"; */
+"4IB-tL-sB4.text" = "Enable Subscribe";
+
+/* Class = "UILabel"; text = "Feedback"; ObjectID = "6Jp-SY-axk"; */
+"6Jp-SY-axk.text" = "反馈";
+
+/* Class = "UILabel"; text = "Help"; ObjectID = "6Nk-oN-anI"; */
+"6Nk-oN-anI.text" = "帮助";
+
+/* Class = "UILabel"; text = "About"; ObjectID = "6hN-qf-DhP"; */
+"6hN-qf-DhP.text" = "关于";
+
+/* Class = "UITextField"; placeholder = "Your email or other contact way."; ObjectID = "6mn-F6-1bN"; */
+"6mn-F6-1bN.placeholder" = "Your email or other contact way.";
+
+/* Class = "UILabel"; text = "Name Value"; ObjectID = "6nD-Qo-JOx"; */
+"6nD-Qo-JOx.text" = "Name Value";
+
+/* Class = "UINavigationItem"; title = "Subscription"; ObjectID = "7GI-yI-lpy"; */
+"7GI-yI-lpy.title" = "订阅";
+
+/* Class = "UITextField"; placeholder = "Telephone"; ObjectID = "Aa9-jA-VdB"; */
+"Aa9-jA-VdB.placeholder" = "电话";
+
+/* Class = "UITableViewSection"; headerTitle = " "; ObjectID = "B8K-QI-Zvl"; */
+"B8K-QI-Zvl.headerTitle" = " ";
+
+/* Class = "UITextField"; placeholder = "Subscribe Name"; ObjectID = "C5T-HY-ReF"; */
+"C5T-HY-ReF.placeholder" = "Subscribe Name";
+
+/* Class = "UINavigationItem"; title = "Me"; ObjectID = "DAv-cg-vmZ"; */
+"DAv-cg-vmZ.title" = "我";
+
+/* Class = "UINavigationItem"; title = "Sign in"; ObjectID = "DHz-Kk-WFi"; */
+"DHz-Kk-WFi.title" = "登录";
+
+/* Class = "UILabel"; text = "Rate Value"; ObjectID = "E0V-Tj-kAt"; */
+"E0V-Tj-kAt.text" = "Rate Value";
+
+/* Class = "UILabel"; text = "10.00000"; ObjectID = "EEi-Cz-swm"; */
+"EEi-Cz-swm.text" = "10.00000";
+
+/* Class = "UILabel"; text = "Enable Once"; ObjectID = "Eaa-vF-7Qy"; */
+"Eaa-vF-7Qy.text" = "允许一次";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "Ege-YX-nhz"; */
+"Ege-YX-nhz.placeholder" = "电子邮件";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "Env-ZB-JSg"; */
+"Env-ZB-JSg.text" = "用户名";
+
+/* Class = "UIBarButtonItem"; title = "Base"; ObjectID = "FEG-AL-6fQ"; */
+"FEG-AL-6fQ.title" = "Base";
+
+/* Class = "UILabel"; text = "Enable Once"; ObjectID = "FU9-M6-N5F"; */
+"FU9-M6-N5F.text" = "Enable Once";
+
+/* Class = "UILabel"; text = "CNY to JPY"; ObjectID = "Ftz-DH-EYJ"; */
+"Ftz-DH-EYJ.text" = "CNY to JPY";
+
+/* Class = "UITextField"; placeholder = "Max Rate"; ObjectID = "GTo-fg-Jct"; */
+"GTo-fg-Jct.placeholder" = "Max Rate";
+
+/* Class = "UILabel"; text = "Birthday Value"; ObjectID = "GbM-Vy-syd"; */
+"GbM-Vy-syd.text" = "Birthday Value";
+
+/* Class = "UILabel"; text = "Date Value"; ObjectID = "Gg3-LS-f65"; */
+"Gg3-LS-f65.text" = "Date Value";
+
+/* Class = "UITabBarItem"; title = "Subscribe"; ObjectID = "H1y-EC-28G"; */
+"H1y-EC-28G.title" = "订阅";
+
+/* Class = "UILabel"; text = "Enable Subscribe"; ObjectID = "HIw-Bj-QfS"; */
+"HIw-Bj-QfS.text" = "Enable Subscribe";
+
+/* Class = "UITextField"; placeholder = "Min Rate"; ObjectID = "Has-SH-yMu"; */
+"Has-SH-yMu.placeholder" = "Min Rate";
+
+/* Class = "UILabel"; text = "Gender"; ObjectID = "IAE-kT-2Lk"; */
+"IAE-kT-2Lk.text" = "Gender";
+
+/* Class = "UILabel"; text = "Copyright © 2016 MuShare Group. All Rights Reserved "; ObjectID = "ILG-vj-lRL"; */
+"ILG-vj-lRL.text" = "Copyright © 2016 MuShare Group. All Rights Reserved ";
+
+/* Class = "UILabel"; text = "Currency"; ObjectID = "Ibq-l7-XJf"; */
+"Ibq-l7-XJf.text" = "Currency";
+
+/* Class = "UINavigationItem"; title = "About"; ObjectID = "J2V-jq-c6q"; */
+"J2V-jq-c6q.title" = "关于";
+
+/* Class = "UILabel"; text = "简体中文"; ObjectID = "JN3-YQ-TFb"; */
+"JN3-YQ-TFb.text" = "简体中文";
+
+/* Class = "UITextField"; placeholder = "Min Rate"; ObjectID = "JaJ-Os-np2"; */
+"JaJ-Os-np2.placeholder" = "Min Rate";
+
+/* Class = "UIButton"; normalTitle = "CNY"; ObjectID = "K3S-3G-fId"; */
+"K3S-3G-fId.normalTitle" = "CNY";
+
+/* Class = "UILabel"; text = "Date:"; ObjectID = "KM7-t2-kU6"; */
+"KM7-t2-kU6.text" = "Date:";
+
+/* Class = "UILabel"; text = "All Currencies"; ObjectID = "LYs-K4-eYU"; */
+"LYs-K4-eYU.text" = "所有货币";
+
+/* Class = "UILabel"; text = "Clear User Data"; ObjectID = "Lfe-iY-k6D"; */
+"Lfe-iY-k6D.text" = "清除数据";
+
+/* Class = "UINavigationItem"; title = "Languages"; ObjectID = "Mae-J2-AzT"; */
+"Mae-J2-AzT.title" = "多语言";
+
+/* Class = "UIButton"; normalTitle = "Sign in"; ObjectID = "Mp5-P9-8Ok"; */
+"Mp5-P9-8Ok.normalTitle" = "注册";
+
+/* Class = "UINavigationItem"; title = "Subscriptions"; ObjectID = "MvW-AD-h80"; */
+"MvW-AD-h80.title" = "我的订阅";
+
+/* Class = "UILabel"; text = "100.0000"; ObjectID = "N5V-ed-3dC"; */
+"N5V-ed-3dC.text" = "100.0000";
+
+/* Class = "UILabel"; text = "Notification"; ObjectID = "N6d-fK-aWK"; */
+"N6d-fK-aWK.text" = "通知";
+
+/* Class = "UIButton"; normalTitle = "Rate in App Store"; ObjectID = "Nq2-il-4wg"; */
+"Nq2-il-4wg.normalTitle" = "在App Store评价";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "OV6-hg-bua"; */
+"OV6-hg-bua.text" = "Email";
+
+/* Class = "UINavigationItem"; title = "Feedback"; ObjectID = "Ow1-j8-BcW"; */
+"Ow1-j8-BcW.title" = "反馈";
+
+/* Class = "UILabel"; text = "Send SMS"; ObjectID = "P12-kE-zYd"; */
+"P12-kE-zYd.text" = "Send SMS";
+
+/* Class = "UILabel"; text = "Email Value"; ObjectID = "Qqo-Tg-WCv"; */
+"Qqo-Tg-WCv.text" = "Email Value";
+
+/* Class = "UINavigationItem"; title = "Subscribe"; ObjectID = "RUV-Sa-Ivd"; */
+"RUV-Sa-Ivd.title" = "订阅";
+
+/* Class = "UINavigationItem"; title = "My Profile"; ObjectID = "Rw1-e3-FrY"; */
+"Rw1-e3-FrY.title" = "我的信息";
+
+/* Class = "UILabel"; text = "Telephone"; ObjectID = "S7j-Wc-cJT"; */
+"S7j-Wc-cJT.text" = "Telephone";
+
+/* Class = "UINavigationItem"; title = "Sign up"; ObjectID = "SaW-My-DaT"; */
+"SaW-My-DaT.title" = "注册";
+
+/* Class = "UIButton"; normalTitle = "Forget Password"; ObjectID = "Sg5-hT-qwC"; */
+"Sg5-hT-qwC.normalTitle" = "忘记密码";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "Skd-rx-5Pk"; */
+"Skd-rx-5Pk.placeholder" = "密码";
+
+/* Class = "UILabel"; text = "10.000 ~ 20.0000"; ObjectID = "T0f-cD-Adh"; */
+"T0f-cD-Adh.text" = "10.000 ~ 20.0000";
+
+/* Class = "UILabel"; text = "Gender Value"; ObjectID = "UXm-af-Pyv"; */
+"UXm-af-Pyv.text" = "Gender Value";
+
+/* Class = "UILabel"; text = "Code"; ObjectID = "Ulk-sr-Cm9"; */
+"Ulk-sr-Cm9.text" = "Code";
+
+/* Class = "UILabel"; text = "Currency"; ObjectID = "Vb1-E4-tMI"; */
+"Vb1-E4-tMI.text" = "Currency";
+
+/* Class = "UILabel"; text = "10.00000"; ObjectID = "Ww2-pk-9I4"; */
+"Ww2-pk-9I4.text" = "10.00000";
+
+/* Class = "UITextField"; placeholder = "1"; ObjectID = "Xe3-Xl-sfN"; */
+"Xe3-Xl-sfN.placeholder" = "1";
+
+/* Class = "UILabel"; text = "Telphone"; ObjectID = "ZSV-Cn-p9q"; */
+"ZSV-Cn-p9q.text" = "Telphone";
+
+/* Class = "UILabel"; text = "Birthday"; ObjectID = "cPb-mp-rU2"; */
+"cPb-mp-rU2.text" = "Birthday";
+
+/* Class = "UINavigationItem"; title = "Rate"; ObjectID = "cZL-gg-6JF"; */
+"cZL-gg-6JF.title" = "Rate";
+
+/* Class = "UIButton"; normalTitle = "To Currency"; ObjectID = "crT-7a-Zsz"; */
+"crT-7a-Zsz.normalTitle" = "To Currency";
+
+/* Class = "UILabel"; text = "Rate:"; ObjectID = "dlg-JU-2Xi"; */
+"dlg-JU-2Xi.text" = "Rate:";
+
+/* Class = "UITabBarItem"; title = "Rate"; ObjectID = "dsK-C6-I2x"; */
+"dsK-C6-I2x.title" = "汇率";
+
+/* Class = "UITableViewSection"; headerTitle = " "; ObjectID = "eLp-ME-xC1"; */
+"eLp-ME-xC1.headerTitle" = " ";
+
+/* Class = "UILabel"; text = "Profile Photo"; ObjectID = "ei9-T4-DVi"; */
+"ei9-T4-DVi.text" = "Profile Photo";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "fJ1-cM-9m5"; */
+"fJ1-cM-9m5.placeholder" = "Email";
+
+/* Class = "UILabel"; text = "繁體中文"; ObjectID = "faV-Fb-jZF"; */
+"faV-Fb-jZF.text" = "繁體中文";
+
+/* Class = "UIButton"; normalTitle = "Log Out"; ObjectID = "gXL-ZX-w1m"; */
+"gXL-ZX-w1m.normalTitle" = "退出登录";
+
+/* Class = "UINavigationItem"; title = "Help"; ObjectID = "grS-7U-iXN"; */
+"grS-7U-iXN.title" = "帮助";
+
+/* Class = "UINavigationItem"; title = "Currencies"; ObjectID = "iFj-RH-TUV"; */
+"iFj-RH-TUV.title" = "Currencies";
+
+/* Class = "UITextField"; placeholder = "Max Rate"; ObjectID = "jkp-0R-fOo"; */
+"jkp-0R-fOo.placeholder" = "Max Rate";
+
+/* Class = "UIButton"; normalTitle = "CNY"; ObjectID = "l2Y-z6-Qki"; */
+"l2Y-z6-Qki.normalTitle" = "CNY";
+
+/* Class = "UISegmentedControl"; mvv-Rz-xc9.segmentTitles[0] = "7d"; ObjectID = "mvv-Rz-xc9"; */
+"mvv-Rz-xc9.segmentTitles[0]" = "7天";
+
+/* Class = "UISegmentedControl"; mvv-Rz-xc9.segmentTitles[1] = "1m"; ObjectID = "mvv-Rz-xc9"; */
+"mvv-Rz-xc9.segmentTitles[1]" = "1个月";
+
+/* Class = "UISegmentedControl"; mvv-Rz-xc9.segmentTitles[2] = "6m"; ObjectID = "mvv-Rz-xc9"; */
+"mvv-Rz-xc9.segmentTitles[2]" = "6个月";
+
+/* Class = "UISegmentedControl"; mvv-Rz-xc9.segmentTitles[3] = "1y"; ObjectID = "mvv-Rz-xc9"; */
+"mvv-Rz-xc9.segmentTitles[3]" = "1年";
+
+/* Class = "UISegmentedControl"; mvv-Rz-xc9.segmentTitles[4] = "3y"; ObjectID = "mvv-Rz-xc9"; */
+"mvv-Rz-xc9.segmentTitles[4]" = "3年";
+
+/* Class = "UINavigationItem"; title = "MuRate"; ObjectID = "nhV-gT-3St"; */
+"nhV-gT-3St.title" = "MuRate";
+
+/* Class = "UILabel"; text = "Send Email"; ObjectID = "ode-KA-Xzx"; */
+"ode-KA-Xzx.text" = "发送邮件";
+
+/* Class = "UILabel"; text = "My Favorite"; ObjectID = "pSR-bs-6ib"; */
+"pSR-bs-6ib.text" = "我的最爱";
+
+/* Class = "UISegmentedControl"; pSe-Mj-XSq.segmentTitles[0] = "Bug"; ObjectID = "pSe-Mj-XSq"; */
+"pSe-Mj-XSq.segmentTitles[0]" = "Bug";
+
+/* Class = "UISegmentedControl"; pSe-Mj-XSq.segmentTitles[1] = "Comment"; ObjectID = "pSe-Mj-XSq"; */
+"pSe-Mj-XSq.segmentTitles[1]" = "评论";
+
+/* Class = "UISegmentedControl"; pSe-Mj-XSq.segmentTitles[2] = "Wish"; ObjectID = "pSe-Mj-XSq"; */
+"pSe-Mj-XSq.segmentTitles[2]" = "建议";
+
+/* Class = "UINavigationItem"; title = "Clear User Data"; ObjectID = "pXX-b1-nn5"; */
+"pXX-b1-nn5.title" = "清除数据";
+
+/* Class = "UILabel"; text = "Send SMS"; ObjectID = "pgh-16-ETw"; */
+"pgh-16-ETw.text" = "Send SMS";
+
+/* Class = "UILabel"; text = "What's up"; ObjectID = "r6Z-6Q-SFJ"; */
+"r6Z-6Q-SFJ.text" = "What's up";
+
+/* Class = "UILabel"; text = "Cannot access to server, check your Internet!"; ObjectID = "sgK-Xj-rr5"; */
+"sgK-Xj-rr5.text" = "无法连接服务器，请检查网络!";
+
+/* Class = "UILabel"; text = "Languages"; ObjectID = "tK4-Rr-wkd"; */
+"tK4-Rr-wkd.text" = "多语言";
+
+/* Class = "UILabel"; text = "Code"; ObjectID = "tfs-iY-DOz"; */
+"tfs-iY-DOz.text" = "Code";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "u3I-Ci-rM2"; */
+"u3I-Ci-rM2.normalTitle" = "提交";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "uBb-IX-sy3"; */
+"uBb-IX-sy3.normalTitle" = "提交";
+
+/* Class = "UITabBarItem"; title = "Me"; ObjectID = "udZ-pr-88l"; */
+"udZ-pr-88l.title" = "我";
+
+/* Class = "UILabel"; text = "Welcome to MuRate, sign in now!"; ObjectID = "vxA-eD-eUe"; */
+"vxA-eD-eUe.text" = "欢迎使用MuRate, 立刻登录!";
+
+/* Class = "UITextField"; placeholder = "Username"; ObjectID = "xBk-b8-3G7"; */
+"xBk-b8-3G7.placeholder" = "用户名";
+
+/* Class = "UIButton"; normalTitle = "From Currency"; ObjectID = "xiB-uC-Io8"; */
+"xiB-uC-Io8.normalTitle" = "From Currency";
+
+/* Class = "UILabel"; text = "Send Email"; ObjectID = "yRJ-iE-Uvp"; */
+"yRJ-iE-Uvp.text" = "发送邮件";
+
+/* Class = "UILabel"; text = "日本語"; ObjectID = "zf7-W5-Quy"; */
+"zf7-W5-Quy.text" = "日本語";

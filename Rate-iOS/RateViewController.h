@@ -8,21 +8,31 @@
 
 #import <UIKit/UIKit.h>
 #import <SVGKit/SVGKit.h>
+#import "DaoManager.h"
 #import "Rate-iOS-Bridging-Header.h"
 
 @interface RateViewController : UIViewController <ChartViewDelegate, UITextFieldDelegate>
 
 @property (strong, nonatomic) NSObject *selectedRate;
+@property (strong, nonatomic) Currency *fromCurrency;
+@property (strong, nonatomic) Currency *toCurrency;
 
 @property (weak, nonatomic) IBOutlet SVGKFastImageView *fromImageView;
 @property (weak, nonatomic) IBOutlet SVGKFastImageView *toImageView;
 @property (weak, nonatomic) IBOutlet UIButton *fromButton;
+@property (weak, nonatomic) IBOutlet UILabel *fromNameLabel;
 @property (weak, nonatomic) IBOutlet UIButton *toButton;
+@property (weak, nonatomic) IBOutlet UILabel *toNameLabel;
 @property (weak, nonatomic) IBOutlet UITextField *fromRateTextFiled;
 @property (weak, nonatomic) IBOutlet UITextField *toRateTextFiled;
 @property (weak, nonatomic) IBOutlet LineChartView *historyLineChartView;
 @property (weak, nonatomic) IBOutlet UILabel *historyDateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *historyRateLebel;
+
 @property (weak, nonatomic) IBOutlet UIView *historyEntryView;
+
+- (IBAction)swapCurrency:(id)sender;
+
+- (IBAction)changeDates:(id)sender;
 
 @end

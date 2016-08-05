@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="713-Yw-h09" customClass="SVGKFastImageView">
-                                <rect key="frame" x="20" y="81" width="48" height="36"/>
+                                <rect key="frame" x="13" y="79" width="52" height="39"/>
                                 <color key="backgroundColor" red="0.84313725490000002" green="0.84313725490000002" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -26,27 +26,55 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2Y-z6-Qki">
-                                <rect key="frame" x="76" y="80" width="61" height="38"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hkc-xJ-lh4">
+                                <rect key="frame" x="73" y="79" width="102" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="CNY">
-                                    <color key="titleColor" red="0.1058823529" green="0.6588235294" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Code">
+                                    <color key="titleColor" red="0.0" green="0.59607843137254901" blue="0.41960784313725491" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="sqh-ol-nfs" kind="push" identifier="selectFromCurrencySegue" id="KjL-UE-fsT"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Currency Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LUr-Jw-1O5">
+                                <rect key="frame" x="73" y="104" width="102" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nUQ-H8-mEa">
-                                <rect key="frame" x="20" y="131" width="117" height="1"/>
+                                <rect key="frame" x="13" y="131" width="120" height="1"/>
                                 <color key="backgroundColor" red="0.6705882352941176" green="0.71372549019607845" blue="0.71372549019607845" alpha="0.40915948275862069" colorSpace="calibratedRGB"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XS1-xk-Bqd">
+                                <rect key="frame" x="73" y="143" width="102" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Code">
+                                    <color key="titleColor" red="0.0" green="0.59607843140000005" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="sqh-ol-nfs" kind="push" identifier="selectToCurrencySegue" id="3sm-0T-aYG"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Currency Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ILf-qC-paM">
+                                <rect key="frame" x="73" y="168" width="102" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PNR-d1-qlG">
                                 <rect key="frame" x="118" y="117" width="84" height="30"/>
                                 <state key="normal" image="search_link"/>
+                                <connections>
+                                    <action selector="swapCurrency:" destination="B8J-8X-Ib2" eventType="touchUpInside" id="Dmd-2I-Ezr"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fWP-d1-Qzp">
-                                <rect key="frame" x="183" y="131" width="117" height="1"/>
+                                <rect key="frame" x="188" y="131" width="120" height="1"/>
                                 <color key="backgroundColor" red="0.6705882353" green="0.71372549019999998" blue="0.71372549019999998" alpha="0.40915948279999997" colorSpace="calibratedRGB"/>
                             </view>
                             <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S5h-Bk-8ap" customClass="SVGKFastImageView">
-                                <rect key="frame" x="20" y="145" width="48" height="36"/>
+                                <rect key="frame" x="13" y="143" width="52" height="39"/>
                                 <color key="backgroundColor" red="0.84313725490000002" green="0.84313725490000002" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -54,21 +82,14 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K3S-3G-fId">
-                                <rect key="frame" x="76" y="144" width="61" height="38"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="CNY">
-                                    <color key="titleColor" red="0.1058823529" green="0.6588235294" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="1" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1RG-WK-mHg">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="1" textAlignment="right" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="1RG-WK-mHg">
                                 <rect key="frame" x="183" y="145" width="111" height="36"/>
                                 <color key="textColor" red="0.13725490196078433" green="0.74509803921568629" blue="0.51372549019607838" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="mvv-Rz-xc9">
-                                <rect key="frame" x="20" y="196" width="280" height="29"/>
+                                <rect key="frame" x="13" y="196" width="295" height="29"/>
                                 <segments>
                                     <segment title="7d"/>
                                     <segment title="1m"/>
@@ -77,15 +98,36 @@
                                     <segment title="3y"/>
                                 </segments>
                                 <color key="tintColor" red="0.1219393919" green="0.77849500380000003" blue="0.58598825249999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="changeDates:" destination="B8J-8X-Ib2" eventType="valueChanged" id="rNW-cW-bP8"/>
+                                </connections>
                             </segmentedControl>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="1" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xe3-Xl-sfN">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="1" textAlignment="right" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="Xe3-Xl-sfN">
                                 <rect key="frame" x="183" y="81" width="111" height="36"/>
                                 <color key="textColor" red="0.13725490196078433" green="0.74509803921568629" blue="0.51372549019607838" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I7T-Cj-F22" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="13" y="232" width="295" height="270"/>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FVL-WQ-TVE">
+                                <rect key="frame" x="20" y="232" width="100" height="36"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date Value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gg3-LS-f65">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="15"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rate Value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E0V-Tj-kAt">
+                                        <rect key="frame" x="0.0" y="15" width="100" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I7T-Cj-F22" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="-10" y="266" width="340" height="267"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="dragEnabled" value="NO"/>
@@ -94,7 +136,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="pinchZoomEnabled" value="NO"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="leftAxis.enabled" value="NO"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="drawGridBackgroundEnabled" value="NO"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="xAxis.enabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="xAxis.enabled" value="NO"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="rightAxis.enabled" value="NO"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="xAxis.labelPosition">
                                         <integer key="value" value="1"/>
@@ -102,54 +144,27 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="descriptionText" value=""/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="legend.enabled" value="NO"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="xAxis.drawGridLinesEnabled" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="dragEnabled" value="YES"/>
                                 </userDefinedRuntimeAttributes>
-                            </view>
-                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FVL-WQ-TVE">
-                                <rect key="frame" x="20" y="245" width="279" height="44"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KM7-t2-kU6">
-                                        <rect key="frame" x="1" y="0.0" width="41" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rate:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlg-JU-2Xi">
-                                        <rect key="frame" x="1" y="23" width="40" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gg3-LS-f65">
-                                        <rect key="frame" x="42" y="0.0" width="237" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rate Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E0V-Tj-kAt">
-                                        <rect key="frame" x="42" y="23" width="237" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="I7T-Cj-F22" firstAttribute="top" secondItem="vUw-p2-Ma0" secondAttribute="bottom" constant="202" id="1QY-g2-R20"/>
                             <constraint firstItem="PNR-d1-qlG" firstAttribute="leading" secondItem="nUQ-H8-mEa" secondAttribute="trailing" constant="-19" id="5Mf-FY-5ir"/>
+                            <constraint firstItem="1RG-WK-mHg" firstAttribute="leading" secondItem="a09-VK-Akl" secondAttribute="leadingMargin" constant="163" id="94B-hG-Zdg"/>
                             <constraint firstItem="fWP-d1-Qzp" firstAttribute="leading" secondItem="PNR-d1-qlG" secondAttribute="trailing" constant="-19" id="DBW-qP-mcp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Xe3-Xl-sfN" secondAttribute="trailing" constant="6" id="I78-Ee-Arb"/>
-                            <constraint firstItem="I7T-Cj-F22" firstAttribute="top" secondItem="mvv-Rz-xc9" secondAttribute="bottom" constant="8" id="MRP-jS-gfK"/>
+                            <constraint firstItem="mvv-Rz-xc9" firstAttribute="leading" secondItem="a09-VK-Akl" secondAttribute="leadingMargin" constant="-7" id="Iq9-VD-qrA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fWP-d1-Qzp" secondAttribute="trailing" id="RVY-m6-SGP"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="I7T-Cj-F22" secondAttribute="trailing" constant="-8" id="T3t-nT-Sw9"/>
-                            <constraint firstItem="Ox1-ko-wQe" firstAttribute="top" secondItem="I7T-Cj-F22" secondAttribute="bottom" constant="17" id="XwT-8T-5sA"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="mvv-Rz-xc9" secondAttribute="trailing" id="ZIX-LF-eVb"/>
+                            <constraint firstItem="Ox1-ko-wQe" firstAttribute="top" secondItem="I7T-Cj-F22" secondAttribute="bottom" constant="-14" id="SLe-0H-Xsy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mvv-Rz-xc9" secondAttribute="trailing" constant="-8" id="SWU-SQ-WCq"/>
                             <constraint firstAttribute="leadingMargin" secondItem="nUQ-H8-mEa" secondAttribute="leading" id="bFr-dq-D6n"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="I7T-Cj-F22" secondAttribute="trailing" constant="-30" id="c46-Qn-Dyt"/>
                             <constraint firstItem="PNR-d1-qlG" firstAttribute="centerX" secondItem="a09-VK-Akl" secondAttribute="centerX" id="cqU-qa-NAH"/>
-                            <constraint firstItem="I7T-Cj-F22" firstAttribute="leading" secondItem="a09-VK-Akl" secondAttribute="leadingMargin" constant="-7" id="dMU-eC-Wbz"/>
+                            <constraint firstItem="I7T-Cj-F22" firstAttribute="leading" secondItem="a09-VK-Akl" secondAttribute="leadingMargin" constant="-30" id="j48-g4-NHd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1RG-WK-mHg" secondAttribute="trailing" constant="6" id="oaG-s3-qPZ"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="mvv-Rz-xc9" secondAttribute="leading" id="tbZ-dk-q4c"/>
+                            <constraint firstItem="Xe3-Xl-sfN" firstAttribute="leading" secondItem="a09-VK-Akl" secondAttribute="leadingMargin" constant="163" id="zGS-WZ-6fo"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Rate" id="cZL-gg-6JF">
@@ -158,21 +173,23 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="fromButton" destination="l2Y-z6-Qki" id="SWa-E1-Sga"/>
+                        <outlet property="fromButton" destination="Hkc-xJ-lh4" id="N57-24-j9G"/>
                         <outlet property="fromImageView" destination="713-Yw-h09" id="ahB-4m-fmA"/>
+                        <outlet property="fromNameLabel" destination="LUr-Jw-1O5" id="r8F-lP-wzZ"/>
                         <outlet property="fromRateTextFiled" destination="Xe3-Xl-sfN" id="7fF-JN-bCs"/>
                         <outlet property="historyDateLabel" destination="Gg3-LS-f65" id="J7m-ll-WIS"/>
                         <outlet property="historyEntryView" destination="FVL-WQ-TVE" id="YNO-K0-SQ1"/>
                         <outlet property="historyLineChartView" destination="I7T-Cj-F22" id="6kx-1a-bB4"/>
                         <outlet property="historyRateLebel" destination="E0V-Tj-kAt" id="dZ3-t5-j9u"/>
-                        <outlet property="toButton" destination="K3S-3G-fId" id="nYn-xZ-EBC"/>
+                        <outlet property="toButton" destination="XS1-xk-Bqd" id="mxx-JY-Ygb"/>
                         <outlet property="toImageView" destination="S5h-Bk-8ap" id="2rA-Si-033"/>
+                        <outlet property="toNameLabel" destination="ILf-qC-paM" id="raX-Gb-NxW"/>
                         <outlet property="toRateTextFiled" destination="1RG-WK-mHg" id="ndz-3o-QXk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="giR-zq-ZYo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4566" y="-6304"/>
+            <point key="canvasLocation" x="-4566" y="-6351"/>
         </scene>
         <!--Currencies-->
         <scene sceneID="AXA-cD-voq">
@@ -293,7 +310,7 @@
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Currency Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="39M-NU-3F2">
                                             <rect key="frame" x="69" y="35" width="119" height="16"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -2162,7 +2179,7 @@
         <image name="tab_subscription_selected" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rYv-zH-LJo"/>
         <segue reference="I4X-zC-orO"/>
+        <segue reference="3sm-0T-aYG"/>
     </inferredMetricsTieBreakers>
 </document>

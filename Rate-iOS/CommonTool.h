@@ -42,8 +42,8 @@
 
 + (NSString *)formateDate:(NSDate *)date withFormat:(NSString *)format;
 
-+ (long)getUnixTimestamp:(NSDate *)date;
-+ (NSDate *)dateWithUnixTimestamp:(long)timestamp;
++ (long long)getUnixTimestamp:(NSDate *)date;
++ (NSDate *)dateWithUnixTimestamp:(long long)timestamp;
 
 //将十六进制颜色转换为 UIColor 对象
 + (UIColor *)colorWithHexString:(NSString *)color;
