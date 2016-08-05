@@ -10,4 +10,8 @@
 
 @interface MyProfileTableViewController : UITableViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *emailLabel;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *telephoneLabel;
+
 @end

@@ -26,6 +26,7 @@
     }
 
     NSLog(@"%@", [NSLocale currentLocale].localeIdentifier);
+
     user = [[UserTool alloc] init];
     user.lan = @"en";
     //Init AFHTTPSessionManager.

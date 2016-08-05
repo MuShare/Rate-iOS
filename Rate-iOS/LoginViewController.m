@@ -8,22 +8,32 @@
 
 #import "LoginViewController.h"
 #import "CommonTool.h"
+#import "InternetTool.h"
+#import "UserTool.h"
+#import "DaoManager.h"
 
 @interface LoginViewController ()
 
 @end
 
-@implementation LoginViewController
+@implementation LoginViewController {
+    AFHTTPSessionManager *manager;
+    UserTool *user;
+    DaoManager *dao;
+}
 
 - (void)viewDidLoad {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     [super viewDidLoad];
+    manager = [InternetTool getSessionManager];
+    user = [[UserTool alloc] init];
+    dao = [[DaoManager alloc] init];
 }
 
 - (BOOL)hidesBottomBarWhenPushed {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     return YES;
@@ -31,7 +41,7 @@
 
 #pragma - mark UITextViewDelegate
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     
@@ -40,7 +50,7 @@
 
 #pragma - mark Action
 - (IBAction)showPassword:(id)sender {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     _passwordTextField.secureTextEntry = !_passwordTextField.secureTextEntry;
@@ -54,13 +64,54 @@
     }
     _emailImageView.highlighted = ![CommonTool isAvailableEmail:_emailTextField.text];
     _passwordImageView.highlighted = [_passwordTextField.text isEqualToString:@""];
-    if(_emailImageView.highlighted || _passwordImageView.highlighted) {
+    if (_emailImageView.highlighted || _passwordImageView.highlighted) {
         return;
     }
+    [_loadingActivityIndicatorView startAnimating];
+    _loginSubmitButton.enabled = NO;
+    UIDevice *currentDevice = [UIDevice currentDevice];
+    [manager POST:[InternetTool createUrl:@"api/user/login"]
+       parameters:@{
+                    @"email": _emailTextField.text,
+                    @"password": _passwordTextField.text,
+                    @"os": [NSString stringWithFormat:@"iOS %@", currentDevice.systemVersion],
+                    @"did": [currentDevice.identifierForVendor UUIDString],
+                    @"device_token": @"deviceToken"
+                    }
+         progress:nil
+          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+              _loadingActivityIndicatorView.hidden = YES;
+              _loginSubmitButton.enabled = YES;
+              InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
+              if ([response statusOK]) {
+                  NSObject *result = [response getResponseResult];
+                  user.email = _emailTextField.text;
+                  user.telephone = [result valueForKey:@"telephone"];
+                  user.name = [result valueForKey:@"uname"];
+                  user.token = [result valueForKey:@"token"];
+                  [self.navigationController popViewControllerAnimated:YES];
+              }
+          }
+          failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+              if (DEBUG) {
+                  NSLog(@"Server error: %@", error.localizedDescription);
+              }
+              _loadingActivityIndicatorView.hidden = YES;
+              _loginSubmitButton.enabled = YES;
+              InternetResponse *response = [[InternetResponse alloc] initWithError:error];
+              switch ([response errorCode]) {
+                  case 1:
+                      
+                      break;
+                      
+                  default:
+                      break;
+              }
+          }];
 }
 
 - (IBAction)finishEdit:(id)sender {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     [sender resignFirstResponder];

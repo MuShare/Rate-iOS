@@ -8,9 +8,7 @@
 
 #import "RegisterViewController.h"
 #import "CommonTool.h"
-#import "DaoManager.h"
 #import "InternetTool.h"
-#import "UserTool.h"
 #import "AlertTool.h"
 
 @interface RegisterViewController ()
@@ -18,9 +16,7 @@
 @end
 
 @implementation RegisterViewController {
-    DaoManager *dao;
     AFHTTPSessionManager *manager;
-    UserTool *user;
 }
 
 - (void)viewDidLoad {
@@ -28,9 +24,7 @@
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     [super viewDidLoad];
-    dao = [[DaoManager alloc] init];
     manager = [InternetTool getSessionManager];
-    user = [[UserTool alloc] init];
 }
 
 - (BOOL)hidesBottomBarWhenPushed {
@@ -97,7 +91,7 @@
                       _telephoneImageView.highlighted = YES;
                       _emailImageView.highlighted = NO;
                       [AlertTool showAlertWithTitle:@"Tip"
-                                         andContent:@"Your telephone has been signed up"
+                                         andContent:@"Your telephone has been signed up."
                                    inViewController:self];
                       break;
                   default:

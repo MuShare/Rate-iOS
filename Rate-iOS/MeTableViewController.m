@@ -25,6 +25,16 @@
     user = [[UserTool alloc] init];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    if(user.token != nil) {
+        _signOrNameLabel.text = user.name;
+        _welcomeOrEmailLabel.text = user.email;
+    }
+}
+
 
 #pragma mark - Table view
 - (UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {

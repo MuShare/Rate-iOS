@@ -35,7 +35,7 @@
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    return 3;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -46,7 +46,7 @@
     SVGKFastImageView *fromImageView = (SVGKFastImageView *)[cell viewWithTag:1];
     SVGKFastImageView *toImageView = (SVGKFastImageView *)[cell viewWithTag:2];
     fromImageView.image = [SVGKImage imageNamed:@"cn.svg"];
-    toImageView.image = [SVGKImage imageNamed:@"cn.svg"];
+    toImageView.image = [SVGKImage imageNamed:@"us.svg"];
     return cell;
 }
 

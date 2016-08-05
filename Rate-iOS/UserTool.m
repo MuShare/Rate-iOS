@@ -62,4 +62,75 @@
     return _lan;
 }
 
+@synthesize email = _email;
+
+- (void)setEmail:(NSString *)email {
+    _email = email;
+    [defaults setObject:_email forKey:NSStringFromSelector(@selector(email))];
+}
+
+- (NSString *)email {
+    if(_email == nil) {
+        _email = [defaults objectForKey:NSStringFromSelector(@selector(email))];
+    }
+    return _email;
+}
+
+@synthesize name = _name;
+
+- (void)setName:(NSString *)name {
+    _name = name;
+    [defaults setObject:_name forKey:NSStringFromSelector(@selector(name))];
+}
+
+- (NSString *)name {
+    if(_name == nil) {
+        _name = [defaults objectForKey:NSStringFromSelector(@selector(name))];
+    }
+    return _name;
+}
+
+@synthesize telephone = _telephone;
+
+- (void)setTelephone:(NSString *)telephone {
+    _telephone = telephone;
+    [defaults setObject:_telephone forKey:NSStringFromSelector(@selector(telephone))];
+}
+
+- (NSString *)telephone {
+    if(_telephone == nil) {
+        _telephone = [defaults objectForKey:NSStringFromSelector(@selector(telephone))];
+    }
+    return _telephone;
+}
+
+
+@synthesize token = _token;
+
+- (void)setToken:(NSString *)token {
+    _token = token;
+    [defaults setObject:_token forKey:NSStringFromSelector(@selector(token))];
+}
+
+- (NSString *)token {
+    if(_token == nil) {
+        _token = [defaults objectForKey:NSStringFromSelector(@selector(token))];
+    }
+    return _token;
+}
+
+@synthesize deviceToken = _deviceToken;
+
+- (void)setDeviceToken:(NSString *)deviceToken {
+    _deviceToken = deviceToken;
+    [defaults setObject:_deviceToken forKey:NSStringFromSelector(@selector(deviceToken))];
+}
+
+- (NSString *)deviceToken {
+    if(_deviceToken == nil) {
+        _deviceToken = [defaults objectForKey:NSStringFromSelector(@selector(deviceToken))];
+    }
+    return _deviceToken;
+}
+
 @end

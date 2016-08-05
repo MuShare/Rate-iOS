@@ -16,6 +16,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UIButton *showPasswordButton;
 
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingActivityIndicatorView;
+@property (weak, nonatomic) IBOutlet UIButton *loginSubmitButton;
+
 - (IBAction)showPassword:(id)sender;
 - (IBAction)loginSubmit:(id)sender;
 - (IBAction)finishEdit:(id)sender;
