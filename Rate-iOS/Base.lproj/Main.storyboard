@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -173,7 +174,11 @@
                             <outletCollection property="gestureRecognizers" destination="TWW-wa-yH1" appends="YES" id="oCu-WT-Ldd"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Rate" id="cZL-gg-6JF"/>
+                    <navigationItem key="navigationItem" title="Rate" id="cZL-gg-6JF">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="aPE-ro-t6u">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="fromButton" destination="Hkc-xJ-lh4" id="N57-24-j9G"/>
                         <outlet property="fromImageView" destination="713-Yw-h09" id="ahB-4m-fmA"/>
@@ -502,7 +507,27 @@
                     <view key="view" contentMode="scaleToFill" id="mCy-dG-cHW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="utG-di-jVp">
+                                <rect key="frame" x="80" y="0.0" width="240" height="568"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="me_user" translatesAutoresizingMaskIntoConstraints="NO" id="LJt-yL-RuW">
+                                        <rect key="frame" x="90" y="97" width="60" height="60"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="LJt-yL-RuW" firstAttribute="centerX" secondItem="utG-di-jVp" secondAttribute="centerX" id="tzt-6k-YwW"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="utG-di-jVp" secondAttribute="trailing" constant="-20" id="I5W-fh-TQe"/>
+                            <constraint firstItem="utG-di-jVp" firstAttribute="width" secondItem="mCy-dG-cHW" secondAttribute="height" multiplier="30:71" id="Lzc-46-hhb"/>
+                            <constraint firstItem="bi6-pu-PNb" firstAttribute="top" secondItem="utG-di-jVp" secondAttribute="bottom" id="O4D-Bw-uwV"/>
+                            <constraint firstItem="utG-di-jVp" firstAttribute="top" secondItem="SQQ-b3-KAR" secondAttribute="bottom" constant="-20" id="TNX-EU-STa"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KK7-MB-2um" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -918,20 +943,28 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="me_user" translatesAutoresizingMaskIntoConstraints="NO" id="Hxp-Vl-xGJ">
                                                     <rect key="frame" x="10" y="10" width="60" height="60"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to MuRate, sign in now!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vxA-eD-eUe">
-                                                    <rect key="frame" x="82" y="46" width="209" height="24"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Sign in / Sign up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1h5-ez-roQ">
+                                                    <rect key="frame" x="82" y="17" width="201" height="27"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                    <color key="textColor" red="0.1058823529" green="0.6588235294" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Welcome to MuRate, sign in now!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vxA-eD-eUe">
+                                                    <rect key="frame" x="82" y="52" width="209" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sign in / Sign up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1h5-ez-roQ">
-                                                    <rect key="frame" x="82" y="10" width="201" height="33"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.1058823529" green="0.6588235294" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="vxA-eD-eUe" firstAttribute="leading" secondItem="exy-tW-PxA" secondAttribute="leadingMargin" constant="74" id="HrD-Cd-hGg"/>
+                                                <constraint firstItem="1h5-ez-roQ" firstAttribute="leading" secondItem="exy-tW-PxA" secondAttribute="leadingMargin" constant="74" id="O24-pP-pDd"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="1h5-ez-roQ" secondAttribute="trailing" constant="37" id="MjL-Rz-CEw"/>
+                                            <constraint firstAttribute="trailing" secondItem="vxA-eD-eUe" secondAttribute="trailing" constant="29" id="fos-Oc-CJ1"/>
+                                        </constraints>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -2249,6 +2282,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="I4X-zC-orO"/>
-        <segue reference="KjL-UE-fsT"/>
+        <segue reference="tCz-c9-o9a"/>
     </inferredMetricsTieBreakers>
 </document>
