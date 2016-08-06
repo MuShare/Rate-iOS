@@ -243,10 +243,10 @@
 "l2Y-z6-Qki.normalTitle" = "CNY";
 
 /* Class = "UISegmentedControl"; mvv-Rz-xc9.segmentTitles[0] = "7d"; ObjectID = "mvv-Rz-xc9"; */
-"mvv-Rz-xc9.segmentTitles[0]" = "7天";
+"mvv-Rz-xc9.segmentTitles[0]" = "1个月";
 
 /* Class = "UISegmentedControl"; mvv-Rz-xc9.segmentTitles[1] = "1m"; ObjectID = "mvv-Rz-xc9"; */
-"mvv-Rz-xc9.segmentTitles[1]" = "1个月";
+"mvv-Rz-xc9.segmentTitles[1]" = "3个月";
 
 /* Class = "UISegmentedControl"; mvv-Rz-xc9.segmentTitles[2] = "6m"; ObjectID = "mvv-Rz-xc9"; */
 "mvv-Rz-xc9.segmentTitles[2]" = "6个月";

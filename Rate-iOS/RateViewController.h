@@ -11,7 +11,7 @@
 #import "DaoManager.h"
 #import "Rate-iOS-Bridging-Header.h"
 
-@interface RateViewController : UIViewController <ChartViewDelegate, UITextFieldDelegate>
+@interface RateViewController : UIViewController <ChartViewDelegate, UITextFieldDelegate, UIGestureRecognizerDelegate>
 
 @property (strong, nonatomic) NSObject *selectedRate;
 @property (strong, nonatomic) Currency *fromCurrency;
@@ -30,6 +30,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *historyRateLebel;
 
 @property (weak, nonatomic) IBOutlet UIView *historyEntryView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *historyEntryLeadingLayoutConstraint;
 
 - (IBAction)swapCurrency:(id)sender;
 

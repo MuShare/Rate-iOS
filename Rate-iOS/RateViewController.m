@@ -11,6 +11,11 @@
 #import "UserTool.h"
 #import "CommonTool.h"
 
+//Fix regulation cause by leading constraint
+#define LeadingConstraintRegulationWidth 20
+
+#define TrailingConstraintRegulationWidth 8
+
 @interface RateViewController ()
 
 @end
@@ -23,9 +28,11 @@
     int selectedTimeIndex;
     NSArray *rates;
     NSDate *start;
+    NSDateFormatter *dateFormatter;
+    float screenWitdh, historyEntryWith;
 }
 
-static const int historySearchDays[5] = {7, 30, 180, 365, 3*365};
+static const int historySearchDays[5] = {30, 90, 180, 365, 3*365};
 
 - (void)viewDidLoad {
     if(DEBUG) {
@@ -43,6 +50,13 @@ static const int historySearchDays[5] = {7, 30, 180, 365, 3*365};
     //Set chart
     _historyLineChartView.delegate = self;
     [_historyLineChartView animateWithXAxisDuration:0.5 yAxisDuration:1.0];
+    
+    //Initial date formatter using local language
+    [self initDateFormatter];
+    
+    //Initial width info
+    screenWitdh = self.view.frame.size.width;
+    historyEntryWith = _historyEntryView.frame.size.width;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -111,12 +125,27 @@ static const int historySearchDays[5] = {7, 30, 180, 365, 3*365};
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
         NSLog(@"Selected chartDataEntry %@", entry);
     }
-    if(_historyEntryView.hidden) {
-        _historyEntryView.hidden = NO;
+    //Show history entry information
+    _historyEntryView.hidden = NO;
+
+    float xOffset = screenWitdh / (rates.count - 1) * entry.xIndex - historyEntryWith / 2 - LeadingConstraintRegulationWidth;
+    if(xOffset < - LeadingConstraintRegulationWidth) {
+        xOffset = - LeadingConstraintRegulationWidth;
+    } else if (xOffset > screenWitdh - historyEntryWith - TrailingConstraintRegulationWidth) {
+        xOffset = screenWitdh - historyEntryWith -TrailingConstraintRegulationWidth;
     }
+    _historyEntryLeadingLayoutConstraint.constant = xOffset;
+    
     NSDate *date = [CommonTool getDateAfterNextDays:(int)(-entry.xIndex) fromDate:[NSDate date]];
-    _historyDateLabel.text = [NSString stringWithFormat:@"%@", [CommonTool formateDate:date withFormat:DateFormatYearMonthDayShort]];
+    _historyDateLabel.text = [NSString stringWithFormat:@"%@", [dateFormatter stringFromDate:date]];
     _historyRateLebel.text = [NSString stringWithFormat:@"%g", entry.value];
+}
+
+- (void)chartValueNothingSelected:(ChartViewBase *)chartView {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    _historyEntryView.hidden = YES;
 }
 
 - (void)chartScaled:(ChartViewBase *)chartView scaleX:(CGFloat)scaleX scaleY:(CGFloat)scaleY {
@@ -146,7 +175,24 @@ static const int historySearchDays[5] = {7, 30, 180, 365, 3*365};
     }
 }
 
+#pragma mark - UIGestureRecognizerDelegate
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+}
+
 #pragma mark - Service
+- (void)initDateFormatter {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+    [dateFormatter setLocale:[NSLocale currentLocale]];
+}
+
 - (void)refreshCurrency {
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
@@ -229,8 +275,7 @@ static const int historySearchDays[5] = {7, 30, 180, 365, 3*365};
 - (void)setDataCount {
     NSMutableArray *xVals = [[NSMutableArray alloc] init];
     for (int i = 0; i < rates.count; i++) {
-        [xVals addObject:[NSString stringWithFormat:@"%@", [CommonTool formateDate:start withFormat:DateFormatMonthDayShort]]];
-        start = [CommonTool getDateAfterNextDays:1 fromDate:start];
+        [xVals addObject:[NSString stringWithFormat:@"%d", i]];
     }
     
     NSMutableArray *yVals1 = [[NSMutableArray alloc] init];

@@ -11,6 +11,7 @@
 #import "UserTool.h"
 #import "DaoManager.h"
 #import <SVGKit/SVGKit.h>
+#import <MJRefresh/MJRefresh.h>
 
 @interface RatesTableViewController ()
 
@@ -37,14 +38,16 @@
         rates = user.cacheRates;
         [self.tableView reloadData];
     }
+    
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self refreshRates];
+    }];
+
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
-    }
-    if(rates != nil) {
-        user.cacheRates = rates;
     }
 }
 
@@ -55,21 +58,7 @@
     //Reset base currency name.
     [self.navigationItem.leftBarButtonItem setTitle:_basedCurrency.name];
     //Reload rates values.
-    [manager GET:[InternetTool createUrl:@"api/rate/current"]
-      parameters:@{@"from": _basedCurrency.cid}
-        progress:nil
-         success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-             InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
-             if([response statusOK]) {
-                 rates = [[response getResponseResult] objectForKey:@"rates"];
-                 [self.tableView reloadData];
-             }
-         }
-         failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-             if(DEBUG) {
-                 NSLog(@"Server error: %@", error.localizedDescription);
-             }
-         }];
+    [self refreshRates];
 }
 
 #pragma mark - UITableViewDataSource
@@ -127,6 +116,33 @@
     } else if([segue.identifier isEqualToString:@"rateSegue"]) {
         [segue.destinationViewController setValue:selectedRate forKey:@"selectedRate"];
     }
+}
+
+#pragma mark - Service
+- (void)refreshRates {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    [manager GET:[InternetTool createUrl:@"api/rate/current"]
+      parameters:@{@"from": _basedCurrency.cid}
+        progress:nil
+         success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+             InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
+             if([response statusOK]) {
+                 rates = [[response getResponseResult] objectForKey:@"rates"];
+                 [self.tableView reloadData];
+                 if(rates != nil) {
+                     user.cacheRates = rates;
+                 }
+             }
+             [self.tableView.mj_header endRefreshing];
+         }
+         failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+             if(DEBUG) {
+                 NSLog(@"Server error: %@", error.localizedDescription);
+             }
+         }];
+    
 }
 
 @end
