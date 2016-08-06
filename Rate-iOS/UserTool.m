@@ -133,4 +133,18 @@
     return _deviceToken;
 }
 
+@synthesize cacheRates = _cacheRates;
+
+- (void)setCacheRates:(NSArray *)cacheRates {
+    _cacheRates = cacheRates;
+    [defaults setObject:_cacheRates forKey:NSStringFromSelector(@selector(cacheRates))];
+}
+
+- (NSArray *)cacheRates {
+    if(_cacheRates == nil) {
+        _cacheRates = [defaults objectForKey:NSStringFromSelector(@selector(cacheRates))];
+    }
+    return _cacheRates;
+}
+
 @end

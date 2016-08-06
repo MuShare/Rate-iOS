@@ -21,4 +21,6 @@
 @property (nonatomic, strong) NSString *token;
 @property (nonatomic, strong) NSString *deviceToken;
 
+@property (nonatomic, strong) NSArray *cacheRates;
+
 @end

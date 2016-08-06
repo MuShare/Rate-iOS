@@ -11,6 +11,7 @@
 #import "InternetTool.h"
 #import "UserTool.h"
 #import "DaoManager.h"
+#import "AlertTool.h"
 
 @interface LoginViewController ()
 
@@ -100,10 +101,20 @@
               _loginSubmitButton.enabled = YES;
               InternetResponse *response = [[InternetResponse alloc] initWithError:error];
               switch ([response errorCode]) {
-                  case 1:
-                      
+                  case ErrorCodeAccountNotFound:
+                      _emailImageView.highlighted = YES;
+                      _passwordImageView.highlighted = NO;
+                      [AlertTool showAlertWithTitle:@"Tip"
+                                         andContent:@"This account is not exsit!"
+                                   inViewController:self];
                       break;
-                      
+                  case ErrorCodePasswordWrong:
+                      _passwordImageView.highlighted = YES;
+                      _emailImageView.highlighted = NO;
+                      [AlertTool showAlertWithTitle:@"Tip"
+                                         andContent:@"Password is wrong!"
+                                   inViewController:self];
+                      break;
                   default:
                       break;
               }

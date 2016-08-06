@@ -33,7 +33,19 @@
     user = [[UserTool alloc] init];
     dao = [[DaoManager alloc] init];
     _basedCurrency = [dao.currencyDao getByCid:user.basedCurrencyId forLanguage:user.lan];
-    
+    if(user.cacheRates != nil) {
+        rates = user.cacheRates;
+        [self.tableView reloadData];
+    }
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    if(rates != nil) {
+        user.cacheRates = rates;
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {

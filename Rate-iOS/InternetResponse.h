@@ -12,8 +12,10 @@
 @interface InternetResponse : NSObject
 
 typedef NS_OPTIONS(NSUInteger, ErrorCode) {
+    ErrorCodeTelephoneExsit = 200,
     ErrorCodeEmailExsit = 300,
-    ErrorCodeTelephoneExsit = 200
+    ErrorCodePasswordWrong = 301,
+    ErrorCodeAccountNotFound = 302,
 };
 
 @property (nonatomic, strong) NSObject *data;
