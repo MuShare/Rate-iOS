@@ -33,6 +33,9 @@
     manager = [InternetTool getSessionManager];
     user = [[UserTool alloc] init];
     dao = [[DaoManager alloc] init];
+    manager = [InternetTool getSessionManager];
+    user = [[UserTool alloc] init];
+    dao = [[DaoManager alloc] init];
     _basedCurrency = [dao.currencyDao getByCid:user.basedCurrencyId];
     if(user.cacheRates != nil) {
         rates = user.cacheRates;

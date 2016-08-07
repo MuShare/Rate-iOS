@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FeedbackViewController : UIViewController
+@interface FeedbackViewController : UIViewController <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *typeSegmentedControl;
 @property (weak, nonatomic) IBOutlet UITextView *contentTextView;

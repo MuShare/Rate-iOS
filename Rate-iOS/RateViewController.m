@@ -68,6 +68,7 @@ static const int historySearchDays[5] = {30, 90, 180, 365, 3*365};
                  forControlEvents:UIControlEventEditingChanged];
     [_toRateTextFiled addTarget:self action:@selector(textFieldDidChange:)
                forControlEvents:UIControlEventEditingChanged];
+    
     [self setCloseKeyboardAccessoryForSender:_fromRateTextFiled];
     [self setCloseKeyboardAccessoryForSender:_toRateTextFiled];
     
@@ -315,32 +316,25 @@ static const int historySearchDays[5] = {30, 90, 180, 365, 3*365};
     }
 }
 
-//为虚拟键盘设置关闭按钮
+//Create done button for keyboard
 - (void)setCloseKeyboardAccessoryForSender:(id)sender {
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    // 创建一个UIToolBar工具条
     UIToolbar * topView = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, self.view.window.frame.size.width, 35)];
-    // 设置工具条风格
     [topView setBarStyle:UIBarStyleDefault];
-    // 为工具条创建第2个“按钮”，该按钮只是一片可伸缩的空白区。
     UIBarButtonItem* spaceButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
                                                                                      target:self
                                                                                      action:nil];
-    // 为工具条创建第3个“按钮”，单击该按钮会激发editFinish方法
     UIBarButtonItem *doneButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
                                                                                     target:self
                                                                                     action:@selector(editFinish)];
     doneButtonItem.tintColor = [UIColor colorWithRed:38/255.0 green:186/255.0 blue:152/255.0 alpha:1.0];
-    // 以3个按钮创建NSArray集合
     NSArray * buttonsArray = [NSArray arrayWithObjects:spaceButtonItem, doneButtonItem, nil];
-    // 为UIToolBar设置按钮
     [topView setItems:buttonsArray];
     [sender setInputAccessoryView:topView];
 }
 
-//键盘完成输入后关闭
 - (void)editFinish {
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));

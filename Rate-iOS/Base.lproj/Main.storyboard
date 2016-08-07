@@ -87,7 +87,7 @@
                                 <rect key="frame" x="183" y="145" width="111" height="36"/>
                                 <color key="textColor" red="0.13725490196078433" green="0.74509803921568629" blue="0.51372549019607838" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="mvv-Rz-xc9">
                                 <rect key="frame" x="13" y="196" width="295" height="29"/>
@@ -107,7 +107,7 @@
                                 <rect key="frame" x="183" y="81" width="111" height="36"/>
                                 <color key="textColor" red="0.13725490196078433" green="0.74509803921568629" blue="0.51372549019607838" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I7T-Cj-F22" customClass="LineChartView" customModule="Charts">
                                 <rect key="frame" x="-9" y="253" width="338" height="280"/>
@@ -611,8 +611,11 @@
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Subscribe Name" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C5T-HY-ReF">
                                                     <rect key="frame" x="51" y="13" width="252" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                    <connections>
+                                                        <action selector="finishEdit:" destination="HGc-d8-D5z" eventType="editingDidEndOnExit" id="CrU-Nk-iUv"/>
+                                                    </connections>
                                                 </textField>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="add_subscribe_name" translatesAutoresizingMaskIntoConstraints="NO" id="kva-WR-KSJ">
                                                     <rect key="frame" x="13" y="13" width="30" height="30"/>
@@ -624,10 +627,6 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection id="Tn7-Yh-rG0">
-                                <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="56" id="zBi-1Z-9qY">
                                         <rect key="frame" x="0.0" y="120" width="320" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
@@ -635,45 +634,37 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="add_subscribe_max" translatesAutoresizingMaskIntoConstraints="NO" id="azk-zM-ZRh">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="add_subscribe_up" highlightedImage="add_subscribe_up_error" translatesAutoresizingMaskIntoConstraints="NO" id="azk-zM-ZRh">
                                                     <rect key="frame" x="13" y="13" width="30" height="30"/>
                                                 </imageView>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Max Rate" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GTo-fg-Jct">
-                                                    <rect key="frame" x="51" y="13" width="252" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="add_subscribe_down" highlightedImage="add_subscribe_down_error" translatesAutoresizingMaskIntoConstraints="NO" id="ve5-30-GrC">
+                                                    <rect key="frame" x="13" y="13" width="30" height="30"/>
+                                                </imageView>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Threshold" textAlignment="right" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="GTo-fg-Jct">
+                                                    <rect key="frame" x="209" y="13" width="94" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
                                                 </textField>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Tip Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BIn-Df-jSi">
+                                                    <rect key="frame" x="51" y="17" width="150" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="GTo-fg-Jct" secondAttribute="trailing" constant="9" id="VuQ-dE-9v0"/>
-                                                <constraint firstItem="GTo-fg-Jct" firstAttribute="leading" secondItem="Znp-d7-AvU" secondAttribute="leadingMargin" constant="43" id="XyP-nA-0Cz"/>
+                                                <constraint firstItem="GTo-fg-Jct" firstAttribute="leading" secondItem="BIn-Df-jSi" secondAttribute="trailing" constant="8" id="XkK-d1-zDv"/>
+                                                <constraint firstItem="BIn-Df-jSi" firstAttribute="leading" secondItem="Znp-d7-AvU" secondAttribute="leadingMargin" constant="43" id="l9Z-kK-b0h"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="56" id="ckY-wG-qlv">
-                                        <rect key="frame" x="0.0" y="176" width="320" height="56"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ckY-wG-qlv" id="Kia-Wk-Aqr">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="add_subscribe_min" translatesAutoresizingMaskIntoConstraints="NO" id="sDO-lk-gUW">
-                                                    <rect key="frame" x="13" y="13" width="30" height="30"/>
-                                                </imageView>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Min Rate" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JaJ-Os-np2">
-                                                    <rect key="frame" x="51" y="13" width="252" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="JaJ-Os-np2" firstAttribute="leading" secondItem="Kia-Wk-Aqr" secondAttribute="leadingMargin" constant="43" id="5rI-HS-xd2"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="JaJ-Os-np2" secondAttribute="trailing" constant="9" id="JF6-eq-avU"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="Tn7-Yh-rG0">
+                                <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="56" id="H4j-KI-P5V">
-                                        <rect key="frame" x="0.0" y="232" width="320" height="56"/>
+                                        <rect key="frame" x="0.0" y="176" width="320" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="H4j-KI-P5V" id="SBj-Fp-Ya6">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
@@ -684,12 +675,12 @@
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xiB-uC-Io8">
                                                     <rect key="frame" x="51" y="11" width="251" height="33"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <state key="normal" title="From Currency">
                                                         <color key="titleColor" red="0.21176470589999999" green="0.60784313729999995" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="sqh-ol-nfs" kind="push" id="2KY-rw-Y4G"/>
+                                                        <segue destination="sqh-ol-nfs" kind="push" identifier="selectSubscribeFromSegue" id="2KY-rw-Y4G"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -700,7 +691,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="56" id="XIg-pE-NY6">
-                                        <rect key="frame" x="0.0" y="288" width="320" height="56"/>
+                                        <rect key="frame" x="0.0" y="232" width="320" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XIg-pE-NY6" id="B0R-rl-f9E">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
@@ -711,12 +702,12 @@
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="crT-7a-Zsz">
                                                     <rect key="frame" x="51" y="11" width="251" height="33"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <state key="normal" title="To Currency">
                                                         <color key="titleColor" red="0.21176470589999999" green="0.60784313729999995" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="sqh-ol-nfs" kind="push" id="W74-fI-qzg"/>
+                                                        <segue destination="sqh-ol-nfs" kind="push" identifier="selectSubscribeToSegue" id="W74-fI-qzg"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -731,7 +722,7 @@
                             <tableViewSection id="DXi-60-uro">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="56" id="u4k-Q5-GcV">
-                                        <rect key="frame" x="0.0" y="344" width="320" height="56"/>
+                                        <rect key="frame" x="0.0" y="288" width="320" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="u4k-Q5-GcV" id="T8G-kp-D44">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
@@ -744,8 +735,8 @@
                                                     <rect key="frame" x="255" y="12" width="51" height="31"/>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Enable Subscribe" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4IB-tL-sB4">
-                                                    <rect key="frame" x="126" y="17" width="121" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <rect key="frame" x="51" y="17" width="196" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -756,34 +747,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="56" id="rHO-ba-dhI">
-                                        <rect key="frame" x="0.0" y="400" width="320" height="56"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rHO-ba-dhI" id="2eI-Vd-Cya">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="add_subscribe_once" translatesAutoresizingMaskIntoConstraints="NO" id="Gh6-M9-x9C">
-                                                    <rect key="frame" x="13" y="13" width="30" height="30"/>
-                                                </imageView>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="PhJ-t2-ByF">
-                                                    <rect key="frame" x="255" y="12" width="51" height="31"/>
-                                                </switch>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Enable Once" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eaa-vF-7Qy">
-                                                    <rect key="frame" x="126" y="17" width="121" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="PhJ-t2-ByF" secondAttribute="trailing" constant="8" id="Ew0-cz-Vuo"/>
-                                                <constraint firstItem="PhJ-t2-ByF" firstAttribute="leading" secondItem="Eaa-vF-7Qy" secondAttribute="trailing" constant="8" id="jaz-Oc-RWe"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="56" id="z5o-pe-UlP">
-                                        <rect key="frame" x="0.0" y="456" width="320" height="56"/>
+                                        <rect key="frame" x="0.0" y="344" width="320" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z5o-pe-UlP" id="qvG-mD-GXJ">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
@@ -796,8 +761,8 @@
                                                     <rect key="frame" x="255" y="12" width="51" height="31"/>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Send Email" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yRJ-iE-Uvp">
-                                                    <rect key="frame" x="126" y="17" width="121" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <rect key="frame" x="51" y="17" width="196" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -809,7 +774,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="56" id="J39-tf-M9Q">
-                                        <rect key="frame" x="0.0" y="512" width="320" height="56"/>
+                                        <rect key="frame" x="0.0" y="400" width="320" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="J39-tf-M9Q" id="bIj-Rw-EH7">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
@@ -822,8 +787,8 @@
                                                     <rect key="frame" x="255" y="12" width="51" height="31"/>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Send SMS" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P12-kE-zYd">
-                                                    <rect key="frame" x="126" y="17" width="121" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <rect key="frame" x="51" y="17" width="196" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -850,8 +815,23 @@
                     <navigationItem key="navigationItem" title="Subscribe" id="RUV-Sa-Ivd">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="hny-1A-Isk">
                             <color key="tintColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="saveSubscribe:" destination="HGc-d8-D5z" id="paD-MS-D1F"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="enableSwitch" destination="mut-D7-Kdb" id="i5O-LC-e7M"/>
+                        <outlet property="fromCurrencyButton" destination="xiB-uC-Io8" id="w0G-nw-o7s"/>
+                        <outlet property="sendEmailSwitch" destination="KBj-aU-meT" id="n9o-Ki-RDi"/>
+                        <outlet property="sendSMSSwitch" destination="aXT-us-gUM" id="dqa-pj-6uH"/>
+                        <outlet property="subscribeDownImageView" destination="ve5-30-GrC" id="wdJ-Fs-oWN"/>
+                        <outlet property="subscribeNameTextField" destination="C5T-HY-ReF" id="5sC-9y-MCz"/>
+                        <outlet property="subscribeTipLabel" destination="BIn-Df-jSi" id="z2H-ZN-Qf0"/>
+                        <outlet property="subscribeUpImageView" destination="azk-zM-ZRh" id="7Vo-LE-2ei"/>
+                        <outlet property="thresholdTextField" destination="GTo-fg-Jct" id="urZ-ti-jun"/>
+                        <outlet property="toCurrencyButton" destination="crT-7a-Zsz" id="ffw-Zb-wjc"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dmu-uf-71h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1097,21 +1077,28 @@
                             </tableViewSection>
                             <tableViewSection id="TFq-YP-Afw">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="50" id="fBZ-JF-B55">
-                                        <rect key="frame" x="0.0" y="494" width="320" height="50"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="70" id="fBZ-JF-B55">
+                                        <rect key="frame" x="0.0" y="494" width="320" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fBZ-JF-B55" id="EOd-3r-SFC">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXL-ZX-w1m">
                                                     <rect key="frame" x="8" y="0.0" width="304" height="49"/>
-                                                    <state key="normal" title="Log Out">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <state key="normal" title="Sign out">
                                                         <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
                                                 </button>
+                                                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tY9-2L-q4j">
+                                                    <rect key="frame" x="0.0" y="49" width="320" height="20"/>
+                                                    <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                                                </view>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="tY9-2L-q4j" secondAttribute="trailing" constant="-8" id="Nq1-94-EZ4"/>
+                                                <constraint firstItem="tY9-2L-q4j" firstAttribute="leading" secondItem="EOd-3r-SFC" secondAttribute="leadingMargin" constant="-8" id="Tpk-OJ-7DM"/>
                                                 <constraint firstItem="gXL-ZX-w1m" firstAttribute="centerX" secondItem="EOd-3r-SFC" secondAttribute="centerX" id="jSH-uh-BnK"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -1869,6 +1856,9 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="e4a-0O-Feh" id="dL8-iC-jgT"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1883,7 +1873,11 @@
                             <constraint firstAttribute="trailingMargin" secondItem="uBb-IX-sy3" secondAttribute="trailing" constant="-6" id="wvp-AP-tvc"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Feedback" id="Ow1-j8-BcW"/>
+                    <navigationItem key="navigationItem" title="Feedback" id="Ow1-j8-BcW">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="vpJ-xU-OK7">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="contactTextField" destination="6mn-F6-1bN" id="jh1-3I-LLc"/>
                         <outlet property="contentTextView" destination="XCe-yD-I2U" id="zOk-af-s6e"/>
@@ -2294,6 +2288,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="add_subscribe_down" width="30" height="30"/>
+        <image name="add_subscribe_down_error" width="30" height="30"/>
         <image name="add_subscribe_email" width="30" height="30"/>
         <image name="add_subscribe_enable" width="30" height="30"/>
         <image name="add_subscribe_from" width="30" height="30"/>
@@ -2303,6 +2299,8 @@
         <image name="add_subscribe_once" width="30" height="30"/>
         <image name="add_subscribe_sms" width="30" height="30"/>
         <image name="add_subscribe_to" width="30" height="30"/>
+        <image name="add_subscribe_up" width="30" height="30"/>
+        <image name="add_subscribe_up_error" width="30" height="30"/>
         <image name="currency_unlike" width="25" height="25"/>
         <image name="launch_logo" width="150" height="150"/>
         <image name="login_facebook" width="50" height="50"/>
@@ -2337,8 +2335,8 @@
         <image name="tab_subscription_selected" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="I4X-zC-orO"/>
         <segue reference="tCz-c9-o9a"/>
         <segue reference="wv3-am-Shd"/>
+        <segue reference="UDA-Mt-qgn"/>
     </inferredMetricsTieBreakers>
 </document>
