@@ -7,6 +7,7 @@
 //
 
 #import "InternetTool.h"
+#import "UserTool.h"
 
 @implementation InternetTool
 
@@ -19,7 +20,14 @@
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    AppDelegate *delegate=[[UIApplication sharedApplication] delegate];
+    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    UserTool *user = [[UserTool alloc] init];
+    if(user.token != nil) {
+        [delegate.httpSessionManager.requestSerializer setValue:user.token forHTTPHeaderField:@"token"];
+        if(DEBUG) {
+            NSLog(@"Session Manager init with user token %@", user.token);
+        }
+    }
     return delegate.httpSessionManager;
 }
 

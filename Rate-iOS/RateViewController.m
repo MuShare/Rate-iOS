@@ -42,8 +42,8 @@ static const int historySearchDays[5] = {30, 90, 180, 365, 3*365};
     dao = [[DaoManager alloc] init];
     manager = [InternetTool getSessionManager];
     user = [[UserTool alloc] init];
-    _fromCurrency = [dao.currencyDao getByCid:user.basedCurrencyId forLanguage:user.lan];
-    _toCurrency = [dao.currencyDao getByCid:[_selectedRate valueForKey:@"cid"] forLanguage:user.lan];
+    _fromCurrency = [dao.currencyDao getByCid:user.basedCurrencyId];
+    _toCurrency = [dao.currencyDao getByCid:[_selectedRate valueForKey:@"cid"]];
     
     //Show history of last 7 days as default
     selectedTimeIndex = 0;

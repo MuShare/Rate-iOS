@@ -26,7 +26,8 @@
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
 
-    NSLog(@"%@", [NSLocale currentLocale].localeIdentifier);
+    //Register Remote Notification
+    [[UIApplication sharedApplication] registerForRemoteNotifications];
 
     user = [[UserTool alloc] init];
     user.lan = @"en";
@@ -77,6 +78,28 @@
     [self saveContext];
 }
 
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+        NSLog(@"Get token from server: %@", deviceToken);
+    }
+    
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+        NSLog(@"Register remote notification token with error: %@", error);
+    }
+    
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+        NSLog(@"Receive remote notification with userInfo: %@", userInfo);
+    }
+}
 
 #pragma mark - Service
 - (void)setRootViewControllerWithIdentifer:(NSString *)identifer {

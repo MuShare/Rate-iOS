@@ -50,14 +50,14 @@
                  NSObject *result = [response getResponseResult];
                  NSArray *currencies = [result valueForKey:@"currencies"];
                  for(NSObject *currency in currencies) {
-                     [dao.currencyDao saveOrUpdateWithJSONObject:currency forLanguage:user.lan];
+                     [dao.currencyDao saveOrUpdateWithJSONObject:currency];
                  }
                  [dao saveContext];
                  //Set new currency revision.
                  user.currencyRev = [[result valueForKey:@"revision"] intValue];
                  //Set Based Currency Id if it is null
                  if(user.basedCurrencyId == nil) {
-                     Currency *basedCurrency = [dao.currencyDao getByCode:@"USD" forLanguage:user.lan];
+                     Currency *basedCurrency = [dao.currencyDao getByCode:@"USD"];
                      user.basedCurrencyId = basedCurrency.cid;
                  }
              }

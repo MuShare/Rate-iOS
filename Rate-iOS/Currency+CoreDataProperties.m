@@ -2,7 +2,7 @@
 //  Currency+CoreDataProperties.m
 //  Rate-iOS
 //
-//  Created by lidaye on 8/3/16.
+//  Created by lidaye on 8/7/16.
 //  Copyright © 2016 MuShare. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -16,7 +16,7 @@
 @dynamic cid;
 @dynamic code;
 @dynamic icon;
+@dynamic favorite;
 @dynamic name;
-@dynamic lan;
 
 @end

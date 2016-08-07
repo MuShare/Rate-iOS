@@ -3,11 +3,11 @@
     <entity name="Currency" representedClassName="Currency" syncable="YES">
         <attribute name="cid" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="code" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="favorite" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="icon" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="lan" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Currency" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="Currency" positionX="-63" positionY="-18" width="128" height="120"/>
     </elements>
 </model>

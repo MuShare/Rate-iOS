@@ -12,14 +12,14 @@
 
 @interface CurrencyDao : DaoTemplate
 
-- (Currency *)saveOrUpdateWithJSONObject:(NSObject *)object forLanguage:(NSString *)lan;
+- (Currency *)saveOrUpdateWithJSONObject:(NSObject *)object;
 
-- (Currency *)getByCid:(NSString *)cid forLanguage:(NSString *)lan;
+- (Currency *)getByCid:(NSString *)cid;
 
-- (Currency *)getByCode:(NSString *)code forLanguage:(NSString *)lan;
+- (Currency *)getByCode:(NSString *)code;
 
-- (NSArray *)findByLanguage:(NSString *)lan;
+- (NSArray *)findAll;
 
-- (NSArray *)findInCids:(NSArray *)cids forLanguage:(NSString *)lan;
+- (NSArray *)findInCids:(NSArray *)cids;
 
 @end

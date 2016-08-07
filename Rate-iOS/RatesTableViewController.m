@@ -33,7 +33,7 @@
     manager = [InternetTool getSessionManager];
     user = [[UserTool alloc] init];
     dao = [[DaoManager alloc] init];
-    _basedCurrency = [dao.currencyDao getByCid:user.basedCurrencyId forLanguage:user.lan];
+    _basedCurrency = [dao.currencyDao getByCid:user.basedCurrencyId];
     if(user.cacheRates != nil) {
         rates = user.cacheRates;
         [self.tableView reloadData];
@@ -80,7 +80,7 @@
     UILabel *nameLabel = (UILabel *)[cell viewWithTag:3];
     UILabel *rateLabel = (UILabel *)[cell viewWithTag:4];
     NSObject *rate = [rates objectAtIndex:indexPath.row];
-    Currency *currency = [dao.currencyDao getByCid:[rate valueForKey:@"cid"] forLanguage:user.lan];
+    Currency *currency = [dao.currencyDao getByCid:[rate valueForKey:@"cid"]];
     currencyImageView.image = [SVGKImage imageNamed:[NSString stringWithFormat:@"%@.svg", currency.icon]];
     codeLabel.text = currency.code;
     nameLabel.text = currency.name;
@@ -123,8 +123,14 @@
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
+    NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
+    [parameters setObject:_basedCurrency.cid forKey:@"from"];
+    
+    if(user.token != nil) {
+        [parameters setObject:[NSNumber numberWithInt:1] forKey:@"favorite"];
+    }
     [manager GET:[InternetTool createUrl:@"api/rate/current"]
-      parameters:@{@"from": _basedCurrency.cid}
+      parameters:parameters
         progress:nil
          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
              InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
@@ -136,11 +142,23 @@
                  }
              }
              [self.tableView.mj_header endRefreshing];
+             
+             //Refresh favorite currencies stored in local database.
+             for(Currency *currency in [dao.currencyDao findAll]) {
+                 currency.favorite = [NSNumber numberWithBool:NO];
+             }
+             for(NSObject *rate in rates) {
+                 Currency *currency = [dao.currencyDao getByCid:[rate valueForKey:@"cid"]];
+                 currency.favorite = [NSNumber numberWithBool:YES];
+             }
+             [dao saveContext];
          }
          failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
              if(DEBUG) {
                  NSLog(@"Server error: %@", error.localizedDescription);
              }
+             InternetResponse *response = [[InternetResponse alloc] initWithError:error];
+             [response errorCode];
          }];
     
 }

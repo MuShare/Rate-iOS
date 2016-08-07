@@ -9,6 +9,7 @@
 #import "CurrenciesTableViewController.h"
 #import "DaoManager.h"
 #import "UserTool.h"
+#import "InternetTool.h"
 #import <SVGKit/SVGKit.h>
 
 @interface CurrenciesTableViewController ()
@@ -18,8 +19,10 @@
 @implementation CurrenciesTableViewController {
     UserTool *user;
     DaoManager *dao;
+    AFHTTPSessionManager *manager;
     NSArray *currencies;
     Currency *selectedCurrency;
+    NSMutableArray *favirateButtons;
 }
 
 - (void)viewDidLoad {
@@ -29,9 +32,10 @@
     [super viewDidLoad];
     user = [[UserTool alloc] init];
     dao = [[DaoManager alloc] init];
-    currencies = [dao.currencyDao findByLanguage:@"en"];
+    manager = [InternetTool getSessionManager];
+    currencies = [dao.currencyDao findAll];
+    favirateButtons = [[NSMutableArray alloc] init];
     [self.tableView reloadData];
-
 }
 
 #pragma mark - Table view data source
@@ -66,6 +70,14 @@
     [favoriteButton addTarget:self
                        action:@selector(favoriteButtonClicked:)
              forControlEvents:UIControlEventTouchUpInside];
+    //Set favorite button for logined user.
+    if(user.token != nil) {
+        favoriteButton.hidden = NO;
+        if(currency.favorite.boolValue) {
+            [favoriteButton setImage:[UIImage imageNamed:@"currency_like"] forState:UIControlStateNormal];
+        }
+    }
+    [favirateButtons addObject:favoriteButton];
     favoriteButton.tag = indexPath.row;
     return cell;
 }
@@ -90,7 +102,34 @@
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
+    
     Currency *currency = [currencies objectAtIndex:sender.tag];
-    sender.highlighted = YES;
+
+    [manager POST:[InternetTool createUrl:@"api/user/favorite"]
+       parameters:@{
+                    @"cid": currency.cid,
+                    @"favorite": [NSNumber numberWithInt:!currency.favorite.boolValue]
+                    }
+         progress:nil
+          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+              InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
+              if([response statusOK]) {
+                  //Save to database
+                  currency.favorite = [NSNumber numberWithBool:!currency.favorite.boolValue];
+                  [dao saveContext];
+                  //Update UI
+                  [sender setImage:[UIImage imageNamed:currency.favorite.boolValue? @"currency_like": @"currency_unlike"]
+                          forState:UIControlStateNormal];
+              }
+          }
+          failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+              if(DEBUG) {
+                  NSLog(@"Server error: %@", error.localizedDescription);
+              }
+              InternetResponse *response = [[InternetResponse alloc] initWithError:error];
+              NSLog(@"%d", [response errorCode]);
+          }];
+
 }
+
 @end

@@ -90,6 +90,7 @@
                   user.telephone = [result valueForKey:@"telephone"];
                   user.name = [result valueForKey:@"uname"];
                   user.token = [result valueForKey:@"token"];
+                  manager = [InternetTool getSessionManager];
                   [self.navigationController popViewControllerAnimated:YES];
               }
           }
