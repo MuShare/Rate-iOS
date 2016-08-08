@@ -19,6 +19,12 @@
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     [super viewDidLoad];
+    
+    _fromImageView.image = [SVGKImage imageNamed:@"cn.svg"];
+    _toImageView.image = [SVGKImage imageNamed:@"us.svg"];
+    _fromCodeLabel.text = @"CNY";
+    _toCodeLabel.text = @"USD";
+    _currentRateLabel.text = @"6.443";
 }
 
 #pragma mark - Table view data source

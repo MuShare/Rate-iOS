@@ -7,7 +7,6 @@
 //
 
 #import "CurrenciesTableViewController.h"
-#import "DaoManager.h"
 #import "UserTool.h"
 #import "InternetTool.h"
 #import <SVGKit/SVGKit.h>
@@ -22,7 +21,6 @@
     AFHTTPSessionManager *manager;
     NSArray *currencies;
     Currency *selectedCurrency;
-    NSMutableArray *favirateButtons;
 }
 
 - (void)viewDidLoad {
@@ -34,7 +32,6 @@
     dao = [[DaoManager alloc] init];
     manager = [InternetTool getSessionManager];
     currencies = [dao.currencyDao findAll];
-    favirateButtons = [[NSMutableArray alloc] init];
     [self.tableView reloadData];
 }
 
@@ -77,7 +74,6 @@
             [favoriteButton setImage:[UIImage imageNamed:@"currency_like"] forState:UIControlStateNormal];
         }
     }
-    [favirateButtons addObject:favoriteButton];
     favoriteButton.tag = indexPath.row;
     return cell;
 }
@@ -104,7 +100,10 @@
     }
     
     Currency *currency = [currencies objectAtIndex:sender.tag];
-
+    NSLog(@"%@", @{
+                   @"cid": currency.cid,
+                   @"favorite": [NSNumber numberWithInt:!currency.favorite.boolValue]
+                   });
     [manager POST:[InternetTool createUrl:@"api/user/favorite"]
        parameters:@{
                     @"cid": currency.cid,
@@ -127,6 +126,14 @@
                   NSLog(@"Server error: %@", error.localizedDescription);
               }
               InternetResponse *response = [[InternetResponse alloc] initWithError:error];
+              switch ([response errorCode]) {
+
+                  default:
+                      if (DEBUG) {
+                          NSLog(@"Error code is %d", [response errorCode]);
+                      }
+                      break;
+              }
               NSLog(@"%d", [response errorCode]);
           }];
 

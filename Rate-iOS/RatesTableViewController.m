@@ -117,7 +117,9 @@
         //Tell Currencies Controller what attribute to set.
         [segue.destinationViewController setValue:@"basedCurrency" forKey:@"currencyAttributeName"];
     } else if([segue.identifier isEqualToString:@"rateSegue"]) {
-        [segue.destinationViewController setValue:selectedRate forKey:@"selectedRate"];
+        //set to currency for RateViewController
+        [segue.destinationViewController setValue:[dao.currencyDao getByCid:[selectedRate valueForKey:@"cid"]]
+                                           forKey:@"toCurrency"];
     }
 }
 
@@ -146,15 +148,17 @@
              }
              [self.tableView.mj_header endRefreshing];
              
-             //Refresh favorite currencies stored in local database.
-             for(Currency *currency in [dao.currencyDao findAll]) {
-                 currency.favorite = [NSNumber numberWithBool:NO];
-             }
-             for(NSObject *rate in rates) {
-                 Currency *currency = [dao.currencyDao getByCid:[rate valueForKey:@"cid"]];
-                 currency.favorite = [NSNumber numberWithBool:YES];
-             }
-             [dao saveContext];
+             //Refresh favorite currencies stored in local database if user logined.
+             if(user.token != nil) {
+                 for(Currency *currency in [dao.currencyDao findAll]) {
+                     currency.favorite = [NSNumber numberWithBool:NO];
+                 }
+                 for(NSObject *rate in rates) {
+                     Currency *currency = [dao.currencyDao getByCid:[rate valueForKey:@"cid"]];
+                     currency.favorite = [NSNumber numberWithBool:YES];
+                 }
+                 [dao saveContext];
+             } 
          }
          failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
              if(DEBUG) {

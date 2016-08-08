@@ -275,6 +275,8 @@
 		E410EEB61D51E5D50077E1D9 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E410EEB51D51E5D50077E1D9 /* HelpViewController.m */; };
 		E41451991D4F8AA000AFE672 /* RateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E41451981D4F8AA000AFE672 /* RateViewController.m */; };
 		E414519F1D502E8200AFE672 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E414519E1D502E8200AFE672 /* LoginViewController.m */; };
+		E43697691D58488200781223 /* Subscribe+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E43697661D58488200781223 /* Subscribe+CoreDataProperties.m */; };
+		E436976A1D58488200781223 /* Subscribe.m in Sources */ = {isa = PBXBuildFile; fileRef = E43697681D58488200781223 /* Subscribe.m */; };
 		E44899981D52DA4600BDD71B /* CommonTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E44899971D52DA4600BDD71B /* CommonTool.m */; };
 		E448999E1D53470500BDD71B /* MenuRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E448999D1D53470500BDD71B /* MenuRootViewController.m */; };
 		E44899A01D534CA800BDD71B /* lauch-bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E448999F1D534CA800BDD71B /* lauch-bg.jpg */; };
@@ -287,6 +289,7 @@
 		E46FB5381D4E305800661E13 /* Rate_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E46FB5371D4E305800661E13 /* Rate_iOSTests.m */; };
 		E46FB5431D4E305800661E13 /* Rate_iOSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E46FB5421D4E305800661E13 /* Rate_iOSUITests.m */; };
 		E46FB5551D4E47CF00661E13 /* RatesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E46FB5541D4E47CF00661E13 /* RatesTableViewController.m */; };
+		E476EAF81D5849EE0001DCDC /* SubscribeDao.m in Sources */ = {isa = PBXBuildFile; fileRef = E476EAF71D5849EE0001DCDC /* SubscribeDao.m */; };
 		E4852F8C1D5093590039B79B /* InternetTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E4852F8B1D5093590039B79B /* InternetTool.m */; };
 		E496A7A01D4F095A003B0F1D /* MyProfileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E496A79F1D4F095A003B0F1D /* MyProfileTableViewController.m */; };
 		E49A351C1D4F35E70073E079 /* MeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E49A351B1D4F35E70073E079 /* MeTableViewController.m */; };
@@ -601,6 +604,10 @@
 		E41451981D4F8AA000AFE672 /* RateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateViewController.m; sourceTree = "<group>"; };
 		E414519D1D502E8200AFE672 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		E414519E1D502E8200AFE672 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		E43697651D58488200781223 /* Subscribe+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Subscribe+CoreDataProperties.h"; sourceTree = "<group>"; };
+		E43697661D58488200781223 /* Subscribe+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Subscribe+CoreDataProperties.m"; sourceTree = "<group>"; };
+		E43697671D58488200781223 /* Subscribe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Subscribe.h; sourceTree = "<group>"; };
+		E43697681D58488200781223 /* Subscribe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Subscribe.m; sourceTree = "<group>"; };
 		E44899961D52DA4600BDD71B /* CommonTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonTool.h; sourceTree = "<group>"; };
 		E44899971D52DA4600BDD71B /* CommonTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonTool.m; sourceTree = "<group>"; };
 		E448999C1D53470500BDD71B /* MenuRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuRootViewController.h; sourceTree = "<group>"; };
@@ -623,6 +630,8 @@
 		E46FB5441D4E305800661E13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E46FB5531D4E47CF00661E13 /* RatesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatesTableViewController.h; sourceTree = "<group>"; };
 		E46FB5541D4E47CF00661E13 /* RatesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatesTableViewController.m; sourceTree = "<group>"; };
+		E476EAF61D5849EE0001DCDC /* SubscribeDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubscribeDao.h; sourceTree = "<group>"; };
+		E476EAF71D5849EE0001DCDC /* SubscribeDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubscribeDao.m; sourceTree = "<group>"; };
 		E4852F8A1D5093590039B79B /* InternetTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InternetTool.h; sourceTree = "<group>"; };
 		E4852F8B1D5093590039B79B /* InternetTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InternetTool.m; sourceTree = "<group>"; };
 		E496A79E1D4F095A003B0F1D /* MyProfileTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProfileTableViewController.h; sourceTree = "<group>"; };
@@ -703,6 +712,10 @@
 		E408A9861D51A81300B34655 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E43697651D58488200781223 /* Subscribe+CoreDataProperties.h */,
+				E43697661D58488200781223 /* Subscribe+CoreDataProperties.m */,
+				E43697671D58488200781223 /* Subscribe.h */,
+				E43697681D58488200781223 /* Subscribe.m */,
 				E408A9881D51A83600B34655 /* Currency+CoreDataProperties.h */,
 				E408A9891D51A83600B34655 /* Currency+CoreDataProperties.m */,
 				E408A98A1D51A83600B34655 /* Currency.h */,
@@ -720,6 +733,8 @@
 				E408A98F1D51A84700B34655 /* DaoManager.m */,
 				E408A9901D51A84700B34655 /* DaoTemplate.h */,
 				E408A9911D51A84700B34655 /* DaoTemplate.m */,
+				E476EAF61D5849EE0001DCDC /* SubscribeDao.h */,
+				E476EAF71D5849EE0001DCDC /* SubscribeDao.m */,
 			);
 			name = Dao;
 			sourceTree = "<group>";
@@ -1585,6 +1600,7 @@
 				E46FB51F1D4E305800661E13 /* AppDelegate.m in Sources */,
 				E4EEEC131D5730DE00A50E1C /* TelephoneViewController.m in Sources */,
 				E448999E1D53470500BDD71B /* MenuRootViewController.m in Sources */,
+				E476EAF81D5849EE0001DCDC /* SubscribeDao.m in Sources */,
 				E4D057BB1D5498EC0003ADA4 /* RegisterViewController.m in Sources */,
 				E408A98C1D51A83600B34655 /* Currency+CoreDataProperties.m in Sources */,
 				E49A351C1D4F35E70073E079 /* MeTableViewController.m in Sources */,
@@ -1602,6 +1618,7 @@
 				E49A351F1D4F4CCE0073E079 /* SubscriptionsTableViewController.m in Sources */,
 				E4EC8A901D522DC900CECF5D /* FeedbackViewController.m in Sources */,
 				E4EEEC161D5730E900A50E1C /* PasswordViewController.m in Sources */,
+				E43697691D58488200781223 /* Subscribe+CoreDataProperties.m in Sources */,
 				E4D057BE1D54BF4C0003ADA4 /* AlertTool.m in Sources */,
 				E408A98D1D51A83600B34655 /* Currency.m in Sources */,
 				E4EEEC101D5730D200A50E1C /* NameViewController.m in Sources */,
@@ -1611,6 +1628,7 @@
 				E408A9991D51AF3D00B34655 /* CurrenciesTableViewController.m in Sources */,
 				E44899981D52DA4600BDD71B /* CommonTool.m in Sources */,
 				E46FB5281D4E305800661E13 /* Rate_iOS.xcdatamodeld in Sources */,
+				E436976A1D58488200781223 /* Subscribe.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

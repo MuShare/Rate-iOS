@@ -7,7 +7,18 @@
         <attribute name="icon" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Subscribe" representedClassName="Subscribe" syncable="YES">
+        <attribute name="enable" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="sendEmail" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="sendSMS" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="sid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="threshold" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="from" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Currency" syncable="YES"/>
+        <relationship name="to" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Currency" syncable="YES"/>
+    </entity>
     <elements>
         <element name="Currency" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="Subscribe" positionX="-63" positionY="18" width="128" height="165"/>
     </elements>
 </model>

@@ -11,6 +11,7 @@
 @interface UserTool : NSObject
 
 @property (nonatomic) NSInteger currencyRev;
+@property (nonatomic) NSInteger subscribeRev;
 @property (nonatomic, strong) NSString *basedCurrencyId;
 
 @property (nonatomic, strong) NSString *lan;

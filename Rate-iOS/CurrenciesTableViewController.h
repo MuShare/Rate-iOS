@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DaoManager.h"
 
 @interface CurrenciesTableViewController : UITableViewController
 

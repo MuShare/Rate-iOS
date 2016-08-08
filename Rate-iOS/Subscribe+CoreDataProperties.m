@@ -1,5 +1,5 @@
 //
-//  Currency+CoreDataProperties.m
+//  Subscribe+CoreDataProperties.m
 //  Rate-iOS
 //
 //  Created by lidaye on 8/8/16.
@@ -9,14 +9,17 @@
 //  to delete and recreate this implementation file for your updated model.
 //
 
-#import "Currency+CoreDataProperties.h"
+#import "Subscribe+CoreDataProperties.h"
 
-@implementation Currency (CoreDataProperties)
+@implementation Subscribe (CoreDataProperties)
 
-@dynamic cid;
-@dynamic code;
-@dynamic favorite;
-@dynamic icon;
-@dynamic name;
+@dynamic enable;
+@dynamic sendEmail;
+@dynamic sendSMS;
+@dynamic sid;
+@dynamic sname;
+@dynamic threshold;
+@dynamic from;
+@dynamic to;
 
 @end

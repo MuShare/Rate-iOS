@@ -32,6 +32,7 @@
     float screenWitdh, historyEntryWith;
 }
 
+//Define history search days.
 static const int historySearchDays[5] = {30, 90, 180, 365, 3*365};
 
 - (void)viewDidLoad {
@@ -42,8 +43,11 @@ static const int historySearchDays[5] = {30, 90, 180, 365, 3*365};
     dao = [[DaoManager alloc] init];
     manager = [InternetTool getSessionManager];
     user = [[UserTool alloc] init];
-    _fromCurrency = [dao.currencyDao getByCid:user.basedCurrencyId];
-    _toCurrency = [dao.currencyDao getByCid:[_selectedRate valueForKey:@"cid"]];
+    
+    //Set from currency as based currency if it is not pushed by parent view controller
+    if (_fromCurrency == nil) {
+        _fromCurrency = [dao.currencyDao getByCid:user.basedCurrencyId];
+    }
     
     //Show history of last 7 days as default
     selectedTimeIndex = 0;
@@ -137,7 +141,7 @@ static const int historySearchDays[5] = {30, 90, 180, 365, 3*365};
     }
     _historyEntryLeadingLayoutConstraint.constant = xOffset;
     
-    NSDate *date = [CommonTool getDateAfterNextDays:(int)(-entry.xIndex) fromDate:[NSDate date]];
+    NSDate *date = [CommonTool getDateAfterNextDays:(int)entry.xIndex fromDate:start];
     _historyDateLabel.text = [NSString stringWithFormat:@"%@", [dateFormatter stringFromDate:date]];
     _historyRateLebel.text = [NSString stringWithFormat:@"%g", entry.value];
 }

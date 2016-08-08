@@ -9,13 +9,14 @@
 #import <Foundation/Foundation.h>
 
 #import "CurrencyDao.h"
-
+#import "SubscribeDao.h"
 
 @interface DaoManager : NSObject
 
 @property (nonatomic, readonly) NSManagedObjectContext *context;
 
 @property (strong, nonatomic) CurrencyDao *currencyDao;
+@property (strong, nonatomic) SubscribeDao *subscribeDao;
 
 -(NSManagedObject *)getObjectById:(NSManagedObjectID *)objectID;
 - (void)saveContext;

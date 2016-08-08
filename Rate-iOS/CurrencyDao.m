@@ -23,6 +23,7 @@
     currency.code = [object valueForKey:@"code"];
     currency.icon = [object valueForKey:@"icon"];
     currency.name = [object valueForKey:@"name"];
+    currency.favorite = [NSNumber numberWithBool:NO];
     return currency;
 }
 

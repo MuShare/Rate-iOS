@@ -18,6 +18,7 @@
     if(self) {
         _context = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
         _currencyDao = [[CurrencyDao alloc] initWithManagedObjectContext:_context];
+        _subscribeDao = [[SubscribeDao alloc] initWithManagedObjectContext:_context];
     }
     return self;
 }

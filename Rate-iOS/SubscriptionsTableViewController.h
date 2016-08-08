@@ -10,4 +10,5 @@
 
 @interface SubscriptionsTableViewController : UITableViewController
 
+- (IBAction)addSubscribe:(id)sender;
 @end

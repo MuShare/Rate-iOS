@@ -34,6 +34,20 @@
     return _currencyRev;
 }
 
+@synthesize subscribeRev = _subscribeRev;
+
+- (void)setSubscribeRev:(NSInteger)subscribeRev {
+    _subscribeRev = subscribeRev;
+    [defaults setInteger:_subscribeRev forKey:NSStringFromSelector(@selector(subscribeRev))];
+}
+
+- (NSInteger)subscribeRev {
+    if(_subscribeRev == 0) {
+        _subscribeRev = [defaults integerForKey:NSStringFromSelector(@selector(subscribeRev))];
+    }
+    return _subscribeRev;
+}
+
 @synthesize basedCurrencyId = _basedCurrencyId;
 
 - (void)setBasedCurrencyId:(NSString *)basedCurrencyId {

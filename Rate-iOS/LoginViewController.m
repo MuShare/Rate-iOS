@@ -90,6 +90,13 @@
                   user.telephone = [result valueForKey:@"telephone"];
                   user.name = [result valueForKey:@"uname"];
                   user.token = [result valueForKey:@"token"];
+                  //Set user's favorite currencies
+                  NSArray *favorites = [result valueForKey:@"favorite"];
+                  for(NSString *cid in favorites) {
+                      Currency *currency = [dao.currencyDao getByCid:cid];
+                      currency.favorite = [NSNumber numberWithBool:YES];
+                  }
+                  [dao saveContext];
                   manager = [InternetTool getSessionManager];
                   [self.navigationController popViewControllerAnimated:YES];
               }

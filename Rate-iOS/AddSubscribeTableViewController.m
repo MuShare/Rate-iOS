@@ -129,7 +129,7 @@
     if ([_subscribeNameTextField.text isEqualToString:@""]) {
         return;
     }
-    if (![_thresholdTextField.text isEqualToString:@""]) {
+    if ([_thresholdTextField.text isEqualToString:@""]) {
         
         return;
     }
@@ -141,6 +141,7 @@
         
         return;
     }
+    NSLog(@"Validate success!");
     [manager POST:[InternetTool createUrl:@"api/user/subscribe"]
        parameters:@{
                     @"sname": _subscribeNameTextField.text,
@@ -156,7 +157,7 @@
           success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
               InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
               if([response statusOK]) {
-                  
+                  [self.navigationController popViewControllerAnimated:YES];
               }
           }
           failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -164,7 +165,17 @@
                   NSLog(@"Server error: %@", error.localizedDescription);
               }
               InternetResponse *response = [[InternetResponse alloc] initWithError:error];
-              NSLog(@"Error code is %d", [response errorCode]);
+              switch ([response errorCode]) {
+                  case ErrorCodeTokenError:
+                      
+                      break;
+                      
+                  default:
+                      if (DEBUG) {
+                          NSLog(@"Error code is %d", [response errorCode]);
+                      }
+                      break;
+              }
           }];
 }
 

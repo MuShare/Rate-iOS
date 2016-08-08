@@ -13,7 +13,6 @@
 
 @interface RateViewController : UIViewController <ChartViewDelegate, UITextFieldDelegate, UIGestureRecognizerDelegate>
 
-@property (strong, nonatomic) NSObject *selectedRate;
 @property (strong, nonatomic) Currency *fromCurrency;
 @property (strong, nonatomic) Currency *toCurrency;
 

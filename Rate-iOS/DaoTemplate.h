@@ -10,6 +10,7 @@
 #import <CoreData/CoreData.h>
 #import "AppDelegate.h"
 #import "Currency.h"
+#import "Subscribe.h"
 
 #define DAO_DEBUG 0
 
