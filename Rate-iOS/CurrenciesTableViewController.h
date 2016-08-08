@@ -9,9 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "DaoManager.h"
 
-@interface CurrenciesTableViewController : UITableViewController
+@interface CurrenciesTableViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+
+@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 
 @property (nonatomic) BOOL selectable;
 @property (nonatomic, strong) NSString *currencyAttributeName;
+
+- (IBAction)selectShowType:(id)sender;
 
 @end

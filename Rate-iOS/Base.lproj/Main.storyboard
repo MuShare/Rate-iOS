@@ -202,9 +202,9 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-4566" y="-6351"/>
+            <point key="canvasLocation" x="-4566" y="-6421"/>
         </scene>
-        <!--Currencies-->
+        <!--Currencies Table View Controller-->
         <scene sceneID="AXA-cD-voq">
             <objects>
                 <tableViewController id="sqh-ol-nfs" customClass="CurrenciesTableViewController" sceneMemberID="viewController">
@@ -241,7 +241,7 @@
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button hidden="YES" opaque="NO" tag="4" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sZC-MD-7Ur">
+                                        <button opaque="NO" tag="4" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sZC-MD-7Ur">
                                             <rect key="frame" x="284" y="17" width="25" height="25"/>
                                             <state key="normal" image="currency_unlike"/>
                                         </button>
@@ -266,11 +266,28 @@
                             <outlet property="delegate" destination="sqh-ol-nfs" id="CvO-33-5k7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Currencies" id="iFj-RH-TUV"/>
+                    <navigationItem key="navigationItem" id="iFj-RH-TUV">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="6t9-j7-6P0">
+                            <rect key="frame" x="61" y="7" width="199" height="31"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="All Currencies"/>
+                                <segment title="Favorite"/>
+                            </segments>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="selectShowType:" destination="sqh-ol-nfs" eventType="valueChanged" id="wU3-Wl-shT"/>
+                            </connections>
+                        </segmentedControl>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="Qk9-mI-Fdn" kind="push" identifier="selectFavoriteUnloginSegue" id="iYg-eg-RuY"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hfk-31-Z3U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4566" y="-5617"/>
+            <point key="canvasLocation" x="-4566" y="-5687"/>
         </scene>
         <!--MuRate-->
         <scene sceneID="VgB-xz-kpk">
@@ -2383,8 +2400,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="UDA-Mt-qgn"/>
-        <segue reference="tCz-c9-o9a"/>
-        <segue reference="qrg-S3-ZeO"/>
+        <segue reference="KjL-UE-fsT"/>
+        <segue reference="iYg-eg-RuY"/>
         <segue reference="wv3-am-Shd"/>
     </inferredMetricsTieBreakers>
 </document>

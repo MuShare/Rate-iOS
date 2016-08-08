@@ -11,7 +11,7 @@
 @implementation DaoTemplate
 
 - (instancetype)initWithManagedObjectContext:(NSManagedObjectContext *)context {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ ''%@", self.class, NSStringFromSelector(_cmd));
     }
     self = [super init];
@@ -20,84 +20,60 @@
 }
 
 - (void)saveContext{
-    if(DEBUG==1)
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'",self.class,NSStringFromSelector(_cmd));
+    }
     if ([_context hasChanges]) {
-        NSError *error=nil;
-        if([_context save:&error]) {
-            if(DEBUG==1)
+        NSError *error = nil;
+        if ([_context save:&error]) {
+            if(DEBUG) {
                 NSLog(@"_context saved changes to persistent store.");
-        }
-        else
+            }
+        } else {
             NSLog(@"Failed to save _context : %@",error);
-    }else{
+        }
+    } else {
         NSLog(@"Skipped _context save, there are no changes.");
     }
 }
 
 - (NSManagedObject *)getByPredicate:(NSPredicate *)predicate
                      withEntityName:(NSString *)entityName {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'",self.class,NSStringFromSelector(_cmd));
     }
-    NSFetchRequest *request=[[NSFetchRequest alloc] initWithEntityName:entityName];
-    request.predicate=predicate;
-    request.fetchLimit=1;
-    NSError *error=nil;
-    NSArray *objects=[_context executeFetchRequest:request error:&error];
-    if(error)
-        NSLog(@"Error in searching user: %@",error);
-    if(objects.count>0) {
-        return [objects objectAtIndex:0];
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:entityName];
+    request.predicate = predicate;
+    request.fetchLimit = 1;
+    NSError *error = nil;
+    NSArray *objects = [_context executeFetchRequest:request error:&error];
+    if (error) {
+        NSLog(@"Error with fetching request: %@",error);
     }
-    return nil;
-}
-
-- (NSManagedObject *)getByPredicate:(NSPredicate *)predicate
-                     withEntityName:(NSString *)entityName
-                            orderBy:(NSSortDescriptor *)sortDescriptor {
-    if(DEBUG) {
-        NSLog(@"Running %@ '%@'",self.class,NSStringFromSelector(_cmd));
-    }
-    NSFetchRequest *request=[[NSFetchRequest alloc] initWithEntityName:entityName];
-    request.predicate=predicate;
-    request.fetchLimit=1;
-    request.sortDescriptors=[NSArray arrayWithObject:sortDescriptor];
-    NSError *error=nil;
-    NSArray *objects=[_context executeFetchRequest:request error:&error];
-    if(error) {
-        NSLog(@"Error in searching user: %@",error);
-    }
-    if(objects.count>0) {
+    if (objects.count > 0) {
         return [objects objectAtIndex:0];
     }
     return nil;
 }
 
 - (NSArray *)findAllWithEntityName:(NSString *)entityName {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'",self.class,NSStringFromSelector(_cmd));
     }
-    NSFetchRequest *request=[NSFetchRequest fetchRequestWithEntityName:entityName];
-    NSError *error=nil;
-    NSArray *objects=[_context executeFetchRequest:request error:&error];
-    if(error) {
-        NSLog(@"Error: %@",error);
-    }
-    return objects;
+    return [self findByPredicate:nil withEntityName:entityName];
 }
 
 - (NSArray *)findByPredicate:(NSPredicate *)predicate
               withEntityName:(NSString *)entityName {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'",self.class,NSStringFromSelector(_cmd));
     }
-    NSFetchRequest *request=[NSFetchRequest fetchRequestWithEntityName:entityName];
-    request.predicate=predicate;
-    NSError *error=nil;
-    NSArray *objects=[_context executeFetchRequest:request error:&error];
-    if(error) {
-        NSLog(@"Error: %@",error);
+    NSError *error = nil;
+    NSArray *objects = [_context executeFetchRequest:[self fetchRequestByPredicate:predicate
+                                                                    withEntityName:entityName]
+                                               error:&error];
+    if (error) {
+       NSLog(@"Error with fetching request: %@",error);
     }
     return objects;
 }
@@ -105,17 +81,39 @@
 - (NSArray *)findByPredicate:(NSPredicate *)predicate
               withEntityName:(NSString *)entityName
                      orderBy:(NSSortDescriptor *)sortDescriptor {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'",self.class,NSStringFromSelector(_cmd));
     }
-    NSFetchRequest *request=[NSFetchRequest fetchRequestWithEntityName:entityName];
-    request.sortDescriptors=[NSArray arrayWithObject:sortDescriptor];
-    request.predicate=predicate;
-    NSError *error=nil;
-    NSArray *objects=[_context executeFetchRequest:request error:&error];
-    if(error) {
-        NSLog(@"Error: %@",error);
+    NSError *error = nil;
+    NSArray *objects = [_context executeFetchRequest:[self fetchRequestByPredicate:predicate
+                                                                    withEntityName:entityName
+                                                                           orderBy:sortDescriptor]
+                                               error:&error];
+    if (error) {
+        NSLog(@"Error with fetching request: %@",error);
     }
     return objects;
+}
+
+- (NSFetchRequest *)fetchRequestByPredicate:(NSPredicate *)predicate
+                             withEntityName:(NSString *)entityName {
+    if (DEBUG) {
+        NSLog(@"Running %@ '%@'",self.class,NSStringFromSelector(_cmd));
+    }
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:entityName];
+    request.predicate = predicate;
+    return request;
+}
+
+- (NSFetchRequest *)fetchRequestByPredicate:(NSPredicate *)predicate
+                             withEntityName:(NSString *)entityName
+                                    orderBy:(NSSortDescriptor *)sortDescriptor {
+    if (DEBUG) {
+        NSLog(@"Running %@ '%@'",self.class,NSStringFromSelector(_cmd));
+    }
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:entityName];
+    request.sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+    request.predicate = predicate;
+    return request;
 }
 @end

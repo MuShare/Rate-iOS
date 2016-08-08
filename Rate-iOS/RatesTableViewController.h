@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "DaoManager.h"
 
-@interface RatesTableViewController : UITableViewController
+@interface RatesTableViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+
+@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 
 @property (nonatomic, strong) Currency *basedCurrency;
 

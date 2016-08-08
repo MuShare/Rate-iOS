@@ -19,20 +19,20 @@
     UserTool *user;
     DaoManager *dao;
     AFHTTPSessionManager *manager;
-    NSArray *currencies;
-    Currency *selectedCurrency;
 }
 
 - (void)viewDidLoad {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     [super viewDidLoad];
     user = [[UserTool alloc] init];
     dao = [[DaoManager alloc] init];
     manager = [InternetTool getSessionManager];
-    currencies = [dao.currencyDao findAll];
-    [self.tableView reloadData];
+
+    //Set fetchedResultsController
+    _fetchedResultsController = [dao.currencyDao fetchRequestControllerWithFavorite:nil Without:nil];
+    _fetchedResultsController.delegate = self;
 }
 
 #pragma mark - Table view data source
@@ -47,7 +47,8 @@
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    return currencies.count;
+    
+    return [_fetchedResultsController.sections[0] numberOfObjects]; //currencies.count;
 }
 
 
@@ -55,8 +56,10 @@
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
+    Currency *currency = [_fetchedResultsController objectAtIndexPath:indexPath]; //[currencies objectAtIndex:indexPath.row];
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"currencyIdentifer" forIndexPath:indexPath];
-    Currency *currency = [currencies objectAtIndex:indexPath.row];
+    
     SVGKFastImageView *currencyImageView = (SVGKFastImageView *)[cell viewWithTag:1];
     UILabel *codeLabel = (UILabel *)[cell viewWithTag:2];
     UILabel *nameLabel = (UILabel *)[cell viewWithTag:3];
@@ -68,7 +71,7 @@
                        action:@selector(favoriteButtonClicked:)
              forControlEvents:UIControlEventTouchUpInside];
     //Set favorite button for logined user.
-    if(user.token != nil) {
+    if (user.token != nil) {
         favoriteButton.hidden = NO;
         if(currency.favorite.boolValue) {
             [favoriteButton setImage:[UIImage imageNamed:@"currency_like"] forState:UIControlStateNormal];
@@ -79,11 +82,11 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    if(_selectable) {
-        Currency *currency = [currencies objectAtIndex:indexPath.row];
+    if (_selectable) {
+        Currency *currency = [_fetchedResultsController objectAtIndexPath:indexPath]; //[currencies objectAtIndex:indexPath.row];
         //Save currency cid to sandbox.
         user.basedCurrencyId = currency.cid;
         //Back to last view controller.
@@ -94,12 +97,42 @@
 }
 
 #pragma mark - Action
-- (void)favoriteButtonClicked:(UIButton *)sender {
-    if(DEBUG) {
+- (IBAction)selectShowType:(id)sender {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    
-    Currency *currency = [currencies objectAtIndex:sender.tag];
+    switch ([sender selectedSegmentIndex]) {
+        //Show all currencies
+        case 0:
+            _fetchedResultsController = [dao.currencyDao fetchRequestControllerWithFavorite:nil Without:nil];
+
+            break;
+        //Show favorites currencies
+        case 1:
+            //If your is unlogin, he should login at first.
+            if (user.token == nil) {
+                [self performSegueWithIdentifier:@"selectFavoriteUnloginSegue" sender:sender];
+                return;
+            } else {
+                NSNumber *favorite = [NSNumber numberWithBool:YES];
+                _fetchedResultsController = [dao.currencyDao fetchRequestControllerWithFavorite:favorite Without:nil];
+ 
+            }
+            
+            break;
+        default:
+            break;
+    }
+}
+
+
+- (void)favoriteButtonClicked:(UIButton *)sender {
+    if (DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    UITableViewCell *cell = (UITableViewCell *)sender.superview.superview;
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    Currency *currency = [_fetchedResultsController objectAtIndexPath:indexPath];
     NSLog(@"%@", @{
                    @"cid": currency.cid,
                    @"favorite": [NSNumber numberWithInt:!currency.favorite.boolValue]
@@ -112,7 +145,7 @@
          progress:nil
           success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
               InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
-              if([response statusOK]) {
+              if ([response statusOK]) {
                   //Save to database
                   currency.favorite = [NSNumber numberWithBool:!currency.favorite.boolValue];
                   [dao saveContext];
@@ -122,7 +155,7 @@
               }
           }
           failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-              if(DEBUG) {
+              if (DEBUG) {
                   NSLog(@"Server error: %@", error.localizedDescription);
               }
               InternetResponse *response = [[InternetResponse alloc] initWithError:error];

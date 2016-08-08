@@ -61,4 +61,26 @@
                          orderBy:[NSSortDescriptor sortDescriptorWithKey:@"code" ascending:YES]];
 }
 
+- (NSFetchedResultsController *)fetchRequestControllerWithFavorite:(NSNumber *)favorite
+                                                           Without:(NSString *)cid {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    NSPredicate *cidPredicate = (cid == nil)? nil: [NSPredicate predicateWithFormat:@"cid!=%@", cid];
+    NSPredicate *favoritePredicate = (favorite == nil)? nil: [NSPredicate predicateWithFormat:@"favorite=%@", favorite];
+    NSPredicate *predicate = [NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects:cidPredicate , favoritePredicate, nil]];
+    NSFetchRequest *request = [self fetchRequestByPredicate:predicate
+                                             withEntityName:CurrencyEntityName
+                                                    orderBy:[NSSortDescriptor sortDescriptorWithKey:@"code" ascending:YES]];
+    NSFetchedResultsController *fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
+                                                                                               managedObjectContext:self.context
+                                                                                                 sectionNameKeyPath:nil
+                                                                                                          cacheName:nil];
+    NSError *error = nil;
+    [fetchedResultsController performFetch:&error];
+    if (error) {
+        NSLog(@"Perform fetch with error: %@", error);
+    }
+    return fetchedResultsController;
+}
 @end

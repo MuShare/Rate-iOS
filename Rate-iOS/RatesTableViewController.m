@@ -33,25 +33,22 @@
     manager = [InternetTool getSessionManager];
     user = [[UserTool alloc] init];
     dao = [[DaoManager alloc] init];
-    manager = [InternetTool getSessionManager];
-    user = [[UserTool alloc] init];
-    dao = [[DaoManager alloc] init];
+    
+    //Load based currency from NSUserDefaults
     _basedCurrency = [dao.currencyDao getByCid:user.basedCurrencyId];
+    
+    //User cache to load table at first.
     if(user.cacheRates != nil) {
         rates = user.cacheRates;
-        [self.tableView reloadData];
+        //Set fetchedResultsController, result does not include base currency itself!!!!!!!!!!!
+        [self setFetchedResultsController];
     }
     
+    //Bind MJRefresh
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [self refreshRates];
     }];
 
-}
-
-- (void)viewDidDisappear:(BOOL)animated {
-    if(DEBUG) {
-        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
-    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -69,21 +66,23 @@
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    return rates.count;
+    return [_fetchedResultsController.sections[0] numberOfObjects];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
+    NSObject *rate = [rates objectAtIndex:indexPath.row];
+    Currency *currency = [_fetchedResultsController objectAtIndexPath:indexPath];//[dao.currencyDao getByCid:[rate valueForKey:@"cid"]];
+    
     UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"rateIdentifier"
                                                                                forIndexPath:indexPath];
     SVGKFastImageView *currencyImageView = (SVGKFastImageView *)[cell viewWithTag:1];
     UILabel *codeLabel = (UILabel *)[cell viewWithTag:2];
     UILabel *nameLabel = (UILabel *)[cell viewWithTag:3];
     UILabel *rateLabel = (UILabel *)[cell viewWithTag:4];
-    NSObject *rate = [rates objectAtIndex:indexPath.row];
-    Currency *currency = [dao.currencyDao getByCid:[rate valueForKey:@"cid"]];
+    
     currencyImageView.image = [SVGKImage imageNamed:[NSString stringWithFormat:@"%@.svg", currency.icon]];
     codeLabel.text = currency.code;
     nameLabel.text = currency.name;
@@ -158,7 +157,9 @@
                      currency.favorite = [NSNumber numberWithBool:YES];
                  }
                  [dao saveContext];
-             } 
+                 [self setFetchedResultsController];
+                 [self.tableView reloadData];
+             }
          }
          failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
              if(DEBUG) {
@@ -168,6 +169,15 @@
              [response errorCode];
          }];
     
+}
+
+- (void)setFetchedResultsController {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    _fetchedResultsController = [dao.currencyDao fetchRequestControllerWithFavorite:[NSNumber numberWithBool:user.token != nil]
+                                                                            Without:user.basedCurrencyId];
+    _fetchedResultsController.delegate = self;
 }
 
 @end

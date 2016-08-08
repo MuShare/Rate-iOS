@@ -22,4 +22,8 @@
 
 - (NSArray *)findInCids:(NSArray *)cids;
 
+//Create NSFetchedResultsController from CoreData
+- (NSFetchedResultsController *)fetchRequestControllerWithFavorite:(NSNumber *)favorite
+                                                           Without:(NSString *)cid;
+
 @end
