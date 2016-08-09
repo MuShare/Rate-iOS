@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -242,14 +243,14 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button hidden="YES" opaque="NO" tag="4" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sZC-MD-7Ur">
-                                            <rect key="frame" x="284" y="17" width="25" height="25"/>
+                                            <rect key="frame" x="260" y="-1" width="60" height="60"/>
                                             <state key="normal" image="currency_unlike"/>
                                         </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="Ibq-l7-XJf" firstAttribute="leading" secondItem="xlh-mk-51I" secondAttribute="leadingMargin" constant="61" id="4KJ-JC-GMV"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="sZC-MD-7Ur" secondAttribute="trailing" constant="-8" id="4Vk-SN-QBu"/>
                                         <constraint firstItem="Ulk-sr-Cm9" firstAttribute="leading" secondItem="xlh-mk-51I" secondAttribute="leadingMargin" constant="61" id="H17-A9-8eb"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="sZC-MD-7Ur" secondAttribute="trailing" constant="3" id="NGb-QL-ocu"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="Ulk-sr-Cm9" secondAttribute="trailing" constant="36" id="NMw-OY-CWZ"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="Ibq-l7-XJf" secondAttribute="trailing" constant="36" id="Oir-Fd-sUC"/>
                                     </constraints>
@@ -557,7 +558,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="utG-di-jVp" secondAttribute="trailing" constant="-20" id="I5W-fh-TQe"/>
                             <constraint firstItem="utG-di-jVp" firstAttribute="width" secondItem="mCy-dG-cHW" secondAttribute="height" multiplier="30:71" id="Lzc-46-hhb"/>
@@ -1099,10 +1100,28 @@
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9LB-gN-LSI">
+                                                    <rect key="frame" x="82" y="17" width="201" height="27"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                    <color key="textColor" red="0.1058823529" green="0.6588235294" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RiT-c3-tZd">
+                                                    <rect key="frame" x="82" y="52" width="209" height="18"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="vxA-eD-eUe" firstAttribute="leading" secondItem="exy-tW-PxA" secondAttribute="leadingMargin" constant="74" id="HrD-Cd-hGg"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="9LB-gN-LSI" secondAttribute="trailing" constant="-4" id="KoI-GK-UVg"/>
                                                 <constraint firstItem="1h5-ez-roQ" firstAttribute="leading" secondItem="exy-tW-PxA" secondAttribute="leadingMargin" constant="74" id="O24-pP-pDd"/>
+                                                <constraint firstItem="9LB-gN-LSI" firstAttribute="leading" secondItem="exy-tW-PxA" secondAttribute="leadingMargin" constant="74" id="PeA-IX-ism"/>
+                                                <constraint firstItem="RiT-c3-tZd" firstAttribute="leading" secondItem="exy-tW-PxA" secondAttribute="leadingMargin" constant="74" id="Sia-Wc-zoi"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="RiT-c3-tZd" secondAttribute="trailing" constant="-12" id="imv-tw-dap"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <constraints>
@@ -1287,21 +1306,25 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXL-ZX-w1m">
-                                                    <rect key="frame" x="8" y="0.0" width="304" height="49"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <state key="normal" title="Sign out">
                                                         <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="logout:" destination="dS7-Ji-tEe" eventType="touchUpInside" id="hLP-Nb-4Lo"/>
+                                                    </connections>
                                                 </button>
                                                 <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tY9-2L-q4j">
-                                                    <rect key="frame" x="0.0" y="49" width="320" height="20"/>
+                                                    <rect key="frame" x="0.0" y="49" width="320" height="25"/>
                                                     <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="tY9-2L-q4j" secondAttribute="trailing" constant="-8" id="Nq1-94-EZ4"/>
-                                                <constraint firstItem="tY9-2L-q4j" firstAttribute="leading" secondItem="EOd-3r-SFC" secondAttribute="leadingMargin" constant="-8" id="Tpk-OJ-7DM"/>
-                                                <constraint firstItem="gXL-ZX-w1m" firstAttribute="centerX" secondItem="EOd-3r-SFC" secondAttribute="centerX" id="jSH-uh-BnK"/>
+                                                <constraint firstItem="tY9-2L-q4j" firstAttribute="leading" secondItem="EOd-3r-SFC" secondAttribute="leadingMargin" constant="-8" id="09P-ap-xPo"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="gXL-ZX-w1m" secondAttribute="trailing" constant="-8" id="KXO-XN-qwe"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="tY9-2L-q4j" secondAttribute="trailing" constant="-8" id="O7x-on-QrG"/>
+                                                <constraint firstItem="gXL-ZX-w1m" firstAttribute="leading" secondItem="EOd-3r-SFC" secondAttribute="leadingMargin" constant="-8" id="kqE-FL-Eom"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1321,8 +1344,10 @@
                     <navigationItem key="navigationItem" title="Me" id="DAv-cg-vmZ"/>
                     <connections>
                         <outlet property="avatarImageView" destination="Hxp-Vl-xGJ" id="5y3-I3-N4C"/>
-                        <outlet property="signOrNameLabel" destination="1h5-ez-roQ" id="Jcm-4b-5WG"/>
-                        <outlet property="welcomeOrEmailLabel" destination="vxA-eD-eUe" id="NVL-mG-qgE"/>
+                        <outlet property="emailLabel" destination="RiT-c3-tZd" id="ius-nv-3g6"/>
+                        <outlet property="nameLabel" destination="9LB-gN-LSI" id="AOP-QR-WL4"/>
+                        <outlet property="signLabel" destination="1h5-ez-roQ" id="2mB-gS-ZL4"/>
+                        <outlet property="welcomeLabel" destination="vxA-eD-eUe" id="HuS-B5-yUZ"/>
                         <segue destination="Qk9-mI-Fdn" kind="push" identifier="loginSegue" id="qrg-S3-ZeO"/>
                         <segue destination="MWY-vF-gvl" kind="push" identifier="profileSegue" id="MCa-qW-tBc"/>
                     </connections>
@@ -2593,8 +2618,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="tCz-c9-o9a"/>
-        <segue reference="qrg-S3-ZeO"/>
-        <segue reference="wv3-am-Shd"/>
         <segue reference="UDA-Mt-qgn"/>
+        <segue reference="wv3-am-Shd"/>
+        <segue reference="iYg-eg-RuY"/>
     </inferredMetricsTieBreakers>
 </document>

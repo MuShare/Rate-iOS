@@ -92,45 +92,37 @@
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    NSLog(@"%@", @{
-                   @"sid": _subscribe.sid,
-                   @"isEnable": [NSNumber numberWithBool:_enableSwitch.on],
-                   @"isSendEmail": [NSNumber numberWithBool:_sendEmailSwitch.on],
-                   @"isSendSms": [NSNumber numberWithBool:_sendSMSSwitch.on],
-                   @"threshold": [NSNumber numberWithFloat:_thresholdTextField.text.floatValue],
-                   @"isAbove": [NSNumber numberWithInt:[_thresholdTextField.text floatValue] < _subscribe.rate.floatValue]
-                   });
     [manager POST:[InternetTool createUrl:@"api/user/subscribe/update"]
-      parameters:@{
-                   @"sid": _subscribe.sid,
-                   @"sname": _subscribe.sname,
-                   @"isEnable": [NSNumber numberWithBool:_enableSwitch.on],
-                   @"isSendEmail": [NSNumber numberWithBool:_sendEmailSwitch.on],
-                   @"isSendSms": [NSNumber numberWithBool:_sendSMSSwitch.on],
-                   @"threshold": [NSNumber numberWithFloat:_thresholdTextField.text.floatValue],
-                   @"isAbove": [NSNumber numberWithInt:[_thresholdTextField.text floatValue] < _subscribe.rate.floatValue]
-                   }
+       parameters:@{
+                    @"sid": _subscribe.sid,
+                    @"sname": _subscribe.sname,
+                    @"isEnable": [NSNumber numberWithBool:_enableSwitch.on],
+                    @"isSendEmail": [NSNumber numberWithBool:_sendEmailSwitch.on],
+                    @"isSendSms": [NSNumber numberWithBool:_sendSMSSwitch.on],
+                    @"threshold": [NSNumber numberWithFloat:_thresholdTextField.text.floatValue],
+                    @"isAbove": [NSNumber numberWithInt:[_thresholdTextField.text floatValue] < _subscribe.rate.floatValue]
+                    }
          progress:nil
-         success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-             InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
-             if([response statusOK]) {
-                 [self.navigationController popViewControllerAnimated:YES];
-             }
-         }
-         failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-             InternetResponse *response = [[InternetResponse alloc] initWithError:error];
-             switch ([response errorCode]) {
-                 case ErrorCodeTokenError:
-                     
-                     break;
-                     
-                 default:
-                     if (DEBUG) {
-                         NSLog(@"Error code is %d", [response errorCode]);
-                     }
-                     break;
-             }
-         }];
+          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+              InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
+              if([response statusOK]) {
+                  [self.navigationController popViewControllerAnimated:YES];
+              }
+          }
+          failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+              InternetResponse *response = [[InternetResponse alloc] initWithError:error];
+              switch ([response errorCode]) {
+                  case ErrorCodeTokenError:
+                      
+                      break;
+                      
+                  default:
+                      if (DEBUG) {
+                          NSLog(@"Error code is %d", [response errorCode]);
+                      }
+                      break;
+              }
+          }];
 }
 
 - (IBAction)deleteSubscribe:(id)sender {

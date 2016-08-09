@@ -24,4 +24,6 @@
 
 @property (nonatomic, strong) NSArray *cacheRates;
 
+- (void)clearup;
+
 @end

@@ -11,7 +11,7 @@
 #import "AppDelegate.h"
 
 //#define DoaminName @"rate.mushare.cn"
-#define DoaminName @"133.51.60.56:8080"
+#define DoaminName @"127.0.0.1:8080"
 
 @interface InternetTool : NSObject
 

@@ -155,10 +155,22 @@
 }
 
 - (NSArray *)cacheRates {
-    if(_cacheRates == nil) {
+    if (_cacheRates == nil) {
         _cacheRates = [defaults objectForKey:NSStringFromSelector(@selector(cacheRates))];
     }
     return _cacheRates;
+}
+
+- (void)clearup {
+    _subscribeRev = 0;
+    _lan = nil;
+    _email = nil;
+    _telephone = nil;
+    _name = nil;
+    _token = nil;
+    _deviceToken = nil;
+    
+    _cacheRates = nil;
 }
 
 @end
