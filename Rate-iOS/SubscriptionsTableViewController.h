@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DaoManager.h"
 
 @interface SubscriptionsTableViewController : UITableViewController
+
+@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 
 - (IBAction)addSubscribe:(id)sender;
 @end

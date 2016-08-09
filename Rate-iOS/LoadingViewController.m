@@ -62,7 +62,7 @@
                  }
              }
              
-             [self performSegueWithIdentifier:@"menuRootSegue" sender:self];
+             [self performSegueWithIdentifier:@"mainTabControllerSegue" sender:self];
          }
          failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
              if(DEBUG) {

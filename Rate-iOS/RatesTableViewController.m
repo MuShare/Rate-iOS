@@ -157,9 +157,11 @@
                      currency.favorite = [NSNumber numberWithBool:YES];
                  }
                  [dao saveContext];
-                 [self setFetchedResultsController];
-                 [self.tableView reloadData];
              }
+             
+             //Reload data
+             [self setFetchedResultsController];
+             [self.tableView reloadData];
          }
          failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
              if(DEBUG) {

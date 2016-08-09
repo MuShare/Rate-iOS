@@ -2,7 +2,7 @@
 //  Subscribe+CoreDataProperties.h
 //  Rate-iOS
 //
-//  Created by lidaye on 8/8/16.
+//  Created by 李大爷的电脑 on 8/9/16.
 //  Copyright © 2016 MuShare. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSString *sid;
 @property (nullable, nonatomic, retain) NSString *sname;
 @property (nullable, nonatomic, retain) NSNumber *threshold;
+@property (nullable, nonatomic, retain) NSNumber *rate;
 @property (nullable, nonatomic, retain) Currency *from;
 @property (nullable, nonatomic, retain) Currency *to;
 

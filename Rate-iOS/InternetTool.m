@@ -31,6 +31,21 @@
     return delegate.httpSessionManager;
 }
 
++ (AFHTTPSessionManager *)getSessionManagerForJSON {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    UserTool *user = [[UserTool alloc] init];
+    if(user.token != nil) {
+        [delegate.httpSessionManagerForJSON.requestSerializer setValue:user.token forHTTPHeaderField:@"token"];
+        if(DEBUG) {
+            NSLog(@"Session Manager JSON init with user token %@", user.token);
+        }
+    }
+    return delegate.httpSessionManagerForJSON;
+}
+
 + (NSString *)createUrl:(NSString *)relativePosition {
     NSString *url=[NSString stringWithFormat:@"http://%@/%@", DoaminName, relativePosition];
     if(DEBUG) {

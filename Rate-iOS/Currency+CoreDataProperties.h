@@ -2,7 +2,7 @@
 //  Currency+CoreDataProperties.h
 //  Rate-iOS
 //
-//  Created by lidaye on 8/8/16.
+//  Created by 李大爷的电脑 on 8/9/16.
 //  Copyright © 2016 MuShare. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu

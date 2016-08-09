@@ -124,6 +124,19 @@
     return _httpSessionManager;
 }
 
+@synthesize httpSessionManagerForJSON = _httpSessionManagerForJSON;
+
+- (AFHTTPSessionManager *)httpSessionManagerForJSON {
+    if(_httpSessionManagerForJSON !=nil) {
+        return _httpSessionManagerForJSON;
+    }
+    _httpSessionManagerForJSON = [AFHTTPSessionManager manager];
+    _httpSessionManagerForJSON.responseSerializer = [[AFCompoundResponseSerializer alloc] init];
+    _httpSessionManagerForJSON.requestSerializer = [AFJSONRequestSerializer serializer];
+    [_httpSessionManagerForJSON.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    return _httpSessionManagerForJSON;
+}
+
 #pragma mark - Core Data stack
 
 @synthesize managedObjectContext = _managedObjectContext;

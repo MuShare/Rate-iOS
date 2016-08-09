@@ -17,4 +17,8 @@
 - (Subscribe *)getBySid:(NSString *)sid;
 
 - (NSArray *)findAll;
+
+- (void)deleteBySid:(NSString *)sid;
+
+- (NSFetchedResultsController *)fetchedResultsControllerForAll;
 @end

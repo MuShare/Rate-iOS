@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <SVGKit/SVGKit.h>
+#import "DaoManager.h"
 
-@interface EditSubscriptionTableViewController : UITableViewController
+@interface EditSubscriptionTableViewController : UITableViewController <UITextViewDelegate>
+
+@property (strong, nonatomic) Subscribe *subscribe;
+
 @property (weak, nonatomic) IBOutlet SVGKFastImageView *fromImageView;
 @property (weak, nonatomic) IBOutlet UILabel *fromCodeLabel;
 @property (weak, nonatomic) IBOutlet SVGKFastImageView *toImageView;
@@ -19,5 +23,14 @@
 @property (weak, nonatomic) IBOutlet UISwitch *enableSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *sendEmailSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *sendSMSSwitch;
+
+@property (weak, nonatomic) IBOutlet UILabel *subscribeTipLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *subscribeDownImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *subscribeUpImageView;
+
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *saveBarButtonItem;
+
+- (IBAction)updateSubscribe:(id)sender;
+- (IBAction)deleteSubscribe:(id)sender;
 
 @end

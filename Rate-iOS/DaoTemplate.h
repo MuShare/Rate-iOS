@@ -37,9 +37,8 @@
 
 - (NSArray *)findAllWithEntityName:(NSString *)entityName;
 
-- (NSFetchRequest *)fetchRequestByPredicate:(NSPredicate *)predicate
-                             withEntityName:(NSString *)entityName;
-
+//Get fetchRequest.
+//An instance of NSFetchedResultsController must has a fetch request with sort descriptors
 - (NSFetchRequest *)fetchRequestByPredicate:(NSPredicate *)predicate
                              withEntityName:(NSString *)entityName
                                     orderBy:(NSSortDescriptor *)sortDescriptor;

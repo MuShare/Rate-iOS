@@ -20,24 +20,56 @@
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     self.menuPreferredStatusBarStyle = UIStatusBarStyleLightContent;
-    self.contentViewShadowColor = [UIColor blackColor];
-    self.contentViewShadowOffset = CGSizeMake(0, 0);
-    self.contentViewShadowOpacity = 0.6;
-    self.contentViewShadowRadius = 12;
-    self.contentViewShadowEnabled = YES;
     
-    self.contentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"mainTabBarController"];
+    self.contentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"rateNavigationController"];
     self.rightMenuViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"rightMenuViewController"];
     
-    self.backgroundImage = [UIImage imageNamed:@"lauch-bg.jpg"];
+    self.backgroundImage = [UIImage imageNamed:@"right-bg.jpg"];
     self.delegate = self;
 }
 
--(void)sideMenu:(RESideMenu *)sideMenu willHideMenuViewController:(UIViewController *)menuViewController {
+- (void)sideMenu:(RESideMenu *)sideMenu willShowMenuViewController:(UIViewController *)menuViewController {
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
+    [self hideTabBar];
 }
 
+- (void)sideMenu:(RESideMenu *)sideMenu willHideMenuViewController:(UIViewController *)menuViewController {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    [self showTabBar];
+}
+
+- (void)showTabBar {
+    if (self.tabBarController.tabBar.hidden == NO) {
+        return;
+    }
+    UIView *contentView;
+    if ([[self.tabBarController.view.subviews objectAtIndex:0] isKindOfClass:[UITabBar class]]) {
+        contentView = [self.tabBarController.view.subviews objectAtIndex:1];
+    } else {
+        contentView = [self.tabBarController.view.subviews objectAtIndex:0];
+    }
+    contentView.frame = CGRectMake(contentView.bounds.origin.x, contentView.bounds.origin.y,  contentView.bounds.size.width, contentView.bounds.size.height - self.tabBarController.tabBar.frame.size.height);
+    self.tabBarController.tabBar.hidden = NO;
+    
+}
+
+- (void)hideTabBar {
+    if (self.tabBarController.tabBar.hidden == YES) {
+        return;
+    }
+    UIView *contentView;
+    if ([[self.tabBarController.view.subviews objectAtIndex:0] isKindOfClass:[UITabBar class]]) {
+        contentView = [self.tabBarController.view.subviews objectAtIndex:1];
+    } else {
+        contentView = [self.tabBarController.view.subviews objectAtIndex:0];
+    }
+    contentView.frame = CGRectMake(contentView.bounds.origin.x,  contentView.bounds.origin.y,  contentView.bounds.size.width, contentView.bounds.size.height + self.tabBarController.tabBar.frame.size.height);
+    self.tabBarController.tabBar.hidden = YES;
+    
+}
 
 @end

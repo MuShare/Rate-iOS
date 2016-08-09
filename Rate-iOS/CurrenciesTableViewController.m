@@ -116,13 +116,14 @@
             } else {
                 NSNumber *favorite = [NSNumber numberWithBool:YES];
                 _fetchedResultsController = [dao.currencyDao fetchRequestControllerWithFavorite:favorite Without:nil];
- 
+                
             }
             
             break;
         default:
             break;
     }
+    [self.tableView reloadData];
 }
 
 

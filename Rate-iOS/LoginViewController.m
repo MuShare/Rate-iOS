@@ -126,6 +126,7 @@
                   default:
                       break;
               }
+              [_loadingActivityIndicatorView stopAnimating];
           }];
 }
 

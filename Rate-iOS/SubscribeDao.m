@@ -19,9 +19,9 @@
         //Create new subscribe
         subscribe = [NSEntityDescription insertNewObjectForEntityForName:SubsribeEntityName
                                                   inManagedObjectContext:self.context];
-        CurrencyDao *currencyDao = [[CurrencyDao alloc] init];
-        subscribe.from = [currencyDao getByCid:[object valueForKey:@"fromCurrency"]];
-        subscribe.to = [currencyDao getByCid:[object valueForKey:@"toCurrency"]];
+        CurrencyDao *currencyDao = [[CurrencyDao alloc] initWithManagedObjectContext:self.context];
+        subscribe.from = [currencyDao getByCid:[object valueForKey:@"fromCid"]];
+        subscribe.to = [currencyDao getByCid:[object valueForKey:@"toCid"]];
     }
     subscribe.enable = [NSNumber numberWithInt:[[object valueForKey:@"enable"] boolValue]];
     subscribe.sendEmail = [NSNumber numberWithInt:[[object valueForKey:@"sendEmail"] boolValue]];
@@ -29,8 +29,6 @@
     subscribe.sname = [object valueForKey:@"sname"];
     subscribe.threshold = [NSNumber numberWithFloat:[[object valueForKey:@"threshold"] floatValue]];
     subscribe.sid = [object valueForKey:@"sid"];
-
-    
     
     return subscribe;
 }
@@ -47,7 +45,36 @@
     if (DEBUG) {
         NSLog(@"Ruuning %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    return [self findByPredicate:nil withEntityName:SubsribeEntityName];
+    return [self findAllWithEntityName:SubsribeEntityName];
+}
+
+- (void)deleteBySid:(NSString *)sid {
+    if (DEBUG) {
+        NSLog(@"Ruuning %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    Subscribe *subscribe = [self getBySid:sid];
+    if(subscribe != nil) {
+        [self.context deleteObject:subscribe];
+    }
+}
+
+- (NSFetchedResultsController *)fetchedResultsControllerForAll {
+    if (DEBUG) {
+        NSLog(@"Ruuning %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    NSFetchRequest *request = [self fetchRequestByPredicate:nil
+                                             withEntityName:SubsribeEntityName
+                                                    orderBy:[NSSortDescriptor sortDescriptorWithKey:@"sname" ascending:YES]];
+    NSFetchedResultsController *fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
+                                                                                               managedObjectContext:self.context
+                                                                                                 sectionNameKeyPath:nil
+                                                                                                          cacheName:nil];
+    NSError *error = nil;
+    [fetchedResultsController performFetch:&error];
+    if (error) {
+        NSLog(@"Perform fetch with error: %@", error);
+    }
+    return fetchedResultsController;
 }
 
 @end

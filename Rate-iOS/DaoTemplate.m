@@ -12,7 +12,7 @@
 
 - (instancetype)initWithManagedObjectContext:(NSManagedObjectContext *)context {
     if (DEBUG) {
-        NSLog(@"Running %@ ''%@", self.class, NSStringFromSelector(_cmd));
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     self = [super init];
     _context = context;

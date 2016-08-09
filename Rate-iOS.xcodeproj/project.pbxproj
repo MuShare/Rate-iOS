@@ -280,11 +280,13 @@
 		E44899981D52DA4600BDD71B /* CommonTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E44899971D52DA4600BDD71B /* CommonTool.m */; };
 		E448999E1D53470500BDD71B /* MenuRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E448999D1D53470500BDD71B /* MenuRootViewController.m */; };
 		E44899A01D534CA800BDD71B /* lauch-bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E448999F1D534CA800BDD71B /* lauch-bg.jpg */; };
+		E46B5BC11D58B46700CE407F /* RightMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E46B5BC01D58B46700CE407F /* RightMenuViewController.m */; };
+		E46B5BC31D58BBEC00CE407F /* right-bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E46B5BC21D58BBEC00CE407F /* right-bg.jpg */; };
+		E46B5BC51D59959C00CE407F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E46B5BC41D59959C00CE407F /* Assets.xcassets */; };
 		E46FB51C1D4E305800661E13 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E46FB51B1D4E305800661E13 /* main.m */; };
 		E46FB51F1D4E305800661E13 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E46FB51E1D4E305800661E13 /* AppDelegate.m */; };
 		E46FB5251D4E305800661E13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E46FB5231D4E305800661E13 /* Main.storyboard */; };
 		E46FB5281D4E305800661E13 /* Rate_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E46FB5261D4E305800661E13 /* Rate_iOS.xcdatamodeld */; };
-		E46FB52A1D4E305800661E13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E46FB5291D4E305800661E13 /* Assets.xcassets */; };
 		E46FB52D1D4E305800661E13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E46FB52B1D4E305800661E13 /* LaunchScreen.storyboard */; };
 		E46FB5381D4E305800661E13 /* Rate_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E46FB5371D4E305800661E13 /* Rate_iOSTests.m */; };
 		E46FB5431D4E305800661E13 /* Rate_iOSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E46FB5421D4E305800661E13 /* Rate_iOSUITests.m */; };
@@ -613,13 +615,16 @@
 		E448999C1D53470500BDD71B /* MenuRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuRootViewController.h; sourceTree = "<group>"; };
 		E448999D1D53470500BDD71B /* MenuRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuRootViewController.m; sourceTree = "<group>"; };
 		E448999F1D534CA800BDD71B /* lauch-bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "lauch-bg.jpg"; sourceTree = "<group>"; };
+		E46B5BBF1D58B46700CE407F /* RightMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightMenuViewController.h; sourceTree = "<group>"; };
+		E46B5BC01D58B46700CE407F /* RightMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightMenuViewController.m; sourceTree = "<group>"; };
+		E46B5BC21D58BBEC00CE407F /* right-bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "right-bg.jpg"; sourceTree = "<group>"; };
+		E46B5BC41D59959C00CE407F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E46FB5171D4E305800661E13 /* Rate-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rate-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E46FB51B1D4E305800661E13 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E46FB51D1D4E305800661E13 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E46FB51E1D4E305800661E13 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		E46FB5241D4E305800661E13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E46FB5271D4E305800661E13 /* Rate_iOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Rate_iOS.xcdatamodel; sourceTree = "<group>"; };
-		E46FB5291D4E305800661E13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E46FB52C1D4E305800661E13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E46FB52E1D4E305800661E13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E46FB5331D4E305800661E13 /* Rate-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rate-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1036,7 +1041,7 @@
 				E4852F891D50932C0039B79B /* Tool */,
 				E46FB51D1D4E305800661E13 /* AppDelegate.h */,
 				E46FB51E1D4E305800661E13 /* AppDelegate.m */,
-				E46FB5291D4E305800661E13 /* Assets.xcassets */,
+				E46B5BC41D59959C00CE407F /* Assets.xcassets */,
 				E46FB52E1D4E305800661E13 /* Info.plist */,
 				E46FB52B1D4E305800661E13 /* LaunchScreen.storyboard */,
 				E46FB5231D4E305800661E13 /* Main.storyboard */,
@@ -1051,6 +1056,7 @@
 			children = (
 				E408A99B1D51B0D200B34655 /* flags */,
 				E46FB51B1D4E305800661E13 /* main.m */,
+				E46B5BC21D58BBEC00CE407F /* right-bg.jpg */,
 				E448999F1D534CA800BDD71B /* lauch-bg.jpg */,
 			);
 			name = "Supporting Files";
@@ -1104,6 +1110,8 @@
 				E46FB5541D4E47CF00661E13 /* RatesTableViewController.m */,
 				E41451971D4F8AA000AFE672 /* RateViewController.h */,
 				E41451981D4F8AA000AFE672 /* RateViewController.m */,
+				E46B5BBF1D58B46700CE407F /* RightMenuViewController.h */,
+				E46B5BC01D58B46700CE407F /* RightMenuViewController.m */,
 			);
 			name = Rate;
 			sourceTree = "<group>";
@@ -1405,6 +1413,7 @@
 				E408AB191D51B0D300B34655 /* kp.svg in Resources */,
 				E408AB761D51B0D300B34655 /* tc.svg in Resources */,
 				E408AAD51D51B0D300B34655 /* dj.svg in Resources */,
+				E46B5BC51D59959C00CE407F /* Assets.xcassets in Resources */,
 				E408AAE91D51B0D300B34655 /* gb-eng.svg in Resources */,
 				E408AB241D51B0D300B34655 /* ls.svg in Resources */,
 				E408AACD1D51B0D300B34655 /* cr.svg in Resources */,
@@ -1502,7 +1511,6 @@
 				E408AB6E1D51B0D300B34655 /* so.svg in Resources */,
 				E408AB3B1D51B0D300B34655 /* mv.svg in Resources */,
 				E408AB261D51B0D300B34655 /* lu.svg in Resources */,
-				E46FB52A1D4E305800661E13 /* Assets.xcassets in Resources */,
 				E408AB541D51B0D300B34655 /* pm.svg in Resources */,
 				E408AB331D51B0D300B34655 /* mn.svg in Resources */,
 				E408AB1D1D51B0D300B34655 /* kz.svg in Resources */,
@@ -1523,6 +1531,7 @@
 				E46FB5251D4E305800661E13 /* Main.storyboard in Resources */,
 				E408AAC51D51B0D300B34655 /* cg.svg in Resources */,
 				E408AAA51D51B0D300B34655 /* ar.svg in Resources */,
+				E46B5BC31D58BBEC00CE407F /* right-bg.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1609,6 +1618,7 @@
 				E414519F1D502E8200AFE672 /* LoginViewController.m in Sources */,
 				E408AB9E1D51B51E00B34655 /* UserTool.m in Sources */,
 				E408A9851D519EBC00B34655 /* InternetResponse.m in Sources */,
+				E46B5BC11D58B46700CE407F /* RightMenuViewController.m in Sources */,
 				E496A7A01D4F095A003B0F1D /* MyProfileTableViewController.m in Sources */,
 				E408A9931D51A84700B34655 /* DaoTemplate.m in Sources */,
 				E4852F8C1D5093590039B79B /* InternetTool.m in Sources */,

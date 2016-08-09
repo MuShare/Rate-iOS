@@ -10,12 +10,14 @@
 #import "InternetResponse.h"
 #import "AppDelegate.h"
 
-#define DoaminName @"rate.mushare.cn"
-//#define DoaminName @"192.168.96.74:8080"
+//#define DoaminName @"rate.mushare.cn"
+#define DoaminName @"133.51.60.56:8080"
 
 @interface InternetTool : NSObject
 
 + (AFHTTPSessionManager *)getSessionManager;
+
++ (AFHTTPSessionManager *)getSessionManagerForJSON;
 
 + (NSString *)createUrl:(NSString *)relativePosition;
 
