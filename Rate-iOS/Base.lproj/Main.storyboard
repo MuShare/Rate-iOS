@@ -751,7 +751,8 @@
                                         <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HtY-GJ-aL2">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="84"/>
                                             <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
-                                            <state key="normal" title="To show subscribes, Sign in now!">
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <state key="normal" title="To show subscriptions, Sign in now!">
                                                 <color key="titleColor" red="0.0" green="0.6705882352941176" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
                                             <connections>
@@ -1100,28 +1101,10 @@
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9LB-gN-LSI">
-                                                    <rect key="frame" x="82" y="17" width="201" height="27"/>
-                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                                    <color key="textColor" red="0.1058823529" green="0.6588235294" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RiT-c3-tZd">
-                                                    <rect key="frame" x="82" y="52" width="209" height="18"/>
-                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="vxA-eD-eUe" firstAttribute="leading" secondItem="exy-tW-PxA" secondAttribute="leadingMargin" constant="74" id="HrD-Cd-hGg"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="9LB-gN-LSI" secondAttribute="trailing" constant="-4" id="KoI-GK-UVg"/>
                                                 <constraint firstItem="1h5-ez-roQ" firstAttribute="leading" secondItem="exy-tW-PxA" secondAttribute="leadingMargin" constant="74" id="O24-pP-pDd"/>
-                                                <constraint firstItem="9LB-gN-LSI" firstAttribute="leading" secondItem="exy-tW-PxA" secondAttribute="leadingMargin" constant="74" id="PeA-IX-ism"/>
-                                                <constraint firstItem="RiT-c3-tZd" firstAttribute="leading" secondItem="exy-tW-PxA" secondAttribute="leadingMargin" constant="74" id="Sia-Wc-zoi"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="RiT-c3-tZd" secondAttribute="trailing" constant="-12" id="imv-tw-dap"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <constraints>
@@ -1344,10 +1327,8 @@
                     <navigationItem key="navigationItem" title="Me" id="DAv-cg-vmZ"/>
                     <connections>
                         <outlet property="avatarImageView" destination="Hxp-Vl-xGJ" id="5y3-I3-N4C"/>
-                        <outlet property="emailLabel" destination="RiT-c3-tZd" id="ius-nv-3g6"/>
-                        <outlet property="nameLabel" destination="9LB-gN-LSI" id="AOP-QR-WL4"/>
-                        <outlet property="signLabel" destination="1h5-ez-roQ" id="2mB-gS-ZL4"/>
-                        <outlet property="welcomeLabel" destination="vxA-eD-eUe" id="HuS-B5-yUZ"/>
+                        <outlet property="signOrNameLabel" destination="1h5-ez-roQ" id="isO-0p-WcX"/>
+                        <outlet property="welcomeOrEmailLabel" destination="vxA-eD-eUe" id="RCs-XL-EfP"/>
                         <segue destination="Qk9-mI-Fdn" kind="push" identifier="loginSegue" id="qrg-S3-ZeO"/>
                         <segue destination="MWY-vF-gvl" kind="push" identifier="profileSegue" id="MCa-qW-tBc"/>
                     </connections>
@@ -2618,8 +2599,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="tCz-c9-o9a"/>
+        <segue reference="t1O-as-tdA"/>
         <segue reference="UDA-Mt-qgn"/>
         <segue reference="wv3-am-Shd"/>
-        <segue reference="iYg-eg-RuY"/>
     </inferredMetricsTieBreakers>
 </document>

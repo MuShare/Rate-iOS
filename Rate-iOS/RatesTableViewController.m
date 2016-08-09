@@ -37,18 +37,13 @@
     //Load based currency from NSUserDefaults
     _basedCurrency = [dao.currencyDao getByCid:user.basedCurrencyId];
     
-    //User cache to load table at first.
-    if(user.cacheRates != nil) {
-        rates = user.cacheRates;
-        //Set fetchedResultsController, result does not include base currency itself!!!!!!!!!!!
-        [self setFetchedResultsController];
-    }
+    _fetchedResultsController.delegate = self;
     
     //Bind MJRefresh
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [self refreshRates];
     }];
-
+    [self.tableView.mj_header beginRefreshing];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -160,7 +155,8 @@
              }
              
              //Reload data
-             [self setFetchedResultsController];
+             _fetchedResultsController = [dao.currencyDao fetchRequestControllerWithFavorite:[NSNumber numberWithBool:user.token != nil]
+                                                                                     Without:user.basedCurrencyId];
              [self.tableView reloadData];
          }
          failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -171,15 +167,6 @@
              [response errorCode];
          }];
     
-}
-
-- (void)setFetchedResultsController {
-    if(DEBUG) {
-        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
-    }
-    _fetchedResultsController = [dao.currencyDao fetchRequestControllerWithFavorite:[NSNumber numberWithBool:user.token != nil]
-                                                                            Without:user.basedCurrencyId];
-    _fetchedResultsController.delegate = self;
 }
 
 @end

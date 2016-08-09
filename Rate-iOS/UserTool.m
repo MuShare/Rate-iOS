@@ -162,15 +162,14 @@
 }
 
 - (void)clearup {
-    _subscribeRev = 0;
-    _lan = nil;
-    _email = nil;
-    _telephone = nil;
-    _name = nil;
-    _token = nil;
-    _deviceToken = nil;
+    [self setSubscribeRev:0];
+    [self setEmail:nil];
+    [self setToken:nil];
+    [self setName:nil];
+    [self setToken:nil];
+    [self setDeviceToken:nil];
     
-    _cacheRates = nil;
+    [self setCacheRates:nil];
 }
 
 @end

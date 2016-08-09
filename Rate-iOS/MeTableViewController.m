@@ -10,6 +10,7 @@
 #import "UserTool.h"
 #import "InternetTool.h"
 #import "DaoManager.h"
+#import "AlertTool.h"
 
 @interface MeTableViewController ()
 
@@ -36,10 +37,8 @@
     }
     manager = [InternetTool getSessionManager];
     if(user.token != nil) {
-        _nameLabel.text = user.name;
-        _welcomeLabel.text = user.email;
-        _nameLabel.hidden = NO;
-        _welcomeLabel.hidden = NO;
+        _signOrNameLabel.text = user.name;
+        _welcomeOrEmailLabel.text = user.email;
     }
 }
 
@@ -89,6 +88,12 @@
     if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
+    if (user.token == nil) {
+        [AlertTool showAlertWithTitle:@"Tip"
+                           andContent:@"Sign in at first!"
+                     inViewController:self];
+        return;
+    }
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Sign out"
                                                                              message:@"Are you sure to sign out now?"
                                                                       preferredStyle:UIAlertControllerStyleActionSheet];
@@ -115,10 +120,8 @@
                         
                         [dao saveContext];
                         
-                        _nameLabel.text = @"";
-                        _emailLabel.text = @"";
-                        _nameLabel.hidden = YES;
-                        _emailLabel.hidden = YES;
+                        _signOrNameLabel.text = @"Sign in / Sign up";
+                        _welcomeOrEmailLabel.text = @"Welcome to MuRate, sign in now!";
                     }
                 }
                 failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
