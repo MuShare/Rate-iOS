@@ -64,6 +64,7 @@
     UILabel *codeLabel = (UILabel *)[cell viewWithTag:2];
     UILabel *nameLabel = (UILabel *)[cell viewWithTag:3];
     UIButton *favoriteButton = (UIButton *)[cell viewWithTag:4];
+    
     currencyImageView.image = [SVGKImage imageNamed:[NSString stringWithFormat:@"%@.svg", currency.icon]];
     codeLabel.text = currency.code;
     nameLabel.text = currency.name;
@@ -132,6 +133,8 @@
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     UITableViewCell *cell = (UITableViewCell *)sender.superview.superview;
+    UIView *loadingView = [cell viewWithTag:5];
+    loadingView.hidden = NO;
     NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
     Currency *currency = [_fetchedResultsController objectAtIndexPath:indexPath];
     NSLog(@"%@", @{
@@ -153,6 +156,7 @@
                   //Update UI
                   [sender setImage:[UIImage imageNamed:currency.favorite.boolValue? @"currency_like": @"currency_unlike"]
                           forState:UIControlStateNormal];
+                  loadingView.hidden = YES;
               }
           }
           failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -166,6 +170,7 @@
                       if (DEBUG) {
                           NSLog(@"Error code is %d", [response errorCode]);
                       }
+                      loadingView.hidden = YES;
                       break;
               }
               NSLog(@"%d", [response errorCode]);

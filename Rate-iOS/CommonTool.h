@@ -22,6 +22,7 @@
 
 @interface CommonTool : NSObject
 
++ (BOOL)isNumeric:(NSString *)str;
 + (BOOL)isAvailableEmail:(NSString *)email;
 
 + (NSUInteger)getNumberOfDaysInThisMonth:(NSDate *)date;

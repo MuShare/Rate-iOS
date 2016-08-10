@@ -23,4 +23,11 @@
     [controller presentViewController:alertController animated:YES completion:nil];
 }
 
++ (void)replaceBarButtonItemWithActivityIndicator:(UIViewController *)controller {
+    UIActivityIndicatorView * activityIndicatorView = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+    UIBarButtonItem * barButton = [[UIBarButtonItem alloc] initWithCustomView:activityIndicatorView];
+    controller.navigationItem.rightBarButtonItem = barButton;
+    [activityIndicatorView startAnimating];
+}
+
 @end

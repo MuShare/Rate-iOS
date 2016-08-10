@@ -53,6 +53,7 @@
     //Reset base currency name.
     [self.navigationItem.leftBarButtonItem setTitle:_basedCurrency.name];
     //Reload rates values.
+    [self.tableView.mj_header beginRefreshing];
     [self refreshRates];
 }
 

@@ -10,6 +10,7 @@
 #import "InternetTool.h"
 #import "UserTool.h"
 #import <SVGKit/SVGKit.h>
+#import <MJRefresh/MJRefresh.h>
 
 @interface SubscriptionsTableViewController ()
 
@@ -32,73 +33,19 @@
     
     _fetchedResultsController = [dao.subscribeDao fetchedResultsControllerForAll];
     
+    //Bind MJRefresh
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self refreshSubscribe];
+    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    //subscribes = [dao.subscribeDao findAll];
-    
     manager = [InternetTool getSessionManagerForJSON];
+    [self refreshSubscribe];
     
-    //Prepare sids for updating.
-    NSMutableArray *sids = [[NSMutableArray alloc] init];
-    for(Subscribe *subscribe in [dao.subscribeDao findAll]) {
-        [sids addObject:subscribe.sid];
-    }
-    
-    [manager PUT:[InternetTool createUrl:@"api/user/subscribes"]
-      parameters:@{
-                   @"rev": [NSNumber numberWithInteger:user.subscribeRev],
-                   @"sids": sids
-                   }
-         success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-             InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
-             if([response statusOK]) {
-                 NSObject *result = [response getResponseResult];
-                 NSObject *data = [result valueForKey:@"data"];
-                 //Update subscribe table when it is updated.
-                 if([[result valueForKey:@"isUpdated"] boolValue]) {
-                     for(NSObject *subscribeObject in [data valueForKey:@"createdOrUpdated"]) {
-                         [dao.subscribeDao saveOrUpdateWithJSONObject:subscribeObject];
-                     }
-                     for(NSString *deletedSid in [data valueForKey:@"deletedSubcribes"]) {
-                         [dao.subscribeDao deleteBySid:deletedSid];
-                     }
-                 }
-                 
-                 //Update rates of subscribe.
-                 NSDictionary *rates = [data valueForKey:@"rates"];
-                 for(NSString *sid in rates.allKeys) {
-                     NSLog(@"%@ %@", sid, rates[sid]);
-                     Subscribe *subscribe = [dao.subscribeDao getBySid:sid];
-                     subscribe.rate = [NSNumber numberWithFloat:[rates[sid] floatValue]];
-                 }
-                 [dao saveContext];
-                 
-                 //Update current revision of subscribe.
-                 user.subscribeRev = [[result valueForKey:@"current"] integerValue];
-                 
-                 //Refresh table view.
-                 _fetchedResultsController = [dao.subscribeDao fetchedResultsControllerForAll];
-                 [self.tableView reloadData];
-             }
-         }
-         failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-             if(DEBUG) {
-                 NSLog(@"Server error: %@", error.localizedDescription);
-             }
-             InternetResponse *response = [[InternetResponse alloc] initWithError:error];
-             switch ([response errorCode]) {
-                     
-                 default:
-                     if (DEBUG) {
-                         NSLog(@"Error code is %d", [response errorCode]);
-                     }
-                     break;
-             }
-         }];
 }
 
 #pragma mark - UITableViewDataSource
@@ -129,7 +76,7 @@
     }
     
     Subscribe *subscribe = [_fetchedResultsController objectAtIndexPath:indexPath];
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"subscribeIdentifer"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:subscribe.enable.boolValue? @"subscribeEnableIdentifer": @"subscribeUnableIdentifer"];
 
     UILabel *snameLabel = (UILabel *)[cell viewWithTag:1];
     SVGKFastImageView *fromImageView = (SVGKFastImageView *)[cell viewWithTag:2];
@@ -175,6 +122,71 @@
     } else {
         [self performSegueWithIdentifier:@"addSubscribeSegue" sender:self];
     }
+}
+
+#pragma mark - Service
+- (void)refreshSubscribe {
+    if (DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    //Prepare sids for updating.
+    NSMutableArray *sids = [[NSMutableArray alloc] init];
+    for(Subscribe *subscribe in [dao.subscribeDao findAll]) {
+        [sids addObject:subscribe.sid];
+    }
+    
+    [manager PUT:[InternetTool createUrl:@"api/user/subscribes"]
+      parameters:@{
+                   @"rev": [NSNumber numberWithInteger:user.subscribeRev],
+                   @"sids": sids
+                   }
+         success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+             InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
+             if([response statusOK]) {
+                 NSObject *result = [response getResponseResult];
+                 NSObject *data = [result valueForKey:@"data"];
+                 //Update subscribe table when it is updated.
+                 if([[result valueForKey:@"isUpdated"] boolValue]) {
+                     for(NSObject *subscribeObject in [data valueForKey:@"createdOrUpdated"]) {
+                         [dao.subscribeDao saveOrUpdateWithJSONObject:subscribeObject];
+                     }
+                     for(NSString *deletedSid in [data valueForKey:@"deletedSubcribes"]) {
+                         [dao.subscribeDao deleteBySid:deletedSid];
+                     }
+                 }
+                 
+                 //Update rates of subscribe.
+                 NSDictionary *rates = [data valueForKey:@"rates"];
+                 for(NSString *sid in rates.allKeys) {
+                     NSLog(@"%@ %@", sid, rates[sid]);
+                     Subscribe *subscribe = [dao.subscribeDao getBySid:sid];
+                     subscribe.rate = [NSNumber numberWithFloat:[rates[sid] floatValue]];
+                 }
+                 [dao saveContext];
+                 
+                 //Update current revision of subscribe.
+                 user.subscribeRev = [[result valueForKey:@"current"] integerValue];
+                 
+                 [self.tableView.mj_header endRefreshing];
+                 //Refresh table view.
+                 _fetchedResultsController = [dao.subscribeDao fetchedResultsControllerForAll];
+                 [self.tableView reloadData];
+             }
+         }
+         failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+             if(DEBUG) {
+                 NSLog(@"Server error: %@", error.localizedDescription);
+             }
+             InternetResponse *response = [[InternetResponse alloc] initWithError:error];
+             switch ([response errorCode]) {
+                     
+                 default:
+                     if (DEBUG) {
+                         NSLog(@"Error code is %d", [response errorCode]);
+                     }
+                     break;
+             }
+         }];
 }
 
 @end

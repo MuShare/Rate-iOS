@@ -15,4 +15,6 @@
                 andContent:(NSString *)content
           inViewController:(UIViewController *)controller;
 
++ (void)replaceBarButtonItemWithActivityIndicator:(UIViewController *)controller;
+
 @end

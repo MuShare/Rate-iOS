@@ -26,12 +26,12 @@
 @property (weak, nonatomic) IBOutlet UISwitch *sendSMSSwitch;
 
 @property (weak, nonatomic) IBOutlet UILabel *subscribeTipLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *subscribeDownImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *subscribeUpImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *trendImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *snameImageView;
 
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *saveBarButtonItem;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *editBarButtonItem;
 
-- (IBAction)updateSubscribe:(id)sender;
+- (IBAction)editSubscribe:(UIBarButtonItem *)sender;
 - (IBAction)deleteSubscribe:(id)sender;
 
 @end

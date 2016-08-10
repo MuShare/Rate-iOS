@@ -14,8 +14,10 @@
 @property (strong, nonatomic) Currency *fromCurrency;
 @property (strong, nonatomic) Currency *toCurrency;
 
-@property (weak, nonatomic) IBOutlet UIImageView *subscribeUpImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *subscribeDownImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *trendImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *fromCurrencyImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *toCurrencyImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *subscribeNameImageView;
 @property (weak, nonatomic) IBOutlet UILabel *subscribeTipLabel;
 
 @property (weak, nonatomic) IBOutlet UITextField *subscribeNameTextField;

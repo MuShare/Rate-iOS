@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "add_subscribe_up_error.png",
+      "filename" : "add_subscribe_to_error.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "add_subscribe_up_error@2x.png",
+      "filename" : "add_subscribe_to_error@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "add_subscribe_up_error@3x.png",
+      "filename" : "add_subscribe_to_error@3x.png",
       "scale" : "3x"
     }
   ],

@@ -11,6 +11,7 @@
 #import "UserTool.h"
 #import "DaoManager.h"
 #import "AlertTool.h"
+#import "CommonTool.h"
 
 @interface AddSubscribeTableViewController ()
 
@@ -126,22 +127,35 @@
     if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
+    BOOL validate = YES;
     if ([_subscribeNameTextField.text isEqualToString:@""]) {
-        return;
+        _subscribeNameImageView.highlighted = YES;
+        validate = NO;
+    } else {
+        _subscribeNameImageView.highlighted = NO;
     }
-    if ([_thresholdTextField.text isEqualToString:@""]) {
-        
-        return;
+    if (![CommonTool isNumeric:_thresholdTextField.text] || _thresholdTextField.text.floatValue <= 0) {
+        _trendImageView.highlighted = YES;
+        validate = NO;
+    } else {
+        _thresholdTextField.highlighted = NO;
     }
     if (_fromCurrency == nil) {
-        
-        return;
+        _fromCurrencyImageView.highlighted = YES;
+        validate = NO;
+    } else {
+        _fromCurrencyImageView.highlighted = NO;
     }
     if (_toCurrency == nil) {
-        
+        _toCurrencyImageView.highlighted = YES;
+        validate = NO;
+    } else {
+        _toCurrencyImageView.highlighted = NO;
+    }
+    if (!validate) {
         return;
     }
-    NSLog(@"Validate success!");
+    [AlertTool replaceBarButtonItemWithActivityIndicator:self];
     [manager POST:[InternetTool createUrl:@"api/user/subscribe"]
        parameters:@{
                     @"sname": _subscribeNameTextField.text,
@@ -174,6 +188,10 @@
                       if (DEBUG) {
                           NSLog(@"Error code is %d", [response errorCode]);
                       }
+                      [AlertTool showAlertWithTitle:@"Tip"
+                                         andContent:@"Cannot modify this subscription, try again later."
+                                   inViewController:self];
+                      [self.navigationController popViewControllerAnimated:YES];
                       break;
               }
           }];
@@ -189,7 +207,7 @@
 #pragma mark - Service 
 //Create done button for keyboard
 - (void)setCloseKeyboardAccessoryForSender:(id)sender {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     UIToolbar * topView = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, self.view.window.frame.size.width, 35)];
@@ -207,14 +225,14 @@
 }
 
 - (void)editFinish {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     [_thresholdTextField resignFirstResponder];
 }
 
 - (void)thresholdTextFieldDidChange:(UITextField *)sender {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     if ([_thresholdTextField.text isEqualToString:@""]) {
@@ -224,12 +242,16 @@
     float rate = [sender.text floatValue];
     if (rate > currentRate) {
         _subscribeTipLabel.text = @"Alert me above";
-        _subscribeDownImageView.hidden = YES;
-        _subscribeUpImageView.hidden = NO;
+        [UIView animateWithDuration:0.5
+                         animations:^{
+                             _trendImageView.transform = CGAffineTransformMakeRotation(0);
+                         }];
     } else {
         _subscribeTipLabel.text = @"Alert me blow";
-        _subscribeUpImageView.hidden = YES;
-        _subscribeDownImageView.hidden = NO;
+        [UIView animateWithDuration:0.5
+                         animations:^{
+                             _trendImageView.transform = CGAffineTransformMakeRotation(M_PI);
+                         }];
     }
 }
 

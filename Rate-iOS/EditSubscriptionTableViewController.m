@@ -8,6 +8,8 @@
 
 #import "EditSubscriptionTableViewController.h"
 #import "InternetTool.h"
+#import "CommonTool.h"
+#import "AlertTool.h"
 
 @interface EditSubscriptionTableViewController ()
 
@@ -27,7 +29,7 @@
     if(_subscribe == nil) {
         return;
     }
-    //self.navigationController.navigationBar.titl = _subscribe.sname;
+    _snameTextField.placeholder = _subscribe.sname;
     _fromImageView.image = [SVGKImage imageNamed:[NSString stringWithFormat:@"%@.svg", _subscribe.from.icon]];
     _toImageView.image = [SVGKImage imageNamed:[NSString stringWithFormat:@"%@.svg", _subscribe.to.icon]];
     _fromCodeLabel.text = _subscribe.from.code;
@@ -36,6 +38,12 @@
     _thresholdTextField.placeholder = [NSString stringWithFormat:@"%.3f", _subscribe.threshold.floatValue];
     [_thresholdTextField addTarget:self action:@selector(thresholdTextFieldDidChange:)
                   forControlEvents:UIControlEventEditingChanged];
+    _enableSwitch.on = _subscribe.enable.boolValue;
+    _sendEmailSwitch.on = _subscribe.sendEmail.boolValue;
+    _sendSMSSwitch.on = _subscribe.sendSMS.boolValue;
+    if(_subscribe.rate.floatValue > _subscribe.threshold.floatValue) {
+        _trendImageView.transform = CGAffineTransformMakeRotation(M_PI);
+    }
 }
 
 #pragma mark - Table view data source
@@ -68,38 +76,120 @@
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    if([sender.text isEqualToString:@""]) {
-        _saveBarButtonItem.enabled = NO;
-        _subscribeTipLabel.hidden = YES;
-    } else {
-        _saveBarButtonItem.enabled = YES;
-        _subscribeTipLabel.hidden = NO;
-    }
+    _subscribeTipLabel.hidden = [_thresholdTextField.text isEqualToString:@""];
     float rate = [sender.text floatValue];
     if (rate > _subscribe.rate.floatValue) {
         _subscribeTipLabel.text = @"Alert me above";
-        _subscribeDownImageView.hidden = YES;
-        _subscribeUpImageView.hidden = NO;
+        [UIView animateWithDuration:0.5
+                         animations:^{
+                             _trendImageView.transform = CGAffineTransformMakeRotation(0);
+                         }];
     } else {
         _subscribeTipLabel.text = @"Alert me blow";
-        _subscribeUpImageView.hidden = YES;
-        _subscribeDownImageView.hidden = NO;
+        [UIView animateWithDuration:0.5
+                         animations:^{
+                             _trendImageView.transform = CGAffineTransformMakeRotation(M_PI);
+                         }];
+    }
+}
+
+#pragma mark - Navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if (DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    if ([segue.identifier isEqualToString:@"subscriptionRateSegue"]) {
+        [segue.destinationViewController setValue:_subscribe.from forKey:@"fromCurrency"];
+        [segue.destinationViewController setValue:_subscribe.to forKey:@"toCurrency"];
     }
 }
 
 #pragma mark - Action
-- (IBAction)updateSubscribe:(id)sender {
+- (IBAction)editSubscribe:(UIBarButtonItem *)sender {
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
+    _snameTextField.enabled = YES;
+    _thresholdTextField.enabled = YES;
+    _enableSwitch.enabled = YES;
+    _sendEmailSwitch.enabled = YES;
+    _sendSMSSwitch.enabled = YES;
+    
+    UIBarButtonItem *saveButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave
+                                                                                    target:self
+                                                                                    action:@selector(updateSubscribe)];
+    self.navigationItem.rightBarButtonItem = saveButtonItem;
+}
+
+- (IBAction)deleteSubscribe:(id)sender {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Delete subscription"
+                                                                             message:@"Are you sure to delete this subscription?"
+                                                                      preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *delete = [UIAlertAction actionWithTitle:@"Delete it now"
+                                                     style:UIAlertActionStyleDestructive
+                                                   handler:^(UIAlertAction * _Nonnull action) {
+        [AlertTool replaceBarButtonItemWithActivityIndicator:self];
+        [manager DELETE:[InternetTool createUrl:@"api/user/subscribe"]
+             parameters:@{
+                          @"sid": _subscribe.sid
+                          }
+                success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                    InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
+                    if([response statusOK]) {
+                        [self.navigationController popViewControllerAnimated:YES];
+                    }
+                }
+                failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                    InternetResponse *response = [[InternetResponse alloc] initWithError:error];
+                    switch ([response errorCode]) {
+                        case ErrorCodeTokenError:
+                            
+                            break;
+                            
+                        default:
+                            if (DEBUG) {
+                                NSLog(@"Error code is %d", [response errorCode]);
+                            }
+                            break;
+                    }
+                }];
+    }];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel"
+                                                     style:UIAlertActionStyleCancel
+                                                   handler:nil];
+    [alertController addAction:delete];
+    [alertController addAction:cancel];
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
+#pragma mark - Service
+- (void)updateSubscribe {
+    if (DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    
+    if(![_thresholdTextField.text isEqualToString:@""]) {
+        if(![CommonTool isNumeric:_thresholdTextField.text]) {
+            _trendImageView.highlighted = YES;
+            return;
+        } else {
+            _trendImageView.highlighted = NO;
+        }
+    }
+
+    [AlertTool replaceBarButtonItemWithActivityIndicator:self];
+    
     [manager POST:[InternetTool createUrl:@"api/user/subscribe/update"]
        parameters:@{
                     @"sid": _subscribe.sid,
-                    @"sname": _subscribe.sname,
+                    @"sname": [_snameTextField.text isEqualToString:@""]? _subscribe.sname: _snameTextField.text,
                     @"isEnable": [NSNumber numberWithBool:_enableSwitch.on],
                     @"isSendEmail": [NSNumber numberWithBool:_sendEmailSwitch.on],
                     @"isSendSms": [NSNumber numberWithBool:_sendSMSSwitch.on],
-                    @"threshold": [NSNumber numberWithFloat:_thresholdTextField.text.floatValue],
+                    @"threshold": [_thresholdTextField.text isEqualToString:@""]? _subscribe.threshold: [NSNumber numberWithFloat:_thresholdTextField.text.floatValue],
                     @"isAbove": [NSNumber numberWithInt:[_thresholdTextField.text floatValue] < _subscribe.rate.floatValue]
                     }
          progress:nil
@@ -120,38 +210,13 @@
                       if (DEBUG) {
                           NSLog(@"Error code is %d", [response errorCode]);
                       }
+                      [AlertTool showAlertWithTitle:@"Tip"
+                                         andContent:@"Cannot modify this subscription, try again later."
+                                   inViewController:self];
+                      [self.navigationController popViewControllerAnimated:YES];
                       break;
               }
           }];
 }
 
-- (IBAction)deleteSubscribe:(id)sender {
-    if(DEBUG) {
-        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
-    }
-    [manager DELETE:[InternetTool createUrl:@"api/user/subscribe"]
-         parameters:@{
-                      @"sid": _subscribe.sid
-                      }
-            success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
-                if([response statusOK]) {
-                    [self.navigationController popViewControllerAnimated:YES];
-                }
-            }
-            failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                InternetResponse *response = [[InternetResponse alloc] initWithError:error];
-                switch ([response errorCode]) {
-                    case ErrorCodeTokenError:
-                        
-                        break;
-                        
-                    default:
-                        if (DEBUG) {
-                            NSLog(@"Error code is %d", [response errorCode]);
-                        }
-                        break;
-                }
-            }];
-}
 @end
