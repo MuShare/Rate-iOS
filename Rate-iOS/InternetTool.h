@@ -10,8 +10,8 @@
 #import "InternetResponse.h"
 #import "AppDelegate.h"
 
-//#define DoaminName @"rate.mushare.cn"
-#define DoaminName @"127.0.0.1:8080"
+#define DoaminName @"rate.mushare.cn"
+//#define DoaminName @"127.0.0.1:8080"
 
 @interface InternetTool : NSObject
 

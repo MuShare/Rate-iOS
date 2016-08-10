@@ -203,7 +203,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-4566" y="-6421"/>
+            <point key="canvasLocation" x="-6934" y="-6973"/>
         </scene>
         <!--Currencies Table View Controller-->
         <scene sceneID="AXA-cD-voq">
@@ -288,7 +288,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hfk-31-Z3U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4566" y="-5687"/>
+            <point key="canvasLocation" x="-6934" y="-6239"/>
         </scene>
         <!--MuRate-->
         <scene sceneID="VgB-xz-kpk">
@@ -376,7 +376,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3os-Wp-skM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5317" y="-5988"/>
+            <point key="canvasLocation" x="-7685" y="-6540"/>
         </scene>
         <!--Rate-->
         <scene sceneID="kcj-i1-VxF">
@@ -402,7 +402,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rnl-sw-cUt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5873" y="-5988"/>
+            <point key="canvasLocation" x="-8241" y="-6540"/>
         </scene>
         <!--Loading View Controller-->
         <scene sceneID="U8I-JF-mK9">
@@ -455,7 +455,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dms-RZ-00a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-7504" y="-4404"/>
+            <point key="canvasLocation" x="-9872" y="-4956"/>
         </scene>
         <!--Rate-->
         <scene sceneID="K4S-QW-9iY">
@@ -475,7 +475,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VcZ-nP-Ar5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-6365" y="-5988"/>
+            <point key="canvasLocation" x="-8733" y="-6540"/>
         </scene>
         <!--Right Menu View Controller-->
         <scene sceneID="6DE-Zd-DTw">
@@ -574,7 +574,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KK7-MB-2um" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-6989" y="-5988"/>
+            <point key="canvasLocation" x="-9357" y="-6540"/>
         </scene>
         <!--Subscriptions-->
         <scene sceneID="nhf-Cz-6DR">
@@ -793,7 +793,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aFj-93-ohI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5873" y="-4963"/>
+            <point key="canvasLocation" x="-8241" y="-5515"/>
         </scene>
         <!--Subscribe-->
         <scene sceneID="0of-TV-ivL">
@@ -831,8 +831,66 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="56" id="zBi-1Z-9qY">
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="Tn7-Yh-rG0">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="56" id="H4j-KI-P5V">
                                         <rect key="frame" x="0.0" y="120" width="320" height="56"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="H4j-KI-P5V" id="SBj-Fp-Ya6">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="55.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="add_subscribe_from" translatesAutoresizingMaskIntoConstraints="NO" id="1GH-w4-V9J">
+                                                    <rect key="frame" x="13" y="13" width="30" height="30"/>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xiB-uC-Io8">
+                                                    <rect key="frame" x="51" y="11" width="251" height="33"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <state key="normal" title="From Currency">
+                                                        <color key="titleColor" red="0.21176470589999999" green="0.60784313729999995" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <segue destination="sqh-ol-nfs" kind="push" identifier="selectSubscribeFromSegue" id="2KY-rw-Y4G"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="xiB-uC-Io8" secondAttribute="trailing" constant="10" id="OTe-g9-OhE"/>
+                                                <constraint firstItem="xiB-uC-Io8" firstAttribute="leading" secondItem="SBj-Fp-Ya6" secondAttribute="leadingMargin" constant="43" id="fWY-US-kDQ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="56" id="XIg-pE-NY6">
+                                        <rect key="frame" x="0.0" y="176" width="320" height="56"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XIg-pE-NY6" id="B0R-rl-f9E">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="55.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="add_subscribe_to" translatesAutoresizingMaskIntoConstraints="NO" id="Gof-Ki-kUI">
+                                                    <rect key="frame" x="13" y="13" width="30" height="30"/>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="crT-7a-Zsz">
+                                                    <rect key="frame" x="51" y="11" width="251" height="33"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <state key="normal" title="To Currency">
+                                                        <color key="titleColor" red="0.21176470589999999" green="0.60784313729999995" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <segue destination="sqh-ol-nfs" kind="push" identifier="selectSubscribeToSegue" id="W74-fI-qzg"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="crT-7a-Zsz" secondAttribute="trailing" constant="10" id="75W-7H-6ZV"/>
+                                                <constraint firstItem="crT-7a-Zsz" firstAttribute="leading" secondItem="B0R-rl-f9E" secondAttribute="leadingMargin" constant="43" id="ec9-i0-SD1"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="56" id="zBi-1Z-9qY">
+                                        <rect key="frame" x="0.0" y="232" width="320" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zBi-1Z-9qY" id="Znp-d7-AvU">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="55.5"/>
@@ -860,64 +918,6 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="GTo-fg-Jct" secondAttribute="trailing" constant="9" id="VuQ-dE-9v0"/>
                                                 <constraint firstItem="GTo-fg-Jct" firstAttribute="leading" secondItem="BIn-Df-jSi" secondAttribute="trailing" constant="8" id="XkK-d1-zDv"/>
                                                 <constraint firstItem="BIn-Df-jSi" firstAttribute="leading" secondItem="Znp-d7-AvU" secondAttribute="leadingMargin" constant="43" id="l9Z-kK-b0h"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection id="Tn7-Yh-rG0">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="56" id="H4j-KI-P5V">
-                                        <rect key="frame" x="0.0" y="176" width="320" height="56"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="H4j-KI-P5V" id="SBj-Fp-Ya6">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="55.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="add_subscribe_from" translatesAutoresizingMaskIntoConstraints="NO" id="1GH-w4-V9J">
-                                                    <rect key="frame" x="13" y="13" width="30" height="30"/>
-                                                </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xiB-uC-Io8">
-                                                    <rect key="frame" x="51" y="11" width="251" height="33"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <state key="normal" title="From Currency">
-                                                        <color key="titleColor" red="0.21176470589999999" green="0.60784313729999995" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </state>
-                                                    <connections>
-                                                        <segue destination="sqh-ol-nfs" kind="push" identifier="selectSubscribeFromSegue" id="2KY-rw-Y4G"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="xiB-uC-Io8" secondAttribute="trailing" constant="10" id="OTe-g9-OhE"/>
-                                                <constraint firstItem="xiB-uC-Io8" firstAttribute="leading" secondItem="SBj-Fp-Ya6" secondAttribute="leadingMargin" constant="43" id="fWY-US-kDQ"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="56" id="XIg-pE-NY6">
-                                        <rect key="frame" x="0.0" y="232" width="320" height="56"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XIg-pE-NY6" id="B0R-rl-f9E">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="55.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="add_subscribe_to" translatesAutoresizingMaskIntoConstraints="NO" id="Gof-Ki-kUI">
-                                                    <rect key="frame" x="13" y="13" width="30" height="30"/>
-                                                </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="crT-7a-Zsz">
-                                                    <rect key="frame" x="51" y="11" width="251" height="33"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <state key="normal" title="To Currency">
-                                                        <color key="titleColor" red="0.21176470589999999" green="0.60784313729999995" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </state>
-                                                    <connections>
-                                                        <segue destination="sqh-ol-nfs" kind="push" identifier="selectSubscribeToSegue" id="W74-fI-qzg"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="crT-7a-Zsz" secondAttribute="trailing" constant="10" id="75W-7H-6ZV"/>
-                                                <constraint firstItem="crT-7a-Zsz" firstAttribute="leading" secondItem="B0R-rl-f9E" secondAttribute="leadingMargin" constant="43" id="ec9-i0-SD1"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1039,7 +1039,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dmu-uf-71h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5317" y="-4562"/>
+            <point key="canvasLocation" x="-7685" y="-5114"/>
         </scene>
         <!--Subscribe-->
         <scene sceneID="iWO-vY-d5t">
@@ -1065,7 +1065,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SQO-hB-ILD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-6365" y="-4963"/>
+            <point key="canvasLocation" x="-8733" y="-5515"/>
         </scene>
         <!--Me-->
         <scene sceneID="BP4-0y-tKD">
@@ -1335,7 +1335,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P5A-qI-QbF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5317" y="-3882"/>
+            <point key="canvasLocation" x="-7685" y="-4434"/>
         </scene>
         <!--Sign in-->
         <scene sceneID="H1s-UE-CWk">
@@ -1472,7 +1472,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mc2-B7-2OP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4566" y="-4963"/>
+            <point key="canvasLocation" x="-6934" y="-5515"/>
         </scene>
         <!--Me-->
         <scene sceneID="RnL-F3-TbC">
@@ -1498,7 +1498,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="72W-Vs-Zag" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-6365" y="-3882"/>
+            <point key="canvasLocation" x="-8733" y="-4434"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Sh4-Mz-U0k">
@@ -1523,7 +1523,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bS6-YY-Ps8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-6989" y="-4404"/>
+            <point key="canvasLocation" x="-9357" y="-4956"/>
         </scene>
         <!--My Profile-->
         <scene sceneID="LPA-bY-S3c">
@@ -1695,7 +1695,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1YR-Be-t1i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4574" y="-3840"/>
+            <point key="canvasLocation" x="-6942" y="-4392"/>
         </scene>
         <!--Modify Password-->
         <scene sceneID="Z0D-OI-4zn">
@@ -1725,7 +1725,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eNu-Vw-45L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3874" y="-4913"/>
+            <point key="canvasLocation" x="-6242" y="-5465"/>
         </scene>
         <!--Name-->
         <scene sceneID="S09-fg-pnh">
@@ -1763,7 +1763,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ege-Oo-kiW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3882" y="-3944"/>
+            <point key="canvasLocation" x="-6250" y="-4496"/>
         </scene>
         <!--Telephone-->
         <scene sceneID="S0J-ic-q3A">
@@ -1798,7 +1798,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f3I-id-lfR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3882" y="-3293"/>
+            <point key="canvasLocation" x="-6250" y="-3845"/>
         </scene>
         <!--Clear User Data-->
         <scene sceneID="L6B-9D-9W3">
@@ -1817,7 +1817,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QDb-sW-Epw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-6210" y="-2722"/>
+            <point key="canvasLocation" x="-8578" y="-3274"/>
         </scene>
         <!--Languages-->
         <scene sceneID="n0D-cG-e2j">
@@ -1911,7 +1911,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4VC-sU-lNk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5763" y="-2722"/>
+            <point key="canvasLocation" x="-8131" y="-3274"/>
         </scene>
         <!--About-->
         <scene sceneID="kgJ-Rx-wjI">
@@ -1971,7 +1971,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j6s-8n-A0s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5310" y="-2722"/>
+            <point key="canvasLocation" x="-7678" y="-3274"/>
         </scene>
         <!--Help-->
         <scene sceneID="9yG-3R-tIi">
@@ -2005,7 +2005,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9p5-90-LWS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4890" y="-2722"/>
+            <point key="canvasLocation" x="-7258" y="-3274"/>
         </scene>
         <!--Feedback-->
         <scene sceneID="hBj-go-vhq">
@@ -2095,7 +2095,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tzm-Yf-I7W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4463" y="-2722"/>
+            <point key="canvasLocation" x="-6831" y="-3274"/>
         </scene>
         <!--Sign up-->
         <scene sceneID="Cry-65-D0i">
@@ -2263,7 +2263,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="see-6B-27u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3874" y="-5569"/>
+            <point key="canvasLocation" x="-6242" y="-6121"/>
         </scene>
         <!--Subscription-->
         <scene sceneID="a0I-yh-r4z">
@@ -2369,8 +2369,33 @@
                             </tableViewSection>
                             <tableViewSection id="XRe-5h-K6c">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="56" id="dZZ-co-9cR">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="56" id="e3J-hf-2CO">
                                         <rect key="frame" x="0.0" y="150" width="320" height="56"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="e3J-hf-2CO" id="Kvs-f3-DMl">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="55.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Subscribe Name" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZvK-vO-6sT">
+                                                    <rect key="frame" x="51" y="13" width="252" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                    <connections>
+                                                        <action selector="finishEdit:" destination="HGc-d8-D5z" eventType="editingDidEndOnExit" id="Jss-GC-e0W"/>
+                                                    </connections>
+                                                </textField>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="add_subscribe_name" translatesAutoresizingMaskIntoConstraints="NO" id="LrG-e3-fpz">
+                                                    <rect key="frame" x="13" y="13" width="30" height="30"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ZvK-vO-6sT" firstAttribute="leading" secondItem="Kvs-f3-DMl" secondAttribute="leadingMargin" constant="43" id="KGf-Li-XLy"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ZvK-vO-6sT" secondAttribute="trailing" constant="9" id="WkW-go-6uX"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="56" id="dZZ-co-9cR">
+                                        <rect key="frame" x="0.0" y="206" width="320" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dZZ-co-9cR" id="gVj-WJ-wYE">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="55.5"/>
@@ -2406,7 +2431,7 @@
                             <tableViewSection id="5F1-5b-Nin">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="56" id="E1a-VQ-s8Q">
-                                        <rect key="frame" x="0.0" y="206" width="320" height="56"/>
+                                        <rect key="frame" x="0.0" y="262" width="320" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="E1a-VQ-s8Q" id="gGH-Dd-en2">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="55.5"/>
@@ -2432,7 +2457,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="56" id="PCy-ex-ovm">
-                                        <rect key="frame" x="0.0" y="262" width="320" height="56"/>
+                                        <rect key="frame" x="0.0" y="318" width="320" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PCy-ex-ovm" id="RAq-8x-dM0">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="55.5"/>
@@ -2458,7 +2483,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="56" id="thD-FH-dhI">
-                                        <rect key="frame" x="0.0" y="318" width="320" height="56"/>
+                                        <rect key="frame" x="0.0" y="374" width="320" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="thD-FH-dhI" id="xoP-xF-ins">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="55.5"/>
@@ -2488,7 +2513,7 @@
                             <tableViewSection id="PWb-1R-0yr">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="56" id="qXm-7X-gXQ">
-                                        <rect key="frame" x="0.0" y="374" width="320" height="56"/>
+                                        <rect key="frame" x="0.0" y="430" width="320" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qXm-7X-gXQ" id="zQ4-ss-70V">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="55.5"/>
@@ -2525,7 +2550,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Subscription" id="7GI-yI-lpy">
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="save" id="fKO-Yb-10m">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="fKO-Yb-10m">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="updateSubscribe:" destination="LnE-E0-jFa" id="Ehk-hY-jO6"/>
@@ -2540,6 +2565,7 @@
                         <outlet property="saveBarButtonItem" destination="fKO-Yb-10m" id="6Bn-tc-whO"/>
                         <outlet property="sendEmailSwitch" destination="Wv3-Qc-SRm" id="QAQ-ih-ZDx"/>
                         <outlet property="sendSMSSwitch" destination="F7j-bL-FYV" id="3sb-Ti-usW"/>
+                        <outlet property="snameTextField" destination="ZvK-vO-6sT" id="rl7-5o-SzH"/>
                         <outlet property="subscribeDownImageView" destination="KeM-UO-RL1" id="Yzl-da-XZ2"/>
                         <outlet property="subscribeTipLabel" destination="LHg-EV-NzP" id="IUB-Ps-eos"/>
                         <outlet property="subscribeUpImageView" destination="eyT-cv-JdQ" id="qmL-Is-8Fr"/>
@@ -2550,7 +2576,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xmA-8S-wDA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5317" y="-5311"/>
+            <point key="canvasLocation" x="-7685" y="-5863"/>
         </scene>
     </scenes>
     <resources>
@@ -2598,9 +2624,9 @@
         <image name="tab_subscription_selected" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="tCz-c9-o9a"/>
-        <segue reference="t1O-as-tdA"/>
-        <segue reference="UDA-Mt-qgn"/>
+        <segue reference="qrg-S3-ZeO"/>
         <segue reference="wv3-am-Shd"/>
+        <segue reference="UDA-Mt-qgn"/>
+        <segue reference="2KY-rw-Y4G"/>
     </inferredMetricsTieBreakers>
 </document>

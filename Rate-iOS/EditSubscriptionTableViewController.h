@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *fromCodeLabel;
 @property (weak, nonatomic) IBOutlet SVGKFastImageView *toImageView;
 @property (weak, nonatomic) IBOutlet UILabel *toCodeLabel;
+@property (weak, nonatomic) IBOutlet UITextField *snameTextField;
 @property (weak, nonatomic) IBOutlet UILabel *currentRateLabel;
 @property (weak, nonatomic) IBOutlet UITextField *thresholdTextField;
 @property (weak, nonatomic) IBOutlet UISwitch *enableSwitch;
