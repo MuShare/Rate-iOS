@@ -77,7 +77,7 @@
                     @"password": _passwordTextField.text,
                     @"os": [NSString stringWithFormat:@"iOS %@", currentDevice.systemVersion],
                     @"did": [currentDevice.identifierForVendor UUIDString],
-                    @"device_token": @"deviceToken"
+                    @"device_token": user.deviceToken
                     }
          progress:nil
           success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {

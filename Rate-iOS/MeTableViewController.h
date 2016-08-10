@@ -13,5 +13,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
 @property (weak, nonatomic) IBOutlet UILabel *signOrNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *welcomeOrEmailLabel;
+@property (weak, nonatomic) IBOutlet UIButton *logoutButton;
+
+- (IBAction)logout:(id)sender;
 
 @end

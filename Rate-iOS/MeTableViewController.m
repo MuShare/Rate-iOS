@@ -145,6 +145,8 @@
                                                    handler:nil];
     [alertController addAction:logout];
     [alertController addAction:cancel];
+    alertController.popoverPresentationController.sourceView = _logoutButton;
+    alertController.popoverPresentationController.sourceRect = _logoutButton.bounds;
     [self presentViewController:alertController animated:YES completion:nil];
 }
 @end

@@ -22,9 +22,11 @@
 
 @interface CommonTool : NSObject
 
+//Validate Tool
 + (BOOL)isNumeric:(NSString *)str;
 + (BOOL)isAvailableEmail:(NSString *)email;
 
+//Date Tool
 + (NSUInteger)getNumberOfDaysInThisMonth:(NSDate *)date;
 
 + (NSDate *)getADayOfLastYear:(NSDate *)date;
@@ -46,7 +48,6 @@
 + (long long)getUnixTimestamp:(NSDate *)date;
 + (NSDate *)dateWithUnixTimestamp:(long long)timestamp;
 
-//将十六进制颜色转换为 UIColor 对象
-+ (UIColor *)colorWithHexString:(NSString *)color;
-
+//Device info Tool
++ (NSString *)deviceName;
 @end

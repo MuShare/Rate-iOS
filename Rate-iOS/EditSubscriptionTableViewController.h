@@ -30,6 +30,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *snameImageView;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *editBarButtonItem;
+@property (weak, nonatomic) IBOutlet UIButton *deleteSubscribeButton;
 
 - (IBAction)editSubscribe:(UIBarButtonItem *)sender;
 - (IBAction)deleteSubscribe:(id)sender;

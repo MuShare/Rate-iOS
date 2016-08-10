@@ -8,9 +8,7 @@
 
 #import "AppDelegate.h"
 #import "UserTool.h"
-#import "InternetResponse.h"
-#import "CurrencyDao.h"
-#import "MenuRootViewController.h"
+#import "CommonTool.h"
 
 @interface AppDelegate ()
 
@@ -25,6 +23,8 @@
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
+    
+    NSLog(@"%@", [CommonTool deviceName]);
 
     //Register Remote Notification
     [[UIApplication sharedApplication] registerForRemoteNotifications];

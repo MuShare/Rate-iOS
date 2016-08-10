@@ -162,6 +162,8 @@
                                                    handler:nil];
     [alertController addAction:delete];
     [alertController addAction:cancel];
+    alertController.popoverPresentationController.sourceView = _deleteSubscribeButton;
+    alertController.popoverPresentationController.sourceRect = _deleteSubscribeButton.bounds;
     [self presentViewController:alertController animated:YES completion:nil];
 }
 
