@@ -306,6 +306,7 @@
 		E4EEEC101D5730D200A50E1C /* NameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4EEEC0F1D5730D200A50E1C /* NameViewController.m */; };
 		E4EEEC131D5730DE00A50E1C /* TelephoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4EEEC121D5730DE00A50E1C /* TelephoneViewController.m */; };
 		E4EEEC161D5730E900A50E1C /* PasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4EEEC151D5730E900A50E1C /* PasswordViewController.m */; };
+		E4F337531D5CB6140013F4D9 /* MySearchResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F337521D5CB6140013F4D9 /* MySearchResultsController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -667,6 +668,8 @@
 		E4EEEC121D5730DE00A50E1C /* TelephoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TelephoneViewController.m; sourceTree = "<group>"; };
 		E4EEEC141D5730E900A50E1C /* PasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordViewController.h; sourceTree = "<group>"; };
 		E4EEEC151D5730E900A50E1C /* PasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordViewController.m; sourceTree = "<group>"; };
+		E4F337511D5CB6140013F4D9 /* MySearchResultsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySearchResultsController.h; sourceTree = "<group>"; };
+		E4F337521D5CB6140013F4D9 /* MySearchResultsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySearchResultsController.m; sourceTree = "<group>"; };
 		E8DE8CE261D3D91477792600 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F0D8F75365DB741C707980DC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1112,6 +1115,8 @@
 				E41451981D4F8AA000AFE672 /* RateViewController.m */,
 				E46B5BBF1D58B46700CE407F /* RightMenuViewController.h */,
 				E46B5BC01D58B46700CE407F /* RightMenuViewController.m */,
+				E4F337511D5CB6140013F4D9 /* MySearchResultsController.h */,
+				E4F337521D5CB6140013F4D9 /* MySearchResultsController.m */,
 			);
 			name = Rate;
 			sourceTree = "<group>";
@@ -1620,6 +1625,7 @@
 				E408A9851D519EBC00B34655 /* InternetResponse.m in Sources */,
 				E46B5BC11D58B46700CE407F /* RightMenuViewController.m in Sources */,
 				E496A7A01D4F095A003B0F1D /* MyProfileTableViewController.m in Sources */,
+				E4F337531D5CB6140013F4D9 /* MySearchResultsController.m in Sources */,
 				E408A9931D51A84700B34655 /* DaoTemplate.m in Sources */,
 				E4852F8C1D5093590039B79B /* InternetTool.m in Sources */,
 				E408A9921D51A84700B34655 /* DaoManager.m in Sources */,

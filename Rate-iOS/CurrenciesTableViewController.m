@@ -56,8 +56,8 @@
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    Currency *currency = [_fetchedResultsController objectAtIndexPath:indexPath]; //[currencies objectAtIndex:indexPath.row];
-    
+    Currency *currency = [_fetchedResultsController objectAtIndexPath:indexPath];
+    NSLog(@"Currency %@, favorite = %@", currency.code, currency.favorite);
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"currencyIdentifer" forIndexPath:indexPath];
     
     SVGKFastImageView *currencyImageView = (SVGKFastImageView *)[cell viewWithTag:1];
@@ -68,17 +68,16 @@
     currencyImageView.image = [SVGKImage imageNamed:[NSString stringWithFormat:@"%@.svg", currency.icon]];
     codeLabel.text = currency.code;
     nameLabel.text = currency.name;
-    [favoriteButton addTarget:self
-                       action:@selector(favoriteButtonClicked:)
-             forControlEvents:UIControlEventTouchUpInside];
+//    [favoriteButton addTarget:self
+//                       action:@selector(favoriteButtonClicked:)
+//             forControlEvents:UIControlEventTouchUpInside];
     //Set favorite button for logined user.
     if (user.token != nil) {
         favoriteButton.hidden = NO;
-        if(currency.favorite.boolValue) {
-            [favoriteButton setImage:[UIImage imageNamed:@"currency_like"] forState:UIControlStateNormal];
-        }
+        [favoriteButton setImage:[UIImage imageNamed:currency.favorite.boolValue? @"currency_like": @"currency_unlike"]
+                        forState:UIControlStateNormal];
     }
-    favoriteButton.tag = indexPath.row;
+    
     return cell;
 }
 
@@ -91,9 +90,43 @@
         //Save currency cid to sandbox.
         user.basedCurrencyId = currency.cid;
         //Back to last view controller.
-        UIViewController *controller = [self.navigationController.viewControllers objectAtIndex:self.navigationController.viewControllers.count-2];
+        UIViewController *controller = [self.navigationController.viewControllers objectAtIndex:self.navigationController.viewControllers.count - 2];
         [controller setValue:currency forKey:_currencyAttributeName];
         [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+
+#pragma mark - NSFetchedResultsControllerDelegate
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
+    if (DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    [self.tableView beginUpdates];
+}
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+    if (DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    [self.tableView endUpdates];
+}
+
+- (void)controller:(NSFetchedResultsController *)controller
+   didChangeObject:(id)anObject
+       atIndexPath:(NSIndexPath *)indexPath
+     forChangeType:(NSFetchedResultsChangeType)type
+      newIndexPath:(NSIndexPath *)newIndexPath {
+    if (DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    
+    switch (type) {
+        case NSFetchedResultsChangeUpdate:
+            
+            break;
+            
+        default:
+            break;
     }
 }
 
@@ -124,7 +157,57 @@
         default:
             break;
     }
-    [self.tableView reloadData];
+}
+
+- (IBAction)setFavorite:(UIButton *)sender {
+    if (DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    
+    UITableViewCell *cell = (UITableViewCell *)sender.superview.superview;
+    UIView *loadingView = [cell viewWithTag:5];
+    loadingView.hidden = NO;
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    Currency *currency = [_fetchedResultsController objectAtIndexPath:indexPath];
+    NSLog(@"Currency is %@, %@", currency.code, @{
+                                              @"cid": currency.cid,
+                                              @"favorite": [NSNumber numberWithInt:!currency.favorite.boolValue]
+                                              });
+    [manager POST:[InternetTool createUrl:@"api/user/favorite"]
+       parameters:@{
+                    @"cid": currency.cid,
+                    @"favorite": [NSNumber numberWithInt:!currency.favorite.boolValue]
+                    }
+         progress:nil
+          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+              InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
+              if ([response statusOK]) {
+                  //Save to database
+                  currency.favorite = [NSNumber numberWithBool:!currency.favorite.boolValue];
+                  [dao saveContext];
+                  //Update UI
+                  [sender setImage:[UIImage imageNamed:currency.favorite.boolValue? @"currency_like": @"currency_unlike"]
+                          forState:UIControlStateNormal];
+                  loadingView.hidden = YES;
+              }
+          }
+          failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+              if (DEBUG) {
+                  NSLog(@"Server error: %@", error.localizedDescription);
+              }
+              InternetResponse *response = [[InternetResponse alloc] initWithError:error];
+              switch ([response errorCode]) {
+                      
+                  default:
+                      if (DEBUG) {
+                          NSLog(@"Error code is %d", [response errorCode]);
+                      }
+                      loadingView.hidden = YES;
+                      break;
+              }
+              NSLog(@"%d", [response errorCode]);
+          }];
+
 }
 
 
@@ -137,10 +220,7 @@
     loadingView.hidden = NO;
     NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
     Currency *currency = [_fetchedResultsController objectAtIndexPath:indexPath];
-    NSLog(@"%@", @{
-                   @"cid": currency.cid,
-                   @"favorite": [NSNumber numberWithInt:!currency.favorite.boolValue]
-                   });
+
     [manager POST:[InternetTool createUrl:@"api/user/favorite"]
        parameters:@{
                     @"cid": currency.cid,

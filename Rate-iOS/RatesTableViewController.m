@@ -13,6 +13,8 @@
 #import <SVGKit/SVGKit.h>
 #import <MJRefresh/MJRefresh.h>
 
+#import "MySearchResultsController.h"
+
 @interface RatesTableViewController ()
 
 @end
@@ -21,8 +23,9 @@
     AFHTTPSessionManager *manager;
     UserTool *user;
     DaoManager *dao;
-    NSArray *rates;
-    NSString *selectedRate;
+    NSDictionary *rates;
+    NSString *selectedCurrency;
+
 }
 
 - (void)viewDidLoad {
@@ -44,6 +47,7 @@
         [self refreshRates];
     }];
     [self.tableView.mj_header beginRefreshing];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -54,7 +58,7 @@
     [self.navigationItem.leftBarButtonItem setTitle:_basedCurrency.name];
     //Reload rates values.
     [self.tableView.mj_header beginRefreshing];
-    [self refreshRates];
+
 }
 
 #pragma mark - UITableViewDataSource
@@ -69,8 +73,8 @@
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    NSObject *rate = [rates objectAtIndex:indexPath.row];
-    Currency *currency = [_fetchedResultsController objectAtIndexPath:indexPath];//[dao.currencyDao getByCid:[rate valueForKey:@"cid"]];
+
+    Currency *currency = [_fetchedResultsController objectAtIndexPath:indexPath];
     
     UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"rateIdentifier"
                                                                                forIndexPath:indexPath];
@@ -82,7 +86,8 @@
     currencyImageView.image = [SVGKImage imageNamed:[NSString stringWithFormat:@"%@.svg", currency.icon]];
     codeLabel.text = currency.code;
     nameLabel.text = currency.name;
-    rateLabel.text = [NSString stringWithFormat:@"%.4f", [[rate valueForKey:@"value"] floatValue]];
+    
+    rateLabel.text = [NSString stringWithFormat:@"%.4f", [rates[currency.cid] floatValue]];
     return cell;
 }
 
@@ -98,7 +103,7 @@
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    selectedRate = [rates objectAtIndex:indexPath.row];
+    selectedCurrency = [_fetchedResultsController objectAtIndexPath:indexPath];
     [self performSegueWithIdentifier:@"rateSegue" sender:self];
 }
 
@@ -113,8 +118,7 @@
         [segue.destinationViewController setValue:@"basedCurrency" forKey:@"currencyAttributeName"];
     } else if([segue.identifier isEqualToString:@"rateSegue"]) {
         //set to currency for RateViewController
-        [segue.destinationViewController setValue:[dao.currencyDao getByCid:[selectedRate valueForKey:@"cid"]]
-                                           forKey:@"toCurrency"];
+        [segue.destinationViewController setValue:selectedCurrency forKey:@"toCurrency"];
     }
 }
 
@@ -136,36 +140,37 @@
              InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
              if([response statusOK]) {
                  rates = [[response getResponseResult] objectForKey:@"rates"];
+                 
+                 //Refresh favorite currencies stored in local database if user logined.
+                 if(user.token != nil) {
+                     for(Currency *currency in [dao.currencyDao findAll]) {
+                         currency.favorite = [NSNumber numberWithBool:NO];
+                     }
+                     for(NSString *cid in rates.allKeys) {
+                         Currency *currency = [dao.currencyDao getByCid:cid];
+                         currency.favorite = [NSNumber numberWithBool:YES];
+                     }
+                     [dao saveContext];
+                 }
+                 
+                 //Reload data
+                 _fetchedResultsController = [dao.currencyDao fetchRequestControllerWithFavorite:[NSNumber numberWithBool:user.token != nil]
+                                                                                         Without:user.basedCurrencyId];
                  [self.tableView reloadData];
-                 if(rates != nil) {
-                     user.cacheRates = rates;
-                 }
+                 [self.tableView.mj_header endRefreshing];
              }
-             [self.tableView.mj_header endRefreshing];
-             
-             //Refresh favorite currencies stored in local database if user logined.
-             if(user.token != nil) {
-                 for(Currency *currency in [dao.currencyDao findAll]) {
-                     currency.favorite = [NSNumber numberWithBool:NO];
-                 }
-                 for(NSObject *rate in rates) {
-                     Currency *currency = [dao.currencyDao getByCid:[rate valueForKey:@"cid"]];
-                     currency.favorite = [NSNumber numberWithBool:YES];
-                 }
-                 [dao saveContext];
-             }
-             
-             //Reload data
-             _fetchedResultsController = [dao.currencyDao fetchRequestControllerWithFavorite:[NSNumber numberWithBool:user.token != nil]
-                                                                                     Without:user.basedCurrencyId];
-             [self.tableView reloadData];
          }
          failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
              if(DEBUG) {
                  NSLog(@"Server error: %@", error.localizedDescription);
              }
+             [self.tableView.mj_header endRefreshing];
              InternetResponse *response = [[InternetResponse alloc] initWithError:error];
-             [response errorCode];
+             switch ([response errorCode]) {
+
+                 default:
+                     break;
+             }
          }];
     
 }

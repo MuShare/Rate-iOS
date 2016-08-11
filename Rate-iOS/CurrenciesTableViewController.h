@@ -17,5 +17,6 @@
 @property (nonatomic, strong) NSString *currencyAttributeName;
 
 - (IBAction)selectShowType:(id)sender;
+- (IBAction)setFavorite:(UIButton *)sender;
 
 @end

@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "UserTool.h"
 #import "CommonTool.h"
+#import "InternetTool.h"
 
 @interface AppDelegate ()
 
@@ -83,7 +84,32 @@
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
         NSLog(@"Get token from server: %@", deviceToken);
     }
-    
+    user.deviceToken = [[[[deviceToken description]
+                          stringByReplacingOccurrencesOfString: @"<" withString: @""]
+                         stringByReplacingOccurrencesOfString: @">" withString: @""]
+                        stringByReplacingOccurrencesOfString: @" " withString: @""];
+    NSLog(@"Device token is %@", user.deviceToken);
+    [_httpSessionManager POST:[InternetTool createUrl:@"api/user/device_token"]
+                   parameters:@{
+                                @"device_token": user.deviceToken
+                                }
+                     progress:nil
+                      success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                          InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
+                          if([response statusOK]) {
+                              NSObject *result = [response getResponseResult];
+                              user.telephone = [result valueForKey:@"telephone"];
+                              user.name = [result valueForKey:@"uname"];
+                              user.token = [result valueForKey:@"token"];
+                          }
+                      }
+                      failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                          InternetResponse *response = [[InternetResponse alloc] initWithError:error];
+                          switch ([response errorCode]) {
+                              default:
+                                  break;
+                          }
+                      }];
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
@@ -91,7 +117,7 @@
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
         NSLog(@"Register remote notification token with error: %@", error);
     }
-    
+    user.deviceToken = @"";
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
