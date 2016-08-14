@@ -7,31 +7,48 @@
 //
 
 #import "NameViewController.h"
+#import "InternetTool.h"
+#import "UserTool.h"
 
 @interface NameViewController ()
 
 @end
 
-@implementation NameViewController
+@implementation NameViewController {
+    AFHTTPSessionManager *manager;
+    UserTool *user;
+}
 
 - (void)viewDidLoad {
+    if (DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    manager = [InternetTool getSessionManager];
+    user = [[UserTool alloc] init];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - Action
+- (IBAction)saveName:(id)sender {
+    if (DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    if ([_nameTextField.text isEqualToString:@""]) {
+        
+        return;
+    }
+    [manager POST:[InternetTool createUrl:@""]
+       parameters:@{
+                    }
+         progress:nil
+          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+              InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
+              if ([response statusOK]) {
+                  
+              }
+          }
+          failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+              
+          }];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end
