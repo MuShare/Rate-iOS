@@ -33,10 +33,13 @@
     
     _fetchedResultsController = [dao.subscribeDao fetchedResultsControllerForAll];
     
-    //Bind MJRefresh
-    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [self refreshSubscribe];
-    }];
+    if (user.token != nil) {
+        //Bind MJRefresh
+        self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+            [self refreshSubscribe];
+        }];
+    }
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -44,6 +47,12 @@
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     manager = [InternetTool getSessionManagerForJSON];
+    if (user.token != nil && self.tableView.mj_header == nil) {
+        //Bind MJRefresh
+        self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+            [self refreshSubscribe];
+        }];
+    }
     [self refreshSubscribe];
     
 }

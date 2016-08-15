@@ -123,6 +123,11 @@
                                          andContent:@"Password is wrong!"
                                    inViewController:self];
                       break;
+                  case ErrorCodeNotValidated:
+                      [AlertTool showAlertWithTitle:@"Tip"
+                                         andContent:@"Active your account by email at first!"
+                                   inViewController:self];
+                      break;
                   default:
                       break;
               }
