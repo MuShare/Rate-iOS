@@ -175,5 +175,15 @@
     
 }
 
+#pragma mark - Action
+- (IBAction)searchCurrency:(id)sender {
+    if (DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    
+}
+
+- (IBAction)openSettingsMenu:(id)sender {
+}
 @end
 

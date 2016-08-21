@@ -294,6 +294,7 @@
 		E476EAF81D5849EE0001DCDC /* SubscribeDao.m in Sources */ = {isa = PBXBuildFile; fileRef = E476EAF71D5849EE0001DCDC /* SubscribeDao.m */; };
 		E4852F8C1D5093590039B79B /* InternetTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E4852F8B1D5093590039B79B /* InternetTool.m */; };
 		E496A7A01D4F095A003B0F1D /* MyProfileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E496A79F1D4F095A003B0F1D /* MyProfileTableViewController.m */; };
+		E498D6471D6737FB0083260F /* ProfilePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E498D6461D6737FB0083260F /* ProfilePhotoViewController.m */; };
 		E49A351C1D4F35E70073E079 /* MeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E49A351B1D4F35E70073E079 /* MeTableViewController.m */; };
 		E49A351F1D4F4CCE0073E079 /* SubscriptionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E49A351E1D4F4CCE0073E079 /* SubscriptionsTableViewController.m */; };
 		E49A35221D4F4CD90073E079 /* AddSubscribeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E49A35211D4F4CD90073E079 /* AddSubscribeTableViewController.m */; };
@@ -642,6 +643,8 @@
 		E4852F8B1D5093590039B79B /* InternetTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InternetTool.m; sourceTree = "<group>"; };
 		E496A79E1D4F095A003B0F1D /* MyProfileTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProfileTableViewController.h; sourceTree = "<group>"; };
 		E496A79F1D4F095A003B0F1D /* MyProfileTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProfileTableViewController.m; sourceTree = "<group>"; };
+		E498D6451D6737FB0083260F /* ProfilePhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfilePhotoViewController.h; sourceTree = "<group>"; };
+		E498D6461D6737FB0083260F /* ProfilePhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfilePhotoViewController.m; sourceTree = "<group>"; };
 		E49A351A1D4F35E70073E079 /* MeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeTableViewController.h; sourceTree = "<group>"; };
 		E49A351B1D4F35E70073E079 /* MeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeTableViewController.m; sourceTree = "<group>"; };
 		E49A351D1D4F4CCE0073E079 /* SubscriptionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubscriptionsTableViewController.h; sourceTree = "<group>"; };
@@ -1144,6 +1147,8 @@
 				E4D057BA1D5498EC0003ADA4 /* RegisterViewController.m */,
 				E4EEEC111D5730DE00A50E1C /* TelephoneViewController.h */,
 				E4EEEC121D5730DE00A50E1C /* TelephoneViewController.m */,
+				E498D6451D6737FB0083260F /* ProfilePhotoViewController.h */,
+				E498D6461D6737FB0083260F /* ProfilePhotoViewController.m */,
 			);
 			name = Me;
 			sourceTree = "<group>";
@@ -1642,6 +1647,7 @@
 				E4D057AA1D544BAC0003ADA4 /* LoadingViewController.m in Sources */,
 				E408A9961D51A88A00B34655 /* CurrencyDao.m in Sources */,
 				E408A9991D51AF3D00B34655 /* CurrenciesTableViewController.m in Sources */,
+				E498D6471D6737FB0083260F /* ProfilePhotoViewController.m in Sources */,
 				E44899981D52DA4600BDD71B /* CommonTool.m in Sources */,
 				E46FB5281D4E305800661E13 /* Rate_iOS.xcdatamodeld in Sources */,
 				E436976A1D58488200781223 /* Subscribe.m in Sources */,

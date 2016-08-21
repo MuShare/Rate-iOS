@@ -27,7 +27,6 @@
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     [super viewDidLoad];
-    user = [[UserTool alloc] init];
     dao = [[DaoManager alloc] init];
 }
 
@@ -36,6 +35,7 @@
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     manager = [InternetTool getSessionManager];
+    user = [[UserTool alloc] init];
     if(user.token != nil) {
         _signOrNameLabel.text = user.name;
         _welcomeOrEmailLabel.text = user.email;

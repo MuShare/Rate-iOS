@@ -37,18 +37,28 @@
         
         return;
     }
-    [manager POST:[InternetTool createUrl:@""]
+    [manager POST:[InternetTool createUrl:@"api/user/change_uname"]
        parameters:@{
+                    @"uname": _nameTextField.text
                     }
          progress:nil
           success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
               InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
               if ([response statusOK]) {
-                  
+                  user.name = _nameTextField.text;
+                  [self.navigationController popViewControllerAnimated:YES];
               }
           }
           failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-              
+              InternetResponse *response = [[InternetResponse alloc] initWithError:error];
+              switch ([response errorCode]) {
+                      
+                  default:
+                      if (DEBUG) {
+                          NSLog(@"Error code is %d", [response errorCode]);
+                      }
+                      break;
+              }
           }];
 }
 @end

@@ -18,16 +18,22 @@
 }
 
 - (void)viewDidLoad {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     [super viewDidLoad];
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    if (DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
     user = [[UserTool alloc] init];
     _emailLabel.text = user.email;
     _nameLabel.text = user.name;
     _telephoneLabel.text = user.telephone;
 }
-
 
 #pragma mark - Table view data source
 - (UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {

@@ -9,12 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "DaoManager.h"
 
-@interface RatesTableViewController : UITableViewController <NSFetchedResultsControllerDelegate, UISearchControllerDelegate>
+@interface RatesTableViewController : UITableViewController <NSFetchedResultsControllerDelegate>
 
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 
-@property (nonatomic, retain) UISearchController *searchController;
-
 @property (nonatomic, strong) Currency *basedCurrency;
+
+- (IBAction)searchCurrency:(id)sender;
+- (IBAction)openSettingsMenu:(id)sender;
 
 @end
