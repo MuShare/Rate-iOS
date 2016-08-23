@@ -10,7 +10,6 @@
 #import "InternetTool.h"
 #import "UserTool.h"
 #import "DaoManager.h"
-#import <SVGKit/SVGKit.h>
 #import <MJRefresh/MJRefresh.h>
 
 #import "MySearchResultsController.h"
@@ -78,15 +77,14 @@
     
     UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"rateIdentifier"
                                                                                forIndexPath:indexPath];
-    SVGKFastImageView *currencyImageView = (SVGKFastImageView *)[cell viewWithTag:1];
+    UIImageView *currencyImageView = (UIImageView *)[cell viewWithTag:1];
     UILabel *codeLabel = (UILabel *)[cell viewWithTag:2];
     UILabel *nameLabel = (UILabel *)[cell viewWithTag:3];
     UILabel *rateLabel = (UILabel *)[cell viewWithTag:4];
     
-    currencyImageView.image = [SVGKImage imageNamed:[NSString stringWithFormat:@"%@.svg", currency.icon]];
+    currencyImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", currency.icon]];
     codeLabel.text = currency.code;
     nameLabel.text = currency.name;
-    
     rateLabel.text = [NSString stringWithFormat:@"%.4f", [rates[currency.cid] floatValue]];
     return cell;
 }

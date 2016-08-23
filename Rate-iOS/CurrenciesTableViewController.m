@@ -9,7 +9,6 @@
 #import "CurrenciesTableViewController.h"
 #import "UserTool.h"
 #import "InternetTool.h"
-#import <SVGKit/SVGKit.h>
 
 @interface CurrenciesTableViewController ()
 
@@ -57,20 +56,18 @@
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     Currency *currency = [_fetchedResultsController objectAtIndexPath:indexPath];
-    NSLog(@"Currency %@, favorite = %@", currency.code, currency.favorite);
+
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"currencyIdentifer" forIndexPath:indexPath];
     
-    SVGKFastImageView *currencyImageView = (SVGKFastImageView *)[cell viewWithTag:1];
+    UIImageView *currencyImageView = (UIImageView *)[cell viewWithTag:1];
     UILabel *codeLabel = (UILabel *)[cell viewWithTag:2];
     UILabel *nameLabel = (UILabel *)[cell viewWithTag:3];
     UIButton *favoriteButton = (UIButton *)[cell viewWithTag:4];
     
-    currencyImageView.image = [SVGKImage imageNamed:[NSString stringWithFormat:@"%@.svg", currency.icon]];
+    currencyImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", currency.icon]];
     codeLabel.text = currency.code;
     nameLabel.text = currency.name;
-//    [favoriteButton addTarget:self
-//                       action:@selector(favoriteButtonClicked:)
-//             forControlEvents:UIControlEventTouchUpInside];
+
     //Set favorite button for logined user.
     if (user.token != nil) {
         favoriteButton.hidden = NO;

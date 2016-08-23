@@ -28,8 +28,14 @@
     NSLog(@"%@", [CommonTool deviceName]);
 
     //Register Remote Notification
-    [[UIApplication sharedApplication] registerForRemoteNotifications];
 
+    if ([[[UIDevice currentDevice] systemVersion] floatValue]>=8.0) {
+        [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
+        [[UIApplication sharedApplication] registerForRemoteNotifications];
+    } else{
+        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeAlert|UIRemoteNotificationTypeAlert];
+    }
+    
     user = [[UserTool alloc] init];
     user.lan = @"en";
     //Init AFHTTPSessionManager.

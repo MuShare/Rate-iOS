@@ -203,8 +203,8 @@ static const int historySearchDays[5] = {30, 90, 180, 365, 3*365};
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
 
-    _fromImageView.image = [SVGKImage imageNamed:[NSString stringWithFormat:@"%@.svg", _fromCurrency.icon]];
-    _toImageView.image = [SVGKImage imageNamed:[NSString stringWithFormat:@"%@.svg", _toCurrency.icon]];
+    _fromImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", _fromCurrency.icon]];
+    _toImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", _toCurrency.icon]];
     [_fromButton setTitle:_fromCurrency.code forState:UIControlStateNormal];
     _fromNameLabel.text = _fromCurrency.name;
     _toNameLabel.text = _toCurrency.name;

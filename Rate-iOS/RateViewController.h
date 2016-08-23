@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <SVGKit/SVGKit.h>
 #import "DaoManager.h"
 #import "Rate-iOS-Bridging-Header.h"
 
@@ -16,8 +15,8 @@
 @property (strong, nonatomic) Currency *fromCurrency;
 @property (strong, nonatomic) Currency *toCurrency;
 
-@property (weak, nonatomic) IBOutlet SVGKFastImageView *fromImageView;
-@property (weak, nonatomic) IBOutlet SVGKFastImageView *toImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *fromImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *toImageView;
 @property (weak, nonatomic) IBOutlet UIButton *fromButton;
 @property (weak, nonatomic) IBOutlet UILabel *fromNameLabel;
 @property (weak, nonatomic) IBOutlet UIButton *toButton;

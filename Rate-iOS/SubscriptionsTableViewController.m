@@ -9,7 +9,6 @@
 #import "SubscriptionsTableViewController.h"
 #import "InternetTool.h"
 #import "UserTool.h"
-#import <SVGKit/SVGKit.h>
 #import <MJRefresh/MJRefresh.h>
 
 @interface SubscriptionsTableViewController ()
@@ -88,14 +87,14 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:subscribe.enable.boolValue? @"subscribeEnableIdentifer": @"subscribeUnableIdentifer"];
 
     UILabel *snameLabel = (UILabel *)[cell viewWithTag:1];
-    SVGKFastImageView *fromImageView = (SVGKFastImageView *)[cell viewWithTag:2];
-    SVGKFastImageView *toImageView = (SVGKFastImageView *)[cell viewWithTag:3];
+    UIImageView *fromImageView = (UIImageView *)[cell viewWithTag:2];
+    UIImageView *toImageView = (UIImageView *)[cell viewWithTag:3];
     UILabel *currentRateLabel = (UILabel *)[cell viewWithTag:4];
     UILabel *thredholdLabel = (UILabel *)[cell viewWithTag:5];
     
     snameLabel.text = subscribe.sname;
-    fromImageView.image = [SVGKImage imageNamed:[NSString stringWithFormat:@"%@.svg", subscribe.from.icon]];
-    toImageView.image = [SVGKImage imageNamed:[NSString stringWithFormat:@"%@.svg", subscribe.to.icon]];
+    fromImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", subscribe.from.icon]];
+    toImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", subscribe.to.icon]];
     currentRateLabel.text = [NSString stringWithFormat:@"%.3f", subscribe.rate.floatValue];
     thredholdLabel.text = [NSString stringWithFormat:@"%.3f", subscribe.threshold.floatValue];
     return cell;

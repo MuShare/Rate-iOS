@@ -30,8 +30,8 @@
         return;
     }
     _snameTextField.placeholder = _subscribe.sname;
-    _fromImageView.image = [SVGKImage imageNamed:[NSString stringWithFormat:@"%@.svg", _subscribe.from.icon]];
-    _toImageView.image = [SVGKImage imageNamed:[NSString stringWithFormat:@"%@.svg", _subscribe.to.icon]];
+    _fromImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", _subscribe.from.icon]];
+    _toImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", _subscribe.to.icon]];
     _fromCodeLabel.text = _subscribe.from.code;
     _toCodeLabel.text = _subscribe.to.code;
     _currentRateLabel.text = [NSString stringWithFormat:@"%.3f", _subscribe.rate.floatValue];
