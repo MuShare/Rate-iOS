@@ -8,7 +8,7 @@
 
 #import "FeedbackViewController.h"
 #import "InternetTool.h"
-
+#import "AlertTool.h"
 @interface FeedbackViewController ()
 
 @end
@@ -69,10 +69,37 @@
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     if([_contactTextField.text isEqualToString:@""] || [_contentTextView.text isEqualToString:@""]) {
-        
+        [AlertTool showAlertWithTitle:@"Warning"
+                           andContent:@"Write content and contact info!"
+                     inViewController:self];
         return;
     }
-    
+    [manager POST:[InternetTool createUrl:@"api/user/add_feedback"]
+       parameters:@{
+                    @"type": [NSNumber numberWithLong:_typeSegmentedControl.selectedSegmentIndex],
+                    @"content": _contentTextView.text,
+                    @"contact": _contactTextField.text
+                    }
+         progress:nil
+          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+              InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
+              if ([response statusOK]) {
+                  [AlertTool showAlertWithTitle:@"Tip"
+                                     andContent:@"Send feedback successfully!"
+                               inViewController:self];
+                  [self.navigationController popViewControllerAnimated:YES];
+              }
+          }
+          failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+              InternetResponse *response = [[InternetResponse alloc] initWithError:error];
+              switch ([response errorCode]) {
+                      
+                  default:
+
+                      break;
+              }
+
+          }];
 }
 
 #pragma mark - Service

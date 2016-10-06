@@ -48,7 +48,32 @@
     
     //Upload image
     if(_profilePhotoImageView.image != nil) {
-
+        NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST"
+                                                                                                  URLString:[InternetTool createUrl:@"api/user/upload_image"]
+                                                                                                 parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+                                                                                                     [formData appendPartWithFileData:UIImageJPEGRepresentation(_profilePhotoImageView.image, 1.0)
+                                                                                                                                 name:@"file" fileName:@"avatar.jpg"
+                                                                                                                             mimeType:@"image/jpeg"];
+            
+                                                                                                 }
+                                                                                                      error:nil];
+        
+        NSURLSessionUploadTask *task = [manager uploadTaskWithStreamedRequest:request
+                                                                     progress:^(NSProgress * _Nonnull uploadProgress) {
+                                                                         dispatch_async(dispatch_get_main_queue(), ^{
+                                                                             NSLog(@"%f", uploadProgress.fractionCompleted);
+                                                                         });
+                                                                     }
+                                                            completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+                                             
+                                                                InternetResponse *res = [[InternetResponse alloc] initWithError:error];
+                                                                switch ([res errorCode]) {
+                                                                        
+                                                                    default:
+                                                                        break;
+                                                                }
+                                                            }];
+        [task resume];
     }
 }
 

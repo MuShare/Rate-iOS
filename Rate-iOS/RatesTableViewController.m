@@ -165,7 +165,7 @@
              [self.tableView.mj_header endRefreshing];
              InternetResponse *response = [[InternetResponse alloc] initWithError:error];
              switch ([response errorCode]) {
-
+                     
                  default:
                      break;
              }

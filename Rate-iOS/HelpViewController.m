@@ -7,6 +7,7 @@
 //
 
 #import "HelpViewController.h"
+#import "InternetTool.h"
 
 @interface HelpViewController ()
 
@@ -19,7 +20,7 @@
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     [super viewDidLoad];
-    NSURL *url = [[NSURL alloc] initWithString:@"http://fczm.pw"];
+    NSURL *url = [[NSURL alloc] initWithString:[InternetTool createUrl:@"help"]];
     [_helpWebView loadRequest:[NSURLRequest requestWithURL:url]];
 }
 

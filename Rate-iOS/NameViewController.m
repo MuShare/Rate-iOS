@@ -52,12 +52,11 @@
           failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
               InternetResponse *response = [[InternetResponse alloc] initWithError:error];
               switch ([response errorCode]) {
-                      
                   default:
                       if (DEBUG) {
                           NSLog(@"Error code is %d", [response errorCode]);
                       }
-                      break;
+                  break;
               }
           }];
 }

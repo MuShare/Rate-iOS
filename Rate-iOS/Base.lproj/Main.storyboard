@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Rate-->
@@ -201,7 +201,7 @@
             </objects>
             <point key="canvasLocation" x="-6934" y="-6973"/>
         </scene>
-        <!--Currencies Table View Controller-->
+        <!--Currencies-->
         <scene sceneID="AXA-cD-voq">
             <objects>
                 <tableViewController id="sqh-ol-nfs" customClass="CurrenciesTableViewController" sceneMemberID="viewController">
@@ -276,21 +276,7 @@
                             <outlet property="delegate" destination="sqh-ol-nfs" id="CvO-33-5k7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="iFj-RH-TUV">
-                        <nil key="title"/>
-                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="6t9-j7-6P0">
-                            <rect key="frame" x="61" y="7" width="199" height="31"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <segments>
-                                <segment title="All Currencies"/>
-                                <segment title="Favorite"/>
-                            </segments>
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <action selector="selectShowType:" destination="sqh-ol-nfs" eventType="valueChanged" id="wU3-Wl-shT"/>
-                            </connections>
-                        </segmentedControl>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Currencies" id="iFj-RH-TUV"/>
                     <connections>
                         <segue destination="Qk9-mI-Fdn" kind="push" identifier="selectFavoriteUnloginSegue" id="iYg-eg-RuY"/>
                     </connections>
@@ -372,20 +358,6 @@
                                 <segue destination="sqh-ol-nfs" kind="push" identifier="selectBaseSegue" id="rYv-zH-LJo"/>
                             </connections>
                         </barButtonItem>
-                        <rightBarButtonItems>
-                            <barButtonItem systemItem="search" id="ide-i1-K8h">
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <action selector="searchCurrency:" destination="a1n-ca-PdH" id="cnF-Uw-7eJ"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem image="rates_settings" id="wsh-D6-PlV">
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <action selector="openSettingsMenu:" destination="a1n-ca-PdH" id="Alu-bf-eSc"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="searchDisplayController" destination="hJp-WF-Vmz" id="1OX-Ba-sdN"/>
@@ -1592,11 +1564,7 @@
                             <outlet property="delegate" destination="MWY-vF-gvl" id="1hh-EL-BuI"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="My Profile" id="Rw1-e3-FrY">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="hGq-8l-gOt">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="My Profile" id="Rw1-e3-FrY"/>
                     <connections>
                         <outlet property="emailLabel" destination="Qqo-Tg-WCv" id="7Me-yG-orx"/>
                         <outlet property="nameLabel" destination="6nD-Qo-JOx" id="sbo-ba-cb6"/>
@@ -1995,11 +1963,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="uBb-IX-sy3" secondAttribute="trailing" constant="-6" id="wvp-AP-tvc"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Feedback" id="Ow1-j8-BcW">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="vpJ-xU-OK7">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Feedback" id="Ow1-j8-BcW"/>
                     <connections>
                         <outlet property="contactTextField" destination="6mn-F6-1bN" id="jh1-3I-LLc"/>
                         <outlet property="contentTextView" destination="XCe-yD-I2U" id="zOk-af-s6e"/>
@@ -2024,13 +1988,15 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cnm-mT-z5h">
                                 <rect key="frame" x="0.0" y="124" width="320" height="320"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Cnm-mT-z5h" secondAttribute="height" multiplier="1:1" id="QHy-V1-Tjp"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Cnm-mT-z5h" firstAttribute="leading" secondItem="j2z-ER-EHZ" secondAttribute="leadingMargin" constant="-20" id="Iyg-hN-KAz"/>
-                            <constraint firstItem="Cnm-mT-z5h" firstAttribute="centerY" secondItem="j2z-ER-EHZ" secondAttribute="centerY" id="hJs-LI-kOd"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Cnm-mT-z5h" secondAttribute="trailing" constant="-20" id="lT4-0e-nVq"/>
+                            <constraint firstItem="Cnm-mT-z5h" firstAttribute="leading" secondItem="j2z-ER-EHZ" secondAttribute="leadingMargin" constant="-20" id="kZI-j0-UTt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Cnm-mT-z5h" secondAttribute="trailing" constant="-20" id="zXs-GX-Z43"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Profile Photo" id="K2p-5q-XFa">
@@ -2557,7 +2523,6 @@
         <image name="me_lang" width="30" height="30"/>
         <image name="me_notification_on" width="30" height="30"/>
         <image name="me_user" width="60" height="60"/>
-        <image name="rates_settings" width="30" height="30"/>
         <image name="register_email" width="30" height="30"/>
         <image name="register_email_error" width="30" height="30"/>
         <image name="register_success" width="150" height="150"/>
@@ -2575,9 +2540,9 @@
         <image name="tab_subscription_selected" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Ato-UD-r5T"/>
-        <segue reference="UDA-Mt-qgn"/>
-        <segue reference="W74-fI-qzg"/>
+        <segue reference="I4X-zC-orO"/>
         <segue reference="wv3-am-Shd"/>
+        <segue reference="rYv-zH-LJo"/>
+        <segue reference="iYg-eg-RuY"/>
     </inferredMetricsTieBreakers>
 </document>

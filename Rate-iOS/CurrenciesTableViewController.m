@@ -83,7 +83,7 @@
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     if (_selectable) {
-        Currency *currency = [_fetchedResultsController objectAtIndexPath:indexPath]; //[currencies objectAtIndex:indexPath.row];
+        Currency *currency = [_fetchedResultsController objectAtIndexPath:indexPath]; 
         //Save currency cid to sandbox.
         user.basedCurrencyId = currency.cid;
         //Back to last view controller.
@@ -147,7 +147,7 @@
             } else {
                 NSNumber *favorite = [NSNumber numberWithBool:YES];
                 _fetchedResultsController = [dao.currencyDao fetchRequestControllerWithFavorite:favorite Without:nil];
-                
+                [self.tableView reloadData];
             }
             
             break;
@@ -202,7 +202,7 @@
                       loadingView.hidden = YES;
                       break;
               }
-              NSLog(@"%d", [response errorCode]);
+
           }];
 
 }

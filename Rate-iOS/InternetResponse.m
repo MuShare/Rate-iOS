@@ -61,6 +61,7 @@
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    return [[self.data valueForKey:@"error_code"] intValue];
+    int erroCode = [[self.data valueForKey:@"error_code"] intValue];
+    return erroCode;
 }
 @end
