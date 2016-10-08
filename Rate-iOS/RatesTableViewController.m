@@ -25,6 +25,9 @@
     NSDictionary *rates;
     NSString *selectedCurrency;
 
+    UIView *searchBarView;
+    UIView *disableViewOverlay;
+    UISearchBar *searchBar;
 }
 
 - (void)viewDidLoad {
@@ -46,7 +49,8 @@
         [self refreshRates];
     }];
     [self.tableView.mj_header beginRefreshing];
-
+    
+    [self setupSearchBar];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -58,6 +62,13 @@
     //Reload rates values.
     [self.tableView.mj_header beginRefreshing];
 
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    [self hideSearchBar];
 }
 
 #pragma mark - UITableViewDataSource
@@ -105,6 +116,32 @@
     [self performSegueWithIdentifier:@"rateSegue" sender:self];
 }
 
+#pragma mark - UISearchBarDelegate
+- (void)searchBar:(UISearchBar *)bar textDidChange:(NSString *)searchText {
+    if (DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    if ([searchText length] == 0) {
+        [self filterResultsToOriginal];
+        [self searchBar:searchBar activate:YES];
+    }
+    else {
+        _fetchedResultsController = [dao.currencyDao fetchRequestControllerWithFavorite:[NSNumber numberWithBool:user.token != nil]
+                                                                                Without:user.basedCurrencyId
+                                                                            withKeyword:searchText];
+        [self.tableView reloadData];
+        [self searchBar:searchBar activate:NO];
+    }
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    if (DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    [self hideSearchBar];
+}
+
+
 #pragma mark - Navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if(DEBUG) {
@@ -118,6 +155,24 @@
         //set to currency for RateViewController
         [segue.destinationViewController setValue:selectedCurrency forKey:@"toCurrency"];
     }
+}
+
+#pragma mark - Action
+- (IBAction)searchCurrency:(id)sender {
+    if (DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    [UIView animateWithDuration:0.25 delay:0.0 options:UIViewAnimationOptionCurveEaseIn
+                     animations:^{
+                         searchBarView.frame = CGRectMake(0, 0, self.view.frame.size.width, 61.0);
+                         [self searchBar:searchBar activate:YES];
+                         [searchBar becomeFirstResponder];
+                     }
+                     completion:^(BOOL finished) {
+                     }];
+}
+
+- (IBAction)openSettingsMenu:(id)sender {
 }
 
 #pragma mark - Service
@@ -153,7 +208,7 @@
                  
                  //Reload data
                  _fetchedResultsController = [dao.currencyDao fetchRequestControllerWithFavorite:[NSNumber numberWithBool:user.token != nil]
-                                                                                         Without:user.basedCurrencyId];
+                                                                                         Without:user.basedCurrencyId withKeyword:nil];
                  [self.tableView reloadData];
                  [self.tableView.mj_header endRefreshing];
              }
@@ -173,15 +228,87 @@
     
 }
 
-#pragma mark - Action
-- (IBAction)searchCurrency:(id)sender {
+- (void)setupSearchBar {
+    if (DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    searchBarView = [[UIView alloc] initWithFrame:CGRectMake(0, - 61.0, self.view.frame.size.width, 61.0)];
+    searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(10.0, 20.0, self.view.frame.size.width - 20, 44.0)];
+    
+    searchBar.searchBarStyle = UISearchBarStyleMinimal;
+    searchBar.delegate = self;
+    searchBarView.backgroundColor = [UIColor colorWithRed:38.0 / 255.0 green:186.0 / 255.0 blue:152.0 / 255.0 alpha:1.0];
+    searchBar.tintColor = [UIColor whiteColor];
+    //Set text to white
+    UITextField *searchTextField = [searchBar valueForKey:@"searchField"];
+    searchTextField.textColor = [UIColor whiteColor];
+    searchTextField.backgroundColor = [UIColor whiteColor];
+    UIImageView *imageView = (UIImageView *)searchTextField.leftView;
+    imageView.image = [imageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    imageView.tintColor = [UIColor whiteColor];
+    UIButton *clearButton = (UIButton *)[searchTextField valueForKey:@"clearButton"];
+    [clearButton setImage:[clearButton.imageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
+    clearButton.tintColor = [UIColor whiteColor];
+    searchBar.showsCancelButton = YES;
+    
+    [searchBarView addSubview:searchBar];
+    
+    disableViewOverlay = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.view.frame.size.width, self.view.frame.size.height)];
+    disableViewOverlay.backgroundColor = [UIColor blackColor];
+    disableViewOverlay.alpha = 0;
+    disableViewOverlay.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    disableViewOverlay.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+    
+    
+    [self.navigationController.view addSubview:searchBarView];
+}
+
+- (void)searchBar:(UISearchBar *)searchBar activate:(BOOL)active {
+    if (DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+
+    self.tableView.allowsSelection = !active;
+    self.tableView.scrollEnabled = !active;
+    if (!active) {
+        [disableViewOverlay removeFromSuperview];
+    } else{
+        
+        disableViewOverlay.alpha = 0;
+        [self.view addSubview:disableViewOverlay];
+        [UIView animateWithDuration:0.3
+                              delay:0.0
+                            options:UIViewAnimationOptionCurveLinear animations:^{
+                                disableViewOverlay.alpha = 0.6;
+                            }
+                         completion:nil];
+    }
+}
+
+- (void)hideSearchBar {
     if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     
+    [UIView animateWithDuration:0.25
+                          delay:0.0
+                        options:UIViewAnimationOptionCurveEaseIn
+                     animations:^{
+                         searchBar.text = @"";
+                         [self filterResultsToOriginal];
+                         searchBarView.frame = CGRectMake(0, - 64.0, self.view.frame.size.width, 64.0);
+                         [self searchBar:searchBar activate:NO];
+                         [searchBar resignFirstResponder];
+                     }
+                     completion:nil];
 }
 
-- (IBAction)openSettingsMenu:(id)sender {
+- (void)filterResultsToOriginal {
+    _fetchedResultsController = [dao.currencyDao fetchRequestControllerWithFavorite:[NSNumber numberWithBool:user.token != nil]
+                                                                            Without:user.basedCurrencyId
+                                                                        withKeyword:nil];
+    [self.tableView reloadData];
 }
+
 @end
 

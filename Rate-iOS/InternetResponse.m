@@ -12,7 +12,7 @@
 
 - (instancetype) initWithResponseObject:(id)responseObject {
     if(DEBUG) {
-        NSLog(@"Running %@ ''%@", self.class, NSStringFromSelector(_cmd));
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     self = [super init];
     if(self) {
@@ -28,7 +28,7 @@
 
 - (instancetype)initWithError:(NSError *)error {
     if(DEBUG) {
-        NSLog(@"Running %@ ''%@", self.class, NSStringFromSelector(_cmd));
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     self = [super init];
     if(self) {

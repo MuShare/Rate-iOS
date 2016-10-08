@@ -24,6 +24,7 @@
 
 //Create NSFetchedResultsController from CoreData
 - (NSFetchedResultsController *)fetchRequestControllerWithFavorite:(NSNumber *)favorite
-                                                           Without:(NSString *)cid;
+                                                           Without:(NSString *)cid
+                                                       withKeyword:(NSString *)keyword;
 
 @end

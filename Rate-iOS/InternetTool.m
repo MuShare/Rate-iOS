@@ -12,7 +12,7 @@
 @implementation InternetTool
 
 + (void)setRequestToken:(NSString *)token {
-    AppDelegate *delegate=[[UIApplication sharedApplication] delegate];
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [delegate.httpSessionManager.requestSerializer setValue:token forHTTPHeaderField:@"Authorization"];
 }
 
@@ -20,7 +20,7 @@
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     UserTool *user = [[UserTool alloc] init];
     if(user.token != nil) {
         [delegate.httpSessionManager.requestSerializer setValue:user.token forHTTPHeaderField:@"token"];

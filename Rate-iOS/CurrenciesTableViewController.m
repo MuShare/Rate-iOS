@@ -30,7 +30,7 @@
     manager = [InternetTool getSessionManager];
 
     //Set fetchedResultsController
-    _fetchedResultsController = [dao.currencyDao fetchRequestControllerWithFavorite:nil Without:nil];
+    _fetchedResultsController = [dao.currencyDao fetchRequestControllerWithFavorite:nil Without:nil withKeyword:nil];
     _fetchedResultsController.delegate = self;
 }
 
@@ -135,7 +135,7 @@
     switch ([sender selectedSegmentIndex]) {
         //Show all currencies
         case 0:
-            _fetchedResultsController = [dao.currencyDao fetchRequestControllerWithFavorite:nil Without:nil];
+            _fetchedResultsController = [dao.currencyDao fetchRequestControllerWithFavorite:nil Without:nil withKeyword:nil];
 
             break;
         //Show favorites currencies
@@ -146,7 +146,7 @@
                 return;
             } else {
                 NSNumber *favorite = [NSNumber numberWithBool:YES];
-                _fetchedResultsController = [dao.currencyDao fetchRequestControllerWithFavorite:favorite Without:nil];
+                _fetchedResultsController = [dao.currencyDao fetchRequestControllerWithFavorite:favorite Without:nil withKeyword:nil];
                 [self.tableView reloadData];
             }
             

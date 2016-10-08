@@ -62,13 +62,15 @@
 }
 
 - (NSFetchedResultsController *)fetchRequestControllerWithFavorite:(NSNumber *)favorite
-                                                           Without:(NSString *)cid {
+                                                           Without:(NSString *)cid
+                                                       withKeyword:(NSString *)keyword {
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     NSPredicate *cidPredicate = (cid == nil)? nil: [NSPredicate predicateWithFormat:@"cid!=%@", cid];
     NSPredicate *favoritePredicate = (favorite == nil)? nil: [NSPredicate predicateWithFormat:@"favorite=%@", favorite];
-    NSPredicate *predicate = [NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects:cidPredicate , favoritePredicate, nil]];
+    NSPredicate *searchPredicate = (keyword ==nil)? nil: [NSPredicate predicateWithFormat:@"code contains[cd] %@ or name contains[cd] %@", keyword, keyword];
+    NSPredicate *predicate = [NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects:cidPredicate , favoritePredicate, searchPredicate, nil]];
     NSFetchRequest *request = [self fetchRequestByPredicate:predicate
                                              withEntityName:CurrencyEntityName
                                                     orderBy:[NSSortDescriptor sortDescriptorWithKey:@"code" ascending:YES]];

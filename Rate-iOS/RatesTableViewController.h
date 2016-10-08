@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "DaoManager.h"
 
-@interface RatesTableViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+@interface RatesTableViewController : UITableViewController <NSFetchedResultsControllerDelegate, UISearchBarDelegate>
 
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 

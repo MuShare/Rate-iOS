@@ -107,6 +107,8 @@
                     if([response statusOK]) {
                         //Clear user data
                         [user clearup];
+                        //Refresh session manager
+                        [InternetTool getSessionManager];
                         
                         //Reset favorite in currencies
                         for(Currency *currency in [dao.currencyDao findAll]) {
