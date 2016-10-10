@@ -89,15 +89,15 @@
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     if (user.token == nil) {
-        [AlertTool showAlertWithTitle:@"Tip"
-                           andContent:@"Sign in at first!"
+        [AlertTool showAlertWithTitle:NSLocalizedString(@"tip_name", @"Tip")
+                           andContent:NSLocalizedString(@"sign_in_at_first", @"Sign in at first!")
                      inViewController:self];
         return;
     }
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Sign out"
-                                                                             message:@"Are you sure to sign out now?"
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"sign_out", @"Sign out")
+                                                                             message:NSLocalizedString(@"sign_out_tip", @"Are you sure to sign out now?")
                                                                       preferredStyle:UIAlertControllerStyleActionSheet];
-    UIAlertAction *logout = [UIAlertAction actionWithTitle:@"Yes, sign out"
+    UIAlertAction *logout = [UIAlertAction actionWithTitle:NSLocalizedString(@"sign_out_yes", @"Yes, sign out")
                                                      style:UIAlertActionStyleDestructive
                                                    handler:^(UIAlertAction * _Nonnull action) {
         [manager DELETE:[InternetTool createUrl:@"api/user/logout"]
@@ -122,8 +122,8 @@
                         
                         [dao saveContext];
                         
-                        _signOrNameLabel.text = @"Sign in / Sign up";
-                        _welcomeOrEmailLabel.text = @"Welcome to MuRate, sign in now!";
+                        _signOrNameLabel.text = NSLocalizedString(@"sign_in_sign_up", @"Sign in / Sign up");
+                        _welcomeOrEmailLabel.text = NSLocalizedString(@"welcome_message", @"Welcome to MuRate, sign in now!");
                     }
                 }
                 failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -142,7 +142,7 @@
                     }
                 }];
     }];
-    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel"
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:NSLocalizedString(@"cancel_name", @"Cancel")
                                                      style:UIAlertActionStyleCancel
                                                    handler:nil];
     [alertController addAction:logout];

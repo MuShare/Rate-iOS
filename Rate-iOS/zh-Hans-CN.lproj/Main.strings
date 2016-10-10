@@ -36,7 +36,7 @@
 "6hN-qf-DhP.text" = "关于";
 
 /* Class = "UITextField"; placeholder = "Your email or other contact way."; ObjectID = "6mn-F6-1bN"; */
-"6mn-F6-1bN.placeholder" = "Your email or other contact way.";
+"6mn-F6-1bN.placeholder" = "您的联系方式.";
 
 /* Class = "UILabel"; text = "Name Value"; ObjectID = "6nD-Qo-JOx"; */
 "6nD-Qo-JOx.text" = "Name Value";
@@ -51,7 +51,7 @@
 "B8K-QI-Zvl.headerTitle" = " ";
 
 /* Class = "UITextField"; placeholder = "Subscribe Name"; ObjectID = "C5T-HY-ReF"; */
-"C5T-HY-ReF.placeholder" = "Subscribe Name";
+"C5T-HY-ReF.placeholder" = "订阅名称";
 
 /* Class = "UINavigationItem"; title = "Me"; ObjectID = "DAv-cg-vmZ"; */
 "DAv-cg-vmZ.title" = "我";
@@ -60,7 +60,7 @@
 "DHz-Kk-WFi.title" = "登录";
 
 /* Class = "UILabel"; text = "Rate Value"; ObjectID = "E0V-Tj-kAt"; */
-"E0V-Tj-kAt.text" = "Rate Value";
+"E0V-Tj-kAt.text" = "汇率值";
 
 /* Class = "UILabel"; text = "10.00000"; ObjectID = "EEi-Cz-swm"; */
 "EEi-Cz-swm.text" = "10.00000";
@@ -78,7 +78,7 @@
 "FEG-AL-6fQ.title" = "Base";
 
 /* Class = "UILabel"; text = "Enable Once"; ObjectID = "FU9-M6-N5F"; */
-"FU9-M6-N5F.text" = "Enable Once";
+"FU9-M6-N5F.text" = "允许一次";
 
 /* Class = "UILabel"; text = "CNY to JPY"; ObjectID = "Ftz-DH-EYJ"; */
 "Ftz-DH-EYJ.text" = "CNY to JPY";
@@ -150,7 +150,7 @@
 "Nq2-il-4wg.normalTitle" = "在App Store评价";
 
 /* Class = "UILabel"; text = "Email"; ObjectID = "OV6-hg-bua"; */
-"OV6-hg-bua.text" = "Email";
+"OV6-hg-bua.text" = "邮箱";
 
 /* Class = "UINavigationItem"; title = "Feedback"; ObjectID = "Ow1-j8-BcW"; */
 "Ow1-j8-BcW.title" = "反馈";
@@ -222,7 +222,7 @@
 "ei9-T4-DVi.text" = "Profile Photo";
 
 /* Class = "UITextField"; placeholder = "Email"; ObjectID = "fJ1-cM-9m5"; */
-"fJ1-cM-9m5.placeholder" = "Email";
+"fJ1-cM-9m5.placeholder" = "邮箱";
 
 /* Class = "UILabel"; text = "繁體中文"; ObjectID = "faV-Fb-jZF"; */
 "faV-Fb-jZF.text" = "繁體中文";

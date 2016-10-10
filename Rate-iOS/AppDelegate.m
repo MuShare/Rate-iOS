@@ -27,14 +27,9 @@
     
     NSLog(@"%@", [CommonTool deviceName]);
 
-    //Register Remote Notification
-
-    if ([[[UIDevice currentDevice] systemVersion] floatValue]>=8.0) {
-        [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
-        [[UIApplication sharedApplication] registerForRemoteNotifications];
-    } else{
-        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeAlert|UIRemoteNotificationTypeAlert];
-    }
+    //Register Remote Notification, support iOS version after 8.0
+    [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
+    [[UIApplication sharedApplication] registerForRemoteNotifications];
     
     user = [[UserTool alloc] init];
     user.lan = @"en";
@@ -94,7 +89,10 @@
                           stringByReplacingOccurrencesOfString: @"<" withString: @""]
                          stringByReplacingOccurrencesOfString: @">" withString: @""]
                         stringByReplacingOccurrencesOfString: @" " withString: @""];
-    NSLog(@"Device token is %@", user.deviceToken);
+    if (DEBUG) {
+        NSLog(@"Device token is %@", user.deviceToken);
+    }
+    
     [_httpSessionManager POST:[InternetTool createUrl:@"api/user/device_token"]
                    parameters:@{
                                 @"device_token": user.deviceToken

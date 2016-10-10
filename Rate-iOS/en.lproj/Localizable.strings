@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  Rate-iOS
+
+  Created by lidaye on 10/10/2016.
+  Copyright © 2016 MuShare. All rights reserved.
+*/
+
+tip_name = "Tip";
+cancel_name = "Cancel";
+
+sign_in_at_first = "Sign in at first!";
+sign_out = "Sign out";
+sign_out_tip = "Are you sure to sign out now?";
+sign_out_yes = "Yes, sign out";
+sign_in_sign_up = "Sign in / Sign up";
+welcome_message = "Welcome to MuRate, sign in now!";

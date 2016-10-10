@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  Rate-iOS
+
+  Created by lidaye on 10/10/2016.
+  Copyright © 2016 MuShare. All rights reserved.
+*/
+
+tip_name = "提示";
+cancel_name = "取消";
+
+sign_in_at_first = "请先登录!";
+sign_out = "退出登录";
+sign_out_tip = "是否立刻退出登录?";
+sign_out_yes = "是的，立刻退出";
+sign_in_sign_up = "登录 / 注册";
+welcome_message = "欢迎使用MuRate，立刻登录！";

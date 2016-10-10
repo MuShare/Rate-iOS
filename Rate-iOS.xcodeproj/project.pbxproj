@@ -19,12 +19,11 @@
 		E410EEB61D51E5D50077E1D9 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E410EEB51D51E5D50077E1D9 /* HelpViewController.m */; };
 		E41451991D4F8AA000AFE672 /* RateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E41451981D4F8AA000AFE672 /* RateViewController.m */; };
 		E414519F1D502E8200AFE672 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E414519E1D502E8200AFE672 /* LoginViewController.m */; };
+		E42575341DABBB48009F1EF5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E42575361DABBB48009F1EF5 /* Localizable.strings */; };
 		E43697691D58488200781223 /* Subscribe+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E43697661D58488200781223 /* Subscribe+CoreDataProperties.m */; };
 		E436976A1D58488200781223 /* Subscribe.m in Sources */ = {isa = PBXBuildFile; fileRef = E43697681D58488200781223 /* Subscribe.m */; };
 		E44899981D52DA4600BDD71B /* CommonTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E44899971D52DA4600BDD71B /* CommonTool.m */; };
-		E44899A01D534CA800BDD71B /* lauch-bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E448999F1D534CA800BDD71B /* lauch-bg.jpg */; };
 		E46B5BC11D58B46700CE407F /* RightMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E46B5BC01D58B46700CE407F /* RightMenuViewController.m */; };
-		E46B5BC31D58BBEC00CE407F /* right-bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E46B5BC21D58BBEC00CE407F /* right-bg.jpg */; };
 		E46B5BC51D59959C00CE407F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E46B5BC41D59959C00CE407F /* Assets.xcassets */; };
 		E46FB51C1D4E305800661E13 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E46FB51B1D4E305800661E13 /* main.m */; };
 		E46FB51F1D4E305800661E13 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E46FB51E1D4E305800661E13 /* AppDelegate.m */; };
@@ -95,16 +94,17 @@
 		E41451981D4F8AA000AFE672 /* RateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateViewController.m; sourceTree = "<group>"; };
 		E414519D1D502E8200AFE672 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		E414519E1D502E8200AFE672 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		E425752B1DAA0271009F1EF5 /* Rate-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Rate-iOS.entitlements"; sourceTree = "<group>"; };
+		E42575351DABBB48009F1EF5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E42575371DABBB4A009F1EF5 /* zh-Hans-CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans-CN"; path = "zh-Hans-CN.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		E43697651D58488200781223 /* Subscribe+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Subscribe+CoreDataProperties.h"; sourceTree = "<group>"; };
 		E43697661D58488200781223 /* Subscribe+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Subscribe+CoreDataProperties.m"; sourceTree = "<group>"; };
 		E43697671D58488200781223 /* Subscribe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Subscribe.h; sourceTree = "<group>"; };
 		E43697681D58488200781223 /* Subscribe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Subscribe.m; sourceTree = "<group>"; };
 		E44899961D52DA4600BDD71B /* CommonTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonTool.h; sourceTree = "<group>"; };
 		E44899971D52DA4600BDD71B /* CommonTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonTool.m; sourceTree = "<group>"; };
-		E448999F1D534CA800BDD71B /* lauch-bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "lauch-bg.jpg"; sourceTree = "<group>"; };
 		E46B5BBF1D58B46700CE407F /* RightMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightMenuViewController.h; sourceTree = "<group>"; };
 		E46B5BC01D58B46700CE407F /* RightMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightMenuViewController.m; sourceTree = "<group>"; };
-		E46B5BC21D58BBEC00CE407F /* right-bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "right-bg.jpg"; sourceTree = "<group>"; };
 		E46B5BC41D59959C00CE407F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E46FB5171D4E305800661E13 /* Rate-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rate-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E46FB51B1D4E305800661E13 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -260,6 +260,7 @@
 		E46FB5191D4E305800661E13 /* Rate-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				E425752B1DAA0271009F1EF5 /* Rate-iOS.entitlements */,
 				E408A9871D51A81B00B34655 /* Dao */,
 				E408A9861D51A81300B34655 /* Model */,
 				E496A79C1D4F083E003B0F1D /* Me */,
@@ -283,8 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				E46FB51B1D4E305800661E13 /* main.m */,
-				E46B5BC21D58BBEC00CE407F /* right-bg.jpg */,
-				E448999F1D534CA800BDD71B /* lauch-bg.jpg */,
+				E42575361DABBB48009F1EF5 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -482,6 +482,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans-CN",
 			);
 			mainGroup = E46FB50E1D4E305800661E13;
 			productRefGroup = E46FB5181D4E305800661E13 /* Products */;
@@ -500,11 +501,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E44899A01D534CA800BDD71B /* lauch-bg.jpg in Resources */,
 				E46B5BC51D59959C00CE407F /* Assets.xcassets in Resources */,
+				E42575341DABBB48009F1EF5 /* Localizable.strings in Resources */,
 				E46FB52D1D4E305800661E13 /* LaunchScreen.storyboard in Resources */,
 				E46FB5251D4E305800661E13 /* Main.storyboard in Resources */,
-				E46B5BC31D58BBEC00CE407F /* right-bg.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -648,6 +648,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		E42575361DABBB48009F1EF5 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E42575351DABBB48009F1EF5 /* en */,
+				E42575371DABBB4A009F1EF5 /* zh-Hans-CN */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		E46FB5231D4E305800661E13 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -757,6 +766,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Rate-iOS/Rate-iOS.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Rate-iOS/Info.plist";
@@ -777,6 +787,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Rate-iOS/Rate-iOS.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_TESTABILITY = YES;
