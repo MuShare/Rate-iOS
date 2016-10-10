@@ -25,6 +25,7 @@
 		E44899981D52DA4600BDD71B /* CommonTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E44899971D52DA4600BDD71B /* CommonTool.m */; };
 		E46B5BC11D58B46700CE407F /* RightMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E46B5BC01D58B46700CE407F /* RightMenuViewController.m */; };
 		E46B5BC51D59959C00CE407F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E46B5BC41D59959C00CE407F /* Assets.xcassets */; };
+		E46EDE2F1DABE7C400CA3DBC /* AutoGenStrings.py in Resources */ = {isa = PBXBuildFile; fileRef = E46EDE2E1DABE7C400CA3DBC /* AutoGenStrings.py */; };
 		E46FB51C1D4E305800661E13 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E46FB51B1D4E305800661E13 /* main.m */; };
 		E46FB51F1D4E305800661E13 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E46FB51E1D4E305800661E13 /* AppDelegate.m */; };
 		E46FB5251D4E305800661E13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E46FB5231D4E305800661E13 /* Main.storyboard */; };
@@ -106,6 +107,7 @@
 		E46B5BBF1D58B46700CE407F /* RightMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightMenuViewController.h; sourceTree = "<group>"; };
 		E46B5BC01D58B46700CE407F /* RightMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightMenuViewController.m; sourceTree = "<group>"; };
 		E46B5BC41D59959C00CE407F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E46EDE2E1DABE7C400CA3DBC /* AutoGenStrings.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = AutoGenStrings.py; sourceTree = "<group>"; };
 		E46FB5171D4E305800661E13 /* Rate-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rate-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E46FB51B1D4E305800661E13 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E46FB51D1D4E305800661E13 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 		E46FB51A1D4E305800661E13 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E46EDE2E1DABE7C400CA3DBC /* AutoGenStrings.py */,
 				E46FB51B1D4E305800661E13 /* main.m */,
 				E42575361DABBB48009F1EF5 /* Localizable.strings */,
 			);
@@ -398,6 +401,7 @@
 				E46FB5151D4E305800661E13 /* Resources */,
 				0778AFD77A87F91B6372E337 /* Embed Pods Frameworks */,
 				68DEAD435AE3AB71C2D771C8 /* Copy Pods Resources */,
+				E46EDE291DABE51E00CA3DBC /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -505,6 +509,7 @@
 				E42575341DABBB48009F1EF5 /* Localizable.strings in Resources */,
 				E46FB52D1D4E305800661E13 /* LaunchScreen.storyboard in Resources */,
 				E46FB5251D4E305800661E13 /* Main.storyboard in Resources */,
+				E46EDE2F1DABE7C400CA3DBC /* AutoGenStrings.py in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -569,6 +574,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		E46EDE291DABE51E00CA3DBC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "python ${SRCROOT}/${TARGET_NAME}/AutoGenStrings.py ${SRCROOT}/${TARGET_NAME}";
 		};
 /* End PBXShellScriptBuildPhase section */
 

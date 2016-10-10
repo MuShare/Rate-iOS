@@ -8,10 +8,21 @@
 
 tip_name = "Tip";
 cancel_name = "Cancel";
+warning_name = "Warning";
 
 sign_in_at_first = "Sign in at first!";
 sign_out = "Sign out";
 sign_out_tip = "Are you sure to sign out now?";
 sign_out_yes = "Yes, sign out";
 sign_in_sign_up = "Sign in / Sign up";
+
 welcome_message = "Welcome to MuRate, sign in now!";
+
+subscription_modify_disable = "Cannot modify this subscription, try again later.";
+subscription_alert_above = "Alert me above";
+subscription_alert_below = "Alert me below";
+subscription_same_currency = "Two currencies cannot be same!";
+subscription_current_rate_is = "Current rate is ";
+subscription_delete = "Delete subscription";
+subscription_delete_message = "Are you sure to delete this subscription?";
+subscription_delete_now = "Delete it now";

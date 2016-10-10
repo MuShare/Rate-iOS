@@ -44,8 +44,8 @@
     }
     [super viewWillAppear:animated];
     if (_fromCurrency == _toCurrency && _fromCurrency != nil) {
-        [AlertTool showAlertWithTitle:@"Warning"
-                           andContent:@"Two currencies cannot be same!"
+        [AlertTool showAlertWithTitle:NSLocalizedString(@"warning_name", @"Warning")
+                           andContent:NSLocalizedString(@"subscription_same_currency", @"Two currencies cannot be same!")
                      inViewController:self];
         return;
     }
@@ -188,8 +188,8 @@
                       if (DEBUG) {
                           NSLog(@"Error code is %d", [response errorCode]);
                       }
-                      [AlertTool showAlertWithTitle:@"Tip"
-                                         andContent:@"Cannot modify this subscription, try again later."
+                      [AlertTool showAlertWithTitle:NSLocalizedString(@"tip_name", @"Tip")
+                                         andContent:NSLocalizedString(@"subscription_modify_disable", @"Cannot modify this subscription, try again later.")
                                    inViewController:self];
                       [self.navigationController popViewControllerAnimated:YES];
                       break;
@@ -236,18 +236,18 @@
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     if ([_thresholdTextField.text isEqualToString:@""]) {
-        _subscribeTipLabel.text = [NSString stringWithFormat:@"Current rate is %.4f", currentRate];
+        _subscribeTipLabel.text = [NSString stringWithFormat:@"%@%.4f", NSLocalizedString(@"subscription_current_rate_is", @"Current rate is "), currentRate];
         return;
     }
     float rate = [sender.text floatValue];
     if (rate > currentRate) {
-        _subscribeTipLabel.text = @"Alert me above";
+        _subscribeTipLabel.text = NSLocalizedString(@"subscription_alert_above", @"Alert me above");
         [UIView animateWithDuration:0.5
                          animations:^{
                              _trendImageView.transform = CGAffineTransformMakeRotation(0);
                          }];
     } else {
-        _subscribeTipLabel.text = @"Alert me blow";
+        _subscribeTipLabel.text = NSLocalizedString(@"subscription_alert_below", @"Alert me below");
         [UIView animateWithDuration:0.5
                          animations:^{
                              _trendImageView.transform = CGAffineTransformMakeRotation(M_PI);

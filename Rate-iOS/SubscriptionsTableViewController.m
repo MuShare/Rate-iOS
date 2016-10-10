@@ -124,7 +124,7 @@
     if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    if(user.token == nil) {
+    if (user.token == nil) {
         //If user is unlogin, push to LoginViewController
         [self performSegueWithIdentifier:@"addSubscribeUnloginSegue" sender:self];
     } else {

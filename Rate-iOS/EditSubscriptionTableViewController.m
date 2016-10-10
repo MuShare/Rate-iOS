@@ -79,13 +79,13 @@
     _subscribeTipLabel.hidden = [_thresholdTextField.text isEqualToString:@""];
     float rate = [sender.text floatValue];
     if (rate > _subscribe.rate.floatValue) {
-        _subscribeTipLabel.text = @"Alert me above";
+        _subscribeTipLabel.text = NSLocalizedString(@"subscription_alert_above", @"Alert me above");
         [UIView animateWithDuration:0.5
                          animations:^{
                              _trendImageView.transform = CGAffineTransformMakeRotation(0);
                          }];
     } else {
-        _subscribeTipLabel.text = @"Alert me blow";
+        _subscribeTipLabel.text = NSLocalizedString(@"subscription_alert_below", @"Alert me below");
         [UIView animateWithDuration:0.5
                          animations:^{
                              _trendImageView.transform = CGAffineTransformMakeRotation(M_PI);
@@ -125,10 +125,10 @@
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Delete subscription"
-                                                                             message:@"Are you sure to delete this subscription?"
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"subscription_delete", @"Delete subscription")
+                                                                             message:NSLocalizedString(@"subscription_delete_message", @"Are you sure to delete this subscription?")
                                                                       preferredStyle:UIAlertControllerStyleActionSheet];
-    UIAlertAction *delete = [UIAlertAction actionWithTitle:@"Delete it now"
+    UIAlertAction *delete = [UIAlertAction actionWithTitle:NSLocalizedString(@"subscription_delete_now", @"Delete it now")
                                                      style:UIAlertActionStyleDestructive
                                                    handler:^(UIAlertAction * _Nonnull action) {
         [AlertTool replaceBarButtonItemWithActivityIndicator:self];
@@ -157,7 +157,7 @@
                     }
                 }];
     }];
-    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel"
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:NSLocalizedString(@"cancel_name", @"Cancel")
                                                      style:UIAlertActionStyleCancel
                                                    handler:nil];
     [alertController addAction:delete];
@@ -212,8 +212,8 @@
                       if (DEBUG) {
                           NSLog(@"Error code is %d", [response errorCode]);
                       }
-                      [AlertTool showAlertWithTitle:@"Tip"
-                                         andContent:@"Cannot modify this subscription, try again later."
+                      [AlertTool showAlertWithTitle:NSLocalizedString(@"tip_name", @"Tip")
+                                         andContent:NSLocalizedString(@"subscription_modify_disable", @"Cannot modify this subscription, try again later.")
                                    inViewController:self];
                       [self.navigationController popViewControllerAnimated:YES];
                       break;

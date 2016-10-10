@@ -1,6 +1,6 @@
 
 /* Class = "UILabel"; text = "Code"; ObjectID = "05t-IS-Yku"; */
-"05t-IS-Yku.text" = "Code";
+//"05t-IS-Yku.text" = "Code";
 
 /* Class = "UITextField"; placeholder = "1"; ObjectID = "1RG-WK-mHg"; */
 "1RG-WK-mHg.placeholder" = "1";
@@ -66,7 +66,7 @@
 "EEi-Cz-swm.text" = "10.00000";
 
 /* Class = "UILabel"; text = "Enable Once"; ObjectID = "Eaa-vF-7Qy"; */
-"Eaa-vF-7Qy.text" = "Enable Once";
+//"Eaa-vF-7Qy.text" = "Enable Once";
 
 /* Class = "UITextField"; placeholder = "Email"; ObjectID = "Ege-YX-nhz"; */
 "Ege-YX-nhz.placeholder" = "Email";
@@ -78,7 +78,7 @@
 "FEG-AL-6fQ.title" = "Base";
 
 /* Class = "UILabel"; text = "Enable Once"; ObjectID = "FU9-M6-N5F"; */
-"FU9-M6-N5F.text" = "Enable Once";
+//"FU9-M6-N5F.text" = "Enable Once";
 
 /* Class = "UILabel"; text = "Subscribe Name"; ObjectID = "Ftz-DH-EYJ"; */
 "Ftz-DH-EYJ.text" = "Subscribe Name";
@@ -96,7 +96,7 @@
 "HIw-Bj-QfS.text" = "Enable Subscribe";
 
 /* Class = "UITextField"; placeholder = "Min Rate"; ObjectID = "Has-SH-yMu"; */
-"Has-SH-yMu.placeholder" = "Min Rate";
+//"Has-SH-yMu.placeholder" = "Min Rate";
 
 /* Class = "UIButton"; normalTitle = "Code"; ObjectID = "Hkc-xJ-lh4"; */
 "Hkc-xJ-lh4.normalTitle" = "Code";
@@ -117,7 +117,7 @@
 "JN3-YQ-TFb.text" = "简体中文";
 
 /* Class = "UITextField"; placeholder = "Min Rate"; ObjectID = "JaJ-Os-np2"; */
-"JaJ-Os-np2.placeholder" = "Min Rate";
+//"JaJ-Os-np2.placeholder" = "Min Rate";
 
 /* Class = "UILabel"; text = "Currency Name"; ObjectID = "LUr-Jw-1O5"; */
 "LUr-Jw-1O5.text" = "Currency Name";
@@ -177,16 +177,16 @@
 "Skd-rx-5Pk.placeholder" = "Password";
 
 /* Class = "UILabel"; text = "10.000 ~ 20.0000"; ObjectID = "T0f-cD-Adh"; */
-"T0f-cD-Adh.text" = "10.000 ~ 20.0000";
+//"T0f-cD-Adh.text" = "10.000 ~ 20.0000";
 
 /* Class = "UILabel"; text = "Code"; ObjectID = "Ulk-sr-Cm9"; */
 "Ulk-sr-Cm9.text" = "Code";
 
 /* Class = "UILabel"; text = "Currency"; ObjectID = "Vb1-E4-tMI"; */
-"Vb1-E4-tMI.text" = "Currency";
+//"Vb1-E4-tMI.text" = "Currency";
 
 /* Class = "UILabel"; text = "10.00000"; ObjectID = "Ww2-pk-9I4"; */
-"Ww2-pk-9I4.text" = "10.00000";
+//"Ww2-pk-9I4.text" = "10.00000";
 
 /* Class = "UIButton"; normalTitle = "Code"; ObjectID = "XS1-xk-Bqd"; */
 "XS1-xk-Bqd.normalTitle" = "Code";
@@ -252,7 +252,7 @@
 "ode-KA-Xzx.text" = "Send Email";
 
 /* Class = "UILabel"; text = "My Favorite"; ObjectID = "pSR-bs-6ib"; */
-"pSR-bs-6ib.text" = "My Favorite";
+//"pSR-bs-6ib.text" = "My Favorite";
 
 /* Class = "UISegmentedControl"; pSe-Mj-XSq.segmentTitles[0] = "Bug"; ObjectID = "pSe-Mj-XSq"; */
 "pSe-Mj-XSq.segmentTitles[0]" = "Bug";
@@ -307,3 +307,88 @@
 
 /* Class = "UILabel"; text = "日本語"; ObjectID = "zf7-W5-Quy"; */
 "zf7-W5-Quy.text" = "日本語";
+
+//##################################################################################
+//#           AutoGenStrings            2016-10-11 00:06:44
+//##################################################################################
+
+/* Class = "UIButton"; normalTitle = "To show subscriptions, Sign in now!"; ObjectID = "HtY-GJ-aL2"; */
+"HtY-GJ-aL2.normalTitle" = "To show subscriptions, Sign in now!";
+
+/* Class = "UIButton"; normalTitle = "Delete subscription"; ObjectID = "Ye7-Pp-P6i"; */
+"Ye7-Pp-P6i.normalTitle" = "Delete subscription";
+
+/* Class = "UILabel"; text = "10.00000"; ObjectID = "DRO-cL-DKK"; */
+"DRO-cL-DKK.text" = "10.00000";
+
+/* Class = "UITextField"; placeholder = "Your user name"; ObjectID = "fsb-Zu-jQx"; */
+"fsb-Zu-jQx.placeholder" = "Your user name";
+
+/* Class = "UILabel"; text = "Code"; ObjectID = "ym2-i0-eRa"; */
+"ym2-i0-eRa.text" = "Code";
+
+/* Class = "UINavigationItem"; title = "Profile Photo"; ObjectID = "K2p-5q-XFa"; */
+"K2p-5q-XFa.title" = "Profile Photo";
+
+/* Class = "UILabel"; text = "Subscribe Name"; ObjectID = "wPe-wv-8qX"; */
+"wPe-wv-8qX.text" = "Subscribe Name";
+
+/* Class = "UILabel"; text = "Monitoring"; ObjectID = "9dx-Qn-fJ3"; */
+"9dx-Qn-fJ3.text" = "Monitoring";
+
+/* Class = "UILabel"; text = "Current "; ObjectID = "dks-4j-KXR"; */
+"dks-4j-KXR.text" = "Current ";
+
+/* Class = "UILabel"; text = "Threshold"; ObjectID = "bR4-XA-9yK"; */
+"bR4-XA-9yK.text" = "Threshold";
+
+/* Class = "UILabel"; text = "Notified"; ObjectID = "rJz-bX-wxi"; */
+"rJz-bX-wxi.text" = "Notified";
+
+/* Class = "UINavigationItem"; title = "Name"; ObjectID = "ngq-fD-3B1"; */
+"ngq-fD-3B1.title" = "Name";
+
+/* Class = "UITextField"; placeholder = "Subscribe Name"; ObjectID = "ZvK-vO-6sT"; */
+"ZvK-vO-6sT.placeholder" = "Subscribe Name";
+
+/* Class = "UILabel"; text = "Code"; ObjectID = "BuE-VA-Ulz"; */
+"BuE-VA-Ulz.text" = "Code";
+
+/* Class = "UILabel"; text = "Cannot be used in app now."; ObjectID = "hWH-MD-62D"; */
+"hWH-MD-62D.text" = "Cannot be used in app now.";
+
+/* Class = "UILabel"; text = "Threshold"; ObjectID = "Z9G-oM-Hv6"; */
+"Z9G-oM-Hv6.text" = "Threshold";
+
+/* Class = "UILabel"; text = "Tip Info"; ObjectID = "BIn-Df-jSi"; */
+"BIn-Df-jSi.text" = "Tip Info";
+
+/* Class = "UILabel"; text = "Cannot be used in app now."; ObjectID = "8ue-aF-NhS"; */
+"8ue-aF-NhS.text" = "Cannot be used in app now.";
+
+/* Class = "UILabel"; text = "Tip Info"; ObjectID = "LHg-EV-NzP"; */
+"LHg-EV-NzP.text" = "Tip Info";
+
+/* Class = "UILabel"; text = "Rate"; ObjectID = "Ul3-Ac-Qym"; */
+"Ul3-Ac-Qym.text" = "Rate";
+
+/* Class = "UILabel"; text = "Current "; ObjectID = "JLx-i0-480"; */
+"JLx-i0-480.text" = "Current ";
+
+/* Class = "UILabel"; text = "10.00000"; ObjectID = "Kwl-DN-MV9"; */
+"Kwl-DN-MV9.text" = "10.00000";
+
+/* Class = "UINavigationItem"; title = "Telephone"; ObjectID = "vjc-ze-Ylc"; */
+"vjc-ze-Ylc.title" = "Telephone";
+
+/* Class = "UITextField"; placeholder = "Your telephone"; ObjectID = "T6C-te-pvM"; */
+"T6C-te-pvM.placeholder" = "Your telephone";
+
+/* Class = "UILabel"; text = "Current exchange rate:"; ObjectID = "iK8-qG-jk4"; */
+"iK8-qG-jk4.text" = "Current exchange rate:";
+
+/* Class = "UILabel"; text = "10.00000"; ObjectID = "q3R-Xl-rpB"; */
+"q3R-Xl-rpB.text" = "10.00000";
+
+/* Class = "UINavigationItem"; title = "Modify Password"; ObjectID = "bdG-MM-1ph"; */
+"bdG-MM-1ph.title" = "Modify Password";

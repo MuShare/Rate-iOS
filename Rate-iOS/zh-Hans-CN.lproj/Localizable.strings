@@ -8,10 +8,21 @@
 
 tip_name = "提示";
 cancel_name = "取消";
+warning_name = "警告";
 
 sign_in_at_first = "请先登录!";
 sign_out = "退出登录";
 sign_out_tip = "是否立刻退出登录?";
 sign_out_yes = "是的，立刻退出";
 sign_in_sign_up = "登录 / 注册";
+
 welcome_message = "欢迎使用MuRate，立刻登录！";
+
+subscription_modify_disable = "不能修改该订阅，稍后再试";
+subscription_alert_above = "当汇率值高于";
+subscription_alert_below = "当汇率值低于";
+subscription_same_currency = "两种货币不能相同！";
+subscription_current_rate_is = "当汇率值为";
+subscription_delete = "删除订阅";
+subscription_delete_message = "确认删除该订阅吗？";
+subscription_delete_now = "立刻删除";
