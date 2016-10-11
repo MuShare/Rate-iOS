@@ -19,20 +19,25 @@
     UserTool *user;
 }
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    
-    NSLog(@"%@", [CommonTool deviceName]);
-
+ 
     //Register Remote Notification, support iOS version after 8.0
     [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
     [[UIApplication sharedApplication] registerForRemoteNotifications];
     
     user = [[UserTool alloc] init];
-    user.lan = @"en";
+    NSString *currentLan = [[NSLocale currentLocale] localeIdentifier];
+    
+    
+    if (user.lan == nil || ![currentLan isEqualToString:user.lan]) {
+        user.lan = currentLan;
+        user.currencyRev = 0;
+    }
+    
+ 
     //Init AFHTTPSessionManager.
     [self httpSessionManager];
     //Init NSManagedObjectContext

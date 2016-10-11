@@ -38,9 +38,13 @@
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
         NSLog(@"Currency revison is %ld.", user.currencyRev);
     }
+    NSDictionary *localization = @{
+                                   @"zh-Hans_US": @"zh-CN",
+                                   @"zh_CN": @"zh-CN"
+                                   };
     [manager GET:[InternetTool createUrl:@"api/currencies"]
       parameters:@{
-                   @"lan": user.lan,
+                   @"lan": localization[user.lan] == nil? user.lan: localization[user.lan],
                    @"rev": [NSNumber numberWithInteger:user.currencyRev]
                    }
         progress:nil
