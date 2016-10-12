@@ -19,6 +19,8 @@
     UserTool *user;
 }
 
+@synthesize refreshRates;
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
@@ -30,13 +32,10 @@
     
     user = [[UserTool alloc] init];
     NSString *currentLan = [[NSLocale currentLocale] localeIdentifier];
-    
-    
     if (user.lan == nil || ![currentLan isEqualToString:user.lan]) {
         user.lan = currentLan;
         user.currencyRev = 0;
     }
-    
  
     //Init AFHTTPSessionManager.
     [self httpSessionManager];

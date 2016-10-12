@@ -19,11 +19,13 @@
 @end
 
 @implementation RatesTableViewController {
+    AppDelegate *delegate;
     AFHTTPSessionManager *manager;
     UserTool *user;
     DaoManager *dao;
     NSDictionary *rates;
     NSString *selectedCurrency;
+    NSNumber *favorite;
 
     UIView *searchBarView;
     UIView *disableViewOverlay;
@@ -36,10 +38,14 @@
     }
     [super viewDidLoad];
     
+    delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     manager = [InternetTool getSessionManager];
     user = [[UserTool alloc] init];
     dao = [[DaoManager alloc] init];
-
+    if (user.token != nil) {
+        favorite = user.showFavorites? [NSNumber numberWithBool:YES]: nil;
+    }
+    
     //Load based currency from NSUserDefaults
     _basedCurrency = [dao.currencyDao getByCid:user.basedCurrencyId];
     
@@ -61,9 +67,13 @@
     }
     //Reset base currency name.
     [self.navigationItem.leftBarButtonItem setTitle:_basedCurrency.name];
-    //Reload rates values.
-    [self.tableView.mj_header beginRefreshing];
-
+    //Reload rates values if showFavorite is changed.
+    if (delegate.refreshRates) {
+        delegate.refreshRates = NO;
+        favorite = user.showFavorites? [NSNumber numberWithBool:YES]: nil;
+        [self.tableView.mj_header beginRefreshing];
+    }
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -128,7 +138,7 @@
         [self searchBar:searchBar activate:YES];
     }
     else {
-        _fetchedResultsController = [dao.currencyDao fetchRequestControllerWithFavorite:[NSNumber numberWithBool:user.token != nil]
+        _fetchedResultsController = [dao.currencyDao fetchRequestControllerWithFavorite:favorite
                                                                                 Without:user.basedCurrencyId
                                                                             withKeyword:searchText];
         [self.tableView reloadData];
@@ -208,7 +218,7 @@
                  }
                  
                  //Reload data
-                 _fetchedResultsController = [dao.currencyDao fetchRequestControllerWithFavorite:[NSNumber numberWithBool:user.token != nil]
+                 _fetchedResultsController = [dao.currencyDao fetchRequestControllerWithFavorite:favorite
                                                                                          Without:user.basedCurrencyId withKeyword:nil];
                  [self.tableView reloadData];
                  [self.tableView.mj_header endRefreshing];
@@ -308,7 +318,7 @@
     if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    _fetchedResultsController = [dao.currencyDao fetchRequestControllerWithFavorite:[NSNumber numberWithBool:user.token != nil]
+    _fetchedResultsController = [dao.currencyDao fetchRequestControllerWithFavorite:favorite
                                                                             Without:user.basedCurrencyId
                                                                         withKeyword:nil];
     [self.tableView reloadData];

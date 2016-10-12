@@ -20,6 +20,7 @@
     UserTool *user;
     AFHTTPSessionManager *manager;
     DaoManager *dao;
+    AppDelegate *delegate;
 }
 
 - (void)viewDidLoad {
@@ -27,8 +28,14 @@
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     [super viewDidLoad];
+    
+    delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     dao = [[DaoManager alloc] init];
     user = [[UserTool alloc] init];
+    
+    //Set UISwitch
+    _showFavoriteSwitch.on = user.showFavorites;
+    _notificationSwitch.on = user.notification;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -151,5 +158,21 @@
     alertController.popoverPresentationController.sourceView = _logoutButton;
     alertController.popoverPresentationController.sourceRect = _logoutButton.bounds;
     [self presentViewController:alertController animated:YES completion:nil];
+}
+
+- (IBAction)changeShowFavorite:(UISwitch *)sender {
+    if (DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    user.showFavorites = sender.on;
+    delegate.refreshRates = YES;
+}
+
+- (IBAction)changeNotification:(UISwitch *)sender {
+    if (DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    user.notification = sender.on;
+    
 }
 @end

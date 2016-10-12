@@ -33,7 +33,7 @@
 }
 
 //Define history search days.
-static const int historySearchDays[5] = {30, 90, 180, 365, 3*365};
+static const int historySearchDays[5] = {30, 90, 180, 365, 3 * 365};
 
 - (void)viewDidLoad {
     if(DEBUG) {

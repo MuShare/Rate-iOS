@@ -86,6 +86,16 @@
     return [defaults boolForKey:NSStringFromSelector(@selector(showFavorites))];
 }
 
+@synthesize notification = _notification;
+
+- (void)setNotification:(BOOL)notification {
+    [defaults setBool:notification forKey:NSStringFromSelector(@selector(notification))];
+}
+
+- (BOOL)notification {
+    return [defaults boolForKey:NSStringFromSelector(@selector(notification))];
+}
+
 @synthesize email = _email;
 
 - (void)setEmail:(NSString *)email {

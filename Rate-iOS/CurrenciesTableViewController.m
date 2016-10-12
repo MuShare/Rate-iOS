@@ -15,6 +15,7 @@
 @end
 
 @implementation CurrenciesTableViewController {
+    AppDelegate *delegate;
     UserTool *user;
     DaoManager *dao;
     AFHTTPSessionManager *manager;
@@ -29,6 +30,8 @@
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     [super viewDidLoad];
+    
+    delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     user = [[UserTool alloc] init];
     dao = [[DaoManager alloc] init];
     manager = [InternetTool getSessionManager];
@@ -205,10 +208,7 @@
     loadingView.hidden = NO;
     NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
     Currency *currency = [_fetchedResultsController objectAtIndexPath:indexPath];
-    NSLog(@"Currency is %@, %@", currency.code, @{
-                                              @"cid": currency.cid,
-                                              @"favorite": [NSNumber numberWithInt:!currency.favorite.boolValue]
-                                              });
+    
     [manager POST:[InternetTool createUrl:@"api/user/favorite"]
        parameters:@{
                     @"cid": currency.cid,
@@ -225,6 +225,9 @@
                   [sender setImage:[UIImage imageNamed:currency.favorite.boolValue? @"currency_like": @"currency_unlike"]
                           forState:UIControlStateNormal];
                   loadingView.hidden = YES;
+                  
+                  //Refresh rates in RatesTableViewController
+                  delegate.refreshRates = YES;
               }
           }
           failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -257,54 +260,6 @@
                          [searchBar becomeFirstResponder];
                      }
                      completion:nil];
-}
-
-
-- (void)favoriteButtonClicked:(UIButton *)sender {
-    if (DEBUG) {
-        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
-    }
-    UITableViewCell *cell = (UITableViewCell *)sender.superview.superview;
-    UIView *loadingView = [cell viewWithTag:5];
-    loadingView.hidden = NO;
-    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
-    Currency *currency = [_fetchedResultsController objectAtIndexPath:indexPath];
-
-    [manager POST:[InternetTool createUrl:@"api/user/favorite"]
-       parameters:@{
-                    @"cid": currency.cid,
-                    @"favorite": [NSNumber numberWithInt:!currency.favorite.boolValue]
-                    }
-         progress:nil
-          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-              InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
-              if ([response statusOK]) {
-                  //Save to database
-                  currency.favorite = [NSNumber numberWithBool:!currency.favorite.boolValue];
-                  [dao saveContext];
-                  //Update UI
-                  [sender setImage:[UIImage imageNamed:currency.favorite.boolValue? @"currency_like": @"currency_unlike"]
-                          forState:UIControlStateNormal];
-                  loadingView.hidden = YES;
-              }
-          }
-          failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-              if (DEBUG) {
-                  NSLog(@"Server error: %@", error.localizedDescription);
-              }
-              InternetResponse *response = [[InternetResponse alloc] initWithError:error];
-              switch ([response errorCode]) {
-
-                  default:
-                      if (DEBUG) {
-                          NSLog(@"Error code is %d", [response errorCode]);
-                      }
-                      loadingView.hidden = YES;
-                      break;
-              }
-              NSLog(@"%d", [response errorCode]);
-          }];
-
 }
 
 #pragma mark - Service 
