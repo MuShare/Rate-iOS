@@ -76,6 +76,16 @@
     return _lan;
 }
 
+@synthesize showFavorites = _showFavorites;
+
+- (void)setShowFavorites:(BOOL)showFavorites {
+    [defaults setBool:showFavorites forKey:NSStringFromSelector(@selector(showFavorites))];
+}
+
+- (BOOL)showFavorites {
+    return [defaults boolForKey:NSStringFromSelector(@selector(showFavorites))];
+}
+
 @synthesize email = _email;
 
 - (void)setEmail:(NSString *)email {

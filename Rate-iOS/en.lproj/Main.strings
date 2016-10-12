@@ -126,7 +126,7 @@
 "LYs-K4-eYU.text" = "All Currencies";
 
 /* Class = "UILabel"; text = "Clear User Data"; ObjectID = "Lfe-iY-k6D"; */
-"Lfe-iY-k6D.text" = "Clear User Data";
+//"Lfe-iY-k6D.text" = "Clear User Data";
 
 /* Class = "UINavigationItem"; title = "Languages"; ObjectID = "Mae-J2-AzT"; */
 "Mae-J2-AzT.title" = "Languages";
@@ -264,7 +264,7 @@
 "pSe-Mj-XSq.segmentTitles[2]" = "Wish";
 
 /* Class = "UINavigationItem"; title = "Clear User Data"; ObjectID = "pXX-b1-nn5"; */
-"pXX-b1-nn5.title" = "Clear User Data";
+//"pXX-b1-nn5.title" = "Clear User Data";
 
 /* Class = "UILabel"; text = "Send SMS"; ObjectID = "pgh-16-ETw"; */
 "pgh-16-ETw.text" = "Send SMS";
@@ -364,7 +364,7 @@
 "BIn-Df-jSi.text" = "Tip Info";
 
 /* Class = "UILabel"; text = "Cannot be used in app now."; ObjectID = "8ue-aF-NhS"; */
-"8ue-aF-NhS.text" = "Cannot be used in app now.";
+//"8ue-aF-NhS.text" = "Cannot be used in app now.";
 
 /* Class = "UILabel"; text = "Tip Info"; ObjectID = "LHg-EV-NzP"; */
 "LHg-EV-NzP.text" = "Tip Info";
@@ -392,3 +392,10 @@
 
 /* Class = "UINavigationItem"; title = "Modify Password"; ObjectID = "bdG-MM-1ph"; */
 "bdG-MM-1ph.title" = "Modify Password";
+
+//##################################################################################
+//#           AutoGenStrings            2016-10-12 10:40:53
+//##################################################################################
+
+/* Class = "UILabel"; text = "Notification"; ObjectID = "B2N-Cn-Pen"; */
+"B2N-Cn-Pen.text" = "Notification";

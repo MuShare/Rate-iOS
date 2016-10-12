@@ -13,7 +13,7 @@
 #import <MJRefresh/MJRefresh.h>
 
 #import "MySearchResultsController.h"
-#import "AlertTool.h"
+
 @interface RatesTableViewController ()
 
 @end
@@ -39,7 +39,7 @@
     manager = [InternetTool getSessionManager];
     user = [[UserTool alloc] init];
     dao = [[DaoManager alloc] init];
-    [AlertTool showAlertWithTitle:@"tip" andContent:user.lan inViewController:self];
+
     //Load based currency from NSUserDefaults
     _basedCurrency = [dao.currencyDao getByCid:user.basedCurrencyId];
     
@@ -51,6 +51,7 @@
     }];
     [self.tableView.mj_header beginRefreshing];
     
+    //Set up search bar
     [self setupSearchBar];
 }
 
@@ -169,8 +170,7 @@
                          [self searchBar:searchBar activate:YES];
                          [searchBar becomeFirstResponder];
                      }
-                     completion:^(BOOL finished) {
-                     }];
+                     completion:nil];
 }
 
 - (IBAction)openSettingsMenu:(id)sender {
@@ -305,6 +305,9 @@
 }
 
 - (void)filterResultsToOriginal {
+    if (DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
     _fetchedResultsController = [dao.currencyDao fetchRequestControllerWithFavorite:[NSNumber numberWithBool:user.token != nil]
                                                                             Without:user.basedCurrencyId
                                                                         withKeyword:nil];

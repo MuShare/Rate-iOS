@@ -28,6 +28,7 @@
     }
     [super viewDidLoad];
     dao = [[DaoManager alloc] init];
+    user = [[UserTool alloc] init];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

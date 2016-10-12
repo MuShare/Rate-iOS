@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "DaoManager.h"
 
-@interface CurrenciesTableViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+@interface CurrenciesTableViewController : UITableViewController <NSFetchedResultsControllerDelegate, UISearchBarDelegate>
 
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 
@@ -18,5 +18,6 @@
 
 - (IBAction)selectShowType:(id)sender;
 - (IBAction)setFavorite:(UIButton *)sender;
+- (IBAction)searchCurrency:(id)sender;
 
 @end

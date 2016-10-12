@@ -67,10 +67,17 @@
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    NSPredicate *cidPredicate = (cid == nil)? nil: [NSPredicate predicateWithFormat:@"cid!=%@", cid];
-    NSPredicate *favoritePredicate = (favorite == nil)? nil: [NSPredicate predicateWithFormat:@"favorite=%@", favorite];
-    NSPredicate *searchPredicate = (keyword ==nil)? nil: [NSPredicate predicateWithFormat:@"code contains[cd] %@ or name contains[cd] %@", keyword, keyword];
-    NSPredicate *predicate = [NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects:cidPredicate , favoritePredicate, searchPredicate, nil]];
+    NSMutableArray *subpredicates = [[NSMutableArray alloc] init];
+    if (favorite != nil) {
+        [subpredicates addObject:[NSPredicate predicateWithFormat:@"favorite=%@", favorite]];
+    }
+    if (cid != nil) {
+        [subpredicates addObject:[NSPredicate predicateWithFormat:@"cid!=%@", cid]];
+    }
+    if (keyword != nil) {
+        [subpredicates addObject:[NSPredicate predicateWithFormat:@"code contains[cd] %@ or name contains[cd] %@", keyword, keyword]];
+    }
+    NSPredicate *predicate = [NSCompoundPredicate andPredicateWithSubpredicates:subpredicates];
     NSFetchRequest *request = [self fetchRequestByPredicate:predicate
                                              withEntityName:CurrencyEntityName
                                                     orderBy:[NSSortDescriptor sortDescriptorWithKey:@"code" ascending:YES]];

@@ -15,6 +15,7 @@
 @property (nonatomic, strong) NSString *basedCurrencyId;
 
 @property (nonatomic, strong) NSString *lan;
+@property (nonatomic) BOOL showFavorites;
 
 @property (nonatomic, strong) NSString *email;
 @property (nonatomic, strong) NSString *telephone;
