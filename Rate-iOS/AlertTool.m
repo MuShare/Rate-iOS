@@ -13,12 +13,12 @@
 + (void)showAlertWithTitle:(NSString *)title
                 andContent:(NSString *)content
           inViewController:(UIViewController *)controller {
-    UIAlertController *alertController=[UIAlertController alertControllerWithTitle:title
-                                                                           message:content
-                                                                    preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *cancelAction=[UIAlertAction actionWithTitle:@"OK"
-                                                         style:UIAlertActionStyleCancel
-                                                       handler:nil];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
+                                                                             message:content
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"ok_name", @"OK")
+                                                           style:UIAlertActionStyleCancel
+                                                         handler:nil];
     [alertController addAction:cancelAction];
     [controller presentViewController:alertController animated:YES completion:nil];
 }
@@ -28,6 +28,17 @@
     UIBarButtonItem * barButton = [[UIBarButtonItem alloc] initWithCustomView:activityIndicatorView];
     controller.navigationItem.rightBarButtonItem = barButton;
     [activityIndicatorView startAnimating];
+}
+
++ (void)showNotConnectInternet:(UIViewController *)controller {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"tip_name", @"Tip")
+                                                                             message:NSLocalizedString(@"no_internet_connection", @"The Internet connection appears to be offline.")
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"ok_name", @"OK")
+                                                           style:UIAlertActionStyleCancel
+                                                         handler:nil];
+    [alertController addAction:cancelAction];
+    [controller presentViewController:alertController animated:YES completion:nil];
 }
 
 @end

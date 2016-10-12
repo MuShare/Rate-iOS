@@ -31,6 +31,11 @@
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     self = [super init];
+
+    if (error.code == NSURLErrorNotConnectedToInternet || error.code == NSURLErrorDNSLookupFailed) {
+        _data = @{@"error_code": [NSNumber numberWithInteger:ErrorCodeNotConnectedToInternet]};
+        return self;
+    }
     if(self) {
         _data = [NSJSONSerialization JSONObjectWithData:(NSData *)error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey]
                                                 options:NSJSONReadingAllowFragments
@@ -47,21 +52,22 @@
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    return [[self.data valueForKey:@"status"] intValue] == 200;
+    return [[_data valueForKey:@"status"] intValue] == 200;
 }
 
 - (id)getResponseResult {
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    return [self.data valueForKey:@"result"];
+    return [_data valueForKey:@"result"];
 }
 
 - (int)errorCode {
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    int erroCode = [[self.data valueForKey:@"error_code"] intValue];
+
+    int erroCode = [[_data valueForKey:@"error_code"] intValue];
     return erroCode;
 }
 @end

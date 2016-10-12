@@ -12,5 +12,8 @@
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingActivityIndicatorView;
 @property (weak, nonatomic) IBOutlet UILabel *tipLabel;
+@property (weak, nonatomic) IBOutlet UIButton *useWithoutInternetButton;
+
+- (IBAction)useWithoutInternet:(id)sender;
 
 @end

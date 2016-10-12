@@ -38,13 +38,10 @@
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
         NSLog(@"Currency revison is %ld.", user.currencyRev);
     }
-    NSDictionary *localization = @{
-                                   @"zh-Hans_US": @"zh-CN",
-                                   @"zh_CN": @"zh-CN"
-                                   };
+
     [manager GET:[InternetTool createUrl:@"api/currencies"]
       parameters:@{
-                   @"lan": localization[user.lan] == nil? user.lan: localization[user.lan],
+                   @"lan": user.lan,
                    @"rev": [NSNumber numberWithInteger:user.currencyRev]
                    }
         progress:nil
@@ -74,9 +71,17 @@
              }
              _loadingActivityIndicatorView.hidden = YES;
              _tipLabel.hidden = NO;
+             _useWithoutInternetButton.hidden = NO;
          }];
 }
 
 
+
+- (IBAction)useWithoutInternet:(id)sender {
+    if (DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    [self performSegueWithIdentifier:@"mainTabControllerSegue" sender:self];
+}
 
 @end

@@ -17,7 +17,8 @@ typedef NS_OPTIONS(NSUInteger, ErrorCode) {
     ErrorCodePasswordWrong = 301,
     ErrorCodeAccountNotFound = 302,
     ErrorCodeNotValidated = 304,
-    ErrorCodeTokenError = 350
+    ErrorCodeTokenError = 350,
+    ErrorCodeNotConnectedToInternet = -1009
 };
 
 @property (nonatomic, strong) NSObject *data;

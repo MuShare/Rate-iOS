@@ -115,11 +115,8 @@
 /* Class = "UILabel"; text = "100.0000"; ObjectID = "N5V-ed-3dC"; */
 "N5V-ed-3dC.text" = "100.0000";
 
-/* Class = "UILabel"; text = "Notification"; ObjectID = "N6d-fK-aWK"; */
-"N6d-fK-aWK.text" = "通知";
-
-/* Class = "UIButton"; normalTitle = "Rate in App Store"; ObjectID = "Nq2-il-4wg"; */
-"Nq2-il-4wg.normalTitle" = "在App Store评价";
+/* Class = "UILabel"; text = "Show Favorites in MuRate"; ObjectID = "N6d-fK-aWK"; */
+"N6d-fK-aWK.text" = "仅显示关注货币";
 
 /* Class = "UILabel"; text = "Email"; ObjectID = "OV6-hg-bua"; */
 "OV6-hg-bua.text" = "邮箱";
@@ -357,7 +354,7 @@
 "vjc-ze-Ylc.title" = "电话";
 
 /* Class = "UITextField"; placeholder = "Your telephone"; ObjectID = "T6C-te-pvM"; */
-"T6C-te-pvM.placeholder" = "您的电弧";
+"T6C-te-pvM.placeholder" = "您的电话";
 
 /* Class = "UILabel"; text = "Current exchange rate:"; ObjectID = "iK8-qG-jk4"; */
 "iK8-qG-jk4.text" = "当前汇率:";
@@ -368,9 +365,15 @@
 /* Class = "UINavigationItem"; title = "Modify Password"; ObjectID = "bdG-MM-1ph"; */
 "bdG-MM-1ph.title" = "修改密码";
 
+/* Class = "UIButton"; normalTitle = "Use without Internet"; ObjectID = "95a-Vh-ASh"; */
+"95a-Vh-ASh.normalTitle" = "在脱机状态下继续使用";
+
 //##################################################################################
-//#           AutoGenStrings            2016-10-12 10:40:53
+//#           AutoGenStrings            2016-10-12 18:36:12
 //##################################################################################
 
 /* Class = "UILabel"; text = "Notification"; ObjectID = "B2N-Cn-Pen"; */
 "B2N-Cn-Pen.text" = "通知";
+
+/* Class = "UIButton"; normalTitle = "Rate in App Store"; ObjectID = "Nq2-il-4wg"; */
+"Nq2-il-4wg.normalTitle" = "Rate in App Store";

@@ -399,3 +399,10 @@
 
 /* Class = "UILabel"; text = "Notification"; ObjectID = "B2N-Cn-Pen"; */
 "B2N-Cn-Pen.text" = "Notification";
+
+//##################################################################################
+//#           AutoGenStrings            2016-10-12 16:26:58
+//##################################################################################
+
+/* Class = "UIButton"; normalTitle = "Use without Internet"; ObjectID = "95a-Vh-ASh"; */
+"95a-Vh-ASh.normalTitle" = "Use without Internet";

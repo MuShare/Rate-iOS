@@ -17,4 +17,6 @@
 
 + (void)replaceBarButtonItemWithActivityIndicator:(UIViewController *)controller;
 
++ (void)showNotConnectInternet:(UIViewController *)controller;
+
 @end

@@ -31,7 +31,7 @@
     [[UIApplication sharedApplication] registerForRemoteNotifications];
     
     user = [[UserTool alloc] init];
-    NSString *currentLan = [[NSLocale currentLocale] localeIdentifier];
+    NSString *currentLan = [[[NSBundle mainBundle] preferredLocalizations] objectAtIndex:0];
     if (user.lan == nil || ![currentLan isEqualToString:user.lan]) {
         user.lan = currentLan;
         user.currencyRev = 0;

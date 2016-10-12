@@ -9,6 +9,7 @@
 #import "RatesTableViewController.h"
 #import "InternetTool.h"
 #import "UserTool.h"
+#import "AlertTool.h"
 #import "DaoManager.h"
 #import <MJRefresh/MJRefresh.h>
 
@@ -195,7 +196,7 @@
     [parameters setObject:_basedCurrency.cid forKey:@"from"];
     
     if(user.token != nil) {
-        [parameters setObject:[NSNumber numberWithInt:1] forKey:@"favorite"];
+        [parameters setObject:[NSNumber numberWithBool:user.showFavorites] forKey:@"favorite"];
     }
     [manager GET:[InternetTool createUrl:@"api/rate/current"]
       parameters:parameters
@@ -219,7 +220,8 @@
                  
                  //Reload data
                  _fetchedResultsController = [dao.currencyDao fetchRequestControllerWithFavorite:favorite
-                                                                                         Without:user.basedCurrencyId withKeyword:nil];
+                                                                                         Without:user.basedCurrencyId
+                                                                                     withKeyword:nil];
                  [self.tableView reloadData];
                  [self.tableView.mj_header endRefreshing];
              }
@@ -231,7 +233,8 @@
              [self.tableView.mj_header endRefreshing];
              InternetResponse *response = [[InternetResponse alloc] initWithError:error];
              switch ([response errorCode]) {
-                     
+                 case ErrorCodeNotConnectedToInternet:
+                     [AlertTool showNotConnectInternet:self];
                  default:
                      break;
              }

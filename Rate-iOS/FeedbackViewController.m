@@ -24,6 +24,7 @@
     [super viewDidLoad];
     manager = [InternetTool getSessionManager];
     [self setCloseKeyboardAccessoryForSender:_contentTextView];
+    [self setCloseKeyboardAccessoryForSender:_contactTextField];
 }
 
 #pragma mark - Delegate: UITextFeildDelegate
@@ -69,8 +70,8 @@
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     if([_contactTextField.text isEqualToString:@""] || [_contentTextView.text isEqualToString:@""]) {
-        [AlertTool showAlertWithTitle:@"Warning"
-                           andContent:@"Write content and contact info!"
+        [AlertTool showAlertWithTitle:NSLocalizedString(@"warning_name", @"Warning")
+                           andContent:NSLocalizedString(@"feedback_not_validate", @"Write content and contact info!")
                      inViewController:self];
         return;
     }
@@ -84,10 +85,17 @@
           success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
               InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
               if ([response statusOK]) {
-                  [AlertTool showAlertWithTitle:@"Tip"
-                                     andContent:@"Send feedback successfully!"
-                               inViewController:self];
-                  [self.navigationController popViewControllerAnimated:YES];
+                  UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"tip_name", @"Tip")
+                                                                                           message:NSLocalizedString(@"feedback_not_validate", @"Write content and contact info!")
+                                                                                    preferredStyle:UIAlertControllerStyleAlert];
+                  UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"ok_name", @"OK")
+                                                                         style:UIAlertActionStyleCancel
+                                                                       handler:^(UIAlertAction * _Nonnull action) {
+                                                                           [self.navigationController popViewControllerAnimated:YES];
+                                                                       }];
+                
+                  [alertController addAction:cancelAction];
+                  [self presentViewController:alertController animated:YES completion:nil];
               }
           }
           failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {

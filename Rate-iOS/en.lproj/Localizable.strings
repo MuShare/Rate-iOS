@@ -7,8 +7,11 @@
 */
 
 tip_name = "Tip";
-cancel_name = "Cancel";
 warning_name = "Warning";
+cancel_name = "Cancel";
+ok_name = "OK";
+
+no_internet_connection = "The Internet connection appears to be offline.";
 
 sign_in_at_first = "Sign in at first!";
 sign_out = "Sign out";
@@ -26,3 +29,5 @@ subscription_current_rate_is = "Current rate is ";
 subscription_delete = "Delete subscription";
 subscription_delete_message = "Are you sure to delete this subscription?";
 subscription_delete_now = "Delete it now";
+
+feedback_not_validate = "Write content and contact info!";

@@ -72,6 +72,7 @@
 
 /* Begin PBXFileReference section */
 		90484F32E9B3B223B0DBE339 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4050F471DAE2475003D0EEB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E408A9831D519EBC00B34655 /* InternetResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InternetResponse.h; sourceTree = "<group>"; };
 		E408A9841D519EBC00B34655 /* InternetResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InternetResponse.m; sourceTree = "<group>"; };
 		E408A9881D51A83600B34655 /* Currency+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Currency+CoreDataProperties.h"; sourceTree = "<group>"; };
@@ -96,7 +97,6 @@
 		E414519D1D502E8200AFE672 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		E414519E1D502E8200AFE672 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		E425752B1DAA0271009F1EF5 /* Rate-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Rate-iOS.entitlements"; sourceTree = "<group>"; };
-		E42575351DABBB48009F1EF5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E42575371DABBB4A009F1EF5 /* zh-Hans-CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans-CN"; path = "zh-Hans-CN.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		E43697651D58488200781223 /* Subscribe+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Subscribe+CoreDataProperties.h"; sourceTree = "<group>"; };
 		E43697661D58488200781223 /* Subscribe+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Subscribe+CoreDataProperties.m"; sourceTree = "<group>"; };
@@ -669,8 +669,8 @@
 		E42575361DABBB48009F1EF5 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E42575351DABBB48009F1EF5 /* en */,
 				E42575371DABBB4A009F1EF5 /* zh-Hans-CN */,
+				E4050F471DAE2475003D0EEB /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
