@@ -15,6 +15,10 @@
 
 @interface InternetTool : NSObject
 
+//Clear token in AFHTTPSessionManager
++ (void)clearToken;
+
+//Get AFHTTPSessionManager with token if signed in
 + (AFHTTPSessionManager *)getSessionManager;
 
 + (AFHTTPSessionManager *)getSessionManagerForJSON;

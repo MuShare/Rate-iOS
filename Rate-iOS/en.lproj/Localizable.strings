@@ -36,6 +36,8 @@ subscription_delete = "Delete subscription";
 subscription_delete_message = "Are you sure to delete this subscription?";
 subscription_delete_now = "Delete it now";
 
+add_subscription_error_mail_need_active = "Cannot send email! Active your account by clicking the link in activate mail.";
+
 feedback_not_validate = "Write content and contact info!";
 
 photo_edit = "Edit Profile Photo";

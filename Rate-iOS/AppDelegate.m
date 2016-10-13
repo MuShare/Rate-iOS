@@ -96,7 +96,7 @@
     if (DEBUG) {
         NSLog(@"Device token is %@", user.deviceToken);
     }
-    
+
     [_httpSessionManager POST:[InternetTool createUrl:@"api/user/device_token"]
                    parameters:@{
                                 @"device_token": user.deviceToken,

@@ -8,6 +8,7 @@
 
 #import "HelpViewController.h"
 #import "InternetTool.h"
+#import "UserTool.h"
 
 @interface HelpViewController ()
 
@@ -20,7 +21,8 @@
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     [super viewDidLoad];
-    NSURL *url = [[NSURL alloc] initWithString:[InternetTool createUrl:@"help"]];
+    UserTool *user = [[UserTool alloc] init];
+    NSURL *url = [[NSURL alloc] initWithString:[InternetTool createUrl:[NSString stringWithFormat:@"help?lan=%@", user.lan]]];
     [_helpWebView loadRequest:[NSURLRequest requestWithURL:url]];
 }
 

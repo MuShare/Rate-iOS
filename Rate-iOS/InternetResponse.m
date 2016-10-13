@@ -33,7 +33,10 @@
     }
     self = [super init];
     
-    if (error.code == NSURLErrorNotConnectedToInternet || error.code == NSURLErrorDNSLookupFailed || error.code == NSURLErrorCannotFindHost) {
+    if (error.code == NSURLErrorNotConnectedToInternet ||
+        error.code == NSURLErrorDNSLookupFailed ||
+        error.code == NSURLErrorCannotFindHost ||
+        error.code == NSURLErrorCannotConnectToHost) {
         _data = @{@"error_code": [NSNumber numberWithInteger:ErrorCodeNotConnectedToInternet]};
         return self;
     }

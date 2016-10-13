@@ -118,8 +118,8 @@
                     if([response statusOK]) {
                         //Clear user data
                         [user clearup];
-                        //Refresh session manager
-                        [InternetTool getSessionManager];
+                        //Clear token
+                        [InternetTool clearToken];
                         
                         //Reset favorite in currencies
                         for(Currency *currency in [dao.currencyDao findAll]) {
@@ -135,6 +135,7 @@
                         
                         _signOrNameLabel.text = NSLocalizedString(@"sign_in_sign_up", @"Sign in / Sign up");
                         _welcomeOrEmailLabel.text = NSLocalizedString(@"welcome_message", @"Welcome to MuRate, sign in now!");
+                        _notificationSwitch.enabled = NO;
                     }
                 }
                 failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -178,7 +179,7 @@
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
 
-    [manager POST:[InternetTool createUrl:@"api/notification"]
+    [manager POST:[InternetTool createUrl:@"api/user/notification"]
        parameters:@{
                     @"enable": [NSNumber numberWithBool:sender.on]
                     }

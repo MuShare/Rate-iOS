@@ -23,13 +23,6 @@
     [controller presentViewController:alertController animated:YES completion:nil];
 }
 
-+ (void)replaceBarButtonItemWithActivityIndicator:(UIViewController *)controller {
-    UIActivityIndicatorView * activityIndicatorView = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
-    UIBarButtonItem * barButton = [[UIBarButtonItem alloc] initWithCustomView:activityIndicatorView];
-    controller.navigationItem.rightBarButtonItem = barButton;
-    [activityIndicatorView startAnimating];
-}
-
 + (void)showNotConnectInternet:(UIViewController *)controller {
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"tip_name", @"Tip")
                                                                              message:NSLocalizedString(@"no_internet_connection", @"The Internet connection appears to be offline.")
@@ -39,6 +32,14 @@
                                                          handler:nil];
     [alertController addAction:cancelAction];
     [controller presentViewController:alertController animated:YES completion:nil];
+}
+
+
++ (void)replaceBarButtonItemWithActivityIndicator:(UIViewController *)controller {
+    UIActivityIndicatorView * activityIndicatorView = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+    UIBarButtonItem * barButton = [[UIBarButtonItem alloc] initWithCustomView:activityIndicatorView];
+    controller.navigationItem.rightBarButtonItem = barButton;
+    [activityIndicatorView startAnimating];
 }
 
 @end

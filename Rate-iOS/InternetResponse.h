@@ -17,6 +17,7 @@ typedef NS_OPTIONS(NSUInteger, ErrorCode) {
     ErrorCodePasswordWrong = 301,
     ErrorCodeAccountNotFound = 302,
     ErrorCodeNotValidated = 304,
+    ErrorCodeMailNeedActivate = 330,
     ErrorCodeTokenError = 350,
     ErrorCodeNotConnectedToInternet = -1009
 };

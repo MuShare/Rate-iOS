@@ -187,8 +187,7 @@
     [self setToken:nil];
     [self setName:nil];
     [self setToken:nil];
-    [self setDeviceToken:nil];
-    
+
     [self setCacheRates:nil];
 }
 

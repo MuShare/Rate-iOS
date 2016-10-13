@@ -36,6 +36,8 @@ subscription_delete = "删除订阅";
 subscription_delete_message = "确认删除该订阅吗？";
 subscription_delete_now = "立刻删除";
 
+add_subscription_error_mail_need_active = "不能发送邮件！请先点击激活邮件中的链接激活账户。";
+
 feedback_not_validate = "请填写内容和联系方式！";
 
 photo_edit = "编辑头像";

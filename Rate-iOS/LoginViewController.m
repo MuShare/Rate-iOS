@@ -71,13 +71,15 @@
     [_loadingActivityIndicatorView startAnimating];
     _loginSubmitButton.enabled = NO;
     UIDevice *currentDevice = [UIDevice currentDevice];
+    
     [manager POST:[InternetTool createUrl:@"api/user/login"]
        parameters:@{
                     @"email": _emailTextField.text,
                     @"password": _passwordTextField.text,
                     @"os": [NSString stringWithFormat:@"iOS %@", currentDevice.systemVersion],
                     @"did": [currentDevice.identifierForVendor UUIDString],
-                    @"device_token": user.deviceToken
+                    @"device_token": user.deviceToken,
+                    @"lan": user.lan
                     }
          progress:nil
           success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -90,6 +92,7 @@
                   user.telephone = [result valueForKey:@"telephone"];
                   user.name = [result valueForKey:@"uname"];
                   user.token = [result valueForKey:@"token"];
+                  user.notification = [result valueForKey:@"notification"];
                   //Set user's favorite currencies
                   NSArray *favorites = [result valueForKey:@"favorite"];
                   for(NSString *cid in favorites) {

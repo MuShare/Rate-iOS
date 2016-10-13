@@ -382,3 +382,13 @@
 
 /* Class = "UILabel"; text = "Oauth cannot be used in app now."; ObjectID = "Ktv-B0-HvZ"; */
 "Ktv-B0-HvZ.text" = "第三方登录暂时无法使用";
+
+//##################################################################################
+//#           AutoGenStrings            2016-10-13 20:53:55
+//##################################################################################
+
+/* Class = "UITextField"; text = "123"; ObjectID = "2S3-QU-f51"; */
+//"2S3-QU-f51.text" = "123";
+
+/* Class = "UITextField"; text = "lm2343635@126.com"; ObjectID = "fJ1-cM-9m5"; */
+//"fJ1-cM-9m5.text" = "lm2343635@126.com";

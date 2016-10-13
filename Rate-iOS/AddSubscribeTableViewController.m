@@ -163,6 +163,7 @@
     if (!validate) {
         return;
     }
+    
     [AlertTool replaceBarButtonItemWithActivityIndicator:self];
     [manager POST:[InternetTool createUrl:@"api/user/subscribe"]
        parameters:@{
@@ -191,18 +192,21 @@
                   case ErrorCodeNotConnectedToInternet:
                       [AlertTool showNotConnectInternet:self];
                       break;
+                  case ErrorCodeMailNeedActivate:
+                      self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave
+                                                                                                             target:self
+                                                                                                             action:@selector(saveSubscribe:)];
+
+                 
+                      [AlertTool showAlertWithTitle:NSLocalizedString(@"tip_name", @"Tip")
+                                         andContent:NSLocalizedString(@"add_subscription_error_mail_need_active", "Cannot send email! Active your account by clicking the link in activate mail.")
+                                   inViewController:self];
+                      break;
                   case ErrorCodeTokenError:
                       
                       break;
-                      
                   default:
-                      if (DEBUG) {
-                          NSLog(@"Error code is %d", [response errorCode]);
-                      }
-                      [AlertTool showAlertWithTitle:NSLocalizedString(@"tip_name", @"Tip")
-                                         andContent:NSLocalizedString(@"subscription_modify_disable", @"Cannot modify this subscription, try again later.")
-                                   inViewController:self];
-                      [self.navigationController popViewControllerAnimated:YES];
+
                       break;
               }
           }];

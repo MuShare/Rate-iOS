@@ -16,6 +16,16 @@
     [delegate.httpSessionManager.requestSerializer setValue:token forHTTPHeaderField:@"Authorization"];
 }
 
++ (void)clearToken {
+    if (DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    delegate.httpSessionManager = [AFHTTPSessionManager manager];
+    delegate.httpSessionManager.responseSerializer = [[AFCompoundResponseSerializer alloc] init];
+
+}
+
 + (AFHTTPSessionManager *)getSessionManager {
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));

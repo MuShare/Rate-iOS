@@ -208,6 +208,17 @@
                   case ErrorCodeNotConnectedToInternet:
                       [AlertTool showNotConnectInternet:self];
                       break;
+                  case ErrorCodeMailNeedActivate:
+                      self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave
+                                                                                                             target:self
+                                                                                                             action:@selector(updateSubscribe)];
+
+                      
+                      [AlertTool showAlertWithTitle:NSLocalizedString(@"tip_name", @"Tip")
+                                         andContent:NSLocalizedString(@"add_subscription_error_mail_need_active", "Active your account by clicking the link in activate mail!")
+                                   inViewController:self];
+                      break;
+
                   case ErrorCodeTokenError:
                       
                       break;
