@@ -145,14 +145,15 @@
                 failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                     InternetResponse *response = [[InternetResponse alloc] initWithError:error];
                     switch ([response errorCode]) {
+                        case ErrorCodeNotConnectedToInternet:
+                            [AlertTool showNotConnectInternet:self];
+                            break;
                         case ErrorCodeTokenError:
                             
                             break;
                             
                         default:
-                            if (DEBUG) {
-                                NSLog(@"Error code is %d", [response errorCode]);
-                            }
+
                             break;
                     }
                 }];
@@ -204,14 +205,13 @@
           failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
               InternetResponse *response = [[InternetResponse alloc] initWithError:error];
               switch ([response errorCode]) {
+                  case ErrorCodeNotConnectedToInternet:
+                      [AlertTool showNotConnectInternet:self];
+                      break;
                   case ErrorCodeTokenError:
                       
                       break;
-                      
                   default:
-                      if (DEBUG) {
-                          NSLog(@"Error code is %d", [response errorCode]);
-                      }
                       [AlertTool showAlertWithTitle:NSLocalizedString(@"tip_name", @"Tip")
                                          andContent:NSLocalizedString(@"subscription_modify_disable", @"Cannot modify this subscription, try again later.")
                                    inViewController:self];

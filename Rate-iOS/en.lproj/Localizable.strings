@@ -31,3 +31,9 @@ subscription_delete_message = "Are you sure to delete this subscription?";
 subscription_delete_now = "Delete it now";
 
 feedback_not_validate = "Write content and contact info!";
+
+photo_edit = "Edit Profile Photo";
+photo_tip = "Choose a photo from library or take a photo.";
+photo_take = "Take Photo";
+photo_simulator_not_support = "iOS Simulator cannot open camera.";
+photo_choose = "Choose from Photos";

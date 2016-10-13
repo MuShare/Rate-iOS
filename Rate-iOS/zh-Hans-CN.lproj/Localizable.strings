@@ -31,3 +31,9 @@ subscription_delete_message = "确认删除该订阅吗？";
 subscription_delete_now = "立刻删除";
 
 feedback_not_validate = "请填写内容和联系方式！";
+
+photo_edit = "编辑头像";
+photo_tip = "从相册中选择一张或者拍照";
+photo_take = "拍照";
+photo_simulator_not_support = "模拟器无法启动相机";
+photo_choose = "从相册中选择";

@@ -23,7 +23,6 @@
 		E43697691D58488200781223 /* Subscribe+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E43697661D58488200781223 /* Subscribe+CoreDataProperties.m */; };
 		E436976A1D58488200781223 /* Subscribe.m in Sources */ = {isa = PBXBuildFile; fileRef = E43697681D58488200781223 /* Subscribe.m */; };
 		E44899981D52DA4600BDD71B /* CommonTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E44899971D52DA4600BDD71B /* CommonTool.m */; };
-		E46B5BC11D58B46700CE407F /* RightMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E46B5BC01D58B46700CE407F /* RightMenuViewController.m */; };
 		E46B5BC51D59959C00CE407F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E46B5BC41D59959C00CE407F /* Assets.xcassets */; };
 		E46EDE2F1DABE7C400CA3DBC /* AutoGenStrings.py in Resources */ = {isa = PBXBuildFile; fileRef = E46EDE2E1DABE7C400CA3DBC /* AutoGenStrings.py */; };
 		E46FB51C1D4E305800661E13 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E46FB51B1D4E305800661E13 /* main.m */; };
@@ -50,7 +49,6 @@
 		E4EEEC101D5730D200A50E1C /* NameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4EEEC0F1D5730D200A50E1C /* NameViewController.m */; };
 		E4EEEC131D5730DE00A50E1C /* TelephoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4EEEC121D5730DE00A50E1C /* TelephoneViewController.m */; };
 		E4EEEC161D5730E900A50E1C /* PasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4EEEC151D5730E900A50E1C /* PasswordViewController.m */; };
-		E4F337531D5CB6140013F4D9 /* MySearchResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F337521D5CB6140013F4D9 /* MySearchResultsController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,8 +102,6 @@
 		E43697681D58488200781223 /* Subscribe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Subscribe.m; sourceTree = "<group>"; };
 		E44899961D52DA4600BDD71B /* CommonTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonTool.h; sourceTree = "<group>"; };
 		E44899971D52DA4600BDD71B /* CommonTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonTool.m; sourceTree = "<group>"; };
-		E46B5BBF1D58B46700CE407F /* RightMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightMenuViewController.h; sourceTree = "<group>"; };
-		E46B5BC01D58B46700CE407F /* RightMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightMenuViewController.m; sourceTree = "<group>"; };
 		E46B5BC41D59959C00CE407F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E46EDE2E1DABE7C400CA3DBC /* AutoGenStrings.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = AutoGenStrings.py; sourceTree = "<group>"; };
 		E46FB5171D4E305800661E13 /* Rate-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rate-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,8 +154,6 @@
 		E4EEEC121D5730DE00A50E1C /* TelephoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TelephoneViewController.m; sourceTree = "<group>"; };
 		E4EEEC141D5730E900A50E1C /* PasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordViewController.h; sourceTree = "<group>"; };
 		E4EEEC151D5730E900A50E1C /* PasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordViewController.m; sourceTree = "<group>"; };
-		E4F337511D5CB6140013F4D9 /* MySearchResultsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySearchResultsController.h; sourceTree = "<group>"; };
-		E4F337521D5CB6140013F4D9 /* MySearchResultsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySearchResultsController.m; sourceTree = "<group>"; };
 		E8DE8CE261D3D91477792600 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F0D8F75365DB741C707980DC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -338,10 +332,6 @@
 				E46FB5541D4E47CF00661E13 /* RatesTableViewController.m */,
 				E41451971D4F8AA000AFE672 /* RateViewController.h */,
 				E41451981D4F8AA000AFE672 /* RateViewController.m */,
-				E46B5BBF1D58B46700CE407F /* RightMenuViewController.h */,
-				E46B5BC01D58B46700CE407F /* RightMenuViewController.m */,
-				E4F337511D5CB6140013F4D9 /* MySearchResultsController.h */,
-				E4F337521D5CB6140013F4D9 /* MySearchResultsController.m */,
 			);
 			name = Rate;
 			sourceTree = "<group>";
@@ -608,9 +598,7 @@
 				E414519F1D502E8200AFE672 /* LoginViewController.m in Sources */,
 				E408AB9E1D51B51E00B34655 /* UserTool.m in Sources */,
 				E408A9851D519EBC00B34655 /* InternetResponse.m in Sources */,
-				E46B5BC11D58B46700CE407F /* RightMenuViewController.m in Sources */,
 				E496A7A01D4F095A003B0F1D /* MyProfileTableViewController.m in Sources */,
-				E4F337531D5CB6140013F4D9 /* MySearchResultsController.m in Sources */,
 				E408A9931D51A84700B34655 /* DaoTemplate.m in Sources */,
 				E4852F8C1D5093590039B79B /* InternetTool.m in Sources */,
 				E408A9921D51A84700B34655 /* DaoManager.m in Sources */,

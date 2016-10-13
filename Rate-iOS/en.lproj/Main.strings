@@ -406,3 +406,13 @@
 
 /* Class = "UIButton"; normalTitle = "Use without Internet"; ObjectID = "95a-Vh-ASh"; */
 "95a-Vh-ASh.normalTitle" = "Use without Internet";
+
+//##################################################################################
+//#           AutoGenStrings            2016-10-13 14:04:24
+//##################################################################################
+
+/* Class = "UINavigationItem"; title = "OAuth Sign in"; ObjectID = "anh-z1-fE1"; */
+"anh-z1-fE1.title" = "OAuth Sign in";
+
+/* Class = "UILabel"; text = "Oauth cannot be used in app now."; ObjectID = "Ktv-B0-HvZ"; */
+"Ktv-B0-HvZ.text" = "Oauth cannot be used in app now.";

@@ -10,6 +10,7 @@
 #import "DaoManager.h"
 #import "InternetTool.h"
 #import "UserTool.h"
+#import "AlertTool.h"
 
 @interface LoadingViewController ()
 
@@ -72,6 +73,15 @@
              _loadingActivityIndicatorView.hidden = YES;
              _tipLabel.hidden = NO;
              _useWithoutInternetButton.hidden = NO;
+             InternetResponse *response = [[InternetResponse alloc] initWithError:error];
+             switch ([response errorCode]) {
+                 case ErrorCodeNotConnectedToInternet:
+            
+                     break;
+                     
+                 default:
+                     break;
+             }
          }];
 }
 

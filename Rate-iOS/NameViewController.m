@@ -9,6 +9,7 @@
 #import "NameViewController.h"
 #import "InternetTool.h"
 #import "UserTool.h"
+#import "AlertTool.h"
 
 @interface NameViewController ()
 
@@ -52,11 +53,12 @@
           failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
               InternetResponse *response = [[InternetResponse alloc] initWithError:error];
               switch ([response errorCode]) {
+                  case ErrorCodeNotConnectedToInternet:
+                      [AlertTool showNotConnectInternet:self];
+                      break;
                   default:
-                      if (DEBUG) {
-                          NSLog(@"Error code is %d", [response errorCode]);
-                      }
-                  break;
+
+                      break;
               }
           }];
 }

@@ -80,6 +80,9 @@
               [_registerSubmitButton setTitle:@"Submit" forState:UIControlStateNormal];
               InternetResponse *response = [[InternetResponse alloc] initWithError:error];
               switch ([response errorCode]) {
+                  case ErrorCodeNotConnectedToInternet:
+                      [AlertTool showNotConnectInternet:self];
+                      break;
                   case ErrorCodeEmailExsit:
                       _emailImageView.highlighted = YES;
                       _telephoneImageView.highlighted = NO;

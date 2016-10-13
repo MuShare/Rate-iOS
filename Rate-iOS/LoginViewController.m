@@ -109,22 +109,25 @@
               _loginSubmitButton.enabled = YES;
               InternetResponse *response = [[InternetResponse alloc] initWithError:error];
               switch ([response errorCode]) {
+                  case ErrorCodeNotConnectedToInternet:
+                      [AlertTool showNotConnectInternet:self];
+                      break;
                   case ErrorCodeAccountNotFound:
                       _emailImageView.highlighted = YES;
                       _passwordImageView.highlighted = NO;
-                      [AlertTool showAlertWithTitle:@"Tip"
+                      [AlertTool showAlertWithTitle:NSLocalizedString(@"tip_name", @"Tip")
                                          andContent:@"This account is not exsit!"
                                    inViewController:self];
                       break;
                   case ErrorCodePasswordWrong:
                       _passwordImageView.highlighted = YES;
                       _emailImageView.highlighted = NO;
-                      [AlertTool showAlertWithTitle:@"Tip"
+                      [AlertTool showAlertWithTitle:NSLocalizedString(@"tip_name", @"Tip")
                                          andContent:@"Password is wrong!"
                                    inViewController:self];
                       break;
                   case ErrorCodeNotValidated:
-                      [AlertTool showAlertWithTitle:@"Tip"
+                      [AlertTool showAlertWithTitle:NSLocalizedString(@"tip_name", @"Tip")
                                          andContent:@"Active your account by email at first!"
                                    inViewController:self];
                       break;

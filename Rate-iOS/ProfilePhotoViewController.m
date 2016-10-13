@@ -68,7 +68,9 @@
                                              
                                                                 InternetResponse *res = [[InternetResponse alloc] initWithError:error];
                                                                 switch ([res errorCode]) {
-                                                                        
+                                                                    case ErrorCodeNotConnectedToInternet:
+                                                                        [AlertTool showNotConnectInternet:self];
+                                                                        break;
                                                                     default:
                                                                         break;
                                                                 }
@@ -82,36 +84,36 @@
     if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Edit Profile Photo"
-                                                                             message:@"Choose a photo from library or take a photo."
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"photo_edit", @"Edit Profile Photo")
+                                                                             message:NSLocalizedString(@"photo_tip",@"Choose a photo from library or take a photo.")
                                                                       preferredStyle:UIAlertControllerStyleActionSheet];
-    UIAlertAction *takePhoto = [UIAlertAction actionWithTitle:@"Take Photo"
+    UIAlertAction *takePhoto = [UIAlertAction actionWithTitle:NSLocalizedString(@"photo_take",@"Take Photo")
                                                         style:UIAlertActionStyleDefault
                                                       handler:^(UIAlertAction * _Nonnull action) {
-        if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-            imagePickerController.sourceType=UIImagePickerControllerSourceTypeCamera;
-            imagePickerController.cameraCaptureMode=UIImagePickerControllerCameraCaptureModePhoto;
-            imagePickerController.cameraDevice=UIImagePickerControllerCameraDeviceRear;
-            imagePickerController.allowsEditing=YES;
-        }else{
+        if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+            imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+            imagePickerController.cameraCaptureMode = UIImagePickerControllerCameraCaptureModePhoto;
+            imagePickerController.cameraDevice = UIImagePickerControllerCameraDeviceRear;
+            imagePickerController.allowsEditing = YES;
+        } else {
             if (DEBUG) {
                 NSLog(@"iOS Simulator cannot open camera.");
             }
-            [AlertTool showAlertWithTitle:@"Warning"
-                               andContent:@"iOS Simulator cannot open camera."
+            [AlertTool showAlertWithTitle:NSLocalizedString(@"warning_nane", @"Warning")
+                               andContent:NSLocalizedString(@"photo_simulator_not_support",@"iOS Simulator cannot open camera.")
                          inViewController:self];
         }
         [self presentViewController:imagePickerController animated: YES completion:nil];
     }];
     
-    UIAlertAction *choose = [UIAlertAction actionWithTitle:@"Choose from Photos"
+    UIAlertAction *choose = [UIAlertAction actionWithTitle:NSLocalizedString(@"photo_choose",@"Choose from Photos")
                                                      style:UIAlertActionStyleDefault
                                                    handler:^(UIAlertAction * _Nonnull action) {
         imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
         imagePickerController.allowsEditing = YES;
         [self presentViewController:imagePickerController animated: YES completion:nil];
     }];
-    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel"
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:NSLocalizedString(@"cancel_name", @"Cancel")
                                                      style:UIAlertActionStyleCancel
                                                    handler:nil];
     [alertController addAction:takePhoto];

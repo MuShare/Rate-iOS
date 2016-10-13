@@ -9,6 +9,7 @@
 #import "SubscriptionsTableViewController.h"
 #import "InternetTool.h"
 #import "UserTool.h"
+#import "AlertTool.h"
 #import <MJRefresh/MJRefresh.h>
 
 @interface SubscriptionsTableViewController ()
@@ -166,7 +167,6 @@
                  //Update rates of subscribe.
                  NSDictionary *rates = [data valueForKey:@"rates"];
                  for(NSString *sid in rates.allKeys) {
-                     NSLog(@"%@ %@", sid, rates[sid]);
                      Subscribe *subscribe = [dao.subscribeDao getBySid:sid];
                      subscribe.rate = [NSNumber numberWithFloat:[rates[sid] floatValue]];
                  }
@@ -185,13 +185,15 @@
              if(DEBUG) {
                  NSLog(@"Server error: %@", error.localizedDescription);
              }
+             [self.tableView.mj_header endRefreshing];
+
              InternetResponse *response = [[InternetResponse alloc] initWithError:error];
              switch ([response errorCode]) {
-                     
+                 case ErrorCodeNotConnectedToInternet:
+                     [AlertTool showNotConnectInternet:self];
+                     break;
                  default:
-                     if (DEBUG) {
-                         NSLog(@"Error code is %d", [response errorCode]);
-                     }
+   
                      break;
              }
          }];

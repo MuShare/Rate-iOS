@@ -141,11 +141,13 @@
                     }
                     InternetResponse *response = [[InternetResponse alloc] initWithError:error];
                     switch ([response errorCode]) {
+                        case ErrorCodeNotConnectedToInternet:
+                            [AlertTool showNotConnectInternet:self];
+                            break;
+                        case ErrorCodeTokenError:
                             
+                            break;
                         default:
-                            if (DEBUG) {
-                                NSLog(@"Error code is %d", [response errorCode]);
-                            }
                             break;
                     }
                 }];

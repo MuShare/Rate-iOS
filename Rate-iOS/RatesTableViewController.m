@@ -13,8 +13,6 @@
 #import "DaoManager.h"
 #import <MJRefresh/MJRefresh.h>
 
-#import "MySearchResultsController.h"
-
 @interface RatesTableViewController ()
 
 @end
@@ -235,6 +233,7 @@
              switch ([response errorCode]) {
                  case ErrorCodeNotConnectedToInternet:
                      [AlertTool showNotConnectInternet:self];
+                     break;
                  default:
                      break;
              }

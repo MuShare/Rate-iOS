@@ -11,7 +11,7 @@
 "2fa-KX-Kk3.title" = "注册";
 
 /* Class = "UILabel"; text = "Currency Name"; ObjectID = "39M-NU-3F2"; */
-"39M-NU-3F2.text" = "Currency Name";
+"39M-NU-3F2.text" = "货币名称";
 
 /* Class = "UILabel"; text = "English"; ObjectID = "3ER-TN-aMl"; */
 "3ER-TN-aMl.text" = "English";
@@ -190,8 +190,6 @@
 /* Class = "UITextField"; placeholder = "Max Rate"; ObjectID = "jkp-0R-fOo"; */
 "jkp-0R-fOo.placeholder" = "Max Rate";
 
-/* Class = "UIButton"; normalTitle = "CNY"; ObjectID = "l2Y-z6-Qki"; */
-//"l2Y-z6-Qki.normalTitle" = "CNY";
 
 /* Class = "UISegmentedControl"; mvv-Rz-xc9.segmentTitles[0] = "7d"; ObjectID = "mvv-Rz-xc9"; */
 "mvv-Rz-xc9.segmentTitles[0]" = "1个月";
@@ -213,9 +211,6 @@
 
 /* Class = "UILabel"; text = "Send Email"; ObjectID = "ode-KA-Xzx"; */
 "ode-KA-Xzx.text" = "发送邮件";
-
-/* Class = "UILabel"; text = "My Favorite"; ObjectID = "pSR-bs-6ib"; */
-//"pSR-bs-6ib.text" = "我的最爱";
 
 /* Class = "UISegmentedControl"; pSe-Mj-XSq.segmentTitles[0] = "Bug"; ObjectID = "pSe-Mj-XSq"; */
 "pSe-Mj-XSq.segmentTitles[0]" = "Bug";
@@ -377,3 +372,13 @@
 
 /* Class = "UIButton"; normalTitle = "Rate in App Store"; ObjectID = "Nq2-il-4wg"; */
 "Nq2-il-4wg.normalTitle" = "Rate in App Store";
+
+//##################################################################################
+//#           AutoGenStrings            2016-10-13 14:04:24
+//##################################################################################
+
+/* Class = "UINavigationItem"; title = "OAuth Sign in"; ObjectID = "anh-z1-fE1"; */
+"anh-z1-fE1.title" = "第三方登录";
+
+/* Class = "UILabel"; text = "Oauth cannot be used in app now."; ObjectID = "Ktv-B0-HvZ"; */
+"Ktv-B0-HvZ.text" = "第三方登录暂时无法使用";

@@ -9,6 +9,7 @@
 #import "CurrenciesTableViewController.h"
 #import "UserTool.h"
 #import "InternetTool.h"
+#import "AlertTool.h"
 
 @interface CurrenciesTableViewController ()
 
@@ -234,14 +235,14 @@
               if (DEBUG) {
                   NSLog(@"Server error: %@", error.localizedDescription);
               }
+              loadingView.hidden = YES;
               InternetResponse *response = [[InternetResponse alloc] initWithError:error];
               switch ([response errorCode]) {
-                      
+                  case ErrorCodeNotConnectedToInternet:
+                      [AlertTool showNotConnectInternet:self];
+                      break;
                   default:
-                      if (DEBUG) {
-                          NSLog(@"Error code is %d", [response errorCode]);
-                      }
-                      loadingView.hidden = YES;
+
                       break;
               }
 

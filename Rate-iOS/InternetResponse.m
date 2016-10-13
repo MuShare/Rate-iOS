@@ -29,10 +29,11 @@
 - (instancetype)initWithError:(NSError *)error {
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+        NSLog(@"InternetResponse init with an error, error.code = %ld", error.code);
     }
     self = [super init];
-
-    if (error.code == NSURLErrorNotConnectedToInternet || error.code == NSURLErrorDNSLookupFailed) {
+    
+    if (error.code == NSURLErrorNotConnectedToInternet || error.code == NSURLErrorDNSLookupFailed || error.code == NSURLErrorCannotFindHost) {
         _data = @{@"error_code": [NSNumber numberWithInteger:ErrorCodeNotConnectedToInternet]};
         return self;
     }
