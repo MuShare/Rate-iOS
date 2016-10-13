@@ -2,8 +2,8 @@
   InfoPlist.strings
   Rate-iOS
 
-  Created by lidaye on 10/10/2016.
+  Created by lidaye on 13/10/2016.
   Copyright © 2016 MuShare. All rights reserved.
 */
 
-CFBundleDisplayName = "汇率助手";
+CFBundleDisplayName = "MuRate";

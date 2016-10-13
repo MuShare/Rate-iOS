@@ -40,6 +40,7 @@
 		E49A351C1D4F35E70073E079 /* MeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E49A351B1D4F35E70073E079 /* MeTableViewController.m */; };
 		E49A351F1D4F4CCE0073E079 /* SubscriptionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E49A351E1D4F4CCE0073E079 /* SubscriptionsTableViewController.m */; };
 		E49A35221D4F4CD90073E079 /* AddSubscribeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E49A35211D4F4CD90073E079 /* AddSubscribeTableViewController.m */; };
+		E4ABB8DF1DAF83C1008FD573 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4ABB8E11DAF83C1008FD573 /* InfoPlist.strings */; };
 		E4D057AA1D544BAC0003ADA4 /* LoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D057A91D544BAB0003ADA4 /* LoadingViewController.m */; };
 		E4D057BB1D5498EC0003ADA4 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D057BA1D5498EC0003ADA4 /* RegisterViewController.m */; };
 		E4D057BE1D54BF4C0003ADA4 /* AlertTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D057BD1D54BF4C0003ADA4 /* AlertTool.m */; };
@@ -134,6 +135,8 @@
 		E49A351E1D4F4CCE0073E079 /* SubscriptionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubscriptionsTableViewController.m; sourceTree = "<group>"; };
 		E49A35201D4F4CD90073E079 /* AddSubscribeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddSubscribeTableViewController.h; sourceTree = "<group>"; };
 		E49A35211D4F4CD90073E079 /* AddSubscribeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddSubscribeTableViewController.m; sourceTree = "<group>"; };
+		E4ABB8E01DAF83C1008FD573 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E4ABB8E21DAF83C5008FD573 /* zh-Hans-CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans-CN"; path = "zh-Hans-CN.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		E4D057A81D544BAB0003ADA4 /* LoadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingViewController.h; sourceTree = "<group>"; };
 		E4D057A91D544BAB0003ADA4 /* LoadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingViewController.m; sourceTree = "<group>"; };
 		E4D057AD1D54586C0003ADA4 /* zh-Hans-CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans-CN"; path = "zh-Hans-CN.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
@@ -282,6 +285,7 @@
 				E46EDE2E1DABE7C400CA3DBC /* AutoGenStrings.py */,
 				E46FB51B1D4E305800661E13 /* main.m */,
 				E42575361DABBB48009F1EF5 /* Localizable.strings */,
+				E4ABB8E11DAF83C1008FD573 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -496,6 +500,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E46B5BC51D59959C00CE407F /* Assets.xcassets in Resources */,
+				E4ABB8DF1DAF83C1008FD573 /* InfoPlist.strings in Resources */,
 				E42575341DABBB48009F1EF5 /* Localizable.strings in Resources */,
 				E46FB52D1D4E305800661E13 /* LaunchScreen.storyboard in Resources */,
 				E46FB5251D4E305800661E13 /* Main.storyboard in Resources */,
@@ -679,6 +684,15 @@
 				E4D057AD1D54586C0003ADA4 /* zh-Hans-CN */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		E4ABB8E11DAF83C1008FD573 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E4ABB8E01DAF83C1008FD573 /* en */,
+				E4ABB8E21DAF83C5008FD573 /* zh-Hans-CN */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

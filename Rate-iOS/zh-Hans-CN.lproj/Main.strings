@@ -14,7 +14,7 @@
 "39M-NU-3F2.text" = "货币名称";
 
 /* Class = "UILabel"; text = "English"; ObjectID = "3ER-TN-aMl"; */
-"3ER-TN-aMl.text" = "English";
+//"3ER-TN-aMl.text" = "English";
 
 /* Class = "UILabel"; text = "MuRate 1.0.0"; ObjectID = "3nm-y7-UyA"; */
 "3nm-y7-UyA.text" = "MuRate 1.0.0";
@@ -98,13 +98,13 @@
 "J2V-jq-c6q.title" = "关于";
 
 /* Class = "UILabel"; text = "简体中文"; ObjectID = "JN3-YQ-TFb"; */
-"JN3-YQ-TFb.text" = "简体中文";
+//"JN3-YQ-TFb.text" = "简体中文";
 
 /* Class = "UILabel"; text = "All Currencies"; ObjectID = "LYs-K4-eYU"; */
 "LYs-K4-eYU.text" = "所有货币";
 
 /* Class = "UINavigationItem"; title = "Languages"; ObjectID = "Mae-J2-AzT"; */
-"Mae-J2-AzT.title" = "多语言";
+//"Mae-J2-AzT.title" = "多语言";
 
 /* Class = "UIButton"; normalTitle = "Sign in"; ObjectID = "Mp5-P9-8Ok"; */
 "Mp5-P9-8Ok.normalTitle" = "登录";
@@ -176,7 +176,7 @@
 "fJ1-cM-9m5.placeholder" = "邮箱";
 
 /* Class = "UILabel"; text = "繁體中文"; ObjectID = "faV-Fb-jZF"; */
-"faV-Fb-jZF.text" = "繁體中文";
+//"faV-Fb-jZF.text" = "繁體中文";
 
 /* Class = "UIButton"; normalTitle = "Log Out"; ObjectID = "gXL-ZX-w1m"; */
 "gXL-ZX-w1m.normalTitle" = "退出登录";
@@ -234,7 +234,7 @@
 "sgK-Xj-rr5.text" = "无法连接服务器，请检查网络!";
 
 /* Class = "UILabel"; text = "Languages"; ObjectID = "tK4-Rr-wkd"; */
-"tK4-Rr-wkd.text" = "多语言";
+//"tK4-Rr-wkd.text" = "多语言";
 
 /* Class = "UILabel"; text = "Code"; ObjectID = "tfs-iY-DOz"; */
 "tfs-iY-DOz.text" = "Code";
@@ -261,7 +261,7 @@
 "yRJ-iE-Uvp.text" = "发送邮件";
 
 /* Class = "UILabel"; text = "日本語"; ObjectID = "zf7-W5-Quy"; */
-"zf7-W5-Quy.text" = "日本語";
+//"zf7-W5-Quy.text" = "日本語";
 
 //##################################################################################
 //#           AutoGenStrings            2016-10-11 00:06:45

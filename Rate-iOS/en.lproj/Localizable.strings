@@ -13,11 +13,17 @@ ok_name = "OK";
 
 no_internet_connection = "The Internet connection appears to be offline.";
 
+sign_in_name = "Sign in";
 sign_in_at_first = "Sign in at first!";
+sign_in_error_account_not_exsit = "This account is not exsit!";
+sign_in_error_password_wrong = "Password is wrong!";
+
 sign_out = "Sign out";
 sign_out_tip = "Are you sure to sign out now?";
 sign_out_yes = "Yes, sign out";
 sign_in_sign_up = "Sign in / Sign up";
+
+registering_name = "Registering...";
 
 welcome_message = "Welcome to MuRate, sign in now!";
 
@@ -37,3 +43,5 @@ photo_tip = "Choose a photo from library or take a photo.";
 photo_take = "Take Photo";
 photo_simulator_not_support = "iOS Simulator cannot open camera.";
 photo_choose = "Choose from Photos";
+
+notification_change_unlogin = "Sign in to change notification state.";

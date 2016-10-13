@@ -25,6 +25,7 @@
     }
     [super viewDidLoad];
     manager = [InternetTool getSessionManager];
+    [self setCloseKeyboardAccessoryForSender:_telephoneTextField];
 }
 
 - (BOOL)hidesBottomBarWhenPushed {
@@ -43,6 +44,7 @@
         [self.navigationController popViewControllerAnimated:YES];
         return;
     }
+    
     _emailImageView.highlighted = ![CommonTool isAvailableEmail:_emailTextField.text];
     _telephoneImageView.highlighted = [_telephoneTextField.text isEqualToString:@""];
     _usernameImageView.highlighted = [_usernameTextField.text isEqualToString:@""];
@@ -50,10 +52,11 @@
     if (_emailImageView.highlighted || _telephoneImageView.highlighted || _usernameImageView.highlighted || _passwordImageView.highlighted) {
         return;
     }
+    
     _loadingActivityIndicatorView.hidden = NO;
     [_loadingActivityIndicatorView startAnimating];
     _registerSubmitButton.enabled = NO;
-    [_registerSubmitButton setTitle:@"Loading..." forState:UIControlStateNormal];
+    [_registerSubmitButton setTitle:NSLocalizedString(@"registering_name", @"Registering...") forState:UIControlStateNormal];
     [manager POST:[InternetTool createUrl:@"api/user/register"]
        parameters:@{
                     @"email": _emailTextField.text,
@@ -65,7 +68,8 @@
           success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
               _loadingActivityIndicatorView.hidden = YES;
               _registerSubmitButton.enabled = YES;
-              [_registerSubmitButton setTitle:@"Sign in" forState:UIControlStateNormal];
+              [_registerSubmitButton setTitle:NSLocalizedString(@"sign_in_name", @"Sign in")
+                                     forState:UIControlStateNormal];
               InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
               if ([response statusOK]) {
                   _registerSuccessView.hidden = NO;
@@ -118,5 +122,35 @@
     [_showPasswordButton setImage:[UIImage imageNamed:_passwordTextField.secureTextEntry? @"login_password_hide": @"login_password_show"]
                          forState:UIControlStateNormal];
 }
+
+#pragma mark - Service
+//Create done button for keyboard
+- (void)setCloseKeyboardAccessoryForSender:(id)sender {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    UIToolbar * topView = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, self.view.window.frame.size.width, 35)];
+    [topView setBarStyle:UIBarStyleDefault];
+    UIBarButtonItem* spaceButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+                                                                                     target:self
+                                                                                     action:nil];
+    UIBarButtonItem *doneButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                                                                    target:self
+                                                                                    action:@selector(editFinish)];
+    doneButtonItem.tintColor = [UIColor colorWithRed:38/255.0 green:186/255.0 blue:152/255.0 alpha:1.0];
+    NSArray * buttonsArray = [NSArray arrayWithObjects:spaceButtonItem, doneButtonItem, nil];
+    [topView setItems:buttonsArray];
+    [sender setInputAccessoryView:topView];
+}
+
+- (void)editFinish {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    if (_telephoneTextField.isFirstResponder) {
+        [_telephoneTextField resignFirstResponder];
+    }
+}
+
 @end
 

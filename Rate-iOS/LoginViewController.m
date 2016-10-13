@@ -116,21 +116,17 @@
                       _emailImageView.highlighted = YES;
                       _passwordImageView.highlighted = NO;
                       [AlertTool showAlertWithTitle:NSLocalizedString(@"tip_name", @"Tip")
-                                         andContent:@"This account is not exsit!"
+                                         andContent:NSLocalizedString(@"sign_in_error_account_not_exsit", @"This account is not exsit!")
                                    inViewController:self];
                       break;
                   case ErrorCodePasswordWrong:
                       _passwordImageView.highlighted = YES;
                       _emailImageView.highlighted = NO;
                       [AlertTool showAlertWithTitle:NSLocalizedString(@"tip_name", @"Tip")
-                                         andContent:@"Password is wrong!"
+                                         andContent:NSLocalizedString(@"sign_in_error_password_wrong", @"Password is wrong!")
                                    inViewController:self];
                       break;
-                  case ErrorCodeNotValidated:
-                      [AlertTool showAlertWithTitle:NSLocalizedString(@"tip_name", @"Tip")
-                                         andContent:@"Active your account by email at first!"
-                                   inViewController:self];
-                      break;
+
                   default:
                       break;
               }

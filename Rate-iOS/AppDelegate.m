@@ -99,7 +99,8 @@
     
     [_httpSessionManager POST:[InternetTool createUrl:@"api/user/device_token"]
                    parameters:@{
-                                @"device_token": user.deviceToken
+                                @"device_token": user.deviceToken,
+                                @"lan": user.lan
                                 }
                      progress:nil
                       success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -114,6 +115,9 @@
                       failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                           InternetResponse *response = [[InternetResponse alloc] initWithError:error];
                           switch ([response errorCode]) {
+                              case ErrorCodeNotConnectedToInternet:
+                                  
+                                  break;
                               default:
                                   break;
                           }

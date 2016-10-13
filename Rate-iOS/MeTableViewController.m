@@ -44,9 +44,12 @@
     }
     manager = [InternetTool getSessionManager];
     user = [[UserTool alloc] init];
-    if(user.token != nil) {
+    if (user.token != nil) {
         _signOrNameLabel.text = user.name;
         _welcomeOrEmailLabel.text = user.email;
+        _notificationSwitch.enabled = YES;
+    } else {
+        _notificationSwitch.enabled = NO;
     }
 }
 
@@ -174,7 +177,31 @@
     if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    user.notification = sender.on;
-    
+
+    [manager POST:[InternetTool createUrl:@"api/notification"]
+       parameters:@{
+                    @"enable": [NSNumber numberWithBool:sender.on]
+                    }
+         progress:nil
+          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+              InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
+              if([response statusOK]) {
+                  user.notification = sender.on;
+              }
+          }
+          failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+              if(DEBUG) {
+                  NSLog(@"Server error: %@", error.localizedDescription);
+              }
+              sender.on = !sender.on;
+              InternetResponse *response = [[InternetResponse alloc] initWithError:error];
+              switch ([response errorCode]) {
+                  case ErrorCodeNotConnectedToInternet:
+                      [AlertTool showNotConnectInternet:self];
+                      break;
+                  default:
+                      break;
+              }
+          }];
 }
 @end
