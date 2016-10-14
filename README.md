@@ -1,9 +1,10 @@
 # Rate-iOS
-iOS Client of MuRate - A rate search and subscription application. 
-MuRate is a exchange rate search app, which includes current rate, history rate and monitoring.
+MuRate is an exchange rate app, which provides real time rate, rate history and customer notification.
 - Search current and historical currency exchange rate.
-- Show favorite currencies in the main page after signing in.
-- Monitoring exchange rate you concentrate on after subscription.
-- Push notification to your iOS devices when the exchange rate is larger or less than the threshold you set.
-Some functions like modifying password, uploading avatar, sending SMS cannot be used in the first version. We will soon finish those functions.
+-Display favorite currencies on the home page after signing in.
+- Monitoring specific exchange rate by subscription.
+- Push notification to your iOS devices when the exchange rate reaches the threshold.
+
 Email for signing up cannot be modified! Activating your account by clicking the URL sent to your email.
+
+You can download this app from App Store: https://itunes.apple.com/cn/app/murate/id1139573801?l=en&mt=8
