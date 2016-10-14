@@ -14,6 +14,7 @@
 
 @property (strong, nonatomic) Currency *fromCurrency;
 @property (strong, nonatomic) Currency *toCurrency;
+@property (nonatomic) NSNumber *rate;
 
 @property (weak, nonatomic) IBOutlet UIImageView *fromImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *toImageView;

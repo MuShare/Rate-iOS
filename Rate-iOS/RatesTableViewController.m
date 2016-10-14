@@ -165,6 +165,7 @@
     } else if([segue.identifier isEqualToString:@"rateSegue"]) {
         //set to currency for RateViewController
         [segue.destinationViewController setValue:selectedCurrency forKey:@"toCurrency"];
+        
     }
 }
 

@@ -25,13 +25,13 @@
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
- 
     //Register Remote Notification, support iOS version after 8.0
     [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
     [[UIApplication sharedApplication] registerForRemoteNotifications];
     
     user = [[UserTool alloc] init];
     NSString *currentLan = [[[NSBundle mainBundle] preferredLocalizations] objectAtIndex:0];
+
     if (user.lan == nil || ![currentLan isEqualToString:user.lan]) {
         user.lan = currentLan;
         user.currencyRev = 0;

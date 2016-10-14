@@ -1,5 +1,5 @@
 /* Class = "UITextField"; placeholder = "1"; ObjectID = "1RG-WK-mHg"; */
-"1RG-WK-mHg.placeholder" = "1";
+//"1RG-WK-mHg.placeholder" = "1";
 
 /* Class = "UILabel"; text = "Sign in / Sign up"; ObjectID = "1h5-ez-roQ"; */
 "1h5-ez-roQ.text" = "登录 / 注册";
@@ -140,7 +140,7 @@
 "Ulk-sr-Cm9.text" = "Code";
 
 /* Class = "UITextField"; placeholder = "1"; ObjectID = "Xe3-Xl-sfN"; */
-"Xe3-Xl-sfN.placeholder" = "1";
+//"Xe3-Xl-sfN.placeholder" = "1";
 
 /* Class = "UILabel"; text = "Telphone"; ObjectID = "ZSV-Cn-p9q"; */
 "ZSV-Cn-p9q.text" = "Telphone";

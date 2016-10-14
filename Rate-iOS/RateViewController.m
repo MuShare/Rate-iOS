@@ -95,10 +95,10 @@ static const int historySearchDays[5] = {30, 90, 180, 365, 3 * 365};
     _fromCurrency = tmpCurrency;
     [self refreshCurrency];
     //Swap rate value
-    NSString *tmpPlacehoder = _toRateTextFiled.placeholder;
-    _toRateTextFiled.placeholder = _fromRateTextFiled.placeholder;
-    _fromRateTextFiled.placeholder = tmpPlacehoder;
-    //Reload history data
+    currentRate = 1.0 / currentRate;
+    _fromRateTextFiled.placeholder = @"1.0000";
+    _toRateTextFiled.placeholder = [NSString stringWithFormat:@"%.4f", currentRate];
+    
     [self loadHistory:historySearchDays[selectedTimeIndex]];
 }
 
@@ -172,12 +172,31 @@ static const int historySearchDays[5] = {30, 90, 180, 365, 3 * 365};
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    float value = [sender.text floatValue];
+    float value = [sender.text isEqualToString:@""]? 1.0: [sender.text floatValue];
     if(sender == _fromRateTextFiled) {
+        _fromRateTextFiled.placeholder = [NSString stringWithFormat:@"%.4f", value];
         _toRateTextFiled.placeholder = [NSString stringWithFormat:@"%.4f", value * currentRate];
     } else if(sender == _toRateTextFiled) {
+        _toRateTextFiled.placeholder = [NSString stringWithFormat:@"%.4f", value];
         _fromRateTextFiled.placeholder = [NSString stringWithFormat:@"%.4f", value / currentRate];
     }
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    if (DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    if (textField == _fromRateTextFiled || textField == _toRateTextFiled) {
+        textField.placeholder = textField.text;
+        textField.text = @"";
+    }
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if (DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    return YES;
 }
 
 #pragma mark - UIGestureRecognizerDelegate
@@ -239,7 +258,7 @@ static const int historySearchDays[5] = {30, 90, 180, 365, 3 * 365};
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    _fromRateTextFiled.placeholder = @"1";
+    _fromRateTextFiled.placeholder = @"1.0000";
     _toRateTextFiled.placeholder = [NSString stringWithFormat:@"%.4f", currentRate];
 }
 
@@ -345,11 +364,12 @@ static const int historySearchDays[5] = {30, 90, 180, 365, 3 * 365};
     }
     for(id input in self.view.subviews){
         if([input isKindOfClass:[UITextField class]]){
-            UITextField *this = input;
-            if([this isFirstResponder]) {
-                [this resignFirstResponder];
-                this.placeholder = this.text;
-                this.text = @"";
+            UITextField *textField = (UITextField *)input;
+            if([textField isFirstResponder]) {
+                [textField resignFirstResponder];
+                textField.placeholder = ([textField.text isEqualToString:@""] && [textField.placeholder isEqualToString:@"1.0000"])? @"1.0000": textField.placeholder;
+                textField.text = @"";
+                
             }
         }
     }
