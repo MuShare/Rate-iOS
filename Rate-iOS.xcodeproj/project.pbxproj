@@ -264,7 +264,7 @@
 				E408A9861D51A81300B34655 /* Model */,
 				E496A79C1D4F083E003B0F1D /* Me */,
 				E496A79B1D4F0831003B0F1D /* Rate */,
-				E496A79D1D4F0843003B0F1D /* Subscribe */,
+				E496A79D1D4F0843003B0F1D /* Subscription */,
 				E46FB51A1D4E305800661E13 /* Supporting Files */,
 				E4852F891D50932C0039B79B /* Tool */,
 				E46FB51D1D4E305800661E13 /* AppDelegate.h */,
@@ -369,7 +369,7 @@
 			name = Me;
 			sourceTree = "<group>";
 		};
-		E496A79D1D4F0843003B0F1D /* Subscribe */ = {
+		E496A79D1D4F0843003B0F1D /* Subscription */ = {
 			isa = PBXGroup;
 			children = (
 				E49A351D1D4F4CCE0073E079 /* SubscriptionsTableViewController.h */,
@@ -379,7 +379,7 @@
 				E4EC8A8B1D5229B600CECF5D /* EditSubscriptionTableViewController.h */,
 				E4EC8A8C1D5229B600CECF5D /* EditSubscriptionTableViewController.m */,
 			);
-			name = Subscribe;
+			name = Subscription;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

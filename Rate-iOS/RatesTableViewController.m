@@ -23,7 +23,8 @@
     UserTool *user;
     DaoManager *dao;
     NSDictionary *rates;
-    NSString *selectedCurrency;
+    Currency *selectedCurrency;
+    NSNumber *selectedRate;
     NSNumber *favorite;
 
     UIView *searchBarView;
@@ -124,6 +125,7 @@
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     selectedCurrency = [_fetchedResultsController objectAtIndexPath:indexPath];
+    selectedRate = rates[selectedCurrency.cid];
     [self performSegueWithIdentifier:@"rateSegue" sender:self];
 }
 
@@ -165,7 +167,7 @@
     } else if([segue.identifier isEqualToString:@"rateSegue"]) {
         //set to currency for RateViewController
         [segue.destinationViewController setValue:selectedCurrency forKey:@"toCurrency"];
-        
+        [segue.destinationViewController setValue:selectedRate forKey:@"rate"];
     }
 }
 

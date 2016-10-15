@@ -104,6 +104,7 @@
         Currency *currency = [_fetchedResultsController objectAtIndexPath:indexPath]; 
         //Save currency cid to sandbox.
         user.basedCurrencyId = currency.cid;
+        delegate.refreshRates = YES;
         //Back to last view controller.
         UIViewController *controller = [self.navigationController.viewControllers objectAtIndex:self.navigationController.viewControllers.count - 2];
         [controller setValue:currency forKey:_currencyAttributeName];

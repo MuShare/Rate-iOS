@@ -18,12 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="MuRate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TiH-ty-AuC">
-                                <frame key="frameInset" minX="108" minY="384" width="104" height="40"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" red="0.090196078431372548" green="0.69019607843137254" blue="0.54117647058823526" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_logo" translatesAutoresizingMaskIntoConstraints="NO" id="b59-Is-5LX">
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="Evp-8j-viC"/>
@@ -45,8 +39,6 @@
                             <constraint firstItem="wtu-T8-Xg3" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="BQq-uq-jOi"/>
                             <constraint firstItem="b59-Is-5LX" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Gan-pR-Ife"/>
                             <constraint firstItem="b59-Is-5LX" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="KUw-ET-vJv"/>
-                            <constraint firstItem="TiH-ty-AuC" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="bwQ-6f-rzN"/>
-                            <constraint firstItem="TiH-ty-AuC" firstAttribute="top" secondItem="b59-Is-5LX" secondAttribute="bottom" constant="25" id="tXr-qa-7qD"/>
                         </constraints>
                     </view>
                 </viewController>

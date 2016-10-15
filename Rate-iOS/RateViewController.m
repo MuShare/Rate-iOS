@@ -26,10 +26,11 @@
     UserTool *user;
     float currentRate;
     int selectedTimeIndex;
-    NSArray *rates;
+    NSArray *historyRates;
     NSDate *start;
     NSDateFormatter *dateFormatter;
     float screenWitdh, historyEntryWith;
+    CGFloat angle;
 }
 
 //Define history search days.
@@ -40,6 +41,7 @@ static const int historySearchDays[5] = {30, 90, 180, 365, 3 * 365};
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     [super viewDidLoad];
+    
     dao = [[DaoManager alloc] init];
     manager = [InternetTool getSessionManager];
     user = [[UserTool alloc] init];
@@ -48,6 +50,10 @@ static const int historySearchDays[5] = {30, 90, 180, 365, 3 * 365};
     if (_fromCurrency == nil) {
         _fromCurrency = [dao.currencyDao getByCid:user.basedCurrencyId];
     }
+    _toRateTextFiled.placeholder = [NSString stringWithFormat:@"%.4f", _rate.floatValue];
+    
+    //Start loading
+    [self startAnimation];
     
     //Show history of last 7 days as default
     selectedTimeIndex = 0;
@@ -106,6 +112,8 @@ static const int historySearchDays[5] = {30, 90, 180, 365, 3 * 365};
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
+    _loadingView.hidden = NO;
+    [self startAnimation];
     selectedTimeIndex = (int)[sender selectedSegmentIndex];
     [self loadHistory:historySearchDays[selectedTimeIndex]];
 }
@@ -132,8 +140,8 @@ static const int historySearchDays[5] = {30, 90, 180, 365, 3 * 365};
     }
     //Show history entry information
     _historyEntryView.hidden = NO;
-
-    float xOffset = screenWitdh / (rates.count - 1) * entry.xIndex - historyEntryWith / 2 - LeadingConstraintRegulationWidth;
+    
+    float xOffset = screenWitdh / (historyRates.count - 1) * entry.xIndex - historyEntryWith / 2 - LeadingConstraintRegulationWidth;
     if(xOffset < - LeadingConstraintRegulationWidth) {
         xOffset = - LeadingConstraintRegulationWidth;
     } else if (xOffset > screenWitdh - historyEntryWith - TrailingConstraintRegulationWidth) {
@@ -282,9 +290,11 @@ static const int historySearchDays[5] = {30, 90, 180, 365, 3 * 365};
                    }
         progress:nil
          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+             _loadingView.hidden = YES;
+             [self stopAnimation];
              InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
              if([response statusOK]) {
-                 rates = [[response getResponseResult] objectForKey:@"data"];
+                 historyRates = [[response getResponseResult] objectForKey:@"data"];
                  [self setDataCount];
              }
          }
@@ -297,14 +307,16 @@ static const int historySearchDays[5] = {30, 90, 180, 365, 3 * 365};
 }
 
 - (void)setDataCount {
+    _historyLineChartView.noDataText = @"";
+    
     NSMutableArray *xVals = [[NSMutableArray alloc] init];
-    for (int i = 0; i < rates.count; i++) {
+    for (int i = 0; i < historyRates.count; i++) {
         [xVals addObject:[NSString stringWithFormat:@"%d", i]];
     }
     
     NSMutableArray *yVals1 = [[NSMutableArray alloc] init];
-    for (int i = 0; i < rates.count; i++) {
-        ChartDataEntry *entry = [[ChartDataEntry alloc] initWithValue:[[rates objectAtIndex:i] doubleValue] xIndex:i];
+    for (int i = 0; i < historyRates.count; i++) {
+        ChartDataEntry *entry = [[ChartDataEntry alloc] initWithValue:[[historyRates objectAtIndex:i] doubleValue] xIndex:i];
         [yVals1 addObject:entry];
     }
     
@@ -373,6 +385,27 @@ static const int historySearchDays[5] = {30, 90, 180, 365, 3 * 365};
             }
         }
     }
+}
+
+- (void)startAnimation {
+    if (DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    CABasicAnimation *rotationAnimation;
+    rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+    rotationAnimation.toValue = [NSNumber numberWithFloat: M_PI * 2.0];
+    rotationAnimation.duration = 2;
+    rotationAnimation.cumulative = YES;
+    rotationAnimation.repeatCount = 100000;
+    
+    [_loadingImageView.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
+}
+
+- (void)stopAnimation {
+    if (DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    [_loadingImageView.layer removeAllAnimations];
 }
 
 @end

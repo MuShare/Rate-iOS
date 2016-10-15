@@ -28,6 +28,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *historyDateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *historyRateLebel;
 
+@property (weak, nonatomic) IBOutlet UIView *loadingView;
+@property (weak, nonatomic) IBOutlet UIImageView *loadingImageView;
 @property (weak, nonatomic) IBOutlet UIView *historyEntryView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *historyEntryLeadingLayoutConstraint;
 

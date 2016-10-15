@@ -1,6 +1,3 @@
-/* Class = "UITextField"; placeholder = "1"; ObjectID = "1RG-WK-mHg"; */
-//"1RG-WK-mHg.placeholder" = "1";
-
 /* Class = "UILabel"; text = "Sign in / Sign up"; ObjectID = "1h5-ez-roQ"; */
 "1h5-ez-roQ.text" = "登录 / 注册";
 
@@ -14,7 +11,7 @@
 "39M-NU-3F2.text" = "货币名称";
 
 /* Class = "UILabel"; text = "MuRate 1.0.0"; ObjectID = "3nm-y7-UyA"; */
-"3nm-y7-UyA.text" = "MuRate 1.0.0";
+"3nm-y7-UyA.text" = "汇率助手 1.0.1";
 
 /* Class = "UILabel"; text = "Enable Subscribe"; ObjectID = "4IB-tL-sB4"; */
 "4IB-tL-sB4.text" = "激活监测";
@@ -146,7 +143,7 @@
 "ZSV-Cn-p9q.text" = "Telphone";
 
 /* Class = "UINavigationItem"; title = "Rate"; ObjectID = "cZL-gg-6JF"; */
-"cZL-gg-6JF.title" = "Rate";
+"cZL-gg-6JF.title" = "汇率详情";
 
 /* Class = "UIButton"; normalTitle = "To Currency"; ObjectID = "crT-7a-Zsz"; */
 "crT-7a-Zsz.normalTitle" = "外币";
@@ -175,10 +172,10 @@
 /* Class = "UITextField"; placeholder = "Max Rate"; ObjectID = "jkp-0R-fOo"; */
 "jkp-0R-fOo.placeholder" = "Max Rate";
 
-/* Class = "UISegmentedControl"; mvv-Rz-xc9.segmentTitles[0] = "7d"; ObjectID = "mvv-Rz-xc9"; */
+/* Class = "UISegmentedControl"; mvv-Rz-xc9.segmentTitles[0] = "1m"; ObjectID = "mvv-Rz-xc9"; */
 "mvv-Rz-xc9.segmentTitles[0]" = "1个月";
 
-/* Class = "UISegmentedControl"; mvv-Rz-xc9.segmentTitles[1] = "1m"; ObjectID = "mvv-Rz-xc9"; */
+/* Class = "UISegmentedControl"; mvv-Rz-xc9.segmentTitles[1] = "3m"; ObjectID = "mvv-Rz-xc9"; */
 "mvv-Rz-xc9.segmentTitles[1]" = "3个月";
 
 /* Class = "UISegmentedControl"; mvv-Rz-xc9.segmentTitles[2] = "6m"; ObjectID = "mvv-Rz-xc9"; */
@@ -191,7 +188,7 @@
 "mvv-Rz-xc9.segmentTitles[4]" = "3年";
 
 /* Class = "UINavigationItem"; title = "MuRate"; ObjectID = "nhV-gT-3St"; */
-"nhV-gT-3St.title" = "MuRate";
+"nhV-gT-3St.title" = "汇率助手";
 
 /* Class = "UILabel"; text = "Send Email"; ObjectID = "ode-KA-Xzx"; */
 "ode-KA-Xzx.text" = "发送邮件";
@@ -305,7 +302,7 @@
 "LHg-EV-NzP.text" = "提示信息";
 
 /* Class = "UILabel"; text = "Rate"; ObjectID = "Ul3-Ac-Qym"; */
-"Ul3-Ac-Qym.text" = "Rate";
+"Ul3-Ac-Qym.text" = "汇率详情";
 
 /* Class = "UILabel"; text = "Register Success !"; ObjectID = "xfI-Ec-ksG"; */
 "xfI-Ec-ksG.text" = "注册成功!";
@@ -338,7 +335,7 @@
 "B2N-Cn-Pen.text" = "通知";
 
 /* Class = "UIButton"; normalTitle = "Rate in App Store"; ObjectID = "Nq2-il-4wg"; */
-"Nq2-il-4wg.normalTitle" = "Rate in App Store";
+"Nq2-il-4wg.normalTitle" = "在App Store中评价";
 
 /* Class = "UINavigationItem"; title = "OAuth Sign in"; ObjectID = "anh-z1-fE1"; */
 "anh-z1-fE1.title" = "第三方登录";
@@ -346,3 +343,10 @@
 /* Class = "UILabel"; text = "Oauth cannot be used in app now."; ObjectID = "Ktv-B0-HvZ"; */
 "Ktv-B0-HvZ.text" = "第三方登录暂时无法使用";
 
+
+//##################################################################################
+//#           AutoGenStrings            2016-10-15 23:01:39
+//##################################################################################
+
+/* Class = "UITextField"; placeholder = "1.0000"; ObjectID = "1RG-WK-mHg"; */
+"1RG-WK-mHg.placeholder" = "1.0000";
