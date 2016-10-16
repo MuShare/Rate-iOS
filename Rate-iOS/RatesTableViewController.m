@@ -27,9 +27,13 @@
     NSNumber *selectedRate;
     NSNumber *favorite;
 
+    //Search Bar
     UIView *searchBarView;
     UIView *disableViewOverlay;
     UISearchBar *searchBar;
+    
+    //Tip Mask
+    UIView *maskView;
 }
 
 - (void)viewDidLoad {
@@ -37,10 +41,15 @@
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     [super viewDidLoad];
+    user = [[UserTool alloc] init];
+    if (!user.basicCurrencyTipShown) {
+        [self showTipMask];
+        user.basicCurrencyTipShown = YES;
+    }
     
     delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
     manager = [InternetTool getSessionManager];
-    user = [[UserTool alloc] init];
     dao = [[DaoManager alloc] init];
     if (user.token != nil) {
         favorite = user.showFavorites? [NSNumber numberWithBool:YES]: nil;
@@ -327,6 +336,40 @@
                                                                             Without:user.basedCurrencyId
                                                                         withKeyword:nil];
     [self.tableView reloadData];
+}
+
+- (void)showTipMask {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    maskView = [[UIView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 64)];
+    maskView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.6];
+    //Create guide arrow.
+    UIImageView *arrowImageView = [[UIImageView alloc] initWithFrame:CGRectMake(40, 10, 90, 90)];
+    arrowImageView.image = [UIImage imageNamed:@"guide_arrow"];
+    [maskView addSubview:arrowImageView];
+    //Create guide tip.
+    UILabel *tipLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, 30)];
+    tipLabel.text = NSLocalizedString(@"base_currency_tip", @"Click to set base currency.");
+    tipLabel.textColor = [UIColor whiteColor];
+    tipLabel.textAlignment = NSTextAlignmentCenter;
+    [maskView addSubview:tipLabel];
+    //Create dismiss button
+    UIButton *dismissButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width / 2 - 80, 140, 160, 40)];
+    [dismissButton setTitle:NSLocalizedString(@"i_know", @"I know") forState:UIControlStateNormal];
+    dismissButton.layer.cornerRadius = 5.0;
+    dismissButton.layer.borderWidth = 1.0;
+    dismissButton.layer.borderColor = [UIColor whiteColor].CGColor;
+    [dismissButton addTarget:self action:@selector(dismissTipMask:) forControlEvents:UIControlEventTouchUpInside];
+    [maskView addSubview:dismissButton];
+    [self.tabBarController.view addSubview:maskView];
+}
+
+- (void)dismissTipMask:(id)sender {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    [maskView removeFromSuperview];
 }
 
 @end

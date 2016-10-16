@@ -47,3 +47,6 @@ photo_simulator_not_support = "iOS Simulator cannot open camera.";
 photo_choose = "Choose from Photos";
 
 notification_change_unlogin = "Sign in to change notification state.";
+
+base_currency_tip = "Click to set base currency.";
+i_know = "I know";

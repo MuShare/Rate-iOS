@@ -181,6 +181,16 @@
     return _cacheRates;
 }
 
+@synthesize basicCurrencyTipShown = _basicCurrencyTipShown;
+
+- (void)setBasicCurrencyTipShown:(BOOL)basicCurrencyTipShown {
+    [defaults setBool:basicCurrencyTipShown forKey:NSStringFromSelector(@selector(basicCurrencyTipShown))];
+}
+
+- (BOOL)basicCurrencyTipShown {
+    return [defaults boolForKey:NSStringFromSelector(@selector(basicCurrencyTipShown))];
+}
+
 - (void)clearup {
     [self setSubscribeRev:0];
     [self setEmail:nil];

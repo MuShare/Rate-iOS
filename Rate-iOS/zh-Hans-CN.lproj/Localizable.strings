@@ -45,3 +45,6 @@ photo_tip = "从相册中选择一张或者拍照";
 photo_take = "拍照";
 photo_simulator_not_support = "模拟器无法启动相机";
 photo_choose = "从相册中选择";
+
+base_currency_tip = "点我设置基准货币。";
+i_know = "朕知道了";

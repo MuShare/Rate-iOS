@@ -26,6 +26,8 @@
 
 @property (nonatomic, strong) NSArray *cacheRates;
 
+@property (nonatomic) BOOL basicCurrencyTipShown;
+
 - (void)clearup;
 
 @end
