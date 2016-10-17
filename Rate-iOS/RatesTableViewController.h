@@ -16,6 +16,5 @@
 @property (nonatomic, strong) Currency *basedCurrency;
 
 - (IBAction)searchCurrency:(id)sender;
-- (IBAction)openSettingsMenu:(id)sender;
 
 @end

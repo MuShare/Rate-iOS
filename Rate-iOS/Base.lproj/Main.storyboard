@@ -141,7 +141,7 @@
                                     <constraint firstItem="10h-eh-ObM" firstAttribute="centerY" secondItem="cO1-Pt-7Zr" secondAttribute="centerY" id="FlZ-cC-fRI"/>
                                 </constraints>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FVL-WQ-TVE">
+                            <view hidden="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FVL-WQ-TVE">
                                 <frame key="frameInset" minY="232" width="80" height="27"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date Value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gg3-LS-f65">
@@ -160,6 +160,10 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="stN-Wn-pt4"/>
+                                    <constraint firstAttribute="width" constant="80" id="yVa-7J-lGJ"/>
+                                </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zRb-Wn-ynM">
                                 <frame key="frameInset" minX="13" minY="81" width="48" height="36"/>
@@ -753,8 +757,7 @@
                                     <frame key="frameInset" width="375" height="79"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HtY-GJ-aL2">
-                                            <frame key="frameInset" width="320" height="84"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HtY-GJ-aL2">
                                             <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="84" id="8wK-Rc-UOZ"/>
@@ -771,6 +774,7 @@
                                     <constraints>
                                         <constraint firstAttribute="trailingMargin" secondItem="HtY-GJ-aL2" secondAttribute="trailing" constant="-8" id="16u-kh-G7k"/>
                                         <constraint firstItem="HtY-GJ-aL2" firstAttribute="leading" secondItem="lr9-zz-zhD" secondAttribute="leadingMargin" constant="-8" id="HRd-JA-XxS"/>
+                                        <constraint firstItem="HtY-GJ-aL2" firstAttribute="top" secondItem="lr9-zz-zhD" secondAttribute="topMargin" constant="-8" id="Td1-aj-UtB"/>
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -1482,19 +1486,19 @@
                                     <segue destination="lOI-Ui-Mi9" kind="push" id="HH8-cF-tvf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hA0-Fk-m8u">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hA0-Fk-m8u">
                                 <state key="normal" image="login_qq"/>
                                 <connections>
                                     <segue destination="mbL-or-3No" kind="push" id="Tfr-fp-YJ7"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BE5-uc-Gyq">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BE5-uc-Gyq">
                                 <state key="normal" image="login_wechat"/>
                                 <connections>
                                     <segue destination="mbL-or-3No" kind="push" id="Sb9-6l-rGN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9uA-C9-IMc">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9uA-C9-IMc">
                                 <state key="normal" image="login_facebook"/>
                                 <connections>
                                     <segue destination="mbL-or-3No" kind="push" id="0T5-5d-tLJ"/>
@@ -2724,10 +2728,10 @@
         <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="rYv-zH-LJo"/>
         <segue reference="I4X-zC-orO"/>
-        <segue reference="qrg-S3-ZeO"/>
-        <segue reference="Tfr-fp-YJ7"/>
+        <segue reference="KjL-UE-fsT"/>
+        <segue reference="t1O-as-tdA"/>
         <segue reference="HH8-cF-tvf"/>
+        <segue reference="Tfr-fp-YJ7"/>
     </inferredMetricsTieBreakers>
 </document>

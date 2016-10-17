@@ -80,6 +80,7 @@
     if (delegate.refreshRates) {
         delegate.refreshRates = NO;
         favorite = user.showFavorites? [NSNumber numberWithBool:YES]: nil;
+        user = [[UserTool alloc] init];
         [self.tableView.mj_header beginRefreshing];
     }
     
@@ -192,9 +193,6 @@
                          [searchBar becomeFirstResponder];
                      }
                      completion:nil];
-}
-
-- (IBAction)openSettingsMenu:(id)sender {
 }
 
 #pragma mark - Service

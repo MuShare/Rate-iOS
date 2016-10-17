@@ -15,7 +15,7 @@ no_internet_connection = "The Internet connection appears to be offline.";
 
 sign_in_name = "Sign in";
 sign_in_at_first = "Sign in at first!";
-sign_in_error_account_not_exsit = "This account is not exsit!";
+sign_in_error_account_not_exsit = "This account is not exist!";
 sign_in_error_password_wrong = "Password is wrong!";
 
 sign_out = "Sign out";
