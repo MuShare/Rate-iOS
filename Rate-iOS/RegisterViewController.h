@@ -11,12 +11,10 @@
 @interface RegisterViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIImageView *emailImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *telephoneImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *usernameImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *passwordImageView;
 
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
-@property (weak, nonatomic) IBOutlet UITextField *telephoneTextField;
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 

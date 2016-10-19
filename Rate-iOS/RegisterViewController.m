@@ -10,6 +10,7 @@
 #import "CommonTool.h"
 #import "InternetTool.h"
 #import "AlertTool.h"
+#import "AppDelegate.h"
 
 @interface RegisterViewController ()
 
@@ -25,7 +26,6 @@
     }
     [super viewDidLoad];
     manager = [InternetTool getSessionManager];
-    [self setCloseKeyboardAccessoryForSender:_telephoneTextField];
 }
 
 - (BOOL)hidesBottomBarWhenPushed {
@@ -46,22 +46,22 @@
     }
     
     _emailImageView.highlighted = ![CommonTool isAvailableEmail:_emailTextField.text];
-    _telephoneImageView.highlighted = [_telephoneTextField.text isEqualToString:@""];
     _usernameImageView.highlighted = [_usernameTextField.text isEqualToString:@""];
     _passwordImageView.highlighted = [_passwordTextField.text isEqualToString:@""];
-    if (_emailImageView.highlighted || _telephoneImageView.highlighted || _usernameImageView.highlighted || _passwordImageView.highlighted) {
+    if (_emailImageView.highlighted ||  _usernameImageView.highlighted || _passwordImageView.highlighted) {
         return;
     }
     
     _loadingActivityIndicatorView.hidden = NO;
     [_loadingActivityIndicatorView startAnimating];
     _registerSubmitButton.enabled = NO;
-    [_registerSubmitButton setTitle:NSLocalizedString(@"registering_name", @"Registering...") forState:UIControlStateNormal];
+    [_registerSubmitButton setTitle:NSLocalizedString(@"registering_name", @"Registering...")
+                           forState:UIControlStateNormal];
     [manager POST:[InternetTool createUrl:@"api/user/register"]
        parameters:@{
                     @"email": _emailTextField.text,
                     @"password": _passwordTextField.text,
-                    @"telephone": _telephoneTextField.text,
+                    @"telephone": @"",
                     @"uname": _usernameTextField.text
                     }
          progress:nil
@@ -73,6 +73,13 @@
               InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
               if ([response statusOK]) {
                   _registerSuccessView.hidden = NO;
+                  
+                  //Save resgister information to AppDelegate
+                  AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+                  delegate.regInfo = @{
+                                       @"username": _emailTextField.text,
+                                       @"password": _passwordTextField.text
+                                       };
               }
           }
           failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -89,13 +96,11 @@
                       break;
                   case ErrorCodeEmailExsit:
                       _emailImageView.highlighted = YES;
-                      _telephoneImageView.highlighted = NO;
                       [AlertTool showAlertWithTitle:@"Tip"
                                          andContent:@"Your email has been signed up."
                                    inViewController:self];
                       break;
                   case ErrorCodeTelephoneExsit:
-                      _telephoneImageView.highlighted = YES;
                       _emailImageView.highlighted = NO;
                       [AlertTool showAlertWithTitle:@"Tip"
                                          andContent:@"Your telephone has been signed up."
@@ -121,35 +126,6 @@
     _passwordTextField.secureTextEntry = !_passwordTextField.secureTextEntry;
     [_showPasswordButton setImage:[UIImage imageNamed:_passwordTextField.secureTextEntry? @"login_password_hide": @"login_password_show"]
                          forState:UIControlStateNormal];
-}
-
-#pragma mark - Service
-//Create done button for keyboard
-- (void)setCloseKeyboardAccessoryForSender:(id)sender {
-    if(DEBUG) {
-        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
-    }
-    UIToolbar * topView = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, self.view.window.frame.size.width, 35)];
-    [topView setBarStyle:UIBarStyleDefault];
-    UIBarButtonItem* spaceButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
-                                                                                     target:self
-                                                                                     action:nil];
-    UIBarButtonItem *doneButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
-                                                                                    target:self
-                                                                                    action:@selector(editFinish)];
-    doneButtonItem.tintColor = [UIColor colorWithRed:38/255.0 green:186/255.0 blue:152/255.0 alpha:1.0];
-    NSArray * buttonsArray = [NSArray arrayWithObjects:spaceButtonItem, doneButtonItem, nil];
-    [topView setItems:buttonsArray];
-    [sender setInputAccessoryView:topView];
-}
-
-- (void)editFinish {
-    if(DEBUG) {
-        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
-    }
-    if (_telephoneTextField.isFirstResponder) {
-        [_telephoneTextField resignFirstResponder];
-    }
 }
 
 @end

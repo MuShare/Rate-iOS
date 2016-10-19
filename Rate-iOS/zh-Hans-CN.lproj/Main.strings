@@ -35,7 +35,7 @@
 "7GI-yI-lpy.title" = "订阅";
 
 /* Class = "UITextField"; placeholder = "Telephone"; ObjectID = "Aa9-jA-VdB"; */
-"Aa9-jA-VdB.placeholder" = "电话";
+//"Aa9-jA-VdB.placeholder" = "电话";
 
 /* Class = "UITableViewSection"; headerTitle = " "; ObjectID = "B8K-QI-Zvl"; */
 "B8K-QI-Zvl.headerTitle" = " ";
@@ -122,7 +122,7 @@
 "Rw1-e3-FrY.title" = "我的信息";
 
 /* Class = "UILabel"; text = "Telephone"; ObjectID = "S7j-Wc-cJT"; */
-"S7j-Wc-cJT.text" = "电话";
+//"S7j-Wc-cJT.text" = "电话";
 
 /* Class = "UINavigationItem"; title = "Sign up"; ObjectID = "SaW-My-DaT"; */
 "SaW-My-DaT.title" = "注册";
@@ -140,7 +140,7 @@
 //"Xe3-Xl-sfN.placeholder" = "1";
 
 /* Class = "UILabel"; text = "Telphone"; ObjectID = "ZSV-Cn-p9q"; */
-"ZSV-Cn-p9q.text" = "Telphone";
+//"ZSV-Cn-p9q.text" = "Telphone";
 
 /* Class = "UINavigationItem"; title = "Rate"; ObjectID = "cZL-gg-6JF"; */
 "cZL-gg-6JF.title" = "汇率详情";

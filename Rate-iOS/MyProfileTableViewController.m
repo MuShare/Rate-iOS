@@ -32,7 +32,6 @@
     user = [[UserTool alloc] init];
     _emailLabel.text = user.email;
     _nameLabel.text = user.name;
-    _telephoneLabel.text = user.telephone;
 }
 
 #pragma mark - Table view data source

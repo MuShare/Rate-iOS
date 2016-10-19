@@ -20,6 +20,7 @@
 }
 
 @synthesize refreshRates;
+@synthesize regInfo;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     if(DEBUG) {

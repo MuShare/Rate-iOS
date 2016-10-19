@@ -12,6 +12,7 @@
 #import "UserTool.h"
 #import "DaoManager.h"
 #import "AlertTool.h"
+#import "AppDelegate.h"
 
 @interface LoginViewController ()
 
@@ -21,6 +22,7 @@
     AFHTTPSessionManager *manager;
     UserTool *user;
     DaoManager *dao;
+    AppDelegate *delegate;
 }
 
 - (void)viewDidLoad {
@@ -28,9 +30,21 @@
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     [super viewDidLoad];
+    delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     manager = [InternetTool getSessionManager];
     user = [[UserTool alloc] init];
     dao = [[DaoManager alloc] init];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    if (DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    if (delegate.regInfo != nil) {
+        _emailTextField.text = [delegate.regInfo valueForKey:@"username"];
+        _passwordTextField.text = [delegate.regInfo valueForKey:@"password"];
+        delegate.regInfo = nil;
+    }
 }
 
 - (BOOL)hidesBottomBarWhenPushed {

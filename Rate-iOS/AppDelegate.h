@@ -22,6 +22,7 @@
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 @property (nonatomic) BOOL refreshRates;
+@property (nonatomic, strong) NSDictionary *regInfo;
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
