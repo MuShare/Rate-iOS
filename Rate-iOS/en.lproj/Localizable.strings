@@ -25,7 +25,7 @@ sign_in_sign_up = "Sign in / Sign up";
 
 registering_name = "Registering...";
 
-welcome_message = "Welcome to MuRate, sign in now!";
+welcome_message = "Welcome to Rate Assistant, sign in now!";
 
 subscription_modify_disable = "Cannot modify this subscription, try again later.";
 subscription_alert_above = "Alert me above";

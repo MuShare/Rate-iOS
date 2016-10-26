@@ -23,6 +23,7 @@
 		E43697691D58488200781223 /* Subscribe+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E43697661D58488200781223 /* Subscribe+CoreDataProperties.m */; };
 		E436976A1D58488200781223 /* Subscribe.m in Sources */ = {isa = PBXBuildFile; fileRef = E43697681D58488200781223 /* Subscribe.m */; };
 		E44899981D52DA4600BDD71B /* CommonTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E44899971D52DA4600BDD71B /* CommonTool.m */; };
+		E44DC43E1DC1F0A6007F4220 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E44DC43D1DC1F0A6007F4220 /* AboutViewController.m */; };
 		E46B5BC51D59959C00CE407F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E46B5BC41D59959C00CE407F /* Assets.xcassets */; };
 		E46EDE2F1DABE7C400CA3DBC /* AutoGenStrings.py in Resources */ = {isa = PBXBuildFile; fileRef = E46EDE2E1DABE7C400CA3DBC /* AutoGenStrings.py */; };
 		E46FB51C1D4E305800661E13 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E46FB51B1D4E305800661E13 /* main.m */; };
@@ -103,6 +104,8 @@
 		E43697681D58488200781223 /* Subscribe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Subscribe.m; sourceTree = "<group>"; };
 		E44899961D52DA4600BDD71B /* CommonTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonTool.h; sourceTree = "<group>"; };
 		E44899971D52DA4600BDD71B /* CommonTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonTool.m; sourceTree = "<group>"; };
+		E44DC43C1DC1F0A6007F4220 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		E44DC43D1DC1F0A6007F4220 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		E46B5BC41D59959C00CE407F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E46EDE2E1DABE7C400CA3DBC /* AutoGenStrings.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = AutoGenStrings.py; sourceTree = "<group>"; };
 		E46FB5171D4E305800661E13 /* Rate-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rate-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -343,6 +346,8 @@
 		E496A79C1D4F083E003B0F1D /* Me */ = {
 			isa = PBXGroup;
 			children = (
+				E44DC43C1DC1F0A6007F4220 /* AboutViewController.h */,
+				E44DC43D1DC1F0A6007F4220 /* AboutViewController.m */,
 				E4EC8A8E1D522DC900CECF5D /* FeedbackViewController.h */,
 				E4EC8A8F1D522DC900CECF5D /* FeedbackViewController.m */,
 				E410EEB41D51E5D50077E1D9 /* HelpViewController.h */,
@@ -621,6 +626,7 @@
 				E408A9961D51A88A00B34655 /* CurrencyDao.m in Sources */,
 				E408A9991D51AF3D00B34655 /* CurrenciesTableViewController.m in Sources */,
 				E498D6471D6737FB0083260F /* ProfilePhotoViewController.m in Sources */,
+				E44DC43E1DC1F0A6007F4220 /* AboutViewController.m in Sources */,
 				E44899981D52DA4600BDD71B /* CommonTool.m in Sources */,
 				E46FB5281D4E305800661E13 /* Rate_iOS.xcdatamodeld in Sources */,
 				E436976A1D58488200781223 /* Subscribe.m in Sources */,

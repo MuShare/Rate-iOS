@@ -11,7 +11,7 @@
 "39M-NU-3F2.text" = "货币名称";
 
 /* Class = "UILabel"; text = "MuRate 1.0.0"; ObjectID = "3nm-y7-UyA"; */
-"3nm-y7-UyA.text" = "汇率助手 1.0.1";
+"3nm-y7-UyA.text" = "汇率助手";
 
 /* Class = "UILabel"; text = "Enable Subscribe"; ObjectID = "4IB-tL-sB4"; */
 "4IB-tL-sB4.text" = "激活监测";
@@ -33,9 +33,6 @@
 
 /* Class = "UINavigationItem"; title = "Subscription"; ObjectID = "7GI-yI-lpy"; */
 "7GI-yI-lpy.title" = "订阅";
-
-/* Class = "UITextField"; placeholder = "Telephone"; ObjectID = "Aa9-jA-VdB"; */
-//"Aa9-jA-VdB.placeholder" = "电话";
 
 /* Class = "UITableViewSection"; headerTitle = " "; ObjectID = "B8K-QI-Zvl"; */
 "B8K-QI-Zvl.headerTitle" = " ";
@@ -100,7 +97,7 @@
 /* Class = "UILabel"; text = "100.0000"; ObjectID = "N5V-ed-3dC"; */
 "N5V-ed-3dC.text" = "100.0000";
 
-/* Class = "UILabel"; text = "Show Favorites in MuRate"; ObjectID = "N6d-fK-aWK"; */
+/* Class = "UILabel"; text = "Show Favorites in homepage"; ObjectID = "N6d-fK-aWK"; */
 "N6d-fK-aWK.text" = "仅显示关注货币";
 
 /* Class = "UILabel"; text = "Email"; ObjectID = "OV6-hg-bua"; */
@@ -135,12 +132,6 @@
 
 /* Class = "UILabel"; text = "Code"; ObjectID = "Ulk-sr-Cm9"; */
 "Ulk-sr-Cm9.text" = "Code";
-
-/* Class = "UITextField"; placeholder = "1"; ObjectID = "Xe3-Xl-sfN"; */
-//"Xe3-Xl-sfN.placeholder" = "1";
-
-/* Class = "UILabel"; text = "Telphone"; ObjectID = "ZSV-Cn-p9q"; */
-//"ZSV-Cn-p9q.text" = "Telphone";
 
 /* Class = "UINavigationItem"; title = "Rate"; ObjectID = "cZL-gg-6JF"; */
 "cZL-gg-6JF.title" = "汇率详情";
@@ -224,7 +215,7 @@
 "udZ-pr-88l.title" = "我";
 
 /* Class = "UILabel"; text = "Welcome to MuRate, sign in now!"; ObjectID = "vxA-eD-eUe"; */
-"vxA-eD-eUe.text" = "欢迎使用MuRate, 立刻登录!";
+"vxA-eD-eUe.text" = "欢迎使用汇率助手, 立刻登录!";
 
 /* Class = "UITextField"; placeholder = "Username"; ObjectID = "xBk-b8-3G7"; */
 "xBk-b8-3G7.placeholder" = "用户名";
@@ -350,3 +341,10 @@
 
 /* Class = "UITextField"; placeholder = "1.0000"; ObjectID = "1RG-WK-mHg"; */
 "1RG-WK-mHg.placeholder" = "1.0000";
+
+//##################################################################################
+//#           AutoGenStrings            2016-10-27 17:17:31
+//##################################################################################
+
+/* Class = "UITextField"; placeholder = "1.0000"; ObjectID = "Xe3-Xl-sfN"; */
+"Xe3-Xl-sfN.placeholder" = "1.0000";

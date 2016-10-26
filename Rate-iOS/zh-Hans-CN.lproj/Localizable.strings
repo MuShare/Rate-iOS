@@ -25,7 +25,7 @@ sign_in_sign_up = "登录 / 注册";
 
 registering_name = "正在注册中...";
 
-welcome_message = "欢迎使用MuRate，立刻登录！";
+welcome_message = "欢迎使用汇率助手，立刻登录！";
 
 subscription_modify_disable = "不能修改该订阅，稍后再试";
 subscription_alert_above = "通知条件：汇率值高于";

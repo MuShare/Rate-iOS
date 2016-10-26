@@ -22,7 +22,7 @@
     }
     [super viewDidLoad];
     UserTool *user = [[UserTool alloc] init];
-    NSURL *url = [[NSURL alloc] initWithString:[InternetTool createUrl:[NSString stringWithFormat:@"help?lan=%@", user.lan]]];
+    NSURL *url = [[NSURL alloc] initWithString:[InternetTool createUrl:[NSString stringWithFormat:@"api/help?lan=%@", user.lan]]];
     [_helpWebView loadRequest:[NSURLRequest requestWithURL:url]];
 }
 
