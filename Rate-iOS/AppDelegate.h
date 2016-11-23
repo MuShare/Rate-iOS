@@ -16,6 +16,7 @@
 
 @property (strong, nonatomic) AFHTTPSessionManager *httpSessionManager;
 @property (strong, nonatomic) AFHTTPSessionManager *httpSessionManagerForJSON;
+@property (strong, nonatomic) AFHTTPSessionManager *newsSessionManager;
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;

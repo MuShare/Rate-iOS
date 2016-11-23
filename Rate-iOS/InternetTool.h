@@ -11,7 +11,8 @@
 #import "AppDelegate.h"
 
 #define DoaminName @"rate.mushare.cn"
-//#define DoaminName @"192.168.96.74:8080"
+#define BaiduNewsApi @"http://apis.baidu.com/showapi_open_bus/channel_news/search_news"
+#define BaiduNewsApiKey @"62f182d039955833270e2d32f1861f6c"
 
 @interface InternetTool : NSObject
 
@@ -22,6 +23,8 @@
 + (AFHTTPSessionManager *)getSessionManager;
 
 + (AFHTTPSessionManager *)getSessionManagerForJSON;
+
++ (AFHTTPSessionManager *)getNewsSessionManager;
 
 + (NSString *)createUrl:(NSString *)relativePosition;
 

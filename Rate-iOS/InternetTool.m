@@ -56,6 +56,14 @@
     return delegate.httpSessionManagerForJSON;
 }
 
++ (AFHTTPSessionManager *)getNewsSessionManager {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    return [delegate newsSessionManager];
+}
+
 + (NSString *)createUrl:(NSString *)relativePosition {
     NSString *url=[NSString stringWithFormat:@"http://%@/%@", DoaminName, relativePosition];
     if(DEBUG) {

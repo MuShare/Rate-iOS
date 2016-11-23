@@ -155,25 +155,43 @@
 @synthesize httpSessionManager = _httpSessionManager;
 
 - (AFHTTPSessionManager *)httpSessionManager {
-    if(_httpSessionManager != nil) {
-        return _httpSessionManager;
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    _httpSessionManager = [AFHTTPSessionManager manager];
-    _httpSessionManager.responseSerializer = [[AFCompoundResponseSerializer alloc] init];
+    if(_httpSessionManager == nil) {
+        _httpSessionManager = [AFHTTPSessionManager manager];
+        _httpSessionManager.responseSerializer = [[AFCompoundResponseSerializer alloc] init];
+    }
     return _httpSessionManager;
 }
 
 @synthesize httpSessionManagerForJSON = _httpSessionManagerForJSON;
 
 - (AFHTTPSessionManager *)httpSessionManagerForJSON {
-    if(_httpSessionManagerForJSON !=nil) {
-        return _httpSessionManagerForJSON;
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    _httpSessionManagerForJSON = [AFHTTPSessionManager manager];
-    _httpSessionManagerForJSON.responseSerializer = [[AFCompoundResponseSerializer alloc] init];
-    _httpSessionManagerForJSON.requestSerializer = [AFJSONRequestSerializer serializer];
-    [_httpSessionManagerForJSON.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    if(_httpSessionManagerForJSON ==nil) {
+        _httpSessionManagerForJSON = [AFHTTPSessionManager manager];
+        _httpSessionManagerForJSON.responseSerializer = [[AFCompoundResponseSerializer alloc] init];
+        _httpSessionManagerForJSON.requestSerializer = [AFJSONRequestSerializer serializer];
+        [_httpSessionManagerForJSON.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    }
     return _httpSessionManagerForJSON;
+}
+
+@synthesize newsSessionManager = _newsSessionManager;
+
+- (AFHTTPSessionManager *)newsSessionManager {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    if (_newsSessionManager == nil) {
+        _newsSessionManager = [AFHTTPSessionManager manager];
+        _newsSessionManager.responseSerializer = [[AFCompoundResponseSerializer alloc] init];
+        [_newsSessionManager.requestSerializer setValue:BaiduNewsApiKey forHTTPHeaderField:@"token"];
+    }
+    return _newsSessionManager;
 }
 
 #pragma mark - Core Data stack
