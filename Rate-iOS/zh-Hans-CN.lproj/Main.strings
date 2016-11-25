@@ -348,3 +348,26 @@
 
 /* Class = "UITextField"; placeholder = "1.0000"; ObjectID = "Xe3-Xl-sfN"; */
 "Xe3-Xl-sfN.placeholder" = "1.0000";
+
+//##################################################################################
+//#           AutoGenStrings            2016-11-25 16:07:58
+//##################################################################################
+
+/* Class = "UINavigationItem"; title = "News"; ObjectID = "ndg-nQ-UVN"; */
+"ndg-nQ-UVN.title" = "News";
+
+/* Class = "UITabBarItem"; title = "News"; ObjectID = "cte-UT-Nlb"; */
+"cte-UT-Nlb.title" = "News";
+
+//##################################################################################
+//#           AutoGenStrings            2016-11-25 16:50:34
+//##################################################################################
+
+/* Class = "UILabel"; text = "Update Time"; ObjectID = "4TJ-Dh-0TD"; */
+"4TJ-Dh-0TD.text" = "Update Time";
+
+/* Class = "UILabel"; text = "News Title"; ObjectID = "Tj8-9m-PIX"; */
+"Tj8-9m-PIX.text" = "News Title";
+
+/* Class = "UILabel"; text = "Source"; ObjectID = "Zgd-ht-itS"; */
+"Zgd-ht-itS.text" = "Source";

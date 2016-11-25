@@ -61,7 +61,7 @@
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    return [delegate newsSessionManager];
+    return delegate.newsSessionManager;
 }
 
 + (NSString *)createUrl:(NSString *)relativePosition {

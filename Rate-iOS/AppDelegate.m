@@ -189,7 +189,7 @@
     if (_newsSessionManager == nil) {
         _newsSessionManager = [AFHTTPSessionManager manager];
         _newsSessionManager.responseSerializer = [[AFCompoundResponseSerializer alloc] init];
-        [_newsSessionManager.requestSerializer setValue:BaiduNewsApiKey forHTTPHeaderField:@"token"];
+        [_newsSessionManager.requestSerializer setValue:BaiduNewsApiKey forHTTPHeaderField:@"apikey"];
     }
     return _newsSessionManager;
 }

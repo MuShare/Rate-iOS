@@ -45,6 +45,7 @@
 		E4D057AA1D544BAC0003ADA4 /* LoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D057A91D544BAB0003ADA4 /* LoadingViewController.m */; };
 		E4D057BB1D5498EC0003ADA4 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D057BA1D5498EC0003ADA4 /* RegisterViewController.m */; };
 		E4D057BE1D54BF4C0003ADA4 /* AlertTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D057BD1D54BF4C0003ADA4 /* AlertTool.m */; };
+		E4D25A811DE81B7F006D55FC /* NewsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D25A801DE81B7F006D55FC /* NewsTableViewController.m */; };
 		E4E8129A1D521E50003DEE58 /* LanguagesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E812991D521E50003DEE58 /* LanguagesTableViewController.m */; };
 		E4EC8A8D1D5229B600CECF5D /* EditSubscriptionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4EC8A8C1D5229B600CECF5D /* EditSubscriptionTableViewController.m */; };
 		E4EC8A901D522DC900CECF5D /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4EC8A8F1D522DC900CECF5D /* FeedbackViewController.m */; };
@@ -148,6 +149,8 @@
 		E4D057BA1D5498EC0003ADA4 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		E4D057BC1D54BF4C0003ADA4 /* AlertTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertTool.h; sourceTree = "<group>"; };
 		E4D057BD1D54BF4C0003ADA4 /* AlertTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertTool.m; sourceTree = "<group>"; };
+		E4D25A7F1DE81B7F006D55FC /* NewsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsTableViewController.h; sourceTree = "<group>"; };
+		E4D25A801DE81B7F006D55FC /* NewsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewController.m; sourceTree = "<group>"; };
 		E4E812981D521E50003DEE58 /* LanguagesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanguagesTableViewController.h; sourceTree = "<group>"; };
 		E4E812991D521E50003DEE58 /* LanguagesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanguagesTableViewController.m; sourceTree = "<group>"; };
 		E4EC8A8B1D5229B600CECF5D /* EditSubscriptionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditSubscriptionTableViewController.h; sourceTree = "<group>"; };
@@ -264,6 +267,7 @@
 			children = (
 				E425752B1DAA0271009F1EF5 /* Rate-iOS.entitlements */,
 				E408A9871D51A81B00B34655 /* Dao */,
+				E4D25A7E1DE81B5C006D55FC /* News */,
 				E408A9861D51A81300B34655 /* Model */,
 				E496A79C1D4F083E003B0F1D /* Me */,
 				E496A79B1D4F0831003B0F1D /* Rate */,
@@ -385,6 +389,15 @@
 				E4EC8A8C1D5229B600CECF5D /* EditSubscriptionTableViewController.m */,
 			);
 			name = Subscription;
+			sourceTree = "<group>";
+		};
+		E4D25A7E1DE81B5C006D55FC /* News */ = {
+			isa = PBXGroup;
+			children = (
+				E4D25A7F1DE81B7F006D55FC /* NewsTableViewController.h */,
+				E4D25A801DE81B7F006D55FC /* NewsTableViewController.m */,
+			);
+			name = News;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -607,6 +620,7 @@
 				E49A35221D4F4CD90073E079 /* AddSubscribeTableViewController.m in Sources */,
 				E414519F1D502E8200AFE672 /* LoginViewController.m in Sources */,
 				E408AB9E1D51B51E00B34655 /* UserTool.m in Sources */,
+				E4D25A811DE81B7F006D55FC /* NewsTableViewController.m in Sources */,
 				E408A9851D519EBC00B34655 /* InternetResponse.m in Sources */,
 				E496A7A01D4F095A003B0F1D /* MyProfileTableViewController.m in Sources */,
 				E408A9931D51A84700B34655 /* DaoTemplate.m in Sources */,
