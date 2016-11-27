@@ -8,6 +8,7 @@
 
 #import "NewsTableViewController.h"
 #import "InternetTool.h"
+#import <MJRefresh/MJRefresh.h>
 
 @interface NewsTableViewController ()
 
@@ -25,28 +26,12 @@
     [super viewDidLoad];
     manager = [InternetTool getNewsSessionManager];
     
-    [manager GET:BaiduNewsApi
-      parameters:@{
-                   @"title": @"货币",
-                   @"channelId": @"5572a109b3cdc86cf39001e0"
-                   }
-        progress:nil
-         success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-             NSObject *data = [NSJSONSerialization JSONObjectWithData:responseObject
-                                                              options:NSJSONReadingAllowFragments
-                                                                error:nil];
-             NSObject *pagebean = [[data valueForKey:@"showapi_res_body"] valueForKey:@"pagebean"];
-             contents = [pagebean valueForKey:@"contentlist"];
-             [self.tableView reloadData];
-         }
-         failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-             NSObject *data = [NSJSONSerialization JSONObjectWithData:(NSData *)error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey]
-                                                              options:NSJSONReadingAllowFragments
-                                                                error:nil];
-             if (DEBUG) {
-                 NSLog(@"Error with data: %@", data);
-             }
-         }];
+    //Bind MJRefresh
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self loadNews];
+    }];
+    [self.tableView.mj_header beginRefreshing];
+    
 }
 
 
@@ -81,4 +66,42 @@
     return cell;
 }
 
+#pragma mark - UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    [self performSegueWithIdentifier:@"newsSegue" sender:self];
+}
+
+#pragma mark - Service 
+- (void)loadNews {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    [manager GET:BaiduNewsApi
+      parameters:@{
+                   @"title": @"货币",
+                   @"channelId": @"5572a109b3cdc86cf39001e0",
+                   @"needHtml": @1
+                   }
+        progress:nil
+         success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+             NSObject *data = [NSJSONSerialization JSONObjectWithData:responseObject
+                                                              options:NSJSONReadingAllowFragments
+                                                                error:nil];
+             NSObject *pagebean = [[data valueForKey:@"showapi_res_body"] valueForKey:@"pagebean"];
+             contents = [pagebean valueForKey:@"contentlist"];
+             [self.tableView reloadData];
+             [self.tableView.mj_header endRefreshing];
+         }
+         failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+             NSObject *data = [NSJSONSerialization JSONObjectWithData:(NSData *)error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey]
+                                                              options:NSJSONReadingAllowFragments
+                                                                error:nil];
+             if (DEBUG) {
+                 NSLog(@"Error with data: %@", data);
+             }
+         }];
+}
 @end

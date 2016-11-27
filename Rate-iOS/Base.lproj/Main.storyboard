@@ -1953,23 +1953,50 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="News" id="ndg-nQ-UVN"/>
+                    <connections>
+                        <segue destination="xdj-sJ-OnI" kind="push" identifier="newsSegue" id="a6N-oD-ypg"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ECt-vl-hKY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-9042" y="-3559"/>
+            <point key="canvasLocation" x="-8393" y="-7709"/>
+        </scene>
+        <!--News View Controller-->
+        <scene sceneID="DtI-HA-2Sn">
+            <objects>
+                <viewController id="xdj-sJ-OnI" customClass="NewsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mIh-75-ZaH"/>
+                        <viewControllerLayoutGuide type="bottom" id="SLP-Nk-MZ0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9YA-RC-bY6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="heN-wM-g2w"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zR8-Kl-3yk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-7685" y="-7709"/>
         </scene>
         <!--News-->
         <scene sceneID="VFw-cN-mq5">
             <objects>
                 <navigationController id="gev-ib-YOv" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="News" image="tab_news" selectedImage="tab_news_selected" id="cte-UT-Nlb"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="njw-Yh-l2b">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="njw-Yh-l2b">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.14326947927474976" green="0.72495657205581665" blue="0.59060615301132202" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="DBa-81-3Nk" kind="relationship" relationship="rootViewController" id="MiG-Pz-ABr"/>
@@ -1977,7 +2004,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HXr-fS-Lkp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-9582" y="-3559"/>
+            <point key="canvasLocation" x="-9022" y="-7709"/>
         </scene>
         <!--About-->
         <scene sceneID="kgJ-Rx-wjI">
