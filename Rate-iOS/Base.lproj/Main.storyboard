@@ -1906,7 +1906,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="On2-Kg-ps4" id="iNN-3O-lwh">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="49.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tj8-9m-PIX">
@@ -1972,9 +1972,24 @@
                     <view key="view" contentMode="scaleToFill" id="9YA-RC-bY6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NNo-5u-OvJ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" red="0.96068006750000001" green="0.96084433790000001" blue="0.96066969629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="SLP-Nk-MZ0" firstAttribute="top" secondItem="NNo-5u-OvJ" secondAttribute="bottom" constant="-49" id="6CN-9l-B73"/>
+                            <constraint firstItem="NNo-5u-OvJ" firstAttribute="top" secondItem="mIh-75-ZaH" secondAttribute="bottom" constant="-64" id="Qyk-Ph-ulk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NNo-5u-OvJ" secondAttribute="trailing" constant="-16" id="wzj-rg-wjt"/>
+                            <constraint firstItem="NNo-5u-OvJ" firstAttribute="leading" secondItem="9YA-RC-bY6" secondAttribute="leadingMargin" constant="-16" id="zKd-5y-6OY"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="heN-wM-g2w"/>
+                    <connections>
+                        <outlet property="contentWebView" destination="NNo-5u-OvJ" id="8TI-g1-nIo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zR8-Kl-3yk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1985,7 +2000,7 @@
             <objects>
                 <navigationController id="gev-ib-YOv" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="News" image="tab_news" selectedImage="tab_news_selected" id="cte-UT-Nlb"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="njw-Yh-l2b">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="njw-Yh-l2b">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.14326947927474976" green="0.72495657205581665" blue="0.59060615301132202" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

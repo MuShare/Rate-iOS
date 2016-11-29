@@ -26,6 +26,7 @@
 		E44DC43E1DC1F0A6007F4220 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E44DC43D1DC1F0A6007F4220 /* AboutViewController.m */; };
 		E44EB1961DE82A15006C8A8C /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E44EB1951DE82A15006C8A8C /* NewsViewController.m */; };
 		E46B5BC51D59959C00CE407F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E46B5BC41D59959C00CE407F /* Assets.xcassets */; };
+		E46EBDE21DED121600B50A38 /* news.css in Resources */ = {isa = PBXBuildFile; fileRef = E46EBDE11DED121600B50A38 /* news.css */; };
 		E46EDE2F1DABE7C400CA3DBC /* AutoGenStrings.py in Resources */ = {isa = PBXBuildFile; fileRef = E46EDE2E1DABE7C400CA3DBC /* AutoGenStrings.py */; };
 		E46FB51C1D4E305800661E13 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E46FB51B1D4E305800661E13 /* main.m */; };
 		E46FB51F1D4E305800661E13 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E46FB51E1D4E305800661E13 /* AppDelegate.m */; };
@@ -111,6 +112,7 @@
 		E44EB1941DE82A15006C8A8C /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
 		E44EB1951DE82A15006C8A8C /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
 		E46B5BC41D59959C00CE407F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E46EBDE11DED121600B50A38 /* news.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = news.css; sourceTree = "<group>"; };
 		E46EDE2E1DABE7C400CA3DBC /* AutoGenStrings.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = AutoGenStrings.py; sourceTree = "<group>"; };
 		E46FB5171D4E305800661E13 /* Rate-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rate-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E46FB51B1D4E305800661E13 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -401,6 +403,7 @@
 				E4D25A801DE81B7F006D55FC /* NewsTableViewController.m */,
 				E44EB1941DE82A15006C8A8C /* NewsViewController.h */,
 				E44EB1951DE82A15006C8A8C /* NewsViewController.m */,
+				E46EBDE11DED121600B50A38 /* news.css */,
 			);
 			name = News;
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 				E46FB52D1D4E305800661E13 /* LaunchScreen.storyboard in Resources */,
 				E46FB5251D4E305800661E13 /* Main.storyboard in Resources */,
 				E46EDE2F1DABE7C400CA3DBC /* AutoGenStrings.py in Resources */,
+				E46EBDE21DED121600B50A38 /* news.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

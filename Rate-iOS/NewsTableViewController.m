@@ -17,6 +17,7 @@
 @implementation NewsTableViewController {
     AFHTTPSessionManager *manager;
     NSArray *contents;
+    NSInteger selectedIndex;
 }
 
 - (void)viewDidLoad {
@@ -34,6 +35,16 @@
     
 }
 
+#pragma mark - Navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if (DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    if ([segue.identifier isEqualToString:@"newsSegue"]) {
+        [segue.destinationViewController setValue:[contents objectAtIndex:selectedIndex]
+                                           forKey:@"content"];
+    }
+}
 
 #pragma mark - Table view data source
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
@@ -71,6 +82,7 @@
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
+    selectedIndex = indexPath.row;
     [self performSegueWithIdentifier:@"newsSegue" sender:self];
 }
 
