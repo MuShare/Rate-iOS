@@ -1986,7 +1986,14 @@
                             <constraint firstItem="NNo-5u-OvJ" firstAttribute="leading" secondItem="9YA-RC-bY6" secondAttribute="leadingMargin" constant="-16" id="zKd-5y-6OY"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="heN-wM-g2w"/>
+                    <navigationItem key="navigationItem" id="heN-wM-g2w">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="Ofg-E9-J3M">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="shareNews:" destination="xdj-sJ-OnI" id="E98-Di-Ufr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="contentWebView" destination="NNo-5u-OvJ" id="8TI-g1-nIo"/>
                     </connections>

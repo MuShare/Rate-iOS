@@ -26,4 +26,25 @@
     [_contentWebView loadHTMLString:html baseURL:nil];
 }
 
+#pragma mark - Action
+- (IBAction)shareNews:(id)sender {
+    if (DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Share News"
+                                                                             message:nil
+                                                                      preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *safari = [UIAlertAction actionWithTitle:@"Open on Safari"
+                                                     style:UIAlertActionStyleDefault
+                                                   handler:^(UIAlertAction * _Nonnull action) {
+                                                       NSURL *cleanURL = [NSURL URLWithString:[_content valueForKey:@"link"]];
+                                                       [[UIApplication sharedApplication] openURL:cleanURL];
+                                                   }];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel"
+                                                     style:UIAlertActionStyleCancel
+                                                   handler:nil];
+    [alertController addAction:safari];
+    [alertController addAction:cancel];
+    [self presentViewController:alertController animated:YES completion:nil];
+}
 @end
