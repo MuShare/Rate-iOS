@@ -354,10 +354,10 @@
 //##################################################################################
 
 /* Class = "UINavigationItem"; title = "News"; ObjectID = "ndg-nQ-UVN"; */
-"ndg-nQ-UVN.title" = "News";
+"ndg-nQ-UVN.title" = "汇率新闻";
 
 /* Class = "UITabBarItem"; title = "News"; ObjectID = "cte-UT-Nlb"; */
-"cte-UT-Nlb.title" = "News";
+"cte-UT-Nlb.title" = "新闻";
 
 //##################################################################################
 //#           AutoGenStrings            2016-11-25 16:50:34

@@ -48,3 +48,6 @@ photo_choose = "从相册中选择";
 
 base_currency_tip = "点我设置基准货币。";
 i_know = "朕知道了";
+
+share_news = "分享新闻";
+open_on_safari = "在Safari中打开";

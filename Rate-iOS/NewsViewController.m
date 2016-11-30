@@ -31,16 +31,16 @@
     if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Share News"
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"share_news", @"Share News")
                                                                              message:nil
                                                                       preferredStyle:UIAlertControllerStyleActionSheet];
-    UIAlertAction *safari = [UIAlertAction actionWithTitle:@"Open on Safari"
+    UIAlertAction *safari = [UIAlertAction actionWithTitle:NSLocalizedString(@"open_on_safari", @"Open on Safari")
                                                      style:UIAlertActionStyleDefault
                                                    handler:^(UIAlertAction * _Nonnull action) {
                                                        NSURL *cleanURL = [NSURL URLWithString:[_content valueForKey:@"link"]];
                                                        [[UIApplication sharedApplication] openURL:cleanURL];
                                                    }];
-    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel"
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:NSLocalizedString(@"cancel_name", @"Cancel")
                                                      style:UIAlertActionStyleCancel
                                                    handler:nil];
     [alertController addAction:safari];

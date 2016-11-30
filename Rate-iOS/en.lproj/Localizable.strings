@@ -50,3 +50,6 @@ notification_change_unlogin = "Sign in to change notification state.";
 
 base_currency_tip = "Click to set base currency.";
 i_know = "I know";
+
+share_news = "Share News";
+open_on_safari = "Open on Safari";
