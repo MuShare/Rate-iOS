@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		12BBA0426BE3196BE73A55CB /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90484F32E9B3B223B0DBE339 /* Pods.framework */; };
+		A73D76D8F4309BA5D0CD8E3E /* Pods_Rate_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65D7F10448A55906E698AF69 /* Pods_Rate_iOS.framework */; };
 		E408A9851D519EBC00B34655 /* InternetResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = E408A9841D519EBC00B34655 /* InternetResponse.m */; };
 		E408A98C1D51A83600B34655 /* Currency+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E408A9891D51A83600B34655 /* Currency+CoreDataProperties.m */; };
 		E408A98D1D51A83600B34655 /* Currency.m in Sources */ = {isa = PBXBuildFile; fileRef = E408A98B1D51A83600B34655 /* Currency.m */; };
@@ -74,6 +75,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A5AB457529E5D9D8836C1EE /* Pods-Rate-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rate-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rate-iOS/Pods-Rate-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		65D7F10448A55906E698AF69 /* Pods_Rate_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rate_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8AF1EB8EC578634EB874638D /* Pods-Rate-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rate-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rate-iOS/Pods-Rate-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		90484F32E9B3B223B0DBE339 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4050F471DAE2475003D0EEB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E408A9831D519EBC00B34655 /* InternetResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InternetResponse.h; sourceTree = "<group>"; };
@@ -178,6 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				12BBA0426BE3196BE73A55CB /* Pods.framework in Frameworks */,
+				A73D76D8F4309BA5D0CD8E3E /* Pods_Rate_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +208,8 @@
 			children = (
 				E8DE8CE261D3D91477792600 /* Pods.debug.xcconfig */,
 				F0D8F75365DB741C707980DC /* Pods.release.xcconfig */,
+				8AF1EB8EC578634EB874638D /* Pods-Rate-iOS.debug.xcconfig */,
+				5A5AB457529E5D9D8836C1EE /* Pods-Rate-iOS.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -211,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				90484F32E9B3B223B0DBE339 /* Pods.framework */,
+				65D7F10448A55906E698AF69 /* Pods_Rate_iOS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -415,12 +423,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E46FB5471D4E305800661E13 /* Build configuration list for PBXNativeTarget "Rate-iOS" */;
 			buildPhases = (
-				2C097E777585CEE482AB3CD8 /* Check Pods Manifest.lock */,
+				2C097E777585CEE482AB3CD8 /* [CP] Check Pods Manifest.lock */,
 				E46FB5131D4E305800661E13 /* Sources */,
 				E46FB5141D4E305800661E13 /* Frameworks */,
 				E46FB5151D4E305800661E13 /* Resources */,
-				0778AFD77A87F91B6372E337 /* Embed Pods Frameworks */,
-				68DEAD435AE3AB71C2D771C8 /* Copy Pods Resources */,
+				0778AFD77A87F91B6372E337 /* [CP] Embed Pods Frameworks */,
+				68DEAD435AE3AB71C2D771C8 /* [CP] Copy Pods Resources */,
 				E46EDE291DABE51E00CA3DBC /* ShellScript */,
 			);
 			buildRules = (
@@ -552,49 +560,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0778AFD77A87F91B6372E337 /* Embed Pods Frameworks */ = {
+		0778AFD77A87F91B6372E337 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rate-iOS/Pods-Rate-iOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2C097E777585CEE482AB3CD8 /* Check Pods Manifest.lock */ = {
+		2C097E777585CEE482AB3CD8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		68DEAD435AE3AB71C2D771C8 /* Copy Pods Resources */ = {
+		68DEAD435AE3AB71C2D771C8 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rate-iOS/Pods-Rate-iOS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E46EDE291DABE51E00CA3DBC /* ShellScript */ = {
@@ -812,7 +820,7 @@
 		};
 		E46FB5481D4E305800661E13 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E8DE8CE261D3D91477792600 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 8AF1EB8EC578634EB874638D /* Pods-Rate-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -833,7 +841,7 @@
 		};
 		E46FB5491D4E305800661E13 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F0D8F75365DB741C707980DC /* Pods.release.xcconfig */;
+			baseConfigurationReference = 5A5AB457529E5D9D8836C1EE /* Pods-Rate-iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

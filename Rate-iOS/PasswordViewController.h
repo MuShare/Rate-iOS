@@ -10,4 +10,13 @@
 
 @interface PasswordViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIImageView *validateCodeImageView;
+@property (weak, nonatomic) IBOutlet UITextField *validationCodeTextField;
+@property (weak, nonatomic) IBOutlet UIImageView *passwordImageView;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet UIButton *showPasswordButton;
+
+- (IBAction)showPassword:(id)sender;
+- (IBAction)resendValidationCode:(id)sender;
+
 @end

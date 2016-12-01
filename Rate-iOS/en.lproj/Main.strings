@@ -355,7 +355,7 @@
 "BuE-VA-Ulz.text" = "Code";
 
 /* Class = "UILabel"; text = "Cannot be used in app now."; ObjectID = "hWH-MD-62D"; */
-"hWH-MD-62D.text" = "Cannot be used in app now.";
+//"hWH-MD-62D.text" = "Cannot be used in app now.";
 
 /* Class = "UILabel"; text = "Threshold"; ObjectID = "Z9G-oM-Hv6"; */
 "Z9G-oM-Hv6.text" = "Threshold";
@@ -449,3 +449,13 @@
 
 /* Class = "UILabel"; text = "Source"; ObjectID = "Zgd-ht-itS"; */
 "Zgd-ht-itS.text" = "Source";
+
+//##################################################################################
+//#           AutoGenStrings            2016-12-01 14:20:39
+//##################################################################################
+
+/* Class = "UITextField"; placeholder = "Validation Code"; ObjectID = "LQz-X4-4IO"; */
+"LQz-X4-4IO.placeholder" = "Validation Code";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "8Sk-kJ-Fe3"; */
+"8Sk-kJ-Fe3.placeholder" = "Password";

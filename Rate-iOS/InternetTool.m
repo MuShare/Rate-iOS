@@ -13,7 +13,7 @@
 
 + (void)setRequestToken:(NSString *)token {
     AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    [delegate.httpSessionManager.requestSerializer setValue:token forHTTPHeaderField:@"Authorization"];
+    [delegate.httpSessionManager.requestSerializer setValue:token forHTTPHeaderField:@"token"];
 }
 
 + (void)clearToken {
