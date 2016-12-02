@@ -19,7 +19,7 @@
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     [super viewDidLoad];
-    
+    _sendButton.layer.borderColor = [UIColor colorWithRed:14.0 / 255 green:189.0 / 255 blue:159.0 / 255 alpha:1.0].CGColor;
 }
 
 #pragma mark - Action
