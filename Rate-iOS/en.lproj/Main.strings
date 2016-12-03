@@ -455,7 +455,26 @@
 //##################################################################################
 
 /* Class = "UITextField"; placeholder = "Validation Code"; ObjectID = "LQz-X4-4IO"; */
-"LQz-X4-4IO.placeholder" = "Validation Code";
+//"LQz-X4-4IO.placeholder" = "Validation Code";
 
 /* Class = "UITextField"; placeholder = "Password"; ObjectID = "8Sk-kJ-Fe3"; */
-"8Sk-kJ-Fe3.placeholder" = "Password";
+//"8Sk-kJ-Fe3.placeholder" = "Password";
+
+//##################################################################################
+//#           AutoGenStrings            2016-12-03 23:05:25
+//##################################################################################
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "Khe-46-5Nv"; */
+"Khe-46-5Nv.normalTitle" = "Submit";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "WHp-Td-4ii"; */
+"WHp-Td-4ii.placeholder" = "Email";
+
+/* Class = "UITextField"; placeholder = "Validation Code"; ObjectID = "GiO-Ky-GgT"; */
+"GiO-Ky-GgT.placeholder" = "Validation Code";
+
+/* Class = "UITextField"; placeholder = "New Password"; ObjectID = "ezm-50-t1W"; */
+"ezm-50-t1W.placeholder" = "New Password";
+
+/* Class = "UIButton"; normalTitle = "Send"; ObjectID = "h2M-Yk-uDf"; */
+"h2M-Yk-uDf.normalTitle" = "Send";

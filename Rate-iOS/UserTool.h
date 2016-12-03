@@ -21,6 +21,7 @@
 @property (nonatomic, strong) NSString *email;
 @property (nonatomic, strong) NSString *telephone;
 @property (nonatomic, strong) NSString *name;
+//Use token to mark whether this user signed in or not.
 @property (nonatomic, strong) NSString *token;
 @property (nonatomic, strong) NSString *deviceToken;
 

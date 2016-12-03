@@ -53,3 +53,5 @@ i_know = "I know";
 
 share_news = "Share News";
 open_on_safari = "Open on Safari";
+
+send_validation_code_success = "Verification code has sent to your email.";

@@ -51,3 +51,5 @@ i_know = "朕知道了";
 
 share_news = "分享新闻";
 open_on_safari = "在Safari中打开";
+
+send_validation_code_success = "验证码已发送到您的邮箱，请注意查收。";

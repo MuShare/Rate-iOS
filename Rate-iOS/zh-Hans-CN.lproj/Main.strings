@@ -118,9 +118,6 @@
 /* Class = "UINavigationItem"; title = "My Profile"; ObjectID = "Rw1-e3-FrY"; */
 "Rw1-e3-FrY.title" = "我的信息";
 
-/* Class = "UILabel"; text = "Telephone"; ObjectID = "S7j-Wc-cJT"; */
-//"S7j-Wc-cJT.text" = "电话";
-
 /* Class = "UINavigationItem"; title = "Sign up"; ObjectID = "SaW-My-DaT"; */
 "SaW-My-DaT.title" = "注册";
 
@@ -277,9 +274,6 @@
 /* Class = "UILabel"; text = "Code"; ObjectID = "BuE-VA-Ulz"; */
 "BuE-VA-Ulz.text" = "代码";
 
-/* Class = "UILabel"; text = "Cannot be used in app now."; ObjectID = "hWH-MD-62D"; */
-//"hWH-MD-62D.text" = "App中暂时无法使用该功能";
-
 /* Class = "UIButton"; normalTitle = "Code"; ObjectID = "Hkc-xJ-lh4"; */
 "Hkc-xJ-lh4.normalTitle" = "代码";
 
@@ -334,34 +328,17 @@
 /* Class = "UILabel"; text = "Oauth cannot be used in app now."; ObjectID = "Ktv-B0-HvZ"; */
 "Ktv-B0-HvZ.text" = "第三方登录暂时无法使用";
 
-
-//##################################################################################
-//#           AutoGenStrings            2016-10-15 23:01:39
-//##################################################################################
-
 /* Class = "UITextField"; placeholder = "1.0000"; ObjectID = "1RG-WK-mHg"; */
 "1RG-WK-mHg.placeholder" = "1.0000";
 
-//##################################################################################
-//#           AutoGenStrings            2016-10-27 17:17:31
-//##################################################################################
-
 /* Class = "UITextField"; placeholder = "1.0000"; ObjectID = "Xe3-Xl-sfN"; */
 "Xe3-Xl-sfN.placeholder" = "1.0000";
-
-//##################################################################################
-//#           AutoGenStrings            2016-11-25 16:07:58
-//##################################################################################
 
 /* Class = "UINavigationItem"; title = "News"; ObjectID = "ndg-nQ-UVN"; */
 "ndg-nQ-UVN.title" = "汇率新闻";
 
 /* Class = "UITabBarItem"; title = "News"; ObjectID = "cte-UT-Nlb"; */
 "cte-UT-Nlb.title" = "新闻";
-
-//##################################################################################
-//#           AutoGenStrings            2016-11-25 16:50:34
-//##################################################################################
 
 /* Class = "UILabel"; text = "Update Time"; ObjectID = "4TJ-Dh-0TD"; */
 "4TJ-Dh-0TD.text" = "Update Time";
@@ -372,12 +349,17 @@
 /* Class = "UILabel"; text = "Source"; ObjectID = "Zgd-ht-itS"; */
 "Zgd-ht-itS.text" = "Source";
 
-//##################################################################################
-//#           AutoGenStrings            2016-12-01 14:20:39
-//##################################################################################
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "Khe-46-5Nv"; */
+"Khe-46-5Nv.normalTitle" = "提交";
 
-/* Class = "UITextField"; placeholder = "Validation Code"; ObjectID = "LQz-X4-4IO"; */
-"LQz-X4-4IO.placeholder" = "Validation Code";
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "WHp-Td-4ii"; */
+"WHp-Td-4ii.placeholder" = "邮箱";
 
-/* Class = "UITextField"; placeholder = "Password"; ObjectID = "8Sk-kJ-Fe3"; */
-"8Sk-kJ-Fe3.placeholder" = "Password";
+/* Class = "UITextField"; placeholder = "Validation Code"; ObjectID = "GiO-Ky-GgT"; */
+"GiO-Ky-GgT.placeholder" = "验证码";
+
+/* Class = "UITextField"; placeholder = "New Password"; ObjectID = "ezm-50-t1W"; */
+"ezm-50-t1W.placeholder" = "新密码";
+
+/* Class = "UIButton"; normalTitle = "Send"; ObjectID = "h2M-Yk-uDf"; */
+"h2M-Yk-uDf.normalTitle" = "发送";

@@ -116,9 +116,7 @@ def compareWithFilePath(newStringPath,originalStringPath):
             newline = ''
             if executeOnce == 1:
                 timestamp = time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()))
-                newline = '\n//##################################################################################\n'
-                newline +='//#           AutoGenStrings            '+timestamp+'\n'
-                newline +='//##################################################################################\n'
+                newline +='//#Generate strings in '+timestamp+'\n'
                 executeOnce = 0
             newline += '\n'+anotation_dic[key]
             newline += '\n"%s" = "%s";\n'%values
@@ -173,9 +171,6 @@ def main():
             os.remove(tempFile_Path)
         else:
             print '- - genstrings %s error'%sourcename
- 
- 
- 
- 
+
 if __name__ == '__main__':
     main()

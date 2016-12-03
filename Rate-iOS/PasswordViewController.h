@@ -12,14 +12,14 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *emailImageView;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
-@property (weak, nonatomic) IBOutlet UIImageView *validateCodeImageView;
-@property (weak, nonatomic) IBOutlet UITextField *validationCodeTextField;
+@property (weak, nonatomic) IBOutlet UIImageView *verificationCodeImageView;
+@property (weak, nonatomic) IBOutlet UITextField *verificationCodeTextField;
 @property (weak, nonatomic) IBOutlet UIImageView *passwordImageView;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UIButton *showPasswordButton;
 @property (weak, nonatomic) IBOutlet UIButton *sendButton;
 
 - (IBAction)showPassword:(id)sender;
-- (IBAction)sendValidationCode:(id)sender;
+- (IBAction)sendVerificationCode:(id)sender;
 
 @end
