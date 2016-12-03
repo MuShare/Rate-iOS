@@ -1419,7 +1419,7 @@
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eXd-ze-l46">
                                 <rect key="frame" x="0.0" y="86" width="320" height="121"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="login_username" highlightedImage="login_username_error" translatesAutoresizingMaskIntoConstraints="NO" id="jg4-kp-m7b">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="register_email" highlightedImage="register_email_error" translatesAutoresizingMaskIntoConstraints="NO" id="jg4-kp-m7b">
                                         <rect key="frame" x="15" y="15" width="30" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -1914,12 +1914,18 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="registerSubmit:" destination="cjE-Dy-Cta" eventType="touchUpInside" id="ZdR-LY-kS0"/>
+                                    <action selector="submitNewPassword:" destination="lOI-Ui-Mi9" eventType="touchUpInside" id="Uag-29-sVH"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="nsc-Rd-nUd">
+                                <rect key="frame" x="280" y="297" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.96068316698074341" green="0.96084421873092651" blue="0.96066063642501831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="4wR-W7-SK8" secondAttribute="trailing" constant="-16" id="Kr1-Ay-DAX"/>
+                            <constraint firstItem="nsc-Rd-nUd" firstAttribute="top" secondItem="Khe-46-5Nv" secondAttribute="bottom" constant="-30" id="Ttn-xI-XKa"/>
+                            <constraint firstItem="nsc-Rd-nUd" firstAttribute="leading" secondItem="Khe-46-5Nv" secondAttribute="trailing" constant="-28" id="XRb-re-ydJ"/>
                             <constraint firstItem="4wR-W7-SK8" firstAttribute="top" secondItem="z0w-8i-lUr" secondAttribute="bottom" constant="22" id="ccN-d9-MtR"/>
                             <constraint firstItem="Khe-46-5Nv" firstAttribute="top" secondItem="z0w-8i-lUr" secondAttribute="bottom" constant="223" id="fVj-FP-GuO"/>
                             <constraint firstItem="Khe-46-5Nv" firstAttribute="leading" secondItem="nfV-5g-E2t" secondAttribute="leadingMargin" constant="-3" id="kN7-H3-aE9"/>
@@ -1931,6 +1937,7 @@
                     <connections>
                         <outlet property="emailImageView" destination="vvV-m0-BFA" id="ey4-Dh-PcM"/>
                         <outlet property="emailTextField" destination="WHp-Td-4ii" id="LP3-Xv-LT3"/>
+                        <outlet property="loadingActivityIndicatorView" destination="nsc-Rd-nUd" id="aSj-iJ-wa0"/>
                         <outlet property="passwordImageView" destination="wcx-Hb-tXu" id="5oo-nm-Cqf"/>
                         <outlet property="passwordTextField" destination="ezm-50-t1W" id="DoA-95-U4B"/>
                         <outlet property="sendButton" destination="h2M-Yk-uDf" id="weB-w3-buB"/>
@@ -2552,7 +2559,7 @@
                                     <action selector="registerSubmit:" destination="cjE-Dy-Cta" eventType="touchUpInside" id="gBK-Lz-pr2"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="fog-Xl-S6f">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="fog-Xl-S6f">
                                 <rect key="frame" x="280" y="297" width="20" height="20"/>
                                 <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>

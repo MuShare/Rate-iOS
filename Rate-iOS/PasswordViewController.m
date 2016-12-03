@@ -62,6 +62,7 @@
           success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
               InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
               if ([response statusOK]) {
+                  _emailTextField.enabled = NO;
                   [AlertTool showAlertWithTitle:NSLocalizedString(@"tip_name", @"Tip")
                                      andContent:NSLocalizedString(@"send_validation_code_success", @"Verification code has sent to your email.")
                                inViewController:self];
@@ -74,5 +75,16 @@
                       break;
               }
           }];
+}
+
+- (IBAction)submitNewPassword:(id)sender {
+    if (DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    _verificationCodeImageView.highlighted = [_verificationCodeTextField.text isEqualToString:@""];
+    _passwordImageView.highlighted = [_passwordTextField.text isEqualToString:@""];
+    if (_emailImageView.highlighted && _passwordImageView.highlighted) {
+        return;
+    }
 }
 @end
