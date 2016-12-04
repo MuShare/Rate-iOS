@@ -19,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *showPasswordButton;
 @property (weak, nonatomic) IBOutlet UIButton *sendButton;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingActivityIndicatorView;
+@property (weak, nonatomic) IBOutlet UIView *modifySuccessView;
+@property (weak, nonatomic) IBOutlet UIButton *submitButton;
 
 - (IBAction)showPassword:(id)sender;
 - (IBAction)sendVerificationCode:(id)sender;

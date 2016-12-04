@@ -19,6 +19,7 @@ typedef NS_OPTIONS(NSUInteger, ErrorCode) {
     ErrorCodeNotValidated = 304,
     ErrorCodeMailNeedActivate = 330,
     ErrorCodeTokenError = 350,
+    ErrorCodeMailNotExist = 360,
     ErrorCodeNotConnectedToInternet = -1009
 };
 

@@ -363,3 +363,7 @@
 
 /* Class = "UIButton"; normalTitle = "Send"; ObjectID = "h2M-Yk-uDf"; */
 "h2M-Yk-uDf.normalTitle" = "发送";
+//#Generate strings in 2016-12-04 19:52:34
+
+/* Class = "UILabel"; text = "Register Success !"; ObjectID = "oyh-AD-3IS"; */
+"oyh-AD-3IS.text" = "密码更改成功!";

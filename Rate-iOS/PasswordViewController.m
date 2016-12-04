@@ -56,6 +56,7 @@
     if (_emailImageView.highlighted) {
         return;
     }
+    _sendButton.enabled = NO;
     [manager POST:[InternetTool createUrl:@"api/user/verification_code"]
        parameters:@{@"email": _emailTextField.text}
          progress:nil
@@ -63,6 +64,7 @@
               InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
               if ([response statusOK]) {
                   _emailTextField.enabled = NO;
+                  _sendButton.enabled = YES;
                   [AlertTool showAlertWithTitle:NSLocalizedString(@"tip_name", @"Tip")
                                      andContent:NSLocalizedString(@"send_validation_code_success", @"Verification code has sent to your email.")
                                inViewController:self];
@@ -71,6 +73,11 @@
           failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
               InternetResponse *response = [[InternetResponse alloc] initWithError:error];
               switch ([response errorCode]) {
+                  case  ErrorCodeMailNotExist:
+                      [AlertTool showAlertWithTitle:NSLocalizedString(@"tip_name", @"tip")
+                                         andContent:NSLocalizedString(@"mail_not_exsit", @"The email you input is not exist.")
+                                   inViewController:self];
+                      break;
                   default:
                       break;
               }
@@ -83,8 +90,37 @@
     }
     _verificationCodeImageView.highlighted = [_verificationCodeTextField.text isEqualToString:@""];
     _passwordImageView.highlighted = [_passwordTextField.text isEqualToString:@""];
-    if (_emailImageView.highlighted && _passwordImageView.highlighted) {
+    if (_verificationCodeImageView.highlighted || _passwordImageView.highlighted) {
         return;
     }
+    [_loadingActivityIndicatorView startAnimating];
+    [manager POST:[InternetTool createUrl:@"api/user/change_password"]
+       parameters:@{
+                    @"email": _emailTextField.text,
+                    @"password": _passwordTextField.text,
+                    @"vertificationCode": _verificationCodeTextField.text
+                    }
+         progress:nil
+          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+              InternetResponse *repsonse = [[InternetResponse alloc] initWithResponseObject:responseObject];
+              if ([repsonse statusOK]) {
+                  //Modified password scuessfully.
+                  _modifySuccessView.hidden = NO;
+                  [_submitButton removeFromSuperview];
+                  [_loadingActivityIndicatorView stopAnimating];
+              }
+          }
+          failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+              InternetResponse *response = [[InternetResponse alloc] initWithError:error];
+              switch ([response errorCode]) {
+                  case  ErrorCodeMailNotExist:
+                      [AlertTool showAlertWithTitle:NSLocalizedString(@"tip_name", @"tip")
+                                         andContent:NSLocalizedString(@"mail_not_exsit", @"The email you input is not exist.")
+                                   inViewController:self];
+                      break;
+                  default:
+                      break;
+              }
+          }];
 }
 @end
