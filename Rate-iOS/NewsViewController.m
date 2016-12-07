@@ -45,6 +45,8 @@
                                                    handler:nil];
     [alertController addAction:safari];
     [alertController addAction:cancel];
+    alertController.popoverPresentationController.sourceView = _contentWebView;
+    alertController.popoverPresentationController.sourceRect = CGRectMake(self.view.frame.size.width / 2, 65, 0, 0);
     [self presentViewController:alertController animated:YES completion:nil];
 }
 @end

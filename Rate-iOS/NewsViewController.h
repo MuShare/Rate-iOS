@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) NSObject *content;
 @property (weak, nonatomic) IBOutlet UIWebView *contentWebView;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *shareBarButtonItem;
 
 - (IBAction)shareNews:(id)sender;
 
