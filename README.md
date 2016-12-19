@@ -1,5 +1,6 @@
 # Rate-iOS
-MuRate is an exchange rate app, which provides real time rate, rate history and customer notification.
+Rate Assistant is an exchange rate app, which provides real time rate, rate history and customer notification.
+
 - Search current and historical currency exchange rate.
 - Display favorite currencies on the home page after signing in.
 - Monitoring specific exchange rate by subscription.
