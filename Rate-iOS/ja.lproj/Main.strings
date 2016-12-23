@@ -9,13 +9,13 @@
 "2S3-QU-f51.placeholder" = "パスワード";
 
 /* Class = "UIBarButtonItem"; title = "Sign up"; ObjectID = "2fa-KX-Kk3"; */
-"2fa-KX-Kk3.title" = "Sign up";
+"2fa-KX-Kk3.title" = "ユーザー登録";
 
 /* Class = "UILabel"; text = "Currency Name"; ObjectID = "39M-NU-3F2"; */
 "39M-NU-3F2.text" = "Currency Name";
 
 /* Class = "UILabel"; text = "Rate Assistant"; ObjectID = "3nm-y7-UyA"; */
-"3nm-y7-UyA.text" = "Rate Assistant";
+"3nm-y7-UyA.text" = "レート";
 
 /* Class = "UILabel"; text = "Enable"; ObjectID = "4IB-tL-sB4"; */
 "4IB-tL-sB4.text" = "Enable";
