@@ -102,6 +102,10 @@
 		E41451981D4F8AA000AFE672 /* RateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateViewController.m; sourceTree = "<group>"; };
 		E414519D1D502E8200AFE672 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		E414519E1D502E8200AFE672 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		E4203F711E0CC57100291C6E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		E4203F721E0CC57100291C6E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		E4203F731E0CC57100291C6E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E4203F741E0CC57100291C6E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E425752B1DAA0271009F1EF5 /* Rate-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Rate-iOS.entitlements"; sourceTree = "<group>"; };
 		E42575371DABBB4A009F1EF5 /* zh-Hans-CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans-CN"; path = "zh-Hans-CN.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		E43697651D58488200781223 /* Subscribe+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Subscribe+CoreDataProperties.h"; sourceTree = "<group>"; };
@@ -509,6 +513,7 @@
 				en,
 				Base,
 				"zh-Hans-CN",
+				ja,
 			);
 			mainGroup = E46FB50E1D4E305800661E13;
 			productRefGroup = E46FB5181D4E305800661E13 /* Products */;
@@ -696,6 +701,7 @@
 			children = (
 				E42575371DABBB4A009F1EF5 /* zh-Hans-CN */,
 				E4050F471DAE2475003D0EEB /* en */,
+				E4203F731E0CC57100291C6E /* ja */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -705,6 +711,7 @@
 			children = (
 				E46FB5241D4E305800661E13 /* Base */,
 				E4D057AE1D54586D0003ADA4 /* zh-Hans-CN */,
+				E4203F721E0CC57100291C6E /* ja */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -714,6 +721,7 @@
 			children = (
 				E46FB52C1D4E305800661E13 /* Base */,
 				E4D057AD1D54586C0003ADA4 /* zh-Hans-CN */,
+				E4203F711E0CC57100291C6E /* ja */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -723,6 +731,7 @@
 			children = (
 				E4ABB8E01DAF83C1008FD573 /* en */,
 				E4ABB8E21DAF83C5008FD573 /* zh-Hans-CN */,
+				E4203F741E0CC57100291C6E /* ja */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
