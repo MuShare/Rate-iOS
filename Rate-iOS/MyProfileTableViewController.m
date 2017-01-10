@@ -22,7 +22,7 @@
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     [super viewDidLoad];
-    
+    user = [[UserTool alloc] init];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -32,6 +32,11 @@
     user = [[UserTool alloc] init];
     _emailLabel.text = user.email;
     _nameLabel.text = user.name;
+    
+    //Set user avatar if it is not nil.
+    if (user.avatar != nil) {
+        _avatarImageView.image = [UIImage imageWithData:user.avatar];
+    }
 }
 
 #pragma mark - Table view data source

@@ -23,7 +23,7 @@
     return [emailTest evaluateWithObject:email];
 }
 
-+(NSDate *)getADayOfLastYear:(NSDate *)date {
++ (NSDate *)getADayOfLastYear:(NSDate *)date {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *components = [calendar components:NSCalendarUnitYear
                                                fromDate:date];
@@ -31,7 +31,7 @@
     return [calendar dateFromComponents:components];
 }
 
-+(NSDate *)getADayOfNextYear:(NSDate *)date {
++ (NSDate *)getADayOfNextYear:(NSDate *)date {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *components = [calendar components:NSCalendarUnitYear
                                                fromDate:date];
@@ -40,7 +40,7 @@
     return [calendar dateFromComponents:components];
 }
 
-+(NSUInteger)getNumberOfDaysInThisMonth:(NSDate *)date {
++ (NSUInteger)getNumberOfDaysInThisMonth:(NSDate *)date {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSRange daysRange = [calendar rangeOfUnit:NSCalendarUnitDay
                                        inUnit:NSCalendarUnitMonth
@@ -48,7 +48,7 @@
     return daysRange.length;
 }
 
-+(NSDate *)getThisYearStart:(NSDate *)date {
++ (NSDate *)getThisYearStart:(NSDate *)date {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *components = [calendar components:NSCalendarUnitYear
                                                fromDate:date];
@@ -56,7 +56,7 @@
     return [calendar dateFromComponents:components];
 }
 
-+(NSDate *)getThisYearEnd:(NSDate *)date {
++ (NSDate *)getThisYearEnd:(NSDate *)date {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *components = [calendar components:NSCalendarUnitYear
                                                fromDate:date];
@@ -68,7 +68,7 @@
     return [calendar dateFromComponents:components];
 }
 
-+(NSDate *)getThisMonthStart:(NSDate *)date {
++ (NSDate *)getThisMonthStart:(NSDate *)date {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *components = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth
                                                fromDate:date];
@@ -76,7 +76,7 @@
     return [calendar dateFromComponents:components];
 }
 
-+(NSDate *)getThisMonthEnd:(NSDate *)date {
++ (NSDate *)getThisMonthEnd:(NSDate *)date {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *components = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth
                                                fromDate:date];
@@ -87,7 +87,7 @@
     return [calendar dateFromComponents:components];
 }
 
-+(NSDate *)getThisWeekStart:(NSDate *)date {
++ (NSDate *)getThisWeekStart:(NSDate *)date {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *components = [calendar components:NSCalendarUnitYear|
                                     NSCalendarUnitMonth|
@@ -98,7 +98,7 @@
     return [calendar dateFromComponents:components];
 }
 
-+(NSDate *)getThisWeekEnd:(NSDate *)date {
++ (NSDate *)getThisWeekEnd:(NSDate *)date {
     NSCalendar *calendar=[NSCalendar currentCalendar];
     NSDateComponents *components=[calendar components:NSCalendarUnitYear|
                                   NSCalendarUnitMonth|
@@ -112,7 +112,7 @@
     return [calendar dateFromComponents:components];
 }
 
-+(NSDate *)getThisDayStart:(NSDate *)date {
++ (NSDate *)getThisDayStart:(NSDate *)date {
     NSCalendar *calendar=[NSCalendar currentCalendar];
     NSDateComponents *components=[calendar components:NSCalendarUnitYear|
                                   NSCalendarUnitMonth|
@@ -122,7 +122,7 @@
     return [calendar dateFromComponents:components];
 }
 
-+(NSDate *)getThisDayEnd:(NSDate *)date {
++ (NSDate *)getThisDayEnd:(NSDate *)date {
     NSCalendar *calendar=[NSCalendar currentCalendar];
     NSDateComponents *components=[calendar components:NSCalendarUnitYear|
                                   NSCalendarUnitMonth|
@@ -139,7 +139,7 @@
 }
 
 
-+(NSDateComponents *)getDateComponents:(NSDate *)date {
++ (NSDateComponents *)getDateComponents:(NSDate *)date {
     NSCalendar *calendar=[NSCalendar currentCalendar];
     NSDateComponents *components=[calendar components:NSCalendarUnitYear|
                                   NSCalendarUnitMonth|
@@ -151,7 +151,7 @@
     return components;
 }
 
-+(NSString *)formateDate:(NSDate *)date withFormat:(NSString *)format {
++ (NSString *)formateDate:(NSDate *)date withFormat:(NSString *)format {
     NSDateFormatter *formatter=[[NSDateFormatter alloc] init];
     [formatter setDateFormat: format];
     return [formatter stringFromDate:date];

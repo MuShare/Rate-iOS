@@ -36,6 +36,7 @@
     //Set UISwitch
     _showFavoriteSwitch.on = user.showFavorites;
     _notificationSwitch.on = user.notification;
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -48,6 +49,12 @@
         _signOrNameLabel.text = user.name;
         _welcomeOrEmailLabel.text = user.email;
         _notificationSwitch.enabled = YES;
+        
+        //Set user avatar if it is not nil.
+        if (user.avatar != nil) {
+            _avatarImageView.image = [UIImage imageWithData:user.avatar];
+        }
+
     } else {
         _notificationSwitch.enabled = NO;
     }
