@@ -54,3 +54,6 @@ open_on_safari = "在Safari中打开";
 
 send_validation_code_success = "验证码已发送到您的邮箱，请注意查收。";
 mail_not_exsit = "该邮箱未注册。";
+
+uploading_avatar = "%已上传";
+uploading_processing = "处理中，请等待...";

@@ -21,6 +21,10 @@
     AFHTTPSessionManager *manager;
     DaoManager *dao;
     UserTool *user;
+    
+    UIView *maskView;
+    UILabel *tipLabel;
+    NSString *uploadingProgressTip;
 }
 
 - (void)viewDidLoad {
@@ -31,6 +35,7 @@
     manager = [InternetTool getSessionManager];
     dao = [[DaoManager alloc] init];
     user = [[UserTool alloc] init];
+    uploadingProgressTip = NSLocalizedString(@"uploading_avatar", nil);
     
     //Init ImagePickerController
     imagePickerController = [[UIImagePickerController alloc] init];
@@ -43,7 +48,7 @@
 }
 
 #pragma mark - UIImagePickerControllerDelegate
--(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class,NSStringFromSelector(_cmd));
         NSLog(@"MediaInfo: %@", info);
@@ -57,42 +62,52 @@
     
     //Upload image
     if(_profilePhotoImageView.image != nil) {
+        //Add a mask.
+        [self showTipMask];
+        
+        //Start uploading.
         NSData *avatar = UIImageJPEGRepresentation(_profilePhotoImageView.image, 1.0);
-        NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST"
-                                                                                                  URLString:[InternetTool createUrl:@"api/user/upload_image"]
-                                                                                                 parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-                                                                                                     [formData appendPartWithFileData:avatar
-                                                                                                                                 name:@"file" fileName:@"avatar.jpg"
-                                                                                                                             mimeType:@"image/jpeg"];
-            
-                                                                                                 }
-                                                                                                      error:nil];
+        NSMutableURLRequest *request =
+        [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST"
+                                                                   URLString:[InternetTool createUrl:@"api/user/upload_image"]
+                                                                  parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+                                                                      [formData appendPartWithFileData:avatar
+                                                                                                  name:@"file" fileName:@"avatar.jpg"
+                                                                                              mimeType:@"image/jpeg"];
+                                                                      
+                                                                  }
+                                                                       error:nil];
         [request setValue:user.token forHTTPHeaderField:@"token"];
-        NSURLSessionUploadTask *task = [manager uploadTaskWithStreamedRequest:request
-                                                                     progress:^(NSProgress * _Nonnull uploadProgress) {
-                                                                         dispatch_async(dispatch_get_main_queue(), ^{
-                                                                             NSLog(@"%f", uploadProgress.fractionCompleted);
-                                                                         });
-                                                                     }
-                                                            completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
-                                             
-                                                                if (error == nil) {
-                                                                    InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
-                                                                    if ([response statusOK]) {
-                                                                        user.avatar = avatar;
-                                                                    }
-                                                                } else {
-                                                                    InternetResponse *res = [[InternetResponse alloc] initWithError:error];
-                                                                    switch ([res errorCode]) {
-                                                                        case ErrorCodeNotConnectedToInternet:
-                                                                            [AlertTool showNotConnectInternet:self];
-                                                                            break;
-                                                                        default:
-                                                                            break;
-                                                                    }
-                                                                }
-                                                                
-                                                            }];
+        NSURLSessionUploadTask *task =
+        [manager uploadTaskWithStreamedRequest:request
+                                      progress:^(NSProgress * _Nonnull uploadProgress) {
+                                          dispatch_async(dispatch_get_main_queue(), ^{
+                                              tipLabel.text = [NSString stringWithFormat:@"%.0f%@", uploadProgress.fractionCompleted * 100, uploadingProgressTip];
+                                              if (uploadProgress.fractionCompleted == 1) {
+                                                  tipLabel.text = NSLocalizedString(@"uploading_processing", nil);
+                                              }
+                                          });
+                                      }
+                             completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+                                 
+                                 if (error == nil) {
+                                     InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
+                                     if ([response statusOK]) {
+                                         user.avatar = avatar;
+                                         [self removeMask];
+                                     }
+                                 } else {
+                                     InternetResponse *res = [[InternetResponse alloc] initWithError:error];
+                                     switch ([res errorCode]) {
+                                         case ErrorCodeNotConnectedToInternet:
+                                             [AlertTool showNotConnectInternet:self];
+                                             break;
+                                         default:
+                                             break;
+                                     }
+                                 }
+                                 
+                             }];
         [task resume];
     }
 }
@@ -138,5 +153,33 @@
     [alertController addAction:choose];
     [alertController addAction:cancel];
     [self presentViewController:alertController animated:YES completion:nil];
+}
+
+#pragma mark - Service
+
+- (void)showTipMask {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    maskView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    maskView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.6];
+    
+    tipLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height / 2 + 40, self.view.frame.size.width, 20)];
+    tipLabel.text = [NSString stringWithFormat:@"%.2f%@", 0.0, uploadingProgressTip];
+    tipLabel.textColor = [UIColor whiteColor];
+    tipLabel.textAlignment = NSTextAlignmentCenter;
+    [maskView addSubview:tipLabel];
+    UIActivityIndicatorView *loadingActivityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    loadingActivityIndicatorView.center = CGPointMake(self.view.frame.size.width / 2, self.view.frame.size.height / 2);
+    [loadingActivityIndicatorView startAnimating];
+    [maskView addSubview:loadingActivityIndicatorView];
+    [self.tabBarController.view addSubview:maskView];
+}
+
+- (void)removeMask {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    [maskView removeFromSuperview];
 }
 @end
