@@ -66,16 +66,17 @@
                   _emailTextField.enabled = NO;
                   _sendButton.enabled = YES;
                   [AlertTool showAlertWithTitle:NSLocalizedString(@"tip_name", @"Tip")
-                                     andContent:NSLocalizedString(@"send_validation_code_success", @"Verification code has sent to your email.")
+                                     andContent:NSLocalizedString(@"send_validation_code_success", nil)
                                inViewController:self];
               }
           }
           failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
               InternetResponse *response = [[InternetResponse alloc] initWithError:error];
+              _sendButton.enabled = YES;
               switch ([response errorCode]) {
                   case  ErrorCodeMailNotExist:
                       [AlertTool showAlertWithTitle:NSLocalizedString(@"tip_name", @"tip")
-                                         andContent:NSLocalizedString(@"mail_not_exsit", @"The email you input is not exist.")
+                                         andContent:NSLocalizedString(@"mail_not_exsit", nil)
                                    inViewController:self];
                       break;
                   default:
@@ -94,6 +95,7 @@
         return;
     }
     [_loadingActivityIndicatorView startAnimating];
+    _submitButton.enabled = NO;
     [manager POST:[InternetTool createUrl:@"api/user/change_password"]
        parameters:@{
                     @"email": _emailTextField.text,
@@ -112,10 +114,22 @@
           }
           failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
               InternetResponse *response = [[InternetResponse alloc] initWithError:error];
+              _submitButton.enabled = YES;
+              [_loadingActivityIndicatorView stopAnimating];
               switch ([response errorCode]) {
-                  case  ErrorCodeMailNotExist:
+                  case ErrorCodeMailNotExist:
                       [AlertTool showAlertWithTitle:NSLocalizedString(@"tip_name", @"tip")
-                                         andContent:NSLocalizedString(@"mail_not_exsit", @"The email you input is not exist.")
+                                         andContent:NSLocalizedString(@"mail_not_exsit", nil)
+                                   inViewController:self];
+                      break;
+                  case ErrorCodeInvalidVerification:
+                      [AlertTool showAlertWithTitle:NSLocalizedString(@"tip_name", @"tip")
+                                         andContent:NSLocalizedString(@"verification_code_error", nil)
+                                   inViewController:self];
+                      break;
+                  case ErrorCodeVerificationExpiration:
+                      [AlertTool showAlertWithTitle:NSLocalizedString(@"tip_name", @"tip")
+                                         andContent:NSLocalizedString(@"verification_expiration", nil)
                                    inViewController:self];
                       break;
                   default:

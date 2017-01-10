@@ -2173,6 +2173,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="contentWebView" destination="NNo-5u-OvJ" id="8TI-g1-nIo"/>
+                        <outlet property="shareBarButtonItem" destination="Ofg-E9-J3M" id="cmP-w7-ymh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zR8-Kl-3yk" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -18,6 +18,8 @@ typedef NS_OPTIONS(NSUInteger, ErrorCode) {
     ErrorCodeAccountNotFound = 302,
     ErrorCodeNotValidated = 304,
     ErrorCodeMailNeedActivate = 330,
+    ErrorCodeInvalidVerification = 343,
+    ErrorCodeVerificationExpiration = 344,
     ErrorCodeTokenError = 350,
     ErrorCodeMailNotExist = 360,
     ErrorCodeNotConnectedToInternet = -1009

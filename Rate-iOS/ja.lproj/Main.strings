@@ -1,0 +1,369 @@
+
+/* Class = "UITextField"; placeholder = "1.0000"; ObjectID = "1RG-WK-mHg"; */
+"1RG-WK-mHg.placeholder" = "1.0000";
+
+/* Class = "UILabel"; text = "Sign in / Sign up"; ObjectID = "1h5-ez-roQ"; */
+"1h5-ez-roQ.text" = "サインイン / ユーザー登録";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "2S3-QU-f51"; */
+"2S3-QU-f51.placeholder" = "パスワード";
+
+/* Class = "UIBarButtonItem"; title = "Sign up"; ObjectID = "2fa-KX-Kk3"; */
+"2fa-KX-Kk3.title" = "ユーザー登録";
+
+/* Class = "UILabel"; text = "Currency Name"; ObjectID = "39M-NU-3F2"; */
+"39M-NU-3F2.text" = "Currency Name";
+
+/* Class = "UILabel"; text = "Rate Assistant"; ObjectID = "3nm-y7-UyA"; */
+"3nm-y7-UyA.text" = "レート";
+
+/* Class = "UILabel"; text = "Enable"; ObjectID = "4IB-tL-sB4"; */
+"4IB-tL-sB4.text" = "Enable";
+
+/* Class = "UILabel"; text = "Update Time"; ObjectID = "4TJ-Dh-0TD"; */
+"4TJ-Dh-0TD.text" = "Update Time";
+
+/* Class = "UILabel"; text = "Feedback"; ObjectID = "6Jp-SY-axk"; */
+"6Jp-SY-axk.text" = "Feedback";
+
+/* Class = "UILabel"; text = "Help"; ObjectID = "6Nk-oN-anI"; */
+"6Nk-oN-anI.text" = "Help";
+
+/* Class = "UILabel"; text = "About"; ObjectID = "6hN-qf-DhP"; */
+"6hN-qf-DhP.text" = "About";
+
+/* Class = "UITextField"; placeholder = "Your email or other contact way."; ObjectID = "6mn-F6-1bN"; */
+"6mn-F6-1bN.placeholder" = "Your email or other contact way.";
+
+/* Class = "UILabel"; text = "Name Value"; ObjectID = "6nD-Qo-JOx"; */
+"6nD-Qo-JOx.text" = "Name Value";
+
+/* Class = "UINavigationItem"; title = "Subscription"; ObjectID = "7GI-yI-lpy"; */
+"7GI-yI-lpy.title" = "Subscription";
+
+/* Class = "UIButton"; normalTitle = "Use without Internet"; ObjectID = "95a-Vh-ASh"; */
+"95a-Vh-ASh.normalTitle" = "Use without Internet";
+
+/* Class = "UILabel"; text = "Monitoring"; ObjectID = "9dx-Qn-fJ3"; */
+"9dx-Qn-fJ3.text" = "Monitoring";
+
+/* Class = "UILabel"; text = "Notification"; ObjectID = "B2N-Cn-Pen"; */
+"B2N-Cn-Pen.text" = "Notification";
+
+/* Class = "UITableViewSection"; headerTitle = " "; ObjectID = "B8K-QI-Zvl"; */
+"B8K-QI-Zvl.headerTitle" = " ";
+
+/* Class = "UILabel"; text = "Tip Info"; ObjectID = "BIn-Df-jSi"; */
+"BIn-Df-jSi.text" = "Tip Info";
+
+/* Class = "UILabel"; text = "Code"; ObjectID = "BuE-VA-Ulz"; */
+"BuE-VA-Ulz.text" = "Code";
+
+/* Class = "UITextField"; placeholder = "Subscribe Name"; ObjectID = "C5T-HY-ReF"; */
+"C5T-HY-ReF.placeholder" = "Subscribe Name";
+
+/* Class = "UINavigationItem"; title = "Me"; ObjectID = "DAv-cg-vmZ"; */
+"DAv-cg-vmZ.title" = "Me";
+
+/* Class = "UINavigationItem"; title = "Sign in"; ObjectID = "DHz-Kk-WFi"; */
+"DHz-Kk-WFi.title" = "Sign in";
+
+/* Class = "UILabel"; text = "10.00000"; ObjectID = "DRO-cL-DKK"; */
+"DRO-cL-DKK.text" = "10.00000";
+
+/* Class = "UILabel"; text = "Rate Value"; ObjectID = "E0V-Tj-kAt"; */
+"E0V-Tj-kAt.text" = "Rate Value";
+
+/* Class = "UILabel"; text = "10.00000"; ObjectID = "EEi-Cz-swm"; */
+"EEi-Cz-swm.text" = "10.00000";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "Ege-YX-nhz"; */
+"Ege-YX-nhz.placeholder" = "Email";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "Env-ZB-JSg"; */
+"Env-ZB-JSg.text" = "Name";
+
+/* Class = "UIBarButtonItem"; title = "Base"; ObjectID = "FEG-AL-6fQ"; */
+"FEG-AL-6fQ.title" = "Base";
+
+/* Class = "UILabel"; text = "Subscribe Name"; ObjectID = "Ftz-DH-EYJ"; */
+"Ftz-DH-EYJ.text" = "Subscribe Name";
+
+/* Class = "UITextField"; placeholder = "Threshold"; ObjectID = "GTo-fg-Jct"; */
+"GTo-fg-Jct.placeholder" = "Threshold";
+
+/* Class = "UILabel"; text = "Date Value"; ObjectID = "Gg3-LS-f65"; */
+"Gg3-LS-f65.text" = "Date Value";
+
+/* Class = "UITextField"; placeholder = "Verification Code"; ObjectID = "GiO-Ky-GgT"; */
+"GiO-Ky-GgT.placeholder" = "Verification Code";
+
+/* Class = "UITabBarItem"; title = "Subscribe"; ObjectID = "H1y-EC-28G"; */
+"H1y-EC-28G.title" = "Subscribe";
+
+/* Class = "UILabel"; text = "Enable"; ObjectID = "HIw-Bj-QfS"; */
+"HIw-Bj-QfS.text" = "Enable";
+
+/* Class = "UIButton"; normalTitle = "Code"; ObjectID = "Hkc-xJ-lh4"; */
+"Hkc-xJ-lh4.normalTitle" = "Code";
+
+/* Class = "UIButton"; normalTitle = "To show subscriptions, Sign in now!"; ObjectID = "HtY-GJ-aL2"; */
+"HtY-GJ-aL2.normalTitle" = "To show subscriptions, Sign in now!";
+
+/* Class = "UILabel"; text = "Copyright © 2016 MuShare Group. All Rights Reserved "; ObjectID = "ILG-vj-lRL"; */
+"ILG-vj-lRL.text" = "Copyright © 2016 MuShare Group. All Rights Reserved ";
+
+/* Class = "UILabel"; text = "Currency Name"; ObjectID = "ILf-qC-paM"; */
+"ILf-qC-paM.text" = "Currency Name";
+
+/* Class = "UILabel"; text = "Currency"; ObjectID = "Ibq-l7-XJf"; */
+"Ibq-l7-XJf.text" = "Currency";
+
+/* Class = "UINavigationItem"; title = "About"; ObjectID = "J2V-jq-c6q"; */
+"J2V-jq-c6q.title" = "About";
+
+/* Class = "UILabel"; text = "Current "; ObjectID = "JLx-i0-480"; */
+"JLx-i0-480.text" = "Current ";
+
+/* Class = "UINavigationItem"; title = "Profile Photo"; ObjectID = "K2p-5q-XFa"; */
+"K2p-5q-XFa.title" = "Profile Photo";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "Khe-46-5Nv"; */
+"Khe-46-5Nv.normalTitle" = "Submit";
+
+/* Class = "UILabel"; text = "Oauth cannot be used in app now."; ObjectID = "Ktv-B0-HvZ"; */
+"Ktv-B0-HvZ.text" = "Oauth cannot be used in app now.";
+
+/* Class = "UILabel"; text = "10.00000"; ObjectID = "Kwl-DN-MV9"; */
+"Kwl-DN-MV9.text" = "10.00000";
+
+/* Class = "UILabel"; text = "Tip Info"; ObjectID = "LHg-EV-NzP"; */
+"LHg-EV-NzP.text" = "Tip Info";
+
+/* Class = "UILabel"; text = "Currency Name"; ObjectID = "LUr-Jw-1O5"; */
+"LUr-Jw-1O5.text" = "Currency Name";
+
+/* Class = "UILabel"; text = "All Currencies"; ObjectID = "LYs-K4-eYU"; */
+"LYs-K4-eYU.text" = "All Currencies";
+
+/* Class = "UIButton"; normalTitle = "Sign in"; ObjectID = "Mp5-P9-8Ok"; */
+"Mp5-P9-8Ok.normalTitle" = "Sign in";
+
+/* Class = "UINavigationItem"; title = "Subscriptions"; ObjectID = "MvW-AD-h80"; */
+"MvW-AD-h80.title" = "Subscriptions";
+
+/* Class = "UILabel"; text = "100.0000"; ObjectID = "N5V-ed-3dC"; */
+"N5V-ed-3dC.text" = "100.0000";
+
+/* Class = "UILabel"; text = "Show favorites in homepage"; ObjectID = "N6d-fK-aWK"; */
+"N6d-fK-aWK.text" = "Show favorites in homepage";
+
+/* Class = "UIButton"; normalTitle = "Rate in App Store"; ObjectID = "Nq2-il-4wg"; */
+"Nq2-il-4wg.normalTitle" = "Rate in App Store";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "OV6-hg-bua"; */
+"OV6-hg-bua.text" = "Email";
+
+/* Class = "UINavigationItem"; title = "Feedback"; ObjectID = "Ow1-j8-BcW"; */
+"Ow1-j8-BcW.title" = "Feedback";
+
+/* Class = "UILabel"; text = "Send SMS"; ObjectID = "P12-kE-zYd"; */
+"P12-kE-zYd.text" = "Send SMS";
+
+/* Class = "UILabel"; text = "Email Value"; ObjectID = "Qqo-Tg-WCv"; */
+"Qqo-Tg-WCv.text" = "Email Value";
+
+/* Class = "UINavigationItem"; title = "Subscribe"; ObjectID = "RUV-Sa-Ivd"; */
+"RUV-Sa-Ivd.title" = "Subscribe";
+
+/* Class = "UINavigationItem"; title = "My Profile"; ObjectID = "Rw1-e3-FrY"; */
+"Rw1-e3-FrY.title" = "My Profile";
+
+/* Class = "UINavigationItem"; title = "Sign up"; ObjectID = "SaW-My-DaT"; */
+"SaW-My-DaT.title" = "Sign up";
+
+/* Class = "UIButton"; normalTitle = "Forget Password"; ObjectID = "Sg5-hT-qwC"; */
+"Sg5-hT-qwC.normalTitle" = "Forget Password";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "Skd-rx-5Pk"; */
+"Skd-rx-5Pk.placeholder" = "Password";
+
+/* Class = "UITextField"; placeholder = "Your telephone"; ObjectID = "T6C-te-pvM"; */
+"T6C-te-pvM.placeholder" = "Your telephone";
+
+/* Class = "UILabel"; text = "News Title"; ObjectID = "Tj8-9m-PIX"; */
+"Tj8-9m-PIX.text" = "News Title";
+
+/* Class = "UILabel"; text = "Rate"; ObjectID = "Ul3-Ac-Qym"; */
+"Ul3-Ac-Qym.text" = "Rate";
+
+/* Class = "UILabel"; text = "Code"; ObjectID = "Ulk-sr-Cm9"; */
+"Ulk-sr-Cm9.text" = "Code";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "WHp-Td-4ii"; */
+"WHp-Td-4ii.placeholder" = "Email";
+
+/* Class = "UIButton"; normalTitle = "Code"; ObjectID = "XS1-xk-Bqd"; */
+"XS1-xk-Bqd.normalTitle" = "Code";
+
+/* Class = "UITextField"; placeholder = "1.0000"; ObjectID = "Xe3-Xl-sfN"; */
+"Xe3-Xl-sfN.placeholder" = "1.0000";
+
+/* Class = "UIButton"; normalTitle = "Delete subscription"; ObjectID = "Ye7-Pp-P6i"; */
+"Ye7-Pp-P6i.normalTitle" = "Delete subscription";
+
+/* Class = "UILabel"; text = "Threshold"; ObjectID = "Z9G-oM-Hv6"; */
+"Z9G-oM-Hv6.text" = "Threshold";
+
+/* Class = "UILabel"; text = "Source"; ObjectID = "Zgd-ht-itS"; */
+"Zgd-ht-itS.text" = "Source";
+
+/* Class = "UITextField"; placeholder = "Subscribe Name"; ObjectID = "ZvK-vO-6sT"; */
+"ZvK-vO-6sT.placeholder" = "Subscribe Name";
+
+/* Class = "UINavigationItem"; title = "OAuth Sign in"; ObjectID = "anh-z1-fE1"; */
+"anh-z1-fE1.title" = "OAuth Sign in";
+
+/* Class = "UILabel"; text = "Threshold"; ObjectID = "bR4-XA-9yK"; */
+"bR4-XA-9yK.text" = "Threshold";
+
+/* Class = "UINavigationItem"; title = "Modify Password"; ObjectID = "bdG-MM-1ph"; */
+"bdG-MM-1ph.title" = "Modify Password";
+
+/* Class = "UINavigationItem"; title = "Rate"; ObjectID = "cZL-gg-6JF"; */
+"cZL-gg-6JF.title" = "Rate";
+
+/* Class = "UIButton"; normalTitle = "To Currency"; ObjectID = "crT-7a-Zsz"; */
+"crT-7a-Zsz.normalTitle" = "To Currency";
+
+/* Class = "UITabBarItem"; title = "News"; ObjectID = "cte-UT-Nlb"; */
+"cte-UT-Nlb.title" = "News";
+
+/* Class = "UILabel"; text = "Current "; ObjectID = "dks-4j-KXR"; */
+"dks-4j-KXR.text" = "Current ";
+
+/* Class = "UITabBarItem"; title = "Rate"; ObjectID = "dsK-C6-I2x"; */
+"dsK-C6-I2x.title" = "Rate";
+
+/* Class = "UITableViewSection"; headerTitle = " "; ObjectID = "eLp-ME-xC1"; */
+"eLp-ME-xC1.headerTitle" = " ";
+
+/* Class = "UILabel"; text = "Profile Photo"; ObjectID = "ei9-T4-DVi"; */
+"ei9-T4-DVi.text" = "Profile Photo";
+
+/* Class = "UITextField"; placeholder = "New Password"; ObjectID = "ezm-50-t1W"; */
+"ezm-50-t1W.placeholder" = "New Password";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "fJ1-cM-9m5"; */
+"fJ1-cM-9m5.placeholder" = "Email";
+
+/* Class = "UITextField"; placeholder = "Your user name"; ObjectID = "fsb-Zu-jQx"; */
+"fsb-Zu-jQx.placeholder" = "Your user name";
+
+/* Class = "UIButton"; normalTitle = "Sign out"; ObjectID = "gXL-ZX-w1m"; */
+"gXL-ZX-w1m.normalTitle" = "Sign out";
+
+/* Class = "UINavigationItem"; title = "Help"; ObjectID = "grS-7U-iXN"; */
+"grS-7U-iXN.title" = "Help";
+
+/* Class = "UIButton"; normalTitle = "Send"; ObjectID = "h2M-Yk-uDf"; */
+"h2M-Yk-uDf.normalTitle" = "Send";
+
+/* Class = "UINavigationItem"; title = "Currencies"; ObjectID = "iFj-RH-TUV"; */
+"iFj-RH-TUV.title" = "Currencies";
+
+/* Class = "UILabel"; text = "Current exchange rate:"; ObjectID = "iK8-qG-jk4"; */
+"iK8-qG-jk4.text" = "Current exchange rate:";
+
+/* Class = "UITextField"; placeholder = "Threshold"; ObjectID = "jkp-0R-fOo"; */
+"jkp-0R-fOo.placeholder" = "Threshold";
+
+/* Class = "UISegmentedControl"; mvv-Rz-xc9.segmentTitles[0] = "1m"; ObjectID = "mvv-Rz-xc9"; */
+"mvv-Rz-xc9.segmentTitles[0]" = "1m";
+
+/* Class = "UISegmentedControl"; mvv-Rz-xc9.segmentTitles[1] = "3m"; ObjectID = "mvv-Rz-xc9"; */
+"mvv-Rz-xc9.segmentTitles[1]" = "3m";
+
+/* Class = "UISegmentedControl"; mvv-Rz-xc9.segmentTitles[2] = "6m"; ObjectID = "mvv-Rz-xc9"; */
+"mvv-Rz-xc9.segmentTitles[2]" = "6m";
+
+/* Class = "UISegmentedControl"; mvv-Rz-xc9.segmentTitles[3] = "1y"; ObjectID = "mvv-Rz-xc9"; */
+"mvv-Rz-xc9.segmentTitles[3]" = "1y";
+
+/* Class = "UISegmentedControl"; mvv-Rz-xc9.segmentTitles[4] = "3y"; ObjectID = "mvv-Rz-xc9"; */
+"mvv-Rz-xc9.segmentTitles[4]" = "3y";
+
+/* Class = "UINavigationItem"; title = "News"; ObjectID = "ndg-nQ-UVN"; */
+"ndg-nQ-UVN.title" = "News";
+
+/* Class = "UINavigationItem"; title = "Name"; ObjectID = "ngq-fD-3B1"; */
+"ngq-fD-3B1.title" = "Name";
+
+/* Class = "UINavigationItem"; title = "Rate Assistant"; ObjectID = "nhV-gT-3St"; */
+"nhV-gT-3St.title" = "Rate Assistant";
+
+/* Class = "UILabel"; text = "Send Email"; ObjectID = "ode-KA-Xzx"; */
+"ode-KA-Xzx.text" = "Send Email";
+
+/* Class = "UILabel"; text = "Modify password successfully !"; ObjectID = "oyh-AD-3IS"; */
+"oyh-AD-3IS.text" = "Modify password successfully !";
+
+/* Class = "UISegmentedControl"; pSe-Mj-XSq.segmentTitles[0] = "Bug"; ObjectID = "pSe-Mj-XSq"; */
+"pSe-Mj-XSq.segmentTitles[0]" = "Bug";
+
+/* Class = "UISegmentedControl"; pSe-Mj-XSq.segmentTitles[1] = "Comment"; ObjectID = "pSe-Mj-XSq"; */
+"pSe-Mj-XSq.segmentTitles[1]" = "Comment";
+
+/* Class = "UISegmentedControl"; pSe-Mj-XSq.segmentTitles[2] = "Wish"; ObjectID = "pSe-Mj-XSq"; */
+"pSe-Mj-XSq.segmentTitles[2]" = "Wish";
+
+/* Class = "UILabel"; text = "Send SMS"; ObjectID = "pgh-16-ETw"; */
+"pgh-16-ETw.text" = "Send SMS";
+
+/* Class = "UILabel"; text = "10.00000"; ObjectID = "q3R-Xl-rpB"; */
+"q3R-Xl-rpB.text" = "10.00000";
+
+/* Class = "UILabel"; text = "Modify Password"; ObjectID = "r6Z-6Q-SFJ"; */
+"r6Z-6Q-SFJ.text" = "Modify Password";
+
+/* Class = "UILabel"; text = "Notified"; ObjectID = "rJz-bX-wxi"; */
+"rJz-bX-wxi.text" = "Notified";
+
+/* Class = "UILabel"; text = "Cannot access to server, check your Internet!"; ObjectID = "sgK-Xj-rr5"; */
+"sgK-Xj-rr5.text" = "Cannot access to server, check your Internet!";
+
+/* Class = "UILabel"; text = "Code"; ObjectID = "tfs-iY-DOz"; */
+"tfs-iY-DOz.text" = "Code";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "u3I-Ci-rM2"; */
+"u3I-Ci-rM2.normalTitle" = "Submit";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "uBb-IX-sy3"; */
+"uBb-IX-sy3.normalTitle" = "Submit";
+
+/* Class = "UITabBarItem"; title = "Me"; ObjectID = "udZ-pr-88l"; */
+"udZ-pr-88l.title" = "Me";
+
+/* Class = "UINavigationItem"; title = "Telephone"; ObjectID = "vjc-ze-Ylc"; */
+"vjc-ze-Ylc.title" = "Telephone";
+
+/* Class = "UILabel"; text = "Welcome to Rate Assistant, sign in now!"; ObjectID = "vxA-eD-eUe"; */
+"vxA-eD-eUe.text" = "Welcome to Rate Assistant, sign in now!";
+
+/* Class = "UILabel"; text = "Subscribe Name"; ObjectID = "wPe-wv-8qX"; */
+"wPe-wv-8qX.text" = "Subscribe Name";
+
+/* Class = "UITextField"; placeholder = "Username"; ObjectID = "xBk-b8-3G7"; */
+"xBk-b8-3G7.placeholder" = "Username";
+
+/* Class = "UILabel"; text = "Register success !"; ObjectID = "xfI-Ec-ksG"; */
+"xfI-Ec-ksG.text" = "Register success !";
+
+/* Class = "UIButton"; normalTitle = "From Currency"; ObjectID = "xiB-uC-Io8"; */
+"xiB-uC-Io8.normalTitle" = "From Currency";
+
+/* Class = "UILabel"; text = "Send Email"; ObjectID = "yRJ-iE-Uvp"; */
+"yRJ-iE-Uvp.text" = "Send Email";
+
+/* Class = "UILabel"; text = "Code"; ObjectID = "ym2-i0-eRa"; */
+"ym2-i0-eRa.text" = "Code";
