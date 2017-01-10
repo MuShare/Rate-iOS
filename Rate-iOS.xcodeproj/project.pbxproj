@@ -375,12 +375,12 @@
 				E4EEEC0F1D5730D200A50E1C /* NameViewController.m */,
 				E4EEEC141D5730E900A50E1C /* PasswordViewController.h */,
 				E4EEEC151D5730E900A50E1C /* PasswordViewController.m */,
+				E498D6451D6737FB0083260F /* ProfilePhotoViewController.h */,
+				E498D6461D6737FB0083260F /* ProfilePhotoViewController.m */,
 				E4D057B91D5498EC0003ADA4 /* RegisterViewController.h */,
 				E4D057BA1D5498EC0003ADA4 /* RegisterViewController.m */,
 				E4EEEC111D5730DE00A50E1C /* TelephoneViewController.h */,
 				E4EEEC121D5730DE00A50E1C /* TelephoneViewController.m */,
-				E498D6451D6737FB0083260F /* ProfilePhotoViewController.h */,
-				E498D6461D6737FB0083260F /* ProfilePhotoViewController.m */,
 			);
 			name = Me;
 			sourceTree = "<group>";

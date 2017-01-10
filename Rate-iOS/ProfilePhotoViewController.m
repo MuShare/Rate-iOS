@@ -10,6 +10,7 @@
 #import "InternetTool.h"
 #import "DaoManager.h"
 #import "AlertTool.h"
+#import "UserTool.h"
 
 @interface ProfilePhotoViewController ()
 
@@ -19,6 +20,7 @@
     UIImagePickerController *imagePickerController;
     AFHTTPSessionManager *manager;
     DaoManager *dao;
+    UserTool *user;
 }
 
 - (void)viewDidLoad {
@@ -28,9 +30,16 @@
     [super viewDidLoad];
     manager = [InternetTool getSessionManager];
     dao = [[DaoManager alloc] init];
+    user = [[UserTool alloc] init];
+    
     //Init ImagePickerController
     imagePickerController = [[UIImagePickerController alloc] init];
     imagePickerController.delegate = self;
+    
+    //Set user avatar if it is not nil.
+    if (user.avatar != nil) {
+        _profilePhotoImageView.image = [UIImage imageWithData:user.avatar];
+    }
 }
 
 #pragma mark - UIImagePickerControllerDelegate
@@ -48,16 +57,17 @@
     
     //Upload image
     if(_profilePhotoImageView.image != nil) {
+        NSData *avatar = UIImageJPEGRepresentation(_profilePhotoImageView.image, 1.0);
         NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST"
                                                                                                   URLString:[InternetTool createUrl:@"api/user/upload_image"]
                                                                                                  parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-                                                                                                     [formData appendPartWithFileData:UIImageJPEGRepresentation(_profilePhotoImageView.image, 1.0)
+                                                                                                     [formData appendPartWithFileData:avatar
                                                                                                                                  name:@"file" fileName:@"avatar.jpg"
                                                                                                                              mimeType:@"image/jpeg"];
             
                                                                                                  }
                                                                                                       error:nil];
-        
+        [request setValue:user.token forHTTPHeaderField:@"token"];
         NSURLSessionUploadTask *task = [manager uploadTaskWithStreamedRequest:request
                                                                      progress:^(NSProgress * _Nonnull uploadProgress) {
                                                                          dispatch_async(dispatch_get_main_queue(), ^{
@@ -66,14 +76,22 @@
                                                                      }
                                                             completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
                                              
-                                                                InternetResponse *res = [[InternetResponse alloc] initWithError:error];
-                                                                switch ([res errorCode]) {
-                                                                    case ErrorCodeNotConnectedToInternet:
-                                                                        [AlertTool showNotConnectInternet:self];
-                                                                        break;
-                                                                    default:
-                                                                        break;
+                                                                if (error == nil) {
+                                                                    InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
+                                                                    if ([response statusOK]) {
+                                                                        user.avatar = avatar;
+                                                                    }
+                                                                } else {
+                                                                    InternetResponse *res = [[InternetResponse alloc] initWithError:error];
+                                                                    switch ([res errorCode]) {
+                                                                        case ErrorCodeNotConnectedToInternet:
+                                                                            [AlertTool showNotConnectInternet:self];
+                                                                            break;
+                                                                        default:
+                                                                            break;
+                                                                    }
                                                                 }
+                                                                
                                                             }];
         [task resume];
     }

@@ -138,6 +138,19 @@
     return _telephone;
 }
 
+@synthesize avatar = _avatar;
+
+- (void)setAvatar:(NSData *)avatar {
+    _avatar = avatar;
+    [defaults setObject:_avatar forKey:NSStringFromSelector(@selector(avatar))];
+}
+
+- (NSData *)avatar {
+    if (_avatar == nil) {
+        _avatar = [defaults objectForKey:NSStringFromSelector(@selector(avatar))];
+    }
+    return _avatar;
+}
 
 @synthesize token = _token;
 

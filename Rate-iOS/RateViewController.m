@@ -353,7 +353,7 @@ static const int historySearchDays[5] = {30, 90, 180, 365, 3 * 365};
 
 //Create done button for keyboard
 - (void)setCloseKeyboardAccessoryForSender:(id)sender {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     UIToolbar * topView = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, self.view.window.frame.size.width, 35)];
@@ -371,7 +371,7 @@ static const int historySearchDays[5] = {30, 90, 180, 365, 3 * 365};
 }
 
 - (void)editFinish {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     for(id input in self.view.subviews){
@@ -381,7 +381,6 @@ static const int historySearchDays[5] = {30, 90, 180, 365, 3 * 365};
                 [textField resignFirstResponder];
                 textField.placeholder = ([textField.text isEqualToString:@""] && [textField.placeholder isEqualToString:@"1.0000"])? @"1.0000": textField.placeholder;
                 textField.text = @"";
-                
             }
         }
     }
