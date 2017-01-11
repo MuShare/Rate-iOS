@@ -111,7 +111,7 @@
 "HtY-GJ-aL2.normalTitle" = "To show subscriptions, Sign in now!";
 
 /* Class = "UILabel"; text = "Copyright © 2016 MuShare Group. All Rights Reserved "; ObjectID = "ILG-vj-lRL"; */
-"ILG-vj-lRL.text" = "Copyright © 2015 - 2017 MuShare Group. All Rights Reserved ";
+"ILG-vj-lRL.text" = "MuShare Group © 2015 - 2017. All Rights Reserved.";
 
 /* Class = "UILabel"; text = "Currency Name"; ObjectID = "ILf-qC-paM"; */
 "ILf-qC-paM.text" = "通貨名";
