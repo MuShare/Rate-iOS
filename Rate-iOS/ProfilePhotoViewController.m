@@ -94,6 +94,7 @@
                                      InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
                                      if ([response statusOK]) {
                                          user.avatar = avatar;
+                                         user.avatarRev ++;
                                          [self removeMask];
                                      }
                                  } else {

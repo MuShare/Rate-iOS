@@ -22,6 +22,7 @@
 @property (nonatomic, strong) NSString *telephone;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSData *avatar;
+@property (nonatomic) NSInteger avatarRev;
 
 //Use token to mark whether this user signed in or not.
 @property (nonatomic, strong) NSString *token;

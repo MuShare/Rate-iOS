@@ -32,6 +32,7 @@
     delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     dao = [[DaoManager alloc] init];
     user = [[UserTool alloc] init];
+    manager = [InternetTool getSessionManager];
     
     //Set UISwitch
     _showFavoriteSwitch.on = user.showFavorites;
@@ -50,11 +51,13 @@
         _welcomeOrEmailLabel.text = user.email;
         _notificationSwitch.enabled = YES;
         
-        //Set user avatar if it is not nil.
+        // Set user avatar if it is not nil.
         if (user.avatar != nil) {
             _avatarImageView.image = [UIImage imageWithData:user.avatar];
         }
-
+        
+        // Refresh user avatar
+        [self downloadAvatar];
     } else {
         _notificationSwitch.enabled = NO;
     }
@@ -143,6 +146,7 @@
                         _signOrNameLabel.text = NSLocalizedString(@"sign_in_sign_up", @"Sign in / Sign up");
                         _welcomeOrEmailLabel.text = NSLocalizedString(@"welcome_message", @"Welcome to MuRate, sign in now!");
                         _notificationSwitch.enabled = NO;
+                        _avatarImageView.image = [UIImage imageNamed:@"me_user"];
                     }
                 }
                 failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -211,5 +215,37 @@
                       break;
               }
           }];
+}
+
+#pragma mark - Service 
+- (void)downloadAvatar {
+    if (DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    [manager GET:[InternetTool createUrl:@"api/user/avatar"]
+      parameters:@{@"rev": [NSNumber numberWithInteger:user.avatarRev]}
+        progress:nil
+        success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
+            if([response statusOK]) {
+                NSObject *result = [response getResponseResult];
+                if ([[result valueForKey:@"isUpdated"] boolValue]) {
+                    user.avatar = [[NSData alloc] initWithBase64EncodedString:[result valueForKey:@"image"]
+                                                                      options:NSDataBase64DecodingIgnoreUnknownCharacters];
+                    user.avatarRev = [[result valueForKey:@"rev"] integerValue];
+                    _avatarImageView.image = [UIImage imageWithData:user.avatar];
+                }
+            }
+         }
+         failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+             InternetResponse *response = [[InternetResponse alloc] initWithError:error];
+             switch ([response errorCode]) {
+                 case ErrorCodeNotConnectedToInternet:
+                     [AlertTool showNotConnectInternet:self];
+                     break;
+                 default:
+                     break;
+             }
+         }];
 }
 @end

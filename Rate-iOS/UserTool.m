@@ -152,6 +152,20 @@
     return _avatar;
 }
 
+@synthesize avatarRev = _avatarRev;
+
+- (void)setAvatarRev:(NSInteger)avatarRev {
+    _avatarRev = avatarRev;
+    [defaults setInteger:_avatarRev forKey:NSStringFromSelector(@selector(avatarRev))];
+}
+
+- (NSInteger)avatarRev {
+    if (_avatarRev == 0) {
+        _avatarRev = [defaults integerForKey:NSStringFromSelector(@selector(avatarRev))];
+    }
+    return _avatarRev;
+}
+
 @synthesize token = _token;
 
 - (void)setToken:(NSString *)token {
@@ -210,7 +224,9 @@
     [self setToken:nil];
     [self setName:nil];
     [self setToken:nil];
-
+    [self setAvatar:nil];
+    [self setAvatarRev:0];
+    
     [self setCacheRates:nil];
 }
 
