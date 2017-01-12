@@ -4,6 +4,7 @@ target 'Rate-iOS' do
     pod 'Charts', '~> 2.3'
     pod 'AFNetworking', '~> 3.1'
     pod 'MJRefresh', '~> 3.1'
+    pod 'UIImageView+Extension', '~> 0.1.0'
 end
 
 post_install do |installer|
