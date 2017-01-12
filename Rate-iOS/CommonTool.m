@@ -166,11 +166,12 @@
     return nil;
 }
 
-
+// Device info tool
 + (NSString *)deviceName {
     struct utsname systemInfo;
     uname(&systemInfo);
     return [NSString stringWithCString:systemInfo.machine
                               encoding:NSUTF8StringEncoding];
 }
+
 @end

@@ -7,23 +7,23 @@
 */
 
 tip_name = "Tip";
-warning_name = "Warning";
-cancel_name = "Cancel";
+warning_name = "警告";
+cancel_name = "キャンセル";
 ok_name = "OK";
 
 no_internet_connection = "The Internet connection appears to be offline.";
 
-sign_in_name = "Sign in";
-sign_in_at_first = "Sign in at first!";
-sign_in_error_account_not_exsit = "This account is not exist!";
-sign_in_error_password_wrong = "Password is wrong!";
+sign_in_name = "サインイン";
+sign_in_at_first = "まずサインインしてください。";
+sign_in_error_account_not_exsit = "このアカウントは見つかりません！";
+sign_in_error_password_wrong = "パスワードが間違いました！";
 
-sign_out = "Sign out";
-sign_out_tip = "Are you sure to sign out now?";
-sign_out_yes = "Yes, sign out";
-sign_in_sign_up = "Sign in / Sign up";
+sign_out = "サインアウト";
+sign_out_tip = "今すぐサインアウトしますか。";
+sign_out_yes = "はい、サインアウト";
+sign_in_sign_up = "サインイン / サインアップ";
 
-registering_name = "Registering...";
+registering_name = "ユーザー登録中...";
 
 welcome_message = "Welcome to Rate Assistant, sign in now!";
 
@@ -31,33 +31,33 @@ subscription_modify_disable = "Cannot modify this subscription, try again later.
 subscription_alert_above = "Alert me above";
 subscription_alert_below = "Alert me below";
 subscription_same_currency = "Two currencies cannot be same!";
-subscription_current_rate_is = "Current rate is ";
+subscription_current_rate_is = "為替レートの現在値は";
 subscription_delete = "Delete subscription";
 subscription_delete_message = "Are you sure to delete this subscription?";
-subscription_delete_now = "Delete it now";
+subscription_delete_now = "すぐ削除";
 
 add_subscription_error_mail_need_active = "Cannot send email! Active your account by clicking the link in activate mail.";
 
 feedback_not_validate = "Write content and contact info!";
 
-photo_edit = "Edit Profile Photo";
-photo_tip = "Choose a photo from library or take a photo.";
-photo_take = "Take Photo";
-photo_simulator_not_support = "iOS Simulator cannot open camera.";
-photo_choose = "Choose from Photos";
+photo_edit = "プロファイル写真を編集";
+photo_tip = "ラブラリーから写真を選択・写真を撮る";
+photo_take = "写真を撮る";
+photo_simulator_not_support = "シミュレータでカメラを使用できません。";
+photo_choose = "写真を選択";
 
 notification_change_unlogin = "Sign in to change notification state.";
 
 base_currency_tip = "Click to set base currency.";
-i_know = "I know";
+i_know = "わかりました";
 
-share_news = "Share News";
-open_on_safari = "Open on Safari";
+share_news = "ニュースを共有";
+open_on_safari = "Safariで開く";
 
-send_validation_code_success = "Verification code has sent to your email.";
-mail_not_exsit = "This email is not registered.";
-verification_code_error = "Verification code is error.";
-verification_expiration = "Verification code is out of date.";
+send_validation_code_success = "検証コードはメールで送信しました。";
+mail_not_exsit = "このメールが登録されていません。";
+verification_code_error = "検証コードは間違いました。";
+verification_expiration = "検証コードの有効期限を過ぎました。";
 
-uploading_avatar = "% uploaded.";
-uploading_processing = "Processing avatar...";
+uploading_avatar = "%をアップロードしました";
+uploading_processing = "プロファイル写真を処理中...";

@@ -12,6 +12,7 @@
 #import "AlertTool.h"
 #import "DaoManager.h"
 #import <MJRefresh/MJRefresh.h>
+#import "UIImageView+Extension.h"
 
 @interface RatesTableViewController ()
 
@@ -116,6 +117,8 @@
     UILabel *rateLabel = (UILabel *)[cell viewWithTag:4];
     
     currencyImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", currency.icon]];
+    [currencyImageView addShadow];
+//    [currencyImageView addCornerRadius];
     codeLabel.text = currency.code;
     nameLabel.text = currency.name;
     rateLabel.text = [NSString stringWithFormat:@"%.4f", [rates[currency.cid] floatValue]];

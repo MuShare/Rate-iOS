@@ -22,11 +22,11 @@
 
 @interface CommonTool : NSObject
 
-//Validate Tool
+// Validate Tool
 + (BOOL)isNumeric:(NSString *)str;
 + (BOOL)isAvailableEmail:(NSString *)email;
 
-//Date Tool
+// Date Tool
 + (NSUInteger)getNumberOfDaysInThisMonth:(NSDate *)date;
 
 + (NSDate *)getADayOfLastYear:(NSDate *)date;
@@ -48,6 +48,7 @@
 + (long long)getUnixTimestamp:(NSDate *)date;
 + (NSDate *)dateWithUnixTimestamp:(long long)timestamp;
 
-//Device info Tool
+// Device info Tool
 + (NSString *)deviceName;
+
 @end

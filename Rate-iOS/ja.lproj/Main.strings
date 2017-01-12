@@ -3,7 +3,7 @@
 "1RG-WK-mHg.placeholder" = "1.0000";
 
 /* Class = "UILabel"; text = "Sign in / Sign up"; ObjectID = "1h5-ez-roQ"; */
-"1h5-ez-roQ.text" = "サインイン / ユーザー登録";
+"1h5-ez-roQ.text" = "サインイン / サインアップ";
 
 /* Class = "UITextField"; placeholder = "Password"; ObjectID = "2S3-QU-f51"; */
 "2S3-QU-f51.placeholder" = "パスワード";
@@ -156,7 +156,7 @@
 "N5V-ed-3dC.text" = "100.0000";
 
 /* Class = "UILabel"; text = "Show favorites in homepage"; ObjectID = "N6d-fK-aWK"; */
-"N6d-fK-aWK.text" = "ホームで好きな通貨だけ表示";
+"N6d-fK-aWK.text" = "ホームでお気に入りな通貨だけ表示";
 
 /* Class = "UIButton"; normalTitle = "Rate in App Store"; ObjectID = "Nq2-il-4wg"; */
 "Nq2-il-4wg.normalTitle" = "App Storeで評価";
@@ -195,7 +195,7 @@
 "Tj8-9m-PIX.text" = "News Title";
 
 /* Class = "UILabel"; text = "Rate"; ObjectID = "Ul3-Ac-Qym"; */
-"Ul3-Ac-Qym.text" = "Rate";
+"Ul3-Ac-Qym.text" = "レート";
 
 /* Class = "UILabel"; text = "Code"; ObjectID = "Ulk-sr-Cm9"; */
 "Ulk-sr-Cm9.text" = "Code";
@@ -231,7 +231,7 @@
 "bdG-MM-1ph.title" = "パスワードを変更";
 
 /* Class = "UINavigationItem"; title = "Rate"; ObjectID = "cZL-gg-6JF"; */
-"cZL-gg-6JF.title" = "Rate";
+"cZL-gg-6JF.title" = "レート";
 
 /* Class = "UIButton"; normalTitle = "To Currency"; ObjectID = "crT-7a-Zsz"; */
 "crT-7a-Zsz.normalTitle" = "To Currency";
@@ -243,7 +243,7 @@
 "dks-4j-KXR.text" = "Current ";
 
 /* Class = "UITabBarItem"; title = "Rate"; ObjectID = "dsK-C6-I2x"; */
-"dsK-C6-I2x.title" = "Rate";
+"dsK-C6-I2x.title" = "レート";
 
 /* Class = "UITableViewSection"; headerTitle = " "; ObjectID = "eLp-ME-xC1"; */
 "eLp-ME-xC1.headerTitle" = " ";
@@ -297,7 +297,7 @@
 "ndg-nQ-UVN.title" = "ニュース";
 
 /* Class = "UINavigationItem"; title = "Name"; ObjectID = "ngq-fD-3B1"; */
-"ngq-fD-3B1.title" = "名前";
+"ngq-fD-3B1.title" = "ユーザー名";
 
 /* Class = "UINavigationItem"; title = "Rate Assistant"; ObjectID = "nhV-gT-3St"; */
 "nhV-gT-3St.title" = "Rate Assistant";
