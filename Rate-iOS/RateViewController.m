@@ -10,7 +10,6 @@
 #import "InternetTool.h"
 #import "UserTool.h"
 #import "CommonTool.h"
-#import "UIImageView+Extension.h"
 
 //Fix regulation cause by leading constraint
 #define LeadingConstraintRegulationWidth 20
@@ -52,10 +51,6 @@ static const int historySearchDays[5] = {30, 90, 180, 365, 3 * 365};
         _fromCurrency = [dao.currencyDao getByCid:user.basedCurrencyId];
     }
     _toRateTextFiled.placeholder = [NSString stringWithFormat:@"%.4f", _rate.floatValue];
-    
-    // Add shadow for currency image view.
-    [_fromImageView addShadowWithColor:[UIColor grayColor] shadowOffset:1 shadowOpacity:1];
-    [_toImageView addShadowWithColor:[UIColor grayColor] shadowOffset:1 shadowOpacity:1];
     
     //Start loading
     [self startAnimation];

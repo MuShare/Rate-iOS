@@ -117,9 +117,7 @@
     UILabel *rateLabel = (UILabel *)[cell viewWithTag:4];
     
     currencyImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", currency.icon]];
-    [currencyImageView addCornerRadius:5];
-    [currencyImageView addShadowWithColor:[UIColor grayColor] shadowOffset:1 shadowOpacity:1];
-
+    [currencyImageView setShadowWithColor:[UIColor lightGrayColor] shadowXOffset:0 shadowYOffset:0 shadowRadius:3];
     codeLabel.text = currency.code;
     nameLabel.text = currency.name;
     rateLabel.text = [NSString stringWithFormat:@"%.4f", [rates[currency.cid] floatValue]];
