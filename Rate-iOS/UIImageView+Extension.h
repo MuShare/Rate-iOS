@@ -10,8 +10,12 @@
 
 @interface UIImageView (Extension)
 
-- (void)addShadow;
+@property (nonatomic) BOOL shadowContainer;
 
-- (void)addCornerRadius;
+- (void)addCornerRadius:(CGFloat)raduis;
+
+- (void)addShadowWithColor:(UIColor *)color
+              shadowOffset:(CGFloat)offset
+             shadowOpacity:(float)opacity;
 
 @end

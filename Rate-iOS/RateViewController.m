@@ -10,6 +10,7 @@
 #import "InternetTool.h"
 #import "UserTool.h"
 #import "CommonTool.h"
+#import "UIImageView+Extension.h"
 
 //Fix regulation cause by leading constraint
 #define LeadingConstraintRegulationWidth 20
@@ -46,27 +47,33 @@ static const int historySearchDays[5] = {30, 90, 180, 365, 3 * 365};
     manager = [InternetTool getSessionManager];
     user = [[UserTool alloc] init];
     
-    //Set from currency as based currency if it is not pushed by parent view controller
+    // Set from currency as based currency if it is not pushed by parent view controller
     if (_fromCurrency == nil) {
         _fromCurrency = [dao.currencyDao getByCid:user.basedCurrencyId];
     }
     _toRateTextFiled.placeholder = [NSString stringWithFormat:@"%.4f", _rate.floatValue];
     
+    // Add shadow for currency image view.
+    [_fromImageView addShadowWithColor:[UIColor grayColor] shadowOffset:1 shadowOpacity:1];
+    [_toImageView addShadowWithColor:[UIColor grayColor] shadowOffset:1 shadowOpacity:1];
+    
     //Start loading
     [self startAnimation];
     
-    //Show history of last 7 days as default
+    // Show history of last 7 days as default
     selectedTimeIndex = 0;
-    //Set chart
+    
+    // Set chart
     _historyLineChartView.delegate = self;
     [_historyLineChartView animateWithXAxisDuration:0.5 yAxisDuration:1.0];
     
-    //Initial date formatter using local language
+    // Initial date formatter using local language
     [self initDateFormatter];
     
-    //Initial width info
+    // Initial width info
     screenWitdh = self.view.frame.size.width;
     historyEntryWith = _historyEntryView.frame.size.width;
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
