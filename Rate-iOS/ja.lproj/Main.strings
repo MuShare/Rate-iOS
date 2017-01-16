@@ -18,7 +18,7 @@
 "3nm-y7-UyA.text" = "レート";
 
 /* Class = "UILabel"; text = "Enable"; ObjectID = "4IB-tL-sB4"; */
-"4IB-tL-sB4.text" = "Enable";
+"4IB-tL-sB4.text" = "通知可能";
 
 /* Class = "UILabel"; text = "Update Time"; ObjectID = "4TJ-Dh-0TD"; */
 "4TJ-Dh-0TD.text" = "更新時間";
@@ -27,7 +27,7 @@
 "6Jp-SY-axk.text" = "フィードバック";
 
 /* Class = "UILabel"; text = "Help"; ObjectID = "6Nk-oN-anI"; */
-"6Nk-oN-anI.text" = "Help";
+"6Nk-oN-anI.text" = "ヘルプ";
 
 /* Class = "UILabel"; text = "About"; ObjectID = "6hN-qf-DhP"; */
 "6hN-qf-DhP.text" = "情報";
@@ -39,7 +39,7 @@
 "6nD-Qo-JOx.text" = "Name Value";
 
 /* Class = "UINavigationItem"; title = "Subscription"; ObjectID = "7GI-yI-lpy"; */
-"7GI-yI-lpy.title" = "Subscription";
+"7GI-yI-lpy.title" = "モニター";
 
 /* Class = "UIButton"; normalTitle = "Use without Internet"; ObjectID = "95a-Vh-ASh"; */
 "95a-Vh-ASh.normalTitle" = "インターネットに接続しないまま使います。";
@@ -60,7 +60,7 @@
 "BuE-VA-Ulz.text" = "Code";
 
 /* Class = "UITextField"; placeholder = "Subscribe Name"; ObjectID = "C5T-HY-ReF"; */
-"C5T-HY-ReF.placeholder" = "Subscribe Name";
+"C5T-HY-ReF.placeholder" = "モニター名";
 
 /* Class = "UINavigationItem"; title = "Me"; ObjectID = "DAv-cg-vmZ"; */
 "DAv-cg-vmZ.title" = "本人";
@@ -84,10 +84,10 @@
 "Env-ZB-JSg.text" = "名前";
 
 /* Class = "UIBarButtonItem"; title = "Base"; ObjectID = "FEG-AL-6fQ"; */
-"FEG-AL-6fQ.title" = "Base";
+"FEG-AL-6fQ.title" = "基準通貨";
 
 /* Class = "UILabel"; text = "Subscribe Name"; ObjectID = "Ftz-DH-EYJ"; */
-"Ftz-DH-EYJ.text" = "Subscribe Name";
+"Ftz-DH-EYJ.text" = "モニター名";
 
 /* Class = "UITextField"; placeholder = "Threshold"; ObjectID = "GTo-fg-Jct"; */
 "GTo-fg-Jct.placeholder" = "閾値";
@@ -99,7 +99,7 @@
 "GiO-Ky-GgT.placeholder" = "検証コード";
 
 /* Class = "UITabBarItem"; title = "Subscribe"; ObjectID = "H1y-EC-28G"; */
-"H1y-EC-28G.title" = "Subscribe";
+"H1y-EC-28G.title" = "モニター";
 
 /* Class = "UILabel"; text = "Enable"; ObjectID = "HIw-Bj-QfS"; */
 "HIw-Bj-QfS.text" = "Enable";
@@ -108,7 +108,7 @@
 "Hkc-xJ-lh4.normalTitle" = "Code";
 
 /* Class = "UIButton"; normalTitle = "To show subscriptions, Sign in now!"; ObjectID = "HtY-GJ-aL2"; */
-"HtY-GJ-aL2.normalTitle" = "To show subscriptions, Sign in now!";
+"HtY-GJ-aL2.normalTitle" = "モニターを表示するため、サインイン！";
 
 /* Class = "UILabel"; text = "Copyright © 2016 MuShare Group. All Rights Reserved "; ObjectID = "ILG-vj-lRL"; */
 "ILG-vj-lRL.text" = "MuShare Group © 2015 - 2017. All Rights Reserved.";
@@ -123,7 +123,7 @@
 "J2V-jq-c6q.title" = "情報";
 
 /* Class = "UILabel"; text = "Current "; ObjectID = "JLx-i0-480"; */
-"JLx-i0-480.text" = "Current ";
+"JLx-i0-480.text" = "現在値 ";
 
 /* Class = "UINavigationItem"; title = "Profile Photo"; ObjectID = "K2p-5q-XFa"; */
 "K2p-5q-XFa.title" = "プロフィール写真";
@@ -150,7 +150,7 @@
 "Mp5-P9-8Ok.normalTitle" = "サインイン";
 
 /* Class = "UINavigationItem"; title = "Subscriptions"; ObjectID = "MvW-AD-h80"; */
-"MvW-AD-h80.title" = "Subscriptions";
+"MvW-AD-h80.title" = "モニター";
 
 /* Class = "UILabel"; text = "100.0000"; ObjectID = "N5V-ed-3dC"; */
 "N5V-ed-3dC.text" = "100.0000";
@@ -174,7 +174,7 @@
 "Qqo-Tg-WCv.text" = "Email Value";
 
 /* Class = "UINavigationItem"; title = "Subscribe"; ObjectID = "RUV-Sa-Ivd"; */
-"RUV-Sa-Ivd.title" = "Subscribe";
+"RUV-Sa-Ivd.title" = "モニター";
 
 /* Class = "UINavigationItem"; title = "My Profile"; ObjectID = "Rw1-e3-FrY"; */
 "Rw1-e3-FrY.title" = "マイプロファール";
@@ -210,7 +210,7 @@
 "Xe3-Xl-sfN.placeholder" = "1.0000";
 
 /* Class = "UIButton"; normalTitle = "Delete subscription"; ObjectID = "Ye7-Pp-P6i"; */
-"Ye7-Pp-P6i.normalTitle" = "Delete subscription";
+"Ye7-Pp-P6i.normalTitle" = "モニターを削除";
 
 /* Class = "UILabel"; text = "Threshold"; ObjectID = "Z9G-oM-Hv6"; */
 "Z9G-oM-Hv6.text" = "閾値";
@@ -219,7 +219,7 @@
 "Zgd-ht-itS.text" = "Source";
 
 /* Class = "UITextField"; placeholder = "Subscribe Name"; ObjectID = "ZvK-vO-6sT"; */
-"ZvK-vO-6sT.placeholder" = "Subscribe Name";
+"ZvK-vO-6sT.placeholder" = "モニター名";
 
 /* Class = "UINavigationItem"; title = "OAuth Sign in"; ObjectID = "anh-z1-fE1"; */
 "anh-z1-fE1.title" = "OAuth Sign in";
@@ -234,13 +234,13 @@
 "cZL-gg-6JF.title" = "レート";
 
 /* Class = "UIButton"; normalTitle = "To Currency"; ObjectID = "crT-7a-Zsz"; */
-"crT-7a-Zsz.normalTitle" = "To Currency";
+"crT-7a-Zsz.normalTitle" = "監視通貨";
 
 /* Class = "UITabBarItem"; title = "News"; ObjectID = "cte-UT-Nlb"; */
 "cte-UT-Nlb.title" = "ニュース";
 
 /* Class = "UILabel"; text = "Current "; ObjectID = "dks-4j-KXR"; */
-"dks-4j-KXR.text" = "Current ";
+"dks-4j-KXR.text" = "現在値 ";
 
 /* Class = "UITabBarItem"; title = "Rate"; ObjectID = "dsK-C6-I2x"; */
 "dsK-C6-I2x.title" = "レート";
@@ -300,7 +300,7 @@
 "ngq-fD-3B1.title" = "ユーザー名";
 
 /* Class = "UINavigationItem"; title = "Rate Assistant"; ObjectID = "nhV-gT-3St"; */
-"nhV-gT-3St.title" = "Rate Assistant";
+"nhV-gT-3St.title" = "為替レート";
 
 /* Class = "UILabel"; text = "Send Email"; ObjectID = "ode-KA-Xzx"; */
 "ode-KA-Xzx.text" = "メールを送信";
@@ -348,10 +348,10 @@
 "vjc-ze-Ylc.title" = "電話";
 
 /* Class = "UILabel"; text = "Welcome to Rate Assistant, sign in now!"; ObjectID = "vxA-eD-eUe"; */
-"vxA-eD-eUe.text" = "Welcome to Rate Assistant, sign in now!";
+"vxA-eD-eUe.text" = "すぐサインイン！";
 
 /* Class = "UILabel"; text = "Subscribe Name"; ObjectID = "wPe-wv-8qX"; */
-"wPe-wv-8qX.text" = "Subscribe Name";
+"wPe-wv-8qX.text" = "モニター名";
 
 /* Class = "UITextField"; placeholder = "Username"; ObjectID = "xBk-b8-3G7"; */
 "xBk-b8-3G7.placeholder" = "ユーザー名";
@@ -360,7 +360,7 @@
 "xfI-Ec-ksG.text" = "サインアップしました!";
 
 /* Class = "UIButton"; normalTitle = "From Currency"; ObjectID = "xiB-uC-Io8"; */
-"xiB-uC-Io8.normalTitle" = "From Currency";
+"xiB-uC-Io8.normalTitle" = "基準通貨";
 
 /* Class = "UILabel"; text = "Send Email"; ObjectID = "yRJ-iE-Uvp"; */
 "yRJ-iE-Uvp.text" = "メールを送信";

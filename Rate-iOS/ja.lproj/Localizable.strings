@@ -6,12 +6,12 @@
   Copyright © 2016 MuShare. All rights reserved.
 */
 
-tip_name = "Tip";
+tip_name = "ヒント";
 warning_name = "警告";
 cancel_name = "キャンセル";
 ok_name = "OK";
 
-no_internet_connection = "The Internet connection appears to be offline.";
+no_internet_connection = "インターネットに接続しません。";
 
 sign_in_name = "サインイン";
 sign_in_at_first = "まずサインインしてください。";
@@ -25,20 +25,20 @@ sign_in_sign_up = "サインイン / サインアップ";
 
 registering_name = "ユーザー登録中...";
 
-welcome_message = "Welcome to Rate Assistant, sign in now!";
+welcome_message = "すぐサインイン！";
 
-subscription_modify_disable = "Cannot modify this subscription, try again later.";
-subscription_alert_above = "Alert me above";
-subscription_alert_below = "Alert me below";
-subscription_same_currency = "Two currencies cannot be same!";
+subscription_modify_disable = "モニターを変更できません。";
+subscription_alert_above = "通知条件は現在値がこの値より高い";
+subscription_alert_below = "通知条件は現在値がこの値より低い";
+subscription_same_currency = "通貨は違うはずです！";
 subscription_current_rate_is = "為替レートの現在値は";
-subscription_delete = "Delete subscription";
-subscription_delete_message = "Are you sure to delete this subscription?";
+subscription_delete = "モニターを削除";
+subscription_delete_message = "このモニターを削除しますか。";
 subscription_delete_now = "すぐ削除";
 
-add_subscription_error_mail_need_active = "Cannot send email! Active your account by clicking the link in activate mail.";
+add_subscription_error_mail_need_active = "アカウントをアクティブしないので、メールを送信できません。";
 
-feedback_not_validate = "Write content and contact info!";
+feedback_not_validate = "内容と連絡先を入力してください。";
 
 photo_edit = "プロファイル写真を編集";
 photo_tip = "ラブラリーから写真を選択・写真を撮る";
@@ -46,9 +46,9 @@ photo_take = "写真を撮る";
 photo_simulator_not_support = "シミュレータでカメラを使用できません。";
 photo_choose = "写真を選択";
 
-notification_change_unlogin = "Sign in to change notification state.";
+notification_change_unlogin = "通知状態を変更するため、サインインしてください。";
 
-base_currency_tip = "Click to set base currency.";
+base_currency_tip = "基準通貨を変更";
 i_know = "わかりました";
 
 share_news = "ニュースを共有";
