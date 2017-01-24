@@ -367,3 +367,24 @@
 
 /* Class = "UILabel"; text = "Register Success !"; ObjectID = "oyh-AD-3IS"; */
 "oyh-AD-3IS.text" = "密码更改成功!";
+//#Generate strings in 2017-01-24 23:06:33
+
+/* Class = "UILabel"; text = "Exchange Currency"; ObjectID = "wUe-3F-xq6"; */
+"wUe-3F-xq6.text" = "Exchange Currency";
+
+/* Class = "UILabel"; text = "Base Currency"; ObjectID = "Vxl-Rn-DNW"; */
+"Vxl-Rn-DNW.text" = "Base Currency";
+//#Generate strings in 2017-01-24 23:16:17
+
+/* Class = "UILabel"; text = "Currency Name"; ObjectID = "Y1N-LV-3wl"; */
+"Y1N-LV-3wl.text" = "Currency Name";
+
+/* Class = "UILabel"; text = "1.0"; ObjectID = "FuK-P4-xTc"; */
+//"FuK-P4-xTc.text" = "1.0";
+
+/* Class = "UILabel"; text = "Code"; ObjectID = "JUX-Zu-m1J"; */
+"JUX-Zu-m1J.text" = "Code";
+//#Generate strings in 2017-01-24 23:20:49
+
+/* Class = "UIButton"; normalTitle = "Change"; ObjectID = "1mv-Cg-h99"; */
+"1mv-Cg-h99.normalTitle" = "Change";

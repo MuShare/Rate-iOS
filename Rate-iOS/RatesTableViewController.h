@@ -11,10 +11,15 @@
 
 @interface RatesTableViewController : UITableViewController <NSFetchedResultsControllerDelegate, UISearchBarDelegate>
 
+@property (weak, nonatomic) IBOutlet UIImageView *basedCurrencyImageView;
+@property (weak, nonatomic) IBOutlet UILabel *basedCurrencyCodeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *basedCurrencyNameLabel;
+
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 
 @property (nonatomic, strong) Currency *basedCurrency;
 
 - (IBAction)searchCurrency:(id)sender;
+- (IBAction)changeBaseCurrency:(id)sender;
 
 @end

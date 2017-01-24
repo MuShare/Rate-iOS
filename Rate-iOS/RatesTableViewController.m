@@ -77,6 +77,10 @@
     }
     //Reset base currency name.
     [self.navigationItem.leftBarButtonItem setTitle:_basedCurrency.name];
+    _basedCurrencyImageView.image = [UIImage imageNamed:_basedCurrency.icon];
+    _basedCurrencyCodeLabel.text = _basedCurrency.code;
+    _basedCurrencyNameLabel.text = _basedCurrency.name;
+    
     //Reload rates values if showFavorite is changed.
     if (delegate.refreshRates) {
         delegate.refreshRates = NO;
@@ -117,7 +121,6 @@
     UILabel *rateLabel = (UILabel *)[cell viewWithTag:4];
     
     currencyImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", currency.icon]];
-//    [currencyImageView setShadowWithColor:[UIColor lightGrayColor] shadowXOffset:0 shadowYOffset:0 shadowRadius:3];
     codeLabel.text = currency.code;
     nameLabel.text = currency.name;
     rateLabel.text = [NSString stringWithFormat:@"%.4f", [rates[currency.cid] floatValue]];
@@ -195,6 +198,13 @@
                          [searchBar becomeFirstResponder];
                      }
                      completion:nil];
+}
+
+- (IBAction)changeBaseCurrency:(id)sender {
+    if (DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    [self performSegueWithIdentifier:@"selectBaseSegue" sender:self];
 }
 
 #pragma mark - Service
@@ -297,8 +307,7 @@
     self.tableView.scrollEnabled = !active;
     if (!active) {
         [disableViewOverlay removeFromSuperview];
-    } else{
-        
+    } else {
         disableViewOverlay.alpha = 0;
         [self.view addSubview:disableViewOverlay];
         [UIView animateWithDuration:0.3
@@ -373,4 +382,3 @@
 }
 
 @end
-

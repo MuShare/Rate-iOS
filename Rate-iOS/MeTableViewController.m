@@ -49,6 +49,7 @@
     if (user.token != nil) {
         _signOrNameLabel.text = user.name;
         _welcomeOrEmailLabel.text = user.email;
+        _showFavoriteSwitch.enabled = YES;
         _notificationSwitch.enabled = YES;
         
         // Set user avatar if it is not nil.
@@ -60,6 +61,7 @@
         [self downloadAvatar];
     } else {
         _notificationSwitch.enabled = NO;
+        _showFavoriteSwitch.enabled = NO;
     }
 }
 
