@@ -153,6 +153,8 @@
     [alertController addAction:takePhoto];
     [alertController addAction:choose];
     [alertController addAction:cancel];
+    alertController.popoverPresentationController.sourceView = self.view;
+    alertController.popoverPresentationController.sourceRect = CGRectMake(self.view.frame.size.width / 2, 65, 0, 0);
     [self presentViewController:alertController animated:YES completion:nil];
 }
 
@@ -183,4 +185,5 @@
     }
     [maskView removeFromSuperview];
 }
+
 @end
