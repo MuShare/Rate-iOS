@@ -3,7 +3,7 @@
 "1RG-WK-mHg.placeholder" = "1.0000";
 
 /* Class = "UILabel"; text = "Sign in / Sign up"; ObjectID = "1h5-ez-roQ"; */
-"1h5-ez-roQ.text" = "サインイン / サインアップ";
+"1h5-ez-roQ.text" = "サインイン / 登録";
 
 /* Class = "UITextField"; placeholder = "Password"; ObjectID = "2S3-QU-f51"; */
 "2S3-QU-f51.placeholder" = "パスワード";
@@ -18,7 +18,7 @@
 "3nm-y7-UyA.text" = "レート";
 
 /* Class = "UILabel"; text = "Enable"; ObjectID = "4IB-tL-sB4"; */
-"4IB-tL-sB4.text" = "通知可能";
+"4IB-tL-sB4.text" = "通知許可";
 
 /* Class = "UILabel"; text = "Update Time"; ObjectID = "4TJ-Dh-0TD"; */
 "4TJ-Dh-0TD.text" = "更新時間";
@@ -27,7 +27,7 @@
 "6Jp-SY-axk.text" = "フィードバック";
 
 /* Class = "UILabel"; text = "Help"; ObjectID = "6Nk-oN-anI"; */
-"6Nk-oN-anI.text" = "ヘルプ";
+"6Nk-oN-anI.text" = "使い方";
 
 /* Class = "UILabel"; text = "About"; ObjectID = "6hN-qf-DhP"; */
 "6hN-qf-DhP.text" = "情報";
@@ -165,7 +165,7 @@
 "OV6-hg-bua.text" = "メール";
 
 /* Class = "UINavigationItem"; title = "Feedback"; ObjectID = "Ow1-j8-BcW"; */
-"Ow1-j8-BcW.title" = "";
+"Ow1-j8-BcW.title" = "フィードバック";
 
 /* Class = "UILabel"; text = "Send SMS"; ObjectID = "P12-kE-zYd"; */
 "P12-kE-zYd.text" = "SMSを送信";
