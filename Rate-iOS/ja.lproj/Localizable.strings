@@ -15,33 +15,33 @@ no_internet_connection = "インターネットに接続しません。";
 
 sign_in_name = "サインイン";
 sign_in_at_first = "まずサインインしてください。";
-sign_in_error_account_not_exsit = "このアカウントは見つかりません！";
-sign_in_error_password_wrong = "パスワードが間違いました！";
+sign_in_error_account_not_exsit = "メールアドレスが違います";
+sign_in_error_password_wrong = "パスワードが違います";
 
 sign_out = "サインアウト";
-sign_out_tip = "今すぐサインアウトしますか。";
+sign_out_tip = "サインアウトしますか。";
 sign_out_yes = "はい、サインアウト";
-sign_in_sign_up = "サインイン / サインアップ";
+sign_in_sign_up = "サインイン / 登録";
 
 registering_name = "ユーザー登録中...";
 
 welcome_message = "すぐサインイン！";
 
 subscription_modify_disable = "モニターを変更できません。";
-subscription_alert_above = "通知条件は現在値がこの値より高い";
-subscription_alert_below = "通知条件は現在値がこの値より低い";
-subscription_same_currency = "通貨は違うはずです！";
-subscription_current_rate_is = "為替レートの現在値は";
+subscription_alert_above = "閾値が現在値より高いです";
+subscription_alert_below = "閾値が現在値より低いです";
+subscription_same_currency = "基準通貨とモニター通貨は異なるものを選んでください";
+subscription_current_rate_is = "現在の為替レートは";
 subscription_delete = "モニターを削除";
 subscription_delete_message = "このモニターを削除しますか。";
 subscription_delete_now = "すぐ削除";
 
-add_subscription_error_mail_need_active = "アカウントをアクティブしないので、メールを送信できません。";
+add_subscription_error_mail_need_active = "アカウントがアクティブでないのでメールを送信できません。";
 
 feedback_not_validate = "内容と連絡先を入力してください。";
 
-photo_edit = "プロファイル写真を編集";
-photo_tip = "ラブラリーから写真を選択・写真を撮る";
+photo_edit = "プロフィール写真を編集";
+photo_tip = "ライブラリーから写真を選択・写真を撮る";
 photo_take = "写真を撮る";
 photo_simulator_not_support = "シミュレータでカメラを使用できません。";
 photo_choose = "写真を選択";
@@ -51,13 +51,13 @@ notification_change_unlogin = "通知状態を変更するため、サインイ�
 base_currency_tip = "基準通貨を変更";
 i_know = "わかりました";
 
-share_news = "ニュースを共有";
+share_news = "トピックスを共有";
 open_on_safari = "Safariで開く";
 
 send_validation_code_success = "検証コードはメールで送信しました。";
-mail_not_exsit = "このメールが登録されていません。";
-verification_code_error = "検証コードは間違いました。";
+mail_not_exsit = "このメールアドレスは登録されていません。";
+verification_code_error = "検証コードが違いす。";
 verification_expiration = "検証コードの有効期限を過ぎました。";
 
 uploading_avatar = "%をアップロードしました";
-uploading_processing = "プロファイル写真を処理中...";
+uploading_processing = "プロフィール写真を処理中...";

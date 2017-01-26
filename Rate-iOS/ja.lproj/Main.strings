@@ -45,7 +45,7 @@
 "95a-Vh-ASh.normalTitle" = "インターネットに接続しないまま使います。";
 
 /* Class = "UILabel"; text = "Monitoring"; ObjectID = "9dx-Qn-fJ3"; */
-"9dx-Qn-fJ3.text" = "監視中";
+"9dx-Qn-fJ3.text" = "モニター中";
 
 /* Class = "UILabel"; text = "Notification"; ObjectID = "B2N-Cn-Pen"; */
 "B2N-Cn-Pen.text" = "通知";
@@ -63,7 +63,7 @@
 "C5T-HY-ReF.placeholder" = "モニター名";
 
 /* Class = "UINavigationItem"; title = "Me"; ObjectID = "DAv-cg-vmZ"; */
-"DAv-cg-vmZ.title" = "本人";
+"DAv-cg-vmZ.title" = "設定";
 
 /* Class = "UINavigationItem"; title = "Sign in"; ObjectID = "DHz-Kk-WFi"; */
 "DHz-Kk-WFi.title" = "サインイン";
@@ -78,10 +78,10 @@
 "EEi-Cz-swm.text" = "10.00000";
 
 /* Class = "UITextField"; placeholder = "Email"; ObjectID = "Ege-YX-nhz"; */
-"Ege-YX-nhz.placeholder" = "メール";
+"Ege-YX-nhz.placeholder" = "メールアドレス";
 
 /* Class = "UILabel"; text = "Name"; ObjectID = "Env-ZB-JSg"; */
-"Env-ZB-JSg.text" = "名前";
+"Env-ZB-JSg.text" = "ユーザー名";
 
 /* Class = "UIBarButtonItem"; title = "Base"; ObjectID = "FEG-AL-6fQ"; */
 "FEG-AL-6fQ.title" = "基準通貨";
@@ -96,13 +96,13 @@
 "Gg3-LS-f65.text" = "Date Value";
 
 /* Class = "UITextField"; placeholder = "Verification Code"; ObjectID = "GiO-Ky-GgT"; */
-"GiO-Ky-GgT.placeholder" = "検証コード";
+"GiO-Ky-GgT.placeholder" = "メールに書かれた数値を入力";
 
 /* Class = "UITabBarItem"; title = "Subscribe"; ObjectID = "H1y-EC-28G"; */
 "H1y-EC-28G.title" = "モニター";
 
 /* Class = "UILabel"; text = "Enable"; ObjectID = "HIw-Bj-QfS"; */
-"HIw-Bj-QfS.text" = "Enable";
+"HIw-Bj-QfS.text" = "通知許可";
 
 /* Class = "UIButton"; normalTitle = "Code"; ObjectID = "Hkc-xJ-lh4"; */
 "Hkc-xJ-lh4.normalTitle" = "Code";
@@ -129,7 +129,7 @@
 "K2p-5q-XFa.title" = "プロフィール写真";
 
 /* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "Khe-46-5Nv"; */
-"Khe-46-5Nv.normalTitle" = "提出";
+"Khe-46-5Nv.normalTitle" = "登録";
 
 /* Class = "UILabel"; text = "Oauth cannot be used in app now."; ObjectID = "Ktv-B0-HvZ"; */
 "Ktv-B0-HvZ.text" = "Oauth cannot be used in app now.";
@@ -156,13 +156,13 @@
 "N5V-ed-3dC.text" = "100.0000";
 
 /* Class = "UILabel"; text = "Show favorites in homepage"; ObjectID = "N6d-fK-aWK"; */
-"N6d-fK-aWK.text" = "ホームでお気に入りな通貨だけ表示";
+"N6d-fK-aWK.text" = "お気に入りの通貨だけ表示";
 
 /* Class = "UIButton"; normalTitle = "Rate in App Store"; ObjectID = "Nq2-il-4wg"; */
 "Nq2-il-4wg.normalTitle" = "App Storeで評価";
 
 /* Class = "UILabel"; text = "Email"; ObjectID = "OV6-hg-bua"; */
-"OV6-hg-bua.text" = "メール";
+"OV6-hg-bua.text" = "メールアドレス";
 
 /* Class = "UINavigationItem"; title = "Feedback"; ObjectID = "Ow1-j8-BcW"; */
 "Ow1-j8-BcW.title" = "フィードバック";
@@ -177,10 +177,10 @@
 "RUV-Sa-Ivd.title" = "モニター";
 
 /* Class = "UINavigationItem"; title = "My Profile"; ObjectID = "Rw1-e3-FrY"; */
-"Rw1-e3-FrY.title" = "マイプロファール";
+"Rw1-e3-FrY.title" = "プロフィール";
 
 /* Class = "UINavigationItem"; title = "Sign up"; ObjectID = "SaW-My-DaT"; */
-"SaW-My-DaT.title" = "サインアップ";
+"SaW-My-DaT.title" = "登録";
 
 /* Class = "UIButton"; normalTitle = "Forget Password"; ObjectID = "Sg5-hT-qwC"; */
 "Sg5-hT-qwC.normalTitle" = "パスワードを忘れました";
@@ -201,7 +201,7 @@
 "Ulk-sr-Cm9.text" = "Code";
 
 /* Class = "UITextField"; placeholder = "Email"; ObjectID = "WHp-Td-4ii"; */
-"WHp-Td-4ii.placeholder" = "メール";
+"WHp-Td-4ii.placeholder" = "メールアドレス";
 
 /* Class = "UIButton"; normalTitle = "Code"; ObjectID = "XS1-xk-Bqd"; */
 "XS1-xk-Bqd.normalTitle" = "Code";
@@ -234,10 +234,10 @@
 "cZL-gg-6JF.title" = "レート";
 
 /* Class = "UIButton"; normalTitle = "To Currency"; ObjectID = "crT-7a-Zsz"; */
-"crT-7a-Zsz.normalTitle" = "監視通貨";
+"crT-7a-Zsz.normalTitle" = "モニター通貨";
 
 /* Class = "UITabBarItem"; title = "News"; ObjectID = "cte-UT-Nlb"; */
-"cte-UT-Nlb.title" = "ニュース";
+"cte-UT-Nlb.title" = "トピックス";
 
 /* Class = "UILabel"; text = "Current "; ObjectID = "dks-4j-KXR"; */
 "dks-4j-KXR.text" = "現在値 ";
@@ -255,7 +255,7 @@
 "ezm-50-t1W.placeholder" = "新しい写真";
 
 /* Class = "UITextField"; placeholder = "Email"; ObjectID = "fJ1-cM-9m5"; */
-"fJ1-cM-9m5.placeholder" = "メール";
+"fJ1-cM-9m5.placeholder" = "メールアドレス";
 
 /* Class = "UITextField"; placeholder = "Your user name"; ObjectID = "fsb-Zu-jQx"; */
 "fsb-Zu-jQx.placeholder" = "お名前";
@@ -264,7 +264,7 @@
 "gXL-ZX-w1m.normalTitle" = "サインアウト";
 
 /* Class = "UINavigationItem"; title = "Help"; ObjectID = "grS-7U-iXN"; */
-"grS-7U-iXN.title" = "Help";
+"grS-7U-iXN.title" = "使い方";
 
 /* Class = "UIButton"; normalTitle = "Send"; ObjectID = "h2M-Yk-uDf"; */
 "h2M-Yk-uDf.normalTitle" = "送信";
@@ -273,7 +273,7 @@
 "iFj-RH-TUV.title" = "通貨";
 
 /* Class = "UILabel"; text = "Current exchange rate:"; ObjectID = "iK8-qG-jk4"; */
-"iK8-qG-jk4.text" = "為替レートの現在値:";
+"iK8-qG-jk4.text" = "現在の為替レート";
 
 /* Class = "UITextField"; placeholder = "Threshold"; ObjectID = "jkp-0R-fOo"; */
 "jkp-0R-fOo.placeholder" = "閾値";
@@ -294,7 +294,7 @@
 "mvv-Rz-xc9.segmentTitles[4]" = "三年間";
 
 /* Class = "UINavigationItem"; title = "News"; ObjectID = "ndg-nQ-UVN"; */
-"ndg-nQ-UVN.title" = "ニュース";
+"ndg-nQ-UVN.title" = "トピックス";
 
 /* Class = "UINavigationItem"; title = "Name"; ObjectID = "ngq-fD-3B1"; */
 "ngq-fD-3B1.title" = "ユーザー名";
@@ -336,13 +336,13 @@
 "tfs-iY-DOz.text" = "Code";
 
 /* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "u3I-Ci-rM2"; */
-"u3I-Ci-rM2.normalTitle" = "提出";
+"u3I-Ci-rM2.normalTitle" = "送信";
 
 /* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "uBb-IX-sy3"; */
-"uBb-IX-sy3.normalTitle" = "提出";
+"uBb-IX-sy3.normalTitle" = "送信";
 
 /* Class = "UITabBarItem"; title = "Me"; ObjectID = "udZ-pr-88l"; */
-"udZ-pr-88l.title" = "本人";
+"udZ-pr-88l.title" = "設定";
 
 /* Class = "UINavigationItem"; title = "Telephone"; ObjectID = "vjc-ze-Ylc"; */
 "vjc-ze-Ylc.title" = "電話";
@@ -357,7 +357,7 @@
 "xBk-b8-3G7.placeholder" = "ユーザー名";
 
 /* Class = "UILabel"; text = "Register success !"; ObjectID = "xfI-Ec-ksG"; */
-"xfI-Ec-ksG.text" = "サインアップしました!";
+"xfI-Ec-ksG.text" = "登録しました!";
 
 /* Class = "UIButton"; normalTitle = "From Currency"; ObjectID = "xiB-uC-Io8"; */
 "xiB-uC-Io8.normalTitle" = "基準通貨";
@@ -369,14 +369,14 @@
 "ym2-i0-eRa.text" = "Code";
 
 /* Class = "UILabel"; text = "Exchange Currency"; ObjectID = "wUe-3F-xq6"; */
-"wUe-3F-xq6.text" = "外貨の為替レート";
+"wUe-3F-xq6.text" = "為替レート";
 
 /* Class = "UILabel"; text = "Base Currency"; ObjectID = "Vxl-Rn-DNW"; */
 "Vxl-Rn-DNW.text" = "基準通貨";
 //#Generate strings in 2017-01-24 23:16:17
 
 /* Class = "UILabel"; text = "Currency Name"; ObjectID = "Y1N-LV-3wl"; */
-"Y1N-LV-3wl.text" = "外貨の為替レート";
+"Y1N-LV-3wl.text" = "為替レート";
 
 /* Class = "UILabel"; text = "Code"; ObjectID = "JUX-Zu-m1J"; */
 "JUX-Zu-m1J.text" = "Code";
