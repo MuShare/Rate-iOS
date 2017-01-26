@@ -383,3 +383,11 @@
 
 /* Class = "UIButton"; normalTitle = "Change"; ObjectID = "1mv-Cg-h99"; */
 "1mv-Cg-h99.normalTitle" = "変更";
+//#Generate strings in 2017-01-26 21:39:40
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Wmo-hd-7cu"; */
+//"Wmo-hd-7cu.text" = "Label";
+//#Generate strings in 2017-01-26 21:45:22
+
+/* Class = "UITextView"; text = "No profile photo, click camera button to choose."; ObjectID = "paS-sM-aNs"; */
+"paS-sM-aNs.text" = "No profile photo, click camera button to choose.";

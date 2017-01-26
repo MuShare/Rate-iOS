@@ -2696,6 +2696,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="No profile photo, click camera button to choose." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="paS-sM-aNs">
+                                <rect key="frame" x="54" y="257" width="213" height="55"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="M0F-DH-YUJ"/>
+                                    <constraint firstAttribute="width" constant="213" id="Xba-6b-WM4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cnm-mT-z5h">
                                 <rect key="frame" x="0.0" y="124" width="320" height="320"/>
                                 <constraints>
@@ -2706,6 +2716,8 @@
                         <color key="backgroundColor" red="0.96068006753921509" green="0.96084433794021606" blue="0.96066969633102417" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Cnm-mT-z5h" firstAttribute="centerY" secondItem="j2z-ER-EHZ" secondAttribute="centerY" id="49G-ow-5WZ"/>
+                            <constraint firstItem="paS-sM-aNs" firstAttribute="centerX" secondItem="j2z-ER-EHZ" secondAttribute="centerX" id="670-bj-rmg"/>
+                            <constraint firstItem="paS-sM-aNs" firstAttribute="centerY" secondItem="j2z-ER-EHZ" secondAttribute="centerY" id="PbN-pi-JHV"/>
                             <constraint firstItem="Cnm-mT-z5h" firstAttribute="leading" secondItem="j2z-ER-EHZ" secondAttribute="leadingMargin" constant="-16" id="hx6-h0-e3I"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Cnm-mT-z5h" secondAttribute="trailing" constant="-16" id="n70-8r-c9Y"/>
                         </constraints>
@@ -3324,9 +3336,9 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="I4X-zC-orO"/>
-        <segue reference="KjL-UE-fsT"/>
+        <segue reference="W74-fI-qzg"/>
         <segue reference="qrg-S3-ZeO"/>
-        <segue reference="Tfr-fp-YJ7"/>
         <segue reference="HH8-cF-tvf"/>
+        <segue reference="Tfr-fp-YJ7"/>
     </inferredMetricsTieBreakers>
 </document>
