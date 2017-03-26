@@ -8,7 +8,7 @@ Rate Assistant is an exchange rate app, which provides real time rate, rate hist
 
 Email for signing up cannot be modified! Activating your account by clicking the URL sent to your email.
 
-![Rate-iOS](https://github.com/MuShare/Rate-iOS/raw/master/Images/rate.png)
+![Rate-iOS](https://github.com/MuShare/Rate-iOS/raw/master/Images/rate_iOS.png)
 
 Submit issues on https://github.com/MuShare/Rate-iOS/issues.
 
