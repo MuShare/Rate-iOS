@@ -135,7 +135,7 @@ static const int historySearchDays[5] = {30, 90, 180, 365, 3 * 365};
 }
 
 #pragma mark - ChartViewDelegate
-- (void)chartValueSelected:(ChartViewBase *)chartView entry:(ChartDataEntry *)entry dataSetIndex:(NSInteger)dataSetIndex highlight:(ChartHighlight *)highlight {
+- (void)chartValueSelected:(ChartViewBase *)chartView entry:(ChartDataEntry *)entry highlight:(ChartHighlight *)highlight {
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
         NSLog(@"Selected chartDataEntry %@", entry);
