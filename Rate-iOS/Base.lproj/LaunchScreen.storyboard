@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -30,8 +31,8 @@
                                     <constraint firstAttribute="width" constant="150" id="nam-SG-rk0"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="MuShare Group © 2015 - 2017. All Rights Reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wtu-T8-Xg3">
-                                <rect key="frame" x="15" y="500" width="292" height="15"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MuShare Group © 2015 - 2017. All Rights Reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wtu-T8-Xg3">
+                                <rect key="frame" x="14" y="533" width="292" height="15"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -39,10 +40,11 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="h1B-Te-Zw0" firstAttribute="top" secondItem="wtu-T8-Xg3" secondAttribute="bottom" constant="54" id="1iQ-sH-bAb"/>
-                            <constraint firstItem="wtu-T8-Xg3" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="BQq-uq-jOi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wtu-T8-Xg3" secondAttribute="trailing" constant="-2" id="CH5-o6-oLo"/>
                             <constraint firstItem="b59-Is-5LX" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Gan-pR-Ife"/>
                             <constraint firstItem="b59-Is-5LX" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="KUw-ET-vJv"/>
+                            <constraint firstItem="h1B-Te-Zw0" firstAttribute="top" secondItem="wtu-T8-Xg3" secondAttribute="bottom" constant="20" id="cxJ-yD-XSB"/>
+                            <constraint firstItem="wtu-T8-Xg3" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-2" id="hUv-gD-Ljr"/>
                         </constraints>
                     </view>
                 </viewController>

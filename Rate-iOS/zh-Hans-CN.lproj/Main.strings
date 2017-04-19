@@ -299,10 +299,10 @@
 "Kwl-DN-MV9.text" = "10.00000";
 
 /* Class = "UINavigationItem"; title = "Telephone"; ObjectID = "vjc-ze-Ylc"; */
-"vjc-ze-Ylc.title" = "电话";
+//"vjc-ze-Ylc.title" = "电话";
 
 /* Class = "UITextField"; placeholder = "Your telephone"; ObjectID = "T6C-te-pvM"; */
-"T6C-te-pvM.placeholder" = "您的电话";
+//"T6C-te-pvM.placeholder" = "您的电话";
 
 /* Class = "UILabel"; text = "Current exchange rate:"; ObjectID = "iK8-qG-jk4"; */
 "iK8-qG-jk4.text" = "当前汇率:";
@@ -389,3 +389,7 @@
 
 /* Class = "UITextView"; text = "No profile photo, click camera button to choose."; ObjectID = "paS-sM-aNs"; */
 "paS-sM-aNs.text" = "No profile photo, click camera button to choose.";
+//#Generate strings in 2017-04-19 18:26:27
+
+/* Class = "UILabel"; text = "Give me a star on Github"; ObjectID = "CHp-mj-W3G"; */
+"CHp-mj-W3G.text" = "Give me a star on Github";

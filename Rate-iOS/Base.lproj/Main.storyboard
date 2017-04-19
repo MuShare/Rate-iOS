@@ -1600,12 +1600,42 @@
                                             <segue destination="zkP-dd-Dpl" kind="push" id="p7T-QI-sAQ"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="50" id="B2I-E5-RbG">
+                                        <rect key="frame" x="0.0" y="380" width="320" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B2I-E5-RbG" id="6DQ-i1-Bog">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="me_github" translatesAutoresizingMaskIntoConstraints="NO" id="9Vf-Qi-A3d">
+                                                    <rect key="frame" x="13" y="10" width="30" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Give me a star on Github" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CHp-mj-W3G">
+                                                    <rect key="frame" x="53" y="14" width="234" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="hMZ-8d-YFz"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="CHp-mj-W3G" firstAttribute="top" secondItem="6DQ-i1-Bog" secondAttribute="topMargin" constant="6" id="ZyL-2p-DqG"/>
+                                                <constraint firstItem="CHp-mj-W3G" firstAttribute="leading" secondItem="6DQ-i1-Bog" secondAttribute="leadingMargin" constant="45" id="hSa-dN-Pqc"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="CHp-mj-W3G" secondAttribute="trailing" constant="33" id="GaV-NS-QkG"/>
+                                        </constraints>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection id="TFq-YP-Afw">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="70" id="fBZ-JF-B55">
-                                        <rect key="frame" x="0.0" y="380" width="320" height="70"/>
+                                        <rect key="frame" x="0.0" y="430" width="320" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fBZ-JF-B55" id="EOd-3r-SFC">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
@@ -3278,6 +3308,7 @@
         <image name="me_currencies" width="30" height="30"/>
         <image name="me_favorite" width="30" height="30"/>
         <image name="me_feedback" width="30" height="30"/>
+        <image name="me_github" width="30" height="30"/>
         <image name="me_help" width="30" height="30"/>
         <image name="me_notification_on" width="30" height="30"/>
         <image name="me_user" width="60" height="60"/>
@@ -3306,7 +3337,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="UDA-Mt-qgn"/>
-        <segue reference="W74-fI-qzg"/>
+        <segue reference="tCz-c9-o9a"/>
         <segue reference="qrg-S3-ZeO"/>
         <segue reference="Tfr-fp-YJ7"/>
         <segue reference="HH8-cF-tvf"/>

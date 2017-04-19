@@ -189,7 +189,7 @@
 "Skd-rx-5Pk.placeholder" = "パスワード";
 
 /* Class = "UITextField"; placeholder = "Your telephone"; ObjectID = "T6C-te-pvM"; */
-"T6C-te-pvM.placeholder" = "Your telephone";
+//"T6C-te-pvM.placeholder" = "Your telephone";
 
 /* Class = "UILabel"; text = "News Title"; ObjectID = "Tj8-9m-PIX"; */
 "Tj8-9m-PIX.text" = "News Title";
@@ -345,7 +345,7 @@
 "udZ-pr-88l.title" = "設定";
 
 /* Class = "UINavigationItem"; title = "Telephone"; ObjectID = "vjc-ze-Ylc"; */
-"vjc-ze-Ylc.title" = "電話";
+//"vjc-ze-Ylc.title" = "電話";
 
 /* Class = "UILabel"; text = "Welcome to Rate Assistant, sign in now!"; ObjectID = "vxA-eD-eUe"; */
 "vxA-eD-eUe.text" = "すぐサインイン！";
@@ -391,3 +391,7 @@
 
 /* Class = "UITextView"; text = "No profile photo, click camera button to choose."; ObjectID = "paS-sM-aNs"; */
 "paS-sM-aNs.text" = "No profile photo, click camera button to choose.";
+//#Generate strings in 2017-04-19 18:26:27
+
+/* Class = "UILabel"; text = "Give me a star on Github"; ObjectID = "CHp-mj-W3G"; */
+"CHp-mj-W3G.text" = "Give me a star on Github";
