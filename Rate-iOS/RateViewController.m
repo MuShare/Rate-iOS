@@ -143,17 +143,17 @@ static const int historySearchDays[5] = {30, 90, 180, 365, 3 * 365};
     //Show history entry information
     _historyEntryView.hidden = NO;
     
-    float xOffset = screenWitdh / (historyRates.count - 1) * entry.xIndex - historyEntryWith / 2 - LeadingConstraintRegulationWidth;
+    float xOffset = screenWitdh / (historyRates.count - 1) * entry.x - historyEntryWith / 2 - LeadingConstraintRegulationWidth;
     if(xOffset < - LeadingConstraintRegulationWidth) {
         xOffset = - LeadingConstraintRegulationWidth;
     } else if (xOffset > screenWitdh - historyEntryWith - TrailingConstraintRegulationWidth) {
-        xOffset = screenWitdh - historyEntryWith -TrailingConstraintRegulationWidth;
+        xOffset = screenWitdh - historyEntryWith - TrailingConstraintRegulationWidth;
     }
     _historyEntryLeadingLayoutConstraint.constant = xOffset;
     
-    NSDate *date = [CommonTool getDateAfterNextDays:(int)entry.xIndex fromDate:start];
+    NSDate *date = [CommonTool getDateAfterNextDays:(int)entry.x fromDate:start];
     _historyDateLabel.text = [NSString stringWithFormat:@"%@", [dateFormatter stringFromDate:date]];
-    _historyRateLebel.text = [NSString stringWithFormat:@"%g", entry.value];
+    _historyRateLebel.text = [NSString stringWithFormat:@"%g", entry.y];
 }
 
 - (void)chartValueNothingSelected:(ChartViewBase *)chartView {
@@ -310,27 +310,21 @@ static const int historySearchDays[5] = {30, 90, 180, 365, 3 * 365};
 
 - (void)setDataCount {
     _historyLineChartView.noDataText = @"";
-    
-    NSMutableArray *xVals = [[NSMutableArray alloc] init];
+
+    NSMutableArray *values = [[NSMutableArray alloc] init];
     for (int i = 0; i < historyRates.count; i++) {
-        [xVals addObject:[NSString stringWithFormat:@"%d", i]];
-    }
-    
-    NSMutableArray *yVals1 = [[NSMutableArray alloc] init];
-    for (int i = 0; i < historyRates.count; i++) {
-        ChartDataEntry *entry = [[ChartDataEntry alloc] initWithValue:[[historyRates objectAtIndex:i] doubleValue] xIndex:i];
-        [yVals1 addObject:entry];
+        ChartDataEntry *entry =[[ChartDataEntry alloc] initWithX:i y:[[historyRates objectAtIndex:i] doubleValue]];
+        [values addObject:entry];
     }
     
     LineChartDataSet *set = nil;
     if (_historyLineChartView.data.dataSetCount > 0) {
         set = (LineChartDataSet *)_historyLineChartView.data.dataSets[0];
-        set.yVals = yVals1;
-        _historyLineChartView.data.xValsObjc = xVals;
+        set.values = values;
         [_historyLineChartView.data notifyDataChanged];
         [_historyLineChartView notifyDataSetChanged];
     } else {
-        set = [[LineChartDataSet alloc] initWithYVals:yVals1 label:nil];
+        set = [[LineChartDataSet alloc] initWithValues:values];
         //设置折线的样式
         set.drawCubicEnabled = YES;
         set.cubicIntensity = 0.2;
@@ -347,7 +341,7 @@ static const int historySearchDays[5] = {30, 90, 180, 365, 3 * 365};
         set.fill = [ChartFill fillWithLinearGradient:gradientRef angle:90.0f];//赋值填充颜色对象
         CGGradientRelease(gradientRef);//释放gradientRef
         //创建 LineChartData 对象
-        LineChartData *data = [[LineChartData alloc] initWithXVals:xVals dataSet:set];
+        LineChartData *data = [[LineChartData alloc] initWithDataSet:set];
         [data setDrawValues:NO];
         _historyLineChartView.data = data;
     }
