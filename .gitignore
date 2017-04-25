@@ -1,0 +1,7 @@
+# macOS
+.DS_Store
+
+# Pod
+Podfile.lock
+Pods/
+*.xcworkspace/
