@@ -68,7 +68,7 @@
 
 #pragma mark - Table view
 - (UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     //Clear header view color
@@ -78,32 +78,35 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     return 20;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     return 0.1;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     //Bind click event for sign in/up or user profile cell.
-    if(indexPath.section == 0 && indexPath.row == 0) {
+    if (indexPath.section == 0 && indexPath.row == 0) {
         if(user.token == nil) {
             [self performSegueWithIdentifier:@"loginSegue" sender:self];
         } else {
             [self performSegueWithIdentifier:@"profileSegue" sender:self];
         }
     }
-    
+    // Bind Github
+    if (indexPath.section == 2 && indexPath.row == 3) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://github.com/MuShare/Rate-iOS"]];
+    }
 }
 
 #pragma mark - Action
