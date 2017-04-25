@@ -17,3 +17,7 @@ You can download this app from App Store: https://itunes.apple.com/app/id1139573
 Rate Assistant supports Android and iOS now! Android version only supports rate search now, other functions will be added in the future.
 
 Andriod version is also open source in Github: https://github.com/MuShare/Rate-Android.
+
+![Rate-Android](https://raw.githubusercontent.com/MuShare/Rate-Android/master/Images/rate_android.png)
+
+You can download Android app from Google play Store: https://play.google.com/store/apps/details?id=org.mushare.rate
