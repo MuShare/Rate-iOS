@@ -86,12 +86,13 @@
     _loginSubmitButton.enabled = NO;
     UIDevice *currentDevice = [UIDevice currentDevice];
     
-    [manager POST:[InternetTool createUrl:@"api/user/login"]
+    [manager POST:[InternetTool createUrl:@"api/user/login/email"]
        parameters:@{
                     @"email": _emailTextField.text,
                     @"password": _passwordTextField.text,
-                    @"os": [NSString stringWithFormat:@"iOS %@", currentDevice.systemVersion],
-                    @"did": [currentDevice.identifierForVendor UUIDString],
+                    @"os": @"iOS",
+                    @"version": [NSString stringWithFormat:@"%@", currentDevice.systemVersion],
+                    @"identifier": [currentDevice.identifierForVendor UUIDString],
                     @"device_token": user.deviceToken,
                     @"lan": user.lan
                     }
@@ -103,9 +104,10 @@
               if ([response statusOK]) {
                   NSObject *result = [response getResponseResult];
                   user.email = _emailTextField.text;
-                  user.telephone = [result valueForKey:@"telephone"];
-                  user.name = [result valueForKey:@"uname"];
+                  user.name = [[result valueForKey:@"user"] valueForKey:@"name"];
                   user.token = [result valueForKey:@"token"];
+                  
+                  /**
                   user.notification = [result valueForKey:@"notification"];
                   //Set user's favorite currencies
                   NSArray *favorites = [result valueForKey:@"favorite"];
@@ -113,6 +115,7 @@
                       Currency *currency = [dao.currencyDao getByCid:cid];
                       currency.favorite = [NSNumber numberWithBool:YES];
                   }
+                   **/
                   [dao saveContext];
                   manager = [InternetTool getSessionManager];
                   [self.navigationController popViewControllerAnimated:YES];

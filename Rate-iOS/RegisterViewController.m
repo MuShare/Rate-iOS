@@ -61,8 +61,7 @@
        parameters:@{
                     @"email": _emailTextField.text,
                     @"password": _passwordTextField.text,
-                    @"telephone": @"",
-                    @"uname": _usernameTextField.text
+                    @"name": _usernameTextField.text
                     }
          progress:nil
           success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {

@@ -69,10 +69,11 @@
         NSData *avatar = UIImageJPEGRepresentation(_profilePhotoImageView.image, 1.0);
         NSMutableURLRequest *request =
         [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST"
-                                                                   URLString:[InternetTool createUrl:@"api/user/upload_image"]
+                                                                   URLString:[InternetTool createUrl:@"api/user/avatar"]
                                                                   parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
                                                                       [formData appendPartWithFileData:avatar
-                                                                                                  name:@"file" fileName:@"avatar.jpg"
+                                                                                                  name:@"avatar"
+                                                                                              fileName:[[NSUUID UUID] UUIDString]
                                                                                               mimeType:@"image/jpeg"];
                                                                       
                                                                   }
