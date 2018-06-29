@@ -102,7 +102,7 @@ def compareWithFilePath(newStringPath,originalStringPath):
             originalString_dic[leftvalue] = rightvalue
     #compare and remove the useless param in original string
     for key in originalString_dic:
-        if(key not in newString_dic):
+        if (key not in newString_dic):
             keystr = '"%s"'%key
             replacestr = '//'+keystr
             match = re.search(replacestr , originalString_txt)
@@ -112,7 +112,7 @@ def compareWithFilePath(newStringPath,originalStringPath):
     executeOnce = 1
     for key in newString_dic:
         values = (key, newString_dic[key])
-        if(key not in originalString_dic):
+        if (key not in originalString_dic):
             newline = ''
             if executeOnce == 1:
                 timestamp = time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()))

@@ -38,7 +38,7 @@
 }
 
 - (void)viewDidLoad {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     [super viewDidLoad];
@@ -72,12 +72,12 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     //Reset base currency name.
     [self.navigationItem.leftBarButtonItem setTitle:_basedCurrency.name];
-    _basedCurrencyImageView.image = [UIImage imageNamed:_basedCurrency.icon];
+    _basedCurrencyImageView.image = [UIImage imageNamed:_basedCurrency.code];
     _basedCurrencyCodeLabel.text = _basedCurrency.code;
     _basedCurrencyNameLabel.text = _basedCurrency.name;
     
@@ -92,7 +92,7 @@
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     [self hideSearchBar];
@@ -100,14 +100,14 @@
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     return [_fetchedResultsController.sections[0] numberOfObjects];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
 
@@ -120,7 +120,7 @@
     UILabel *nameLabel = (UILabel *)[cell viewWithTag:3];
     UILabel *rateLabel = (UILabel *)[cell viewWithTag:4];
     
-    currencyImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", currency.icon]];
+    currencyImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", currency.code]];
     codeLabel.text = currency.code;
     nameLabel.text = currency.name;
     rateLabel.text = [NSString stringWithFormat:@"%.4f", [rates[currency.cid] floatValue]];
@@ -128,7 +128,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     return 0.1;
@@ -136,7 +136,7 @@
 
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     selectedCurrency = [_fetchedResultsController objectAtIndexPath:indexPath];
@@ -172,14 +172,14 @@
 
 #pragma mark - Navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    if([segue.identifier isEqualToString:@"selectBaseSegue"]) {
+    if ([segue.identifier isEqualToString:@"selectBaseSegue"]) {
         [segue.destinationViewController setValue:@YES forKey:@"selectable"];
         //Tell Currencies Controller what attribute to set.
         [segue.destinationViewController setValue:@"basedCurrency" forKey:@"currencyAttributeName"];
-    } else if([segue.identifier isEqualToString:@"rateSegue"]) {
+    } else if ([segue.identifier isEqualToString:@"rateSegue"]) {
         //set to currency for RateViewController
         [segue.destinationViewController setValue:selectedCurrency forKey:@"toCurrency"];
         [segue.destinationViewController setValue:selectedRate forKey:@"rate"];
@@ -193,7 +193,7 @@
     }
     [UIView animateWithDuration:0.25 delay:0.0 options:UIViewAnimationOptionCurveEaseIn
                      animations:^{
-                         searchBarView.frame = CGRectMake(0, 0, self.view.frame.size.width, 61.0);
+                         searchBarView.frame = CGRectMake(0, 0, self.view.frame.size.width, [self topPadding] + 44.0);
                          [self searchBar:searchBar activate:YES];
                          [searchBar becomeFirstResponder];
                      }
@@ -208,14 +208,15 @@
 }
 
 #pragma mark - Service
+
 - (void)refreshRates {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
     [parameters setObject:_basedCurrency.cid forKey:@"from"];
     
-    if(user.token != nil) {
+    if (user.token != nil) {
         [parameters setObject:[NSNumber numberWithBool:user.showFavorites] forKey:@"favorite"];
     }
     [manager GET:[InternetTool createUrl:@"api/rate/current"]
@@ -223,11 +224,11 @@
         progress:nil
          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
              InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
-             if([response statusOK]) {
+             if ([response statusOK]) {
                  rates = [[response getResponseResult] objectForKey:@"rates"];
                  
                  //Refresh favorite currencies stored in local database if user logined.
-                 if(user.token != nil) {
+                 if (user.token != nil) {
                      for(Currency *currency in [dao.currencyDao findAll]) {
                          currency.favorite = [NSNumber numberWithBool:NO];
                      }
@@ -247,7 +248,7 @@
              }
          }
          failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-             if(DEBUG) {
+             if (DEBUG) {
                  NSLog(@"Server error: %@", error.localizedDescription);
              }
              [self.tableView.mj_header endRefreshing];
@@ -263,12 +264,25 @@
     
 }
 
+- (CGFloat)topPadding {
+    CGFloat topPadding = 0;
+    if (@available(iOS 11.0, *)) {
+        UIWindow *window = UIApplication.sharedApplication.keyWindow;
+        topPadding = window.safeAreaInsets.top;
+    }
+    if (topPadding == 0) {
+        topPadding = 20.0;
+    }
+    return topPadding;
+}
+
 - (void)setupSearchBar {
     if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    searchBarView = [[UIView alloc] initWithFrame:CGRectMake(0, - 61.0, self.view.frame.size.width, 61.0)];
-    searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(10.0, 20.0, self.view.frame.size.width - 20, 44.0)];
+    CGFloat topPadding = [self topPadding];
+    searchBarView = [[UIView alloc] initWithFrame:CGRectMake(0, - (topPadding + 41.0), self.view.frame.size.width, topPadding + 41.0)];
+    searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(10.0, topPadding, self.view.frame.size.width - topPadding, 44.0)];
     
     searchBar.searchBarStyle = UISearchBarStyleMinimal;
     searchBar.delegate = self;
@@ -293,7 +307,6 @@
     disableViewOverlay.alpha = 0;
     disableViewOverlay.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     disableViewOverlay.autoresizingMask = UIViewAutoresizingFlexibleHeight;
-    
     
     [self.navigationController.view addSubview:searchBarView];
 }
@@ -324,13 +337,14 @@
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     
+    CGFloat height = [self topPadding] + 44.0;
     [UIView animateWithDuration:0.25
                           delay:0.0
                         options:UIViewAnimationOptionCurveEaseIn
                      animations:^{
                          searchBar.text = @"";
                          [self filterResultsToOriginal];
-                         searchBarView.frame = CGRectMake(0, - 64.0, self.view.frame.size.width, 64.0);
+                         searchBarView.frame = CGRectMake(0, - height, self.view.frame.size.width, height);
                          [self searchBar:searchBar activate:NO];
                          [searchBar resignFirstResponder];
                      }
@@ -348,10 +362,11 @@
 }
 
 - (void)showTipMask {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    maskView = [[UIView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 64)];
+    CGFloat height = [self topPadding] + 44.0;
+    maskView = [[UIView alloc] initWithFrame:CGRectMake(0, height, self.view.frame.size.width, self.view.frame.size.height - height)];
     maskView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.6];
     //Create guide arrow.
     UIImageView *arrowImageView = [[UIImageView alloc] initWithFrame:CGRectMake(40, 10, 90, 90)];
@@ -375,7 +390,7 @@
 }
 
 - (void)dismissTipMask:(id)sender {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     [maskView removeFromSuperview];

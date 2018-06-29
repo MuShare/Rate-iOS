@@ -54,14 +54,14 @@
 
 #pragma mark - Table view data source
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     return 0.1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     
@@ -70,7 +70,7 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     Currency *currency = [_fetchedResultsController objectAtIndexPath:indexPath];
@@ -82,7 +82,7 @@
     UILabel *nameLabel = (UILabel *)[cell viewWithTag:3];
     UIButton *favoriteButton = (UIButton *)[cell viewWithTag:4];
     
-    currencyImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", currency.icon]];
+    currencyImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", currency.code]];
     codeLabel.text = currency.code;
     nameLabel.text = currency.name;
 
@@ -257,7 +257,7 @@
     }
     [UIView animateWithDuration:0.25 delay:0.0 options:UIViewAnimationOptionCurveEaseIn
                      animations:^{
-                         searchBarView.frame = CGRectMake(0, 0, self.view.frame.size.width, 61.0);
+                         searchBarView.frame = CGRectMake(0, 0, self.view.frame.size.width, [self topPadding] + 41.0);
                          [self searchBar:searchBar activate:YES];
                          [searchBar becomeFirstResponder];
                      }
@@ -265,12 +265,25 @@
 }
 
 #pragma mark - Service 
+- (CGFloat)topPadding {
+    CGFloat topPadding = 0;
+    if (@available(iOS 11.0, *)) {
+        UIWindow *window = UIApplication.sharedApplication.keyWindow;
+        topPadding = window.safeAreaInsets.top;
+    }
+    if (topPadding == 0) {
+        topPadding = 20.0;
+    }
+    return topPadding;
+}
+
 - (void)setupSearchBar {
     if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    searchBarView = [[UIView alloc] initWithFrame:CGRectMake(0, - 61.0, self.view.frame.size.width, 61.0)];
-    searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(10.0, 20.0, self.view.frame.size.width - 20, 44.0)];
+    CGFloat topPadding = [self topPadding];
+    searchBarView = [[UIView alloc] initWithFrame:CGRectMake(0, - (topPadding + 41.0), self.view.frame.size.width, topPadding + 41.0)];
+    searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(10.0, topPadding, self.view.frame.size.width - topPadding, 44.0)];
     
     searchBar.searchBarStyle = UISearchBarStyleMinimal;
     searchBar.delegate = self;
@@ -328,13 +341,14 @@
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     
+    CGFloat height = [self topPadding] + 44.0;
     [UIView animateWithDuration:0.25
                           delay:0.0
                         options:UIViewAnimationOptionCurveEaseIn
                      animations:^{
                          searchBar.text = @"";
                          [self filterResultsToOriginal];
-                         searchBarView.frame = CGRectMake(0, - 64.0, self.view.frame.size.width, 64.0);
+                         searchBarView.frame = CGRectMake(0, -height, self.view.frame.size.width, height);
                          [self searchBar:searchBar activate:NO];
                          [searchBar resignFirstResponder];
                      }

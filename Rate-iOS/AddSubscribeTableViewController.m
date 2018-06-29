@@ -57,7 +57,7 @@
     }
     
     //Load current rate from server.
-    if(_fromCurrency != nil && _toCurrency != nil) {
+    if (_fromCurrency != nil && _toCurrency != nil) {
         [manager GET:[InternetTool createUrl:@"api/rate/current"]
           parameters:@{
                        @"from": _fromCurrency.cid,
@@ -66,14 +66,14 @@
             progress:nil
              success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                  InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
-                 if([response statusOK]) {
+                 if ([response statusOK]) {
                      currentRate = [[[response getResponseResult] objectForKey:@"rate"] floatValue];
                      _subscribeTipLabel.hidden = NO;
                      [self thresholdTextFieldDidChange:_thresholdTextField];
                  }
              }
              failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                 if(DEBUG) {
+                 if (DEBUG) {
                      NSLog(@"Server error: %@", error.localizedDescription);
                  }
                  InternetResponse *response = [[InternetResponse alloc] initWithError:error];
@@ -121,7 +121,7 @@
     if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    if([segue.identifier isEqualToString:@"selectSubscribeFromSegue"]) {
+    if ([segue.identifier isEqualToString:@"selectSubscribeFromSegue"]) {
         [segue.destinationViewController setValue:@YES forKey:@"selectable"];
         [segue.destinationViewController setValue:@"fromCurrency" forKey:@"currencyAttributeName"];
     } else if ([segue.identifier isEqualToString:@"selectSubscribeToSegue"]) {
@@ -179,12 +179,12 @@
          progress:nil
           success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
               InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
-              if([response statusOK]) {
+              if ([response statusOK]) {
                   [self.navigationController popViewControllerAnimated:YES];
               }
           }
           failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-              if(DEBUG) {
+              if (DEBUG) {
                   NSLog(@"Server error: %@", error.localizedDescription);
               }
               InternetResponse *response = [[InternetResponse alloc] initWithError:error];

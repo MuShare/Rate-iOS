@@ -35,12 +35,12 @@
 
 
 - (void)loadCurriencies {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
         NSLog(@"Currency revison is %ld.", user.currencyRev);
     }
 
-    [manager GET:[InternetTool createUrl:@"api/currencies"]
+    [manager GET:[InternetTool createUrl:@"api/currencies/list"]
       parameters:@{
                    @"lan": user.lan,
                    @"rev": [NSNumber numberWithInteger:user.currencyRev]
@@ -48,17 +48,17 @@
         progress:nil
          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
              InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
-             if([response statusOK]) {
+             if ([response statusOK]) {
                  NSObject *result = [response getResponseResult];
                  NSArray *currencies = [result valueForKey:@"currencies"];
-                 for(NSObject *currency in currencies) {
+                 for (NSObject *currency in currencies) {
                      [dao.currencyDao saveOrUpdateWithJSONObject:currency];
                  }
                  [dao saveContext];
                  //Set new currency revision.
                  user.currencyRev = [[result valueForKey:@"revision"] intValue];
                  //Set Based Currency Id if it is null
-                 if(user.basedCurrencyId == nil) {
+                 if (user.basedCurrencyId == nil) {
                      Currency *basedCurrency = [dao.currencyDao getByCode:@"USD"];
                      user.basedCurrencyId = basedCurrency.cid;
                  }
@@ -67,7 +67,7 @@
              [self performSegueWithIdentifier:@"mainTabControllerSegue" sender:self];
          }
          failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-             if(DEBUG) {
+             if (DEBUG) {
                  NSLog(@"Server error: %@", error.localizedDescription);
              }
              _loadingActivityIndicatorView.hidden = YES;

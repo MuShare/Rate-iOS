@@ -11,23 +11,23 @@
 @implementation InternetResponse
 
 - (instancetype) initWithResponseObject:(id)responseObject {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     self = [super init];
-    if(self) {
+    if (self) {
         _data = [NSJSONSerialization JSONObjectWithData:responseObject
                                                 options:NSJSONReadingAllowFragments
                                                   error:nil];
     }
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Get Message from server: %@", self.data);
     }
     return self;
 }
 
 - (instancetype)initWithError:(NSError *)error {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
         NSLog(@"InternetResponse init with an error, error.code = %ld", error.code);
     }
@@ -40,34 +40,34 @@
         _data = @{@"error_code": [NSNumber numberWithInteger:ErrorCodeNotConnectedToInternet]};
         return self;
     }
-    if(self) {
+    if (self) {
         _data = [NSJSONSerialization JSONObjectWithData:(NSData *)error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey]
                                                 options:NSJSONReadingAllowFragments
                                                   error:nil];
 
     }
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Get Error from server: %@", self.data);
     }
     return self;
 }
 
 - (BOOL)statusOK {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     return [[_data valueForKey:@"status"] intValue] == 200;
 }
 
 - (id)getResponseResult {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     return [_data valueForKey:@"result"];
 }
 
 - (int)errorCode {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
 

@@ -40,7 +40,7 @@
     if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    if(!_registerSuccessView.hidden) {
+    if (!_registerSuccessView.hidden) {
         [self.navigationController popViewControllerAnimated:YES];
         return;
     }

@@ -80,7 +80,7 @@
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     //If user is not login, show login button for him.
-    if(user.token == nil) {
+    if (user.token == nil) {
         return [tableView dequeueReusableCellWithIdentifier:@"subscriptionUnloginIdentifer"];
     }
     
@@ -115,7 +115,7 @@
     if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    if([segue.identifier isEqualToString:@"subscriptionSegue"]) {
+    if ([segue.identifier isEqualToString:@"subscriptionSegue"]) {
         [segue.destinationViewController setValue:selectedSubscribe forKey:@"subscribe"];
     }
 }
@@ -151,11 +151,11 @@
                    }
          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
              InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
-             if([response statusOK]) {
+             if ([response statusOK]) {
                  NSObject *result = [response getResponseResult];
                  NSObject *data = [result valueForKey:@"data"];
                  //Update subscribe table when it is updated.
-                 if([[result valueForKey:@"isUpdated"] boolValue]) {
+                 if ([[result valueForKey:@"isUpdated"] boolValue]) {
                      for(NSObject *subscribeObject in [data valueForKey:@"createdOrUpdated"]) {
                          [dao.subscribeDao saveOrUpdateWithJSONObject:subscribeObject];
                      }
@@ -182,7 +182,7 @@
              }
          }
          failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-             if(DEBUG) {
+             if (DEBUG) {
                  NSLog(@"Server error: %@", error.localizedDescription);
              }
              [self.tableView.mj_header endRefreshing];

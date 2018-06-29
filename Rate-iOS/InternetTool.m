@@ -27,14 +27,14 @@
 }
 
 + (AFHTTPSessionManager *)getSessionManager {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     UserTool *user = [[UserTool alloc] init];
-    if(user.token != nil) {
+    if (user.token != nil) {
         [delegate.httpSessionManager.requestSerializer setValue:user.token forHTTPHeaderField:@"token"];
-        if(DEBUG) {
+        if (DEBUG) {
             NSLog(@"Session Manager init with user token %@", user.token);
         }
     }
@@ -42,14 +42,14 @@
 }
 
 + (AFHTTPSessionManager *)getSessionManagerForJSON {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     UserTool *user = [[UserTool alloc] init];
-    if(user.token != nil) {
+    if (user.token != nil) {
         [delegate.httpSessionManagerForJSON.requestSerializer setValue:user.token forHTTPHeaderField:@"token"];
-        if(DEBUG) {
+        if (DEBUG) {
             NSLog(@"Session Manager JSON init with user token %@", user.token);
         }
     }
@@ -57,7 +57,7 @@
 }
 
 + (AFHTTPSessionManager *)getNewsSessionManager {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -66,7 +66,7 @@
 
 + (NSString *)createUrl:(NSString *)relativePosition {
     NSString *url=[NSString stringWithFormat:@"http://%@/%@", DoaminName, relativePosition];
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
         NSLog(@"Request URL is: %@",url);
     }
@@ -77,7 +77,7 @@
     NSDictionary *response = [NSJSONSerialization JSONObjectWithData:responseObject
                                                              options:NSJSONReadingAllowFragments
                                                                error:nil];
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
         NSLog(@"Get Message from server: %@", response);
     }

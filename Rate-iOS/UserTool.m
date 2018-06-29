@@ -28,7 +28,7 @@
 }
 
 - (NSInteger)currencyRev {
-    if(_currencyRev == 0) {
+    if (_currencyRev == 0) {
         _currencyRev = [defaults integerForKey:NSStringFromSelector(@selector(currencyRev))];
     }
     return _currencyRev;
@@ -42,7 +42,7 @@
 }
 
 - (NSInteger)subscribeRev {
-    if(_subscribeRev == 0) {
+    if (_subscribeRev == 0) {
         _subscribeRev = [defaults integerForKey:NSStringFromSelector(@selector(subscribeRev))];
     }
     return _subscribeRev;
@@ -56,7 +56,7 @@
 }
 
 - (NSString *)basedCurrencyId {
-    if(_basedCurrencyId == nil) {
+    if (_basedCurrencyId == nil) {
         _basedCurrencyId = [defaults objectForKey:NSStringFromSelector(@selector(basedCurrencyId))];
     }
     return _basedCurrencyId;
@@ -70,7 +70,7 @@
 }
 
 - (NSString *)lan {
-    if(_lan == nil) {
+    if (_lan == nil) {
         _lan = [defaults objectForKey:NSStringFromSelector(@selector(lan))];
     }
     return _lan;
@@ -104,7 +104,7 @@
 }
 
 - (NSString *)email {
-    if(_email == nil) {
+    if (_email == nil) {
         _email = [defaults objectForKey:NSStringFromSelector(@selector(email))];
     }
     return _email;
@@ -118,7 +118,7 @@
 }
 
 - (NSString *)name {
-    if(_name == nil) {
+    if (_name == nil) {
         _name = [defaults objectForKey:NSStringFromSelector(@selector(name))];
     }
     return _name;
@@ -132,7 +132,7 @@
 }
 
 - (NSString *)telephone {
-    if(_telephone == nil) {
+    if (_telephone == nil) {
         _telephone = [defaults objectForKey:NSStringFromSelector(@selector(telephone))];
     }
     return _telephone;
@@ -174,7 +174,7 @@
 }
 
 - (NSString *)token {
-    if(_token == nil) {
+    if (_token == nil) {
         _token = [defaults objectForKey:NSStringFromSelector(@selector(token))];
     }
     return _token;
@@ -188,7 +188,7 @@
 }
 
 - (NSString *)deviceToken {
-    if(_deviceToken == nil) {
+    if (_deviceToken == nil) {
         _deviceToken = [defaults objectForKey:NSStringFromSelector(@selector(deviceToken))];
     }
     return _deviceToken;

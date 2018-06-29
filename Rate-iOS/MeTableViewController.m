@@ -24,7 +24,7 @@
 }
 
 - (void)viewDidLoad {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     [super viewDidLoad];
@@ -41,7 +41,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     manager = [InternetTool getSessionManager];
@@ -97,7 +97,7 @@
     }
     //Bind click event for sign in/up or user profile cell.
     if (indexPath.section == 0 && indexPath.row == 0) {
-        if(user.token == nil) {
+        if (user.token == nil) {
             [self performSegueWithIdentifier:@"loginSegue" sender:self];
         } else {
             [self performSegueWithIdentifier:@"profileSegue" sender:self];
@@ -130,7 +130,7 @@
              parameters:nil
                 success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                     InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
-                    if([response statusOK]) {
+                    if ([response statusOK]) {
                         //Clear user data
                         [user clearup];
                         //Clear token
@@ -155,7 +155,7 @@
                     }
                 }
                 failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                    if(DEBUG) {
+                    if (DEBUG) {
                         NSLog(@"Server error: %@", error.localizedDescription);
                         
                     }
@@ -202,12 +202,12 @@
          progress:nil
           success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
               InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
-              if([response statusOK]) {
+              if ([response statusOK]) {
                   user.notification = sender.on;
               }
           }
           failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-              if(DEBUG) {
+              if (DEBUG) {
                   NSLog(@"Server error: %@", error.localizedDescription);
               }
               sender.on = !sender.on;
@@ -232,7 +232,7 @@
         progress:nil
         success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
-            if([response statusOK]) {
+            if ([response statusOK]) {
                 NSObject *result = [response getResponseResult];
                 if ([[result valueForKey:@"isUpdated"] boolValue]) {
                     user.avatar = [[NSData alloc] initWithBase64EncodedString:[result valueForKey:@"image"]

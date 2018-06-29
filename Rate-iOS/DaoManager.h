@@ -18,7 +18,7 @@
 @property (strong, nonatomic) CurrencyDao *currencyDao;
 @property (strong, nonatomic) SubscribeDao *subscribeDao;
 
--(NSManagedObject *)getObjectById:(NSManagedObjectID *)objectID;
+- (NSManagedObject *)getObjectById:(NSManagedObjectID *)objectID;
 - (void)saveContext;
 
 @end

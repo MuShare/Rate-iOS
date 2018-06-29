@@ -11,24 +11,23 @@
 @implementation CurrencyDao
 
 - (Currency *)saveOrUpdateWithJSONObject:(NSObject *)object {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     Currency *currency = [self getByCid:[object valueForKey:@"cid"]];
-    if(currency == nil) {
+    if (currency == nil) {
         currency = [NSEntityDescription insertNewObjectForEntityForName:CurrencyEntityName
                                                  inManagedObjectContext:self.context];
     }
     currency.cid = [object valueForKey:@"cid"];
     currency.code = [object valueForKey:@"code"];
-    currency.icon = [object valueForKey:@"icon"];
     currency.name = [object valueForKey:@"name"];
     currency.favorite = [NSNumber numberWithBool:NO];
     return currency;
 }
 
 - (Currency *)getByCid:(NSString *)cid {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     return (Currency *)[self getByPredicate:[NSPredicate predicateWithFormat:@"cid=%@", cid]
@@ -36,7 +35,7 @@
 }
 
 - (Currency *)getByCode:(NSString *)code {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     return (Currency *)[self getByPredicate:[NSPredicate predicateWithFormat:@"code=%@", code]
@@ -44,7 +43,7 @@
 }
 
 - (NSArray *)findAll {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     return [self findByPredicate:nil
@@ -53,7 +52,7 @@
 }
 
 - (NSArray *)findInCids:(NSArray *)cids{
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     return [self findByPredicate:[NSPredicate predicateWithFormat:@"cid IN %@", cids]
@@ -64,7 +63,7 @@
 - (NSFetchedResultsController *)fetchRequestControllerWithFavorite:(NSNumber *)favorite
                                                            Without:(NSString *)cid
                                                        withKeyword:(NSString *)keyword {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     NSMutableArray *subpredicates = [[NSMutableArray alloc] init];

@@ -20,13 +20,13 @@
 }
 
 - (void)viewDidLoad {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     [super viewDidLoad];
     manager = [InternetTool getSessionManager];
     
-    if(_subscribe == nil) {
+    if (_subscribe == nil) {
         return;
     }
     _snameTextField.placeholder = _subscribe.sname;
@@ -41,14 +41,14 @@
     _enableSwitch.on = _subscribe.enable.boolValue;
     _sendEmailSwitch.on = _subscribe.sendEmail.boolValue;
     _sendSMSSwitch.on = _subscribe.sendSMS.boolValue;
-    if(_subscribe.rate.floatValue > _subscribe.threshold.floatValue) {
+    if (_subscribe.rate.floatValue > _subscribe.threshold.floatValue) {
         _trendImageView.transform = CGAffineTransformMakeRotation(M_PI);
     }
 }
 
 #pragma mark - Table view data source
 - (UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     //Clear header view color
@@ -58,14 +58,14 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     return 15;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     return 0.1;
@@ -73,7 +73,7 @@
 
 #pragma mark - UITextFieldDelegate
 - (void)thresholdTextFieldDidChange:(UITextField *)sender {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     _subscribeTipLabel.hidden = [_thresholdTextField.text isEqualToString:@""];
@@ -106,7 +106,7 @@
 
 #pragma mark - Action
 - (IBAction)editSubscribe:(UIBarButtonItem *)sender {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     _snameTextField.enabled = YES;
@@ -122,7 +122,7 @@
 }
 
 - (IBAction)deleteSubscribe:(id)sender {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"subscription_delete", @"Delete subscription")
@@ -138,7 +138,7 @@
                           }
                 success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                     InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
-                    if([response statusOK]) {
+                    if ([response statusOK]) {
                         [self.navigationController popViewControllerAnimated:YES];
                     }
                 }
@@ -174,8 +174,8 @@
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     
-    if(![_thresholdTextField.text isEqualToString:@""]) {
-        if(![CommonTool isNumeric:_thresholdTextField.text]) {
+    if (![_thresholdTextField.text isEqualToString:@""]) {
+        if (![CommonTool isNumeric:_thresholdTextField.text]) {
             _trendImageView.highlighted = YES;
             return;
         } else {
@@ -198,7 +198,7 @@
          progress:nil
           success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
               InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
-              if([response statusOK]) {
+              if ([response statusOK]) {
                   [self.navigationController popViewControllerAnimated:YES];
               }
           }

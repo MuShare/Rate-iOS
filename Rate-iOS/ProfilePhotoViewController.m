@@ -49,19 +49,19 @@
 
 #pragma mark - UIImagePickerControllerDelegate
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class,NSStringFromSelector(_cmd));
         NSLog(@"MediaInfo: %@", info);
     }
     NSString *mediaType = [info objectForKey:UIImagePickerControllerMediaType];
-    if([mediaType isEqualToString:(NSString *)kUTTypeImage]) {
+    if ([mediaType isEqualToString:(NSString *)kUTTypeImage]) {
         _profilePhotoImageView.image = [info objectForKey:UIImagePickerControllerEditedImage];
     }
     //Hide UIImagePickerController
     [picker dismissViewControllerAnimated:YES completion:nil];
     
     //Upload image
-    if(_profilePhotoImageView.image != nil) {
+    if (_profilePhotoImageView.image != nil) {
         //Add a mask.
         [self showTipMask];
         
@@ -161,7 +161,7 @@
 #pragma mark - Service
 
 - (void)showTipMask {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     maskView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
@@ -180,7 +180,7 @@
 }
 
 - (void)removeMask {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     [maskView removeFromSuperview];

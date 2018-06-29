@@ -26,7 +26,7 @@
     if ([_context hasChanges]) {
         NSError *error = nil;
         if ([_context save:&error]) {
-            if(DEBUG) {
+            if (DEBUG) {
                 NSLog(@"_context saved changes to persistent store.");
             }
         } else {

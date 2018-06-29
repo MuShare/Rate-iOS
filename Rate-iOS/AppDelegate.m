@@ -23,7 +23,7 @@
 @synthesize regInfo;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     //Register Remote Notification, support iOS version after 8.0
@@ -48,7 +48,7 @@
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -56,7 +56,7 @@
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
@@ -65,28 +65,28 @@
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     [self saveContext];
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
         NSLog(@"Get token from server: %@", deviceToken);
     }
@@ -106,7 +106,7 @@
                      progress:nil
                       success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                           InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
-                          if([response statusOK]) {
+                          if ([response statusOK]) {
                               NSObject *result = [response getResponseResult];
                               user.telephone = [result valueForKey:@"telephone"];
                               user.name = [result valueForKey:@"uname"];
@@ -126,7 +126,7 @@
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
         NSLog(@"Register remote notification token with error: %@", error);
     }
@@ -134,7 +134,7 @@
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
         NSLog(@"Receive remote notification with userInfo: %@", userInfo);
     }
@@ -142,7 +142,7 @@
 
 #pragma mark - Service
 - (void)setRootViewControllerWithIdentifer:(NSString *)identifer {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -155,10 +155,10 @@
 @synthesize httpSessionManager = _httpSessionManager;
 
 - (AFHTTPSessionManager *)httpSessionManager {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    if(_httpSessionManager == nil) {
+    if (_httpSessionManager == nil) {
         _httpSessionManager = [AFHTTPSessionManager manager];
         _httpSessionManager.responseSerializer = [[AFCompoundResponseSerializer alloc] init];
     }
@@ -168,10 +168,10 @@
 @synthesize httpSessionManagerForJSON = _httpSessionManagerForJSON;
 
 - (AFHTTPSessionManager *)httpSessionManagerForJSON {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    if(_httpSessionManagerForJSON ==nil) {
+    if (_httpSessionManagerForJSON ==nil) {
         _httpSessionManagerForJSON = [AFHTTPSessionManager manager];
         _httpSessionManagerForJSON.responseSerializer = [[AFCompoundResponseSerializer alloc] init];
         _httpSessionManagerForJSON.requestSerializer = [AFJSONRequestSerializer serializer];
@@ -183,7 +183,7 @@
 @synthesize newsSessionManager = _newsSessionManager;
 
 - (AFHTTPSessionManager *)newsSessionManager {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     if (_newsSessionManager == nil) {
@@ -225,7 +225,7 @@
     
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"Rate_iOS.sqlite"];
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Persistent entity saved in %@", storeURL.absoluteString);
     }
     

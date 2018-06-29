@@ -15,7 +15,7 @@
         NSLog(@"Ruuning %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     Subscribe *subscribe = [self getBySid:[object valueForKey:@"sid"]];
-    if(subscribe == nil) {
+    if (subscribe == nil) {
         //Create new subscribe
         subscribe = [NSEntityDescription insertNewObjectForEntityForName:SubsribeEntityName
                                                   inManagedObjectContext:self.context];
@@ -53,7 +53,7 @@
         NSLog(@"Ruuning %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     Subscribe *subscribe = [self getBySid:sid];
-    if(subscribe != nil) {
+    if (subscribe != nil) {
         [self.context deleteObject:subscribe];
     }
 }

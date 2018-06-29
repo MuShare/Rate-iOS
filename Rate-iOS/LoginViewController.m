@@ -74,7 +74,7 @@
 }
 
 - (IBAction)loginSubmit:(id)sender {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     _emailImageView.highlighted = ![CommonTool isAvailableEmail:_emailTextField.text];

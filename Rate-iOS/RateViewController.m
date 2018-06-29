@@ -37,7 +37,7 @@
 static const int historySearchDays[5] = {30, 90, 180, 365, 3 * 365};
 
 - (void)viewDidLoad {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     [super viewDidLoad];
@@ -72,7 +72,7 @@ static const int historySearchDays[5] = {30, 90, 180, 365, 3 * 365};
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     [self refreshCurrency];
@@ -94,7 +94,7 @@ static const int historySearchDays[5] = {30, 90, 180, 365, 3 * 365};
 #pragma mark - Action
 
 - (IBAction)swapCurrency:(id)sender {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     //Swap currency info
@@ -111,7 +111,7 @@ static const int historySearchDays[5] = {30, 90, 180, 365, 3 * 365};
 }
 
 - (IBAction)changeDates:(id)sender {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     _loadingView.hidden = NO;
@@ -122,7 +122,7 @@ static const int historySearchDays[5] = {30, 90, 180, 365, 3 * 365};
 
 #pragma mark - Navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     if ([segue.identifier isEqualToString:@"selectFromCurrencySegue"]) {
@@ -136,7 +136,7 @@ static const int historySearchDays[5] = {30, 90, 180, 365, 3 * 365};
 
 #pragma mark - ChartViewDelegate
 - (void)chartValueSelected:(ChartViewBase *)chartView entry:(ChartDataEntry *)entry highlight:(ChartHighlight *)highlight {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
         NSLog(@"Selected chartDataEntry %@", entry);
     }
@@ -144,7 +144,7 @@ static const int historySearchDays[5] = {30, 90, 180, 365, 3 * 365};
     _historyEntryView.hidden = NO;
     
     float xOffset = screenWitdh / (historyRates.count - 1) * entry.x - historyEntryWith / 2 - LeadingConstraintRegulationWidth;
-    if(xOffset < - LeadingConstraintRegulationWidth) {
+    if (xOffset < - LeadingConstraintRegulationWidth) {
         xOffset = - LeadingConstraintRegulationWidth;
     } else if (xOffset > screenWitdh - historyEntryWith - TrailingConstraintRegulationWidth) {
         xOffset = screenWitdh - historyEntryWith - TrailingConstraintRegulationWidth;
@@ -157,21 +157,21 @@ static const int historySearchDays[5] = {30, 90, 180, 365, 3 * 365};
 }
 
 - (void)chartValueNothingSelected:(ChartViewBase *)chartView {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     _historyEntryView.hidden = YES;
 }
 
 - (void)chartScaled:(ChartViewBase *)chartView scaleX:(CGFloat)scaleX scaleY:(CGFloat)scaleY {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
         NSLog(@"chartScaled scaleX = %f, scaleY = %f", scaleX, scaleY);
     }
 }
 
 - (void)chartTranslated:(ChartViewBase *)chartView dX:(CGFloat)dX dY:(CGFloat)dY {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
         NSLog(@"chartTranslated dX = %f, dY = %f", dX, dY);
     }
@@ -179,14 +179,14 @@ static const int historySearchDays[5] = {30, 90, 180, 365, 3 * 365};
 
 #pragma mark - UITextFieldDelegate
 - (void)textFieldDidChange:(UITextField *)sender {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     float value = [sender.text isEqualToString:@""]? 1.0: [sender.text floatValue];
-    if(sender == _fromRateTextFiled) {
+    if (sender == _fromRateTextFiled) {
         _fromRateTextFiled.placeholder = [NSString stringWithFormat:@"%.4f", value];
         _toRateTextFiled.placeholder = [NSString stringWithFormat:@"%.4f", value * currentRate];
-    } else if(sender == _toRateTextFiled) {
+    } else if (sender == _toRateTextFiled) {
         _toRateTextFiled.placeholder = [NSString stringWithFormat:@"%.4f", value];
         _fromRateTextFiled.placeholder = [NSString stringWithFormat:@"%.4f", value / currentRate];
     }
@@ -211,14 +211,14 @@ static const int historySearchDays[5] = {30, 90, 180, 365, 3 * 365};
 
 #pragma mark - UIGestureRecognizerDelegate
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
 }
 
 #pragma mark - Service
 - (void)initDateFormatter {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     dateFormatter = [[NSDateFormatter alloc] init];
@@ -228,12 +228,12 @@ static const int historySearchDays[5] = {30, 90, 180, 365, 3 * 365};
 }
 
 - (void)refreshCurrency {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
 
-    _fromImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", _fromCurrency.icon]];
-    _toImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", _toCurrency.icon]];
+    _fromImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", _fromCurrency.code]];
+    _toImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", _toCurrency.code]];
     [_fromButton setTitle:_fromCurrency.code forState:UIControlStateNormal];
     _fromNameLabel.text = _fromCurrency.name;
     _toNameLabel.text = _toCurrency.name;
@@ -241,7 +241,7 @@ static const int historySearchDays[5] = {30, 90, 180, 365, 3 * 365};
 }
 
 - (void)loadCurrent {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     [manager GET:[InternetTool createUrl:@"api/rate/current"]
@@ -252,20 +252,20 @@ static const int historySearchDays[5] = {30, 90, 180, 365, 3 * 365};
         progress:nil
          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
              InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
-             if([response statusOK]) {
+             if ([response statusOK]) {
                  currentRate = [[[response getResponseResult] objectForKey:@"rate"] floatValue];
                  [self refreshCurrentRate];
              }
          }
          failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-             if(DEBUG) {
+             if (DEBUG) {
                  NSLog(@"Server error: %@", error.localizedDescription);
              }
          }];
 }
 
 - (void)refreshCurrentRate {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     _fromRateTextFiled.placeholder = @"1.0000";
@@ -273,14 +273,14 @@ static const int historySearchDays[5] = {30, 90, 180, 365, 3 * 365};
 }
 
 - (void)loadHistory:(int)days {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     NSDate *end = [NSDate date];
     start = [CommonTool getDateAfterNextDays:-days fromDate:end];
     long long startTimestamp = [CommonTool getUnixTimestamp:start];
     long long endTimpstamp = [CommonTool getUnixTimestamp:end];
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Loading history data from %@ to %@, %d days. Timestamp is (%lld, %lld)", start, end, days, startTimestamp, endTimpstamp);
     }
     [manager GET:[InternetTool createUrl:@"api/rate/history"]
@@ -295,13 +295,13 @@ static const int historySearchDays[5] = {30, 90, 180, 365, 3 * 365};
              _loadingView.hidden = YES;
              [self stopAnimation];
              InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
-             if([response statusOK]) {
+             if ([response statusOK]) {
                  historyRates = [[response getResponseResult] objectForKey:@"data"];
                  [self setDataCount];
              }
          }
          failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-             if(DEBUG) {
+             if (DEBUG) {
                  NSLog(@"Server error: %@", error.localizedDescription);
              }
          }];
@@ -326,7 +326,7 @@ static const int historySearchDays[5] = {30, 90, 180, 365, 3 * 365};
     } else {
         set = [[LineChartDataSet alloc] initWithValues:values];
         //设置折线的样式
-        set.drawCubicEnabled = YES;
+        set.drawIconsEnabled = YES;
         set.cubicIntensity = 0.2;
         set.drawCirclesEnabled = NO;
         //点击选中拐点的交互样式
@@ -371,9 +371,9 @@ static const int historySearchDays[5] = {30, 90, 180, 365, 3 * 365};
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     for(id input in self.view.subviews){
-        if([input isKindOfClass:[UITextField class]]){
+        if ([input isKindOfClass:[UITextField class]]){
             UITextField *textField = (UITextField *)input;
-            if([textField isFirstResponder]) {
+            if ([textField isFirstResponder]) {
                 [textField resignFirstResponder];
                 textField.placeholder = ([textField.text isEqualToString:@""] && [textField.placeholder isEqualToString:@"1.0000"])? @"1.0000": textField.placeholder;
                 textField.text = @"";
