@@ -1,131 +1,131 @@
 /* Class = "UILabel"; text = "Sign in / Sign up"; ObjectID = "1h5-ez-roQ"; */
-"1h5-ez-roQ.text" = "登录 / 注册";
+//"1h5-ez-roQ.text" = "登录 / 注册";
 
 /* Class = "UITextField"; placeholder = "Password"; ObjectID = "2S3-QU-f51"; */
-"2S3-QU-f51.placeholder" = "密码";
+//"2S3-QU-f51.placeholder" = "密码";
 
 /* Class = "UIBarButtonItem"; title = "Sign up"; ObjectID = "2fa-KX-Kk3"; */
-"2fa-KX-Kk3.title" = "注册";
+//"2fa-KX-Kk3.title" = "注册";
 
 /* Class = "UILabel"; text = "Currency Name"; ObjectID = "39M-NU-3F2"; */
 "39M-NU-3F2.text" = "货币名称";
 
 /* Class = "UILabel"; text = "MuRate 1.0.0"; ObjectID = "3nm-y7-UyA"; */
-"3nm-y7-UyA.text" = "汇率助手";
+//"3nm-y7-UyA.text" = "汇率助手";
 
 /* Class = "UILabel"; text = "Enable Subscribe"; ObjectID = "4IB-tL-sB4"; */
-"4IB-tL-sB4.text" = "激活监测";
+//"4IB-tL-sB4.text" = "激活监测";
 
 /* Class = "UILabel"; text = "Feedback"; ObjectID = "6Jp-SY-axk"; */
-"6Jp-SY-axk.text" = "反馈";
+//"6Jp-SY-axk.text" = "反馈";
 
 /* Class = "UILabel"; text = "Help"; ObjectID = "6Nk-oN-anI"; */
-"6Nk-oN-anI.text" = "帮助";
+//"6Nk-oN-anI.text" = "帮助";
 
 /* Class = "UILabel"; text = "About"; ObjectID = "6hN-qf-DhP"; */
-"6hN-qf-DhP.text" = "关于";
+//"6hN-qf-DhP.text" = "关于";
 
 /* Class = "UITextField"; placeholder = "Your email or other contact way."; ObjectID = "6mn-F6-1bN"; */
-"6mn-F6-1bN.placeholder" = "您的联系方式.";
+//"6mn-F6-1bN.placeholder" = "您的联系方式.";
 
 /* Class = "UILabel"; text = "Name Value"; ObjectID = "6nD-Qo-JOx"; */
-"6nD-Qo-JOx.text" = "Name Value";
+//"6nD-Qo-JOx.text" = "Name Value";
 
 /* Class = "UINavigationItem"; title = "Subscription"; ObjectID = "7GI-yI-lpy"; */
-"7GI-yI-lpy.title" = "订阅";
+//"7GI-yI-lpy.title" = "订阅";
 
 /* Class = "UITableViewSection"; headerTitle = " "; ObjectID = "B8K-QI-Zvl"; */
-"B8K-QI-Zvl.headerTitle" = " ";
+//"B8K-QI-Zvl.headerTitle" = " ";
 
 /* Class = "UITextField"; placeholder = "Subscribe Name"; ObjectID = "C5T-HY-ReF"; */
-"C5T-HY-ReF.placeholder" = "订阅名称";
+//"C5T-HY-ReF.placeholder" = "订阅名称";
 
 /* Class = "UINavigationItem"; title = "Me"; ObjectID = "DAv-cg-vmZ"; */
-"DAv-cg-vmZ.title" = "我";
+//"DAv-cg-vmZ.title" = "我";
 
 /* Class = "UINavigationItem"; title = "Sign in"; ObjectID = "DHz-Kk-WFi"; */
-"DHz-Kk-WFi.title" = "登录";
+//"DHz-Kk-WFi.title" = "登录";
 
 /* Class = "UILabel"; text = "Rate Value"; ObjectID = "E0V-Tj-kAt"; */
 "E0V-Tj-kAt.text" = "汇率值";
 
 /* Class = "UILabel"; text = "10.00000"; ObjectID = "EEi-Cz-swm"; */
-"EEi-Cz-swm.text" = "10.00000";
+//"EEi-Cz-swm.text" = "10.00000";
 
 /* Class = "UITextField"; placeholder = "Email"; ObjectID = "Ege-YX-nhz"; */
-"Ege-YX-nhz.placeholder" = "邮箱";
+//"Ege-YX-nhz.placeholder" = "邮箱";
 
 /* Class = "UILabel"; text = "Name"; ObjectID = "Env-ZB-JSg"; */
-"Env-ZB-JSg.text" = "用户名";
+//"Env-ZB-JSg.text" = "用户名";
 
 /* Class = "UIBarButtonItem"; title = "Base"; ObjectID = "FEG-AL-6fQ"; */
 "FEG-AL-6fQ.title" = "Base";
 
 /* Class = "UILabel"; text = "CNY to JPY"; ObjectID = "Ftz-DH-EYJ"; */
-"Ftz-DH-EYJ.text" = "CNY to JPY";
+//"Ftz-DH-EYJ.text" = "CNY to JPY";
 
 /* Class = "UITextField"; placeholder = "Max Rate"; ObjectID = "GTo-fg-Jct"; */
-"GTo-fg-Jct.placeholder" = "最大值";
+//"GTo-fg-Jct.placeholder" = "最大值";
 
 /* Class = "UILabel"; text = "Date Value"; ObjectID = "Gg3-LS-f65"; */
 "Gg3-LS-f65.text" = "Date Value";
 
 /* Class = "UITabBarItem"; title = "Subscribe"; ObjectID = "H1y-EC-28G"; */
-"H1y-EC-28G.title" = "订阅";
+//"H1y-EC-28G.title" = "订阅";
 
 /* Class = "UILabel"; text = "Enable Subscribe"; ObjectID = "HIw-Bj-QfS"; */
-"HIw-Bj-QfS.text" = "激活监测";
+//"HIw-Bj-QfS.text" = "激活监测";
 
 /* Class = "UILabel"; text = "Copyright © 2016 MuShare Group. All Rights Reserved "; ObjectID = "ILG-vj-lRL"; */
-"ILG-vj-lRL.text" = "MuShare团队 © 2015 - 2017. 保留所有权利";
+//"ILG-vj-lRL.text" = "MuShare团队 © 2015 - 2017. 保留所有权利";
 
 /* Class = "UILabel"; text = "Currency"; ObjectID = "Ibq-l7-XJf"; */
 "Ibq-l7-XJf.text" = "货币";
 
 /* Class = "UINavigationItem"; title = "About"; ObjectID = "J2V-jq-c6q"; */
-"J2V-jq-c6q.title" = "关于";
+//"J2V-jq-c6q.title" = "关于";
 
 /* Class = "UILabel"; text = "All Currencies"; ObjectID = "LYs-K4-eYU"; */
-"LYs-K4-eYU.text" = "所有货币";
+//"LYs-K4-eYU.text" = "所有货币";
 
 /* Class = "UIButton"; normalTitle = "Sign in"; ObjectID = "Mp5-P9-8Ok"; */
-"Mp5-P9-8Ok.normalTitle" = "登录";
+//"Mp5-P9-8Ok.normalTitle" = "登录";
 
 /* Class = "UINavigationItem"; title = "Subscriptions"; ObjectID = "MvW-AD-h80"; */
-"MvW-AD-h80.title" = "我的订阅";
+//"MvW-AD-h80.title" = "我的订阅";
 
 /* Class = "UILabel"; text = "100.0000"; ObjectID = "N5V-ed-3dC"; */
 "N5V-ed-3dC.text" = "100.0000";
 
 /* Class = "UILabel"; text = "Show Favorites in homepage"; ObjectID = "N6d-fK-aWK"; */
-"N6d-fK-aWK.text" = "仅显示关注货币";
+//"N6d-fK-aWK.text" = "仅显示关注货币";
 
 /* Class = "UILabel"; text = "Email"; ObjectID = "OV6-hg-bua"; */
-"OV6-hg-bua.text" = "邮箱";
+//"OV6-hg-bua.text" = "邮箱";
 
 /* Class = "UINavigationItem"; title = "Feedback"; ObjectID = "Ow1-j8-BcW"; */
-"Ow1-j8-BcW.title" = "反馈";
+//"Ow1-j8-BcW.title" = "反馈";
 
 /* Class = "UILabel"; text = "Send SMS"; ObjectID = "P12-kE-zYd"; */
-"P12-kE-zYd.text" = "发送短信";
+//"P12-kE-zYd.text" = "发送短信";
 
 /* Class = "UILabel"; text = "Email Value"; ObjectID = "Qqo-Tg-WCv"; */
-"Qqo-Tg-WCv.text" = "Email Value";
+//"Qqo-Tg-WCv.text" = "Email Value";
 
 /* Class = "UINavigationItem"; title = "Subscribe"; ObjectID = "RUV-Sa-Ivd"; */
-"RUV-Sa-Ivd.title" = "订阅";
+//"RUV-Sa-Ivd.title" = "订阅";
 
 /* Class = "UINavigationItem"; title = "My Profile"; ObjectID = "Rw1-e3-FrY"; */
-"Rw1-e3-FrY.title" = "我的信息";
+//"Rw1-e3-FrY.title" = "我的信息";
 
 /* Class = "UINavigationItem"; title = "Sign up"; ObjectID = "SaW-My-DaT"; */
-"SaW-My-DaT.title" = "注册";
+//"SaW-My-DaT.title" = "注册";
 
 /* Class = "UIButton"; normalTitle = "Forget Password"; ObjectID = "Sg5-hT-qwC"; */
-"Sg5-hT-qwC.normalTitle" = "忘记密码";
+//"Sg5-hT-qwC.normalTitle" = "忘记密码";
 
 /* Class = "UITextField"; placeholder = "Password"; ObjectID = "Skd-rx-5Pk"; */
-"Skd-rx-5Pk.placeholder" = "密码";
+//"Skd-rx-5Pk.placeholder" = "密码";
 
 /* Class = "UILabel"; text = "Code"; ObjectID = "Ulk-sr-Cm9"; */
 "Ulk-sr-Cm9.text" = "Code";
@@ -134,31 +134,31 @@
 "cZL-gg-6JF.title" = "汇率详情";
 
 /* Class = "UIButton"; normalTitle = "To Currency"; ObjectID = "crT-7a-Zsz"; */
-"crT-7a-Zsz.normalTitle" = "外币";
+//"crT-7a-Zsz.normalTitle" = "外币";
 
 /* Class = "UITabBarItem"; title = "Rate"; ObjectID = "dsK-C6-I2x"; */
 "dsK-C6-I2x.title" = "汇率";
 
 /* Class = "UITableViewSection"; headerTitle = " "; ObjectID = "eLp-ME-xC1"; */
-"eLp-ME-xC1.headerTitle" = " ";
+//"eLp-ME-xC1.headerTitle" = " ";
 
 /* Class = "UILabel"; text = "Profile Photo"; ObjectID = "ei9-T4-DVi"; */
-"ei9-T4-DVi.text" = "用户头像";
+//"ei9-T4-DVi.text" = "用户头像";
 
 /* Class = "UITextField"; placeholder = "Email"; ObjectID = "fJ1-cM-9m5"; */
-"fJ1-cM-9m5.placeholder" = "邮箱";
+//"fJ1-cM-9m5.placeholder" = "邮箱";
 
 /* Class = "UIButton"; normalTitle = "Log Out"; ObjectID = "gXL-ZX-w1m"; */
-"gXL-ZX-w1m.normalTitle" = "退出登录";
+//"gXL-ZX-w1m.normalTitle" = "退出登录";
 
 /* Class = "UINavigationItem"; title = "Help"; ObjectID = "grS-7U-iXN"; */
-"grS-7U-iXN.title" = "帮助";
+//"grS-7U-iXN.title" = "帮助";
 
 /* Class = "UINavigationItem"; title = "Currencies"; ObjectID = "iFj-RH-TUV"; */
 "iFj-RH-TUV.title" = "所有货币";
 
 /* Class = "UITextField"; placeholder = "Max Rate"; ObjectID = "jkp-0R-fOo"; */
-"jkp-0R-fOo.placeholder" = "Max Rate";
+//"jkp-0R-fOo.placeholder" = "Max Rate";
 
 /* Class = "UISegmentedControl"; mvv-Rz-xc9.segmentTitles[0] = "1m"; ObjectID = "mvv-Rz-xc9"; */
 "mvv-Rz-xc9.segmentTitles[0]" = "1个月";
@@ -179,22 +179,22 @@
 "nhV-gT-3St.title" = "汇率助手";
 
 /* Class = "UILabel"; text = "Send Email"; ObjectID = "ode-KA-Xzx"; */
-"ode-KA-Xzx.text" = "发送邮件";
+//"ode-KA-Xzx.text" = "发送邮件";
 
 /* Class = "UISegmentedControl"; pSe-Mj-XSq.segmentTitles[0] = "Bug"; ObjectID = "pSe-Mj-XSq"; */
-"pSe-Mj-XSq.segmentTitles[0]" = "Bug";
+////////"pSe-Mj-XSq.segmentTitles[0]" = "Bug";
 
 /* Class = "UISegmentedControl"; pSe-Mj-XSq.segmentTitles[1] = "Comment"; ObjectID = "pSe-Mj-XSq"; */
-"pSe-Mj-XSq.segmentTitles[1]" = "评论";
+////////"pSe-Mj-XSq.segmentTitles[1]" = "评论";
 
 /* Class = "UISegmentedControl"; pSe-Mj-XSq.segmentTitles[2] = "Wish"; ObjectID = "pSe-Mj-XSq"; */
-"pSe-Mj-XSq.segmentTitles[2]" = "建议";
+////////"pSe-Mj-XSq.segmentTitles[2]" = "建议";
 
 /* Class = "UILabel"; text = "Send SMS"; ObjectID = "pgh-16-ETw"; */
-"pgh-16-ETw.text" = "发送短信";
+//"pgh-16-ETw.text" = "发送短信";
 
 /* Class = "UILabel"; text = "Modify Password"; ObjectID = "r6Z-6Q-SFJ"; */
-"r6Z-6Q-SFJ.text" = "修改密码";
+//"r6Z-6Q-SFJ.text" = "修改密码";
 
 /* Class = "UILabel"; text = "Cannot access to server, check your Internet!"; ObjectID = "sgK-Xj-rr5"; */
 "sgK-Xj-rr5.text" = "无法连接服务器，请检查网络!";
@@ -203,124 +203,124 @@
 "tfs-iY-DOz.text" = "Code";
 
 /* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "u3I-Ci-rM2"; */
-"u3I-Ci-rM2.normalTitle" = "提交";
+//"u3I-Ci-rM2.normalTitle" = "提交";
 
 /* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "uBb-IX-sy3"; */
-"uBb-IX-sy3.normalTitle" = "提交";
+//"uBb-IX-sy3.normalTitle" = "提交";
 
 /* Class = "UITabBarItem"; title = "Me"; ObjectID = "udZ-pr-88l"; */
-"udZ-pr-88l.title" = "我";
+//"udZ-pr-88l.title" = "我";
 
 /* Class = "UILabel"; text = "Welcome to MuRate, sign in now!"; ObjectID = "vxA-eD-eUe"; */
-"vxA-eD-eUe.text" = "欢迎使用汇率助手, 立刻登录!";
+//"vxA-eD-eUe.text" = "欢迎使用汇率助手, 立刻登录!";
 
 /* Class = "UITextField"; placeholder = "Username"; ObjectID = "xBk-b8-3G7"; */
-"xBk-b8-3G7.placeholder" = "用户名";
+//"xBk-b8-3G7.placeholder" = "用户名";
 
 /* Class = "UIButton"; normalTitle = "From Currency"; ObjectID = "xiB-uC-Io8"; */
-"xiB-uC-Io8.normalTitle" = "本币";
+//"xiB-uC-Io8.normalTitle" = "本币";
 
 /* Class = "UILabel"; text = "Send Email"; ObjectID = "yRJ-iE-Uvp"; */
-"yRJ-iE-Uvp.text" = "发送邮件";
+//"yRJ-iE-Uvp.text" = "发送邮件";
 
 /* Class = "UIButton"; normalTitle = "To show subscriptions, Sign in now!"; ObjectID = "HtY-GJ-aL2"; */
-"HtY-GJ-aL2.normalTitle" = "登录后显示您的订阅！";
+//"HtY-GJ-aL2.normalTitle" = "登录后显示您的订阅！";
 
 /* Class = "UIButton"; normalTitle = "Delete subscription"; ObjectID = "Ye7-Pp-P6i"; */
-"Ye7-Pp-P6i.normalTitle" = "删除订阅";
+//"Ye7-Pp-P6i.normalTitle" = "删除订阅";
 
 /* Class = "UILabel"; text = "10.00000"; ObjectID = "DRO-cL-DKK"; */
-"DRO-cL-DKK.text" = "10.00000";
+//"DRO-cL-DKK.text" = "10.00000";
 
 /* Class = "UITextField"; placeholder = "Your user name"; ObjectID = "fsb-Zu-jQx"; */
-"fsb-Zu-jQx.placeholder" = "您的用户名";
+//"fsb-Zu-jQx.placeholder" = "您的用户名";
 
 /* Class = "UILabel"; text = "Code"; ObjectID = "ym2-i0-eRa"; */
-"ym2-i0-eRa.text" = "代码";
+//"ym2-i0-eRa.text" = "代码";
 
 /* Class = "UINavigationItem"; title = "Profile Photo"; ObjectID = "K2p-5q-XFa"; */
-"K2p-5q-XFa.title" = "用户头像";
+//"K2p-5q-XFa.title" = "用户头像";
 
 /* Class = "UIButton"; normalTitle = "Code"; ObjectID = "XS1-xk-Bqd"; */
 "XS1-xk-Bqd.normalTitle" = "代码";
 
 /* Class = "UILabel"; text = "Subscribe Name"; ObjectID = "wPe-wv-8qX"; */
-"wPe-wv-8qX.text" = "订阅名称";
+//"wPe-wv-8qX.text" = "订阅名称";
 
 /* Class = "UILabel"; text = "Monitoring"; ObjectID = "9dx-Qn-fJ3"; */
-"9dx-Qn-fJ3.text" = "监测中";
+//"9dx-Qn-fJ3.text" = "监测中";
 
 /* Class = "UILabel"; text = "Current "; ObjectID = "dks-4j-KXR"; */
-"dks-4j-KXR.text" = "当前汇率 ";
+//"dks-4j-KXR.text" = "当前汇率 ";
 
 /* Class = "UILabel"; text = "Threshold"; ObjectID = "bR4-XA-9yK"; */
-"bR4-XA-9yK.text" = "阈值";
+//"bR4-XA-9yK.text" = "阈值";
 
 /* Class = "UILabel"; text = "Notified"; ObjectID = "rJz-bX-wxi"; */
-"rJz-bX-wxi.text" = "已通知";
+//"rJz-bX-wxi.text" = "已通知";
 
 /* Class = "UILabel"; text = "Currency Name"; ObjectID = "LUr-Jw-1O5"; */
 "LUr-Jw-1O5.text" = "货币名称";
 
 /* Class = "UINavigationItem"; title = "Name"; ObjectID = "ngq-fD-3B1"; */
-"ngq-fD-3B1.title" = "用户名";
+//"ngq-fD-3B1.title" = "用户名";
 
 /* Class = "UITextField"; placeholder = "Subscribe Name"; ObjectID = "ZvK-vO-6sT"; */
-"ZvK-vO-6sT.placeholder" = "订阅名称";
+//"ZvK-vO-6sT.placeholder" = "订阅名称";
 
 /* Class = "UILabel"; text = "Currency Name"; ObjectID = "ILf-qC-paM"; */
 "ILf-qC-paM.text" = "货币名称";
 
 /* Class = "UILabel"; text = "Code"; ObjectID = "BuE-VA-Ulz"; */
-"BuE-VA-Ulz.text" = "代码";
+//"BuE-VA-Ulz.text" = "代码";
 
 /* Class = "UIButton"; normalTitle = "Code"; ObjectID = "Hkc-xJ-lh4"; */
 "Hkc-xJ-lh4.normalTitle" = "代码";
 
 /* Class = "UILabel"; text = "Threshold"; ObjectID = "Z9G-oM-Hv6"; */
-"Z9G-oM-Hv6.text" = "阈值";
+//"Z9G-oM-Hv6.text" = "阈值";
 
 /* Class = "UILabel"; text = "Tip Info"; ObjectID = "BIn-Df-jSi"; */
-"BIn-Df-jSi.text" = "提示信息";
+//"BIn-Df-jSi.text" = "提示信息";
 
 /* Class = "UILabel"; text = "Tip Info"; ObjectID = "LHg-EV-NzP"; */
-"LHg-EV-NzP.text" = "提示信息";
+//"LHg-EV-NzP.text" = "提示信息";
 
 /* Class = "UILabel"; text = "Rate"; ObjectID = "Ul3-Ac-Qym"; */
-"Ul3-Ac-Qym.text" = "汇率详情";
+//"Ul3-Ac-Qym.text" = "汇率详情";
 
 /* Class = "UILabel"; text = "Register Success !"; ObjectID = "xfI-Ec-ksG"; */
-"xfI-Ec-ksG.text" = "注册成功!";
+//"xfI-Ec-ksG.text" = "注册成功!";
 
 /* Class = "UILabel"; text = "Current "; ObjectID = "JLx-i0-480"; */
-"JLx-i0-480.text" = "当前值 ";
+//"JLx-i0-480.text" = "当前值 ";
 
 /* Class = "UILabel"; text = "10.00000"; ObjectID = "Kwl-DN-MV9"; */
-"Kwl-DN-MV9.text" = "10.00000";
+//"Kwl-DN-MV9.text" = "10.00000";
 
 /* Class = "UILabel"; text = "Current exchange rate:"; ObjectID = "iK8-qG-jk4"; */
-"iK8-qG-jk4.text" = "当前汇率:";
+//"iK8-qG-jk4.text" = "当前汇率:";
 
 /* Class = "UILabel"; text = "10.00000"; ObjectID = "q3R-Xl-rpB"; */
-"q3R-Xl-rpB.text" = "10.00000";
+//"q3R-Xl-rpB.text" = "10.00000";
 
 /* Class = "UINavigationItem"; title = "Modify Password"; ObjectID = "bdG-MM-1ph"; */
-"bdG-MM-1ph.title" = "修改密码";
+//"bdG-MM-1ph.title" = "修改密码";
 
 /* Class = "UIButton"; normalTitle = "Use without Internet"; ObjectID = "95a-Vh-ASh"; */
 "95a-Vh-ASh.normalTitle" = "在脱机状态下继续使用";
 
 /* Class = "UILabel"; text = "Notification"; ObjectID = "B2N-Cn-Pen"; */
-"B2N-Cn-Pen.text" = "通知";
+//"B2N-Cn-Pen.text" = "通知";
 
 /* Class = "UIButton"; normalTitle = "Rate in App Store"; ObjectID = "Nq2-il-4wg"; */
-"Nq2-il-4wg.normalTitle" = "在App Store中评价";
+//"Nq2-il-4wg.normalTitle" = "在App Store中评价";
 
 /* Class = "UINavigationItem"; title = "OAuth Sign in"; ObjectID = "anh-z1-fE1"; */
-"anh-z1-fE1.title" = "第三方登录";
+//"anh-z1-fE1.title" = "第三方登录";
 
 /* Class = "UILabel"; text = "Oauth cannot be used in app now."; ObjectID = "Ktv-B0-HvZ"; */
-"Ktv-B0-HvZ.text" = "第三方登录暂时无法使用";
+//"Ktv-B0-HvZ.text" = "第三方登录暂时无法使用";
 
 /* Class = "UITextField"; placeholder = "1.0000"; ObjectID = "1RG-WK-mHg"; */
 "1RG-WK-mHg.placeholder" = "1.0000";
@@ -329,37 +329,37 @@
 "Xe3-Xl-sfN.placeholder" = "1.0000";
 
 /* Class = "UINavigationItem"; title = "News"; ObjectID = "ndg-nQ-UVN"; */
-"ndg-nQ-UVN.title" = "汇率新闻";
+//"ndg-nQ-UVN.title" = "汇率新闻";
 
 /* Class = "UITabBarItem"; title = "News"; ObjectID = "cte-UT-Nlb"; */
-"cte-UT-Nlb.title" = "新闻";
+//"cte-UT-Nlb.title" = "新闻";
 
 /* Class = "UILabel"; text = "Update Time"; ObjectID = "4TJ-Dh-0TD"; */
-"4TJ-Dh-0TD.text" = "Update Time";
+//"4TJ-Dh-0TD.text" = "Update Time";
 
 /* Class = "UILabel"; text = "News Title"; ObjectID = "Tj8-9m-PIX"; */
-"Tj8-9m-PIX.text" = "News Title";
+//"Tj8-9m-PIX.text" = "News Title";
 
 /* Class = "UILabel"; text = "Source"; ObjectID = "Zgd-ht-itS"; */
-"Zgd-ht-itS.text" = "Source";
+//"Zgd-ht-itS.text" = "Source";
 
 /* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "Khe-46-5Nv"; */
-"Khe-46-5Nv.normalTitle" = "提交";
+//"Khe-46-5Nv.normalTitle" = "提交";
 
 /* Class = "UITextField"; placeholder = "Email"; ObjectID = "WHp-Td-4ii"; */
-"WHp-Td-4ii.placeholder" = "邮箱";
+//"WHp-Td-4ii.placeholder" = "邮箱";
 
 /* Class = "UITextField"; placeholder = "Validation Code"; ObjectID = "GiO-Ky-GgT"; */
-"GiO-Ky-GgT.placeholder" = "验证码";
+//"GiO-Ky-GgT.placeholder" = "验证码";
 
 /* Class = "UITextField"; placeholder = "New Password"; ObjectID = "ezm-50-t1W"; */
-"ezm-50-t1W.placeholder" = "新密码";
+//"ezm-50-t1W.placeholder" = "新密码";
 
 /* Class = "UIButton"; normalTitle = "Send"; ObjectID = "h2M-Yk-uDf"; */
-"h2M-Yk-uDf.normalTitle" = "发送";
+//"h2M-Yk-uDf.normalTitle" = "发送";
 
 /* Class = "UILabel"; text = "Register Success !"; ObjectID = "oyh-AD-3IS"; */
-"oyh-AD-3IS.text" = "密码更改成功!";
+//"oyh-AD-3IS.text" = "密码更改成功!";
 
 /* Class = "UILabel"; text = "Exchange Currency"; ObjectID = "wUe-3F-xq6"; */
 "wUe-3F-xq6.text" = "外币汇率值";
@@ -377,7 +377,7 @@
 "1mv-Cg-h99.normalTitle" = "选择";
 
 /* Class = "UITextView"; text = "No profile photo, click camera button to choose."; ObjectID = "paS-sM-aNs"; */
-"paS-sM-aNs.text" = "No profile photo, click camera button to choose.";
+//"paS-sM-aNs.text" = "No profile photo, click camera button to choose.";
 
 /* Class = "UILabel"; text = "Give me a star on Github"; ObjectID = "CHp-mj-W3G"; */
-"CHp-mj-W3G.text" = "在Github上关注该项目";
+//"CHp-mj-W3G.text" = "在Github上关注该项目";

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		77EA3DD020E9C91400BCB23D /* Subscribe+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 77EA3DCE20E9C91400BCB23D /* Subscribe+CoreDataProperties.m */; };
+		77EA3DD320E9C91C00BCB23D /* SubscribeDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 77EA3DD120E9C91B00BCB23D /* SubscribeDao.m */; };
+		77EA3DD620E9C97500BCB23D /* Subscribe.m in Sources */ = {isa = PBXBuildFile; fileRef = 77EA3DD520E9C97500BCB23D /* Subscribe.m */; };
 		D788568E8EB19A5DD471CA94 /* Pods_Rate_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3981F97B149773FDAD56A56E /* Pods_Rate_iOS.framework */; };
 		E408A9851D519EBC00B34655 /* InternetResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = E408A9841D519EBC00B34655 /* InternetResponse.m */; };
 		E408A98C1D51A83600B34655 /* Currency+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E408A9891D51A83600B34655 /* Currency+CoreDataProperties.m */; };
@@ -16,17 +19,10 @@
 		E408A9961D51A88A00B34655 /* CurrencyDao.m in Sources */ = {isa = PBXBuildFile; fileRef = E408A9951D51A88A00B34655 /* CurrencyDao.m */; };
 		E408A9991D51AF3D00B34655 /* CurrenciesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E408A9981D51AF3D00B34655 /* CurrenciesTableViewController.m */; };
 		E408AB9E1D51B51E00B34655 /* UserTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E408AB9D1D51B51E00B34655 /* UserTool.m */; };
-		E410EEB61D51E5D50077E1D9 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E410EEB51D51E5D50077E1D9 /* HelpViewController.m */; };
 		E41451991D4F8AA000AFE672 /* RateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E41451981D4F8AA000AFE672 /* RateViewController.m */; };
-		E414519F1D502E8200AFE672 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E414519E1D502E8200AFE672 /* LoginViewController.m */; };
 		E42575341DABBB48009F1EF5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E42575361DABBB48009F1EF5 /* Localizable.strings */; };
-		E43697691D58488200781223 /* Subscribe+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E43697661D58488200781223 /* Subscribe+CoreDataProperties.m */; };
-		E436976A1D58488200781223 /* Subscribe.m in Sources */ = {isa = PBXBuildFile; fileRef = E43697681D58488200781223 /* Subscribe.m */; };
 		E44899981D52DA4600BDD71B /* CommonTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E44899971D52DA4600BDD71B /* CommonTool.m */; };
-		E44DC43E1DC1F0A6007F4220 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E44DC43D1DC1F0A6007F4220 /* AboutViewController.m */; };
-		E44EB1961DE82A15006C8A8C /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E44EB1951DE82A15006C8A8C /* NewsViewController.m */; };
 		E46B5BC51D59959C00CE407F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E46B5BC41D59959C00CE407F /* Assets.xcassets */; };
-		E46EBDE21DED121600B50A38 /* news.css in Resources */ = {isa = PBXBuildFile; fileRef = E46EBDE11DED121600B50A38 /* news.css */; };
 		E46EDE2F1DABE7C400CA3DBC /* AutoGenStrings.py in Resources */ = {isa = PBXBuildFile; fileRef = E46EDE2E1DABE7C400CA3DBC /* AutoGenStrings.py */; };
 		E46FB51C1D4E305800661E13 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E46FB51B1D4E305800661E13 /* main.m */; };
 		E46FB51F1D4E305800661E13 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E46FB51E1D4E305800661E13 /* AppDelegate.m */; };
@@ -36,24 +32,10 @@
 		E46FB5381D4E305800661E13 /* Rate_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E46FB5371D4E305800661E13 /* Rate_iOSTests.m */; };
 		E46FB5431D4E305800661E13 /* Rate_iOSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E46FB5421D4E305800661E13 /* Rate_iOSUITests.m */; };
 		E46FB5551D4E47CF00661E13 /* RatesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E46FB5541D4E47CF00661E13 /* RatesTableViewController.m */; };
-		E476EAF81D5849EE0001DCDC /* SubscribeDao.m in Sources */ = {isa = PBXBuildFile; fileRef = E476EAF71D5849EE0001DCDC /* SubscribeDao.m */; };
 		E4852F8C1D5093590039B79B /* InternetTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E4852F8B1D5093590039B79B /* InternetTool.m */; };
-		E496A7A01D4F095A003B0F1D /* MyProfileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E496A79F1D4F095A003B0F1D /* MyProfileTableViewController.m */; };
-		E498D6471D6737FB0083260F /* ProfilePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E498D6461D6737FB0083260F /* ProfilePhotoViewController.m */; };
-		E49A351C1D4F35E70073E079 /* MeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E49A351B1D4F35E70073E079 /* MeTableViewController.m */; };
-		E49A351F1D4F4CCE0073E079 /* SubscriptionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E49A351E1D4F4CCE0073E079 /* SubscriptionsTableViewController.m */; };
-		E49A35221D4F4CD90073E079 /* AddSubscribeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E49A35211D4F4CD90073E079 /* AddSubscribeTableViewController.m */; };
 		E4ABB8DF1DAF83C1008FD573 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4ABB8E11DAF83C1008FD573 /* InfoPlist.strings */; };
 		E4D057AA1D544BAC0003ADA4 /* LoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D057A91D544BAB0003ADA4 /* LoadingViewController.m */; };
-		E4D057BB1D5498EC0003ADA4 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D057BA1D5498EC0003ADA4 /* RegisterViewController.m */; };
 		E4D057BE1D54BF4C0003ADA4 /* AlertTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D057BD1D54BF4C0003ADA4 /* AlertTool.m */; };
-		E4D25A811DE81B7F006D55FC /* NewsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D25A801DE81B7F006D55FC /* NewsTableViewController.m */; };
-		E4E8129A1D521E50003DEE58 /* LanguagesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E812991D521E50003DEE58 /* LanguagesTableViewController.m */; };
-		E4EC8A8D1D5229B600CECF5D /* EditSubscriptionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4EC8A8C1D5229B600CECF5D /* EditSubscriptionTableViewController.m */; };
-		E4EC8A901D522DC900CECF5D /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4EC8A8F1D522DC900CECF5D /* FeedbackViewController.m */; };
-		E4EEEC101D5730D200A50E1C /* NameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4EEEC0F1D5730D200A50E1C /* NameViewController.m */; };
-		E4EEEC131D5730DE00A50E1C /* TelephoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4EEEC121D5730DE00A50E1C /* TelephoneViewController.m */; };
-		E4EEEC161D5730E900A50E1C /* PasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4EEEC151D5730E900A50E1C /* PasswordViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +59,12 @@
 		3812B1C1AAE93A210277C679 /* Pods-Rate-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rate-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rate-iOS/Pods-Rate-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		3981F97B149773FDAD56A56E /* Pods_Rate_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rate_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7398EE75E2C6CA3E7F0C9940 /* Pods-Rate-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rate-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rate-iOS/Pods-Rate-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		77EA3DCE20E9C91400BCB23D /* Subscribe+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Subscribe+CoreDataProperties.m"; sourceTree = "<group>"; };
+		77EA3DCF20E9C91400BCB23D /* Subscribe+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Subscribe+CoreDataProperties.h"; sourceTree = "<group>"; };
+		77EA3DD120E9C91B00BCB23D /* SubscribeDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubscribeDao.m; sourceTree = "<group>"; };
+		77EA3DD220E9C91C00BCB23D /* SubscribeDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubscribeDao.h; sourceTree = "<group>"; };
+		77EA3DD420E9C97500BCB23D /* Subscribe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Subscribe.h; sourceTree = "<group>"; };
+		77EA3DD520E9C97500BCB23D /* Subscribe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Subscribe.m; sourceTree = "<group>"; };
 		90484F32E9B3B223B0DBE339 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4050F471DAE2475003D0EEB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E408A9831D519EBC00B34655 /* InternetResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InternetResponse.h; sourceTree = "<group>"; };
@@ -95,31 +83,18 @@
 		E408A9981D51AF3D00B34655 /* CurrenciesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrenciesTableViewController.m; sourceTree = "<group>"; };
 		E408AB9C1D51B51E00B34655 /* UserTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserTool.h; sourceTree = "<group>"; };
 		E408AB9D1D51B51E00B34655 /* UserTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTool.m; sourceTree = "<group>"; };
-		E410EEB41D51E5D50077E1D9 /* HelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
-		E410EEB51D51E5D50077E1D9 /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
 		E41451911D4F88BD00AFE672 /* Rate-iOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Rate-iOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		E41451971D4F8AA000AFE672 /* RateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RateViewController.h; sourceTree = "<group>"; };
 		E41451981D4F8AA000AFE672 /* RateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateViewController.m; sourceTree = "<group>"; };
-		E414519D1D502E8200AFE672 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		E414519E1D502E8200AFE672 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		E4203F711E0CC57100291C6E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		E4203F721E0CC57100291C6E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		E4203F731E0CC57100291C6E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E4203F741E0CC57100291C6E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E425752B1DAA0271009F1EF5 /* Rate-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Rate-iOS.entitlements"; sourceTree = "<group>"; };
 		E42575371DABBB4A009F1EF5 /* zh-Hans-CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans-CN"; path = "zh-Hans-CN.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		E43697651D58488200781223 /* Subscribe+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Subscribe+CoreDataProperties.h"; sourceTree = "<group>"; };
-		E43697661D58488200781223 /* Subscribe+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Subscribe+CoreDataProperties.m"; sourceTree = "<group>"; };
-		E43697671D58488200781223 /* Subscribe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Subscribe.h; sourceTree = "<group>"; };
-		E43697681D58488200781223 /* Subscribe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Subscribe.m; sourceTree = "<group>"; };
 		E44899961D52DA4600BDD71B /* CommonTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonTool.h; sourceTree = "<group>"; };
 		E44899971D52DA4600BDD71B /* CommonTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonTool.m; sourceTree = "<group>"; };
-		E44DC43C1DC1F0A6007F4220 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
-		E44DC43D1DC1F0A6007F4220 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
-		E44EB1941DE82A15006C8A8C /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
-		E44EB1951DE82A15006C8A8C /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
 		E46B5BC41D59959C00CE407F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E46EBDE11DED121600B50A38 /* news.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = news.css; sourceTree = "<group>"; };
 		E46EDE2E1DABE7C400CA3DBC /* AutoGenStrings.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = AutoGenStrings.py; sourceTree = "<group>"; };
 		E46FB5171D4E305800661E13 /* Rate-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rate-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E46FB51B1D4E305800661E13 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -137,44 +112,16 @@
 		E46FB5441D4E305800661E13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E46FB5531D4E47CF00661E13 /* RatesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatesTableViewController.h; sourceTree = "<group>"; };
 		E46FB5541D4E47CF00661E13 /* RatesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatesTableViewController.m; sourceTree = "<group>"; };
-		E476EAF61D5849EE0001DCDC /* SubscribeDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubscribeDao.h; sourceTree = "<group>"; };
-		E476EAF71D5849EE0001DCDC /* SubscribeDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubscribeDao.m; sourceTree = "<group>"; };
 		E4852F8A1D5093590039B79B /* InternetTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InternetTool.h; sourceTree = "<group>"; };
 		E4852F8B1D5093590039B79B /* InternetTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InternetTool.m; sourceTree = "<group>"; };
-		E496A79E1D4F095A003B0F1D /* MyProfileTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProfileTableViewController.h; sourceTree = "<group>"; };
-		E496A79F1D4F095A003B0F1D /* MyProfileTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProfileTableViewController.m; sourceTree = "<group>"; };
-		E498D6451D6737FB0083260F /* ProfilePhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfilePhotoViewController.h; sourceTree = "<group>"; };
-		E498D6461D6737FB0083260F /* ProfilePhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfilePhotoViewController.m; sourceTree = "<group>"; };
-		E49A351A1D4F35E70073E079 /* MeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeTableViewController.h; sourceTree = "<group>"; };
-		E49A351B1D4F35E70073E079 /* MeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeTableViewController.m; sourceTree = "<group>"; };
-		E49A351D1D4F4CCE0073E079 /* SubscriptionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubscriptionsTableViewController.h; sourceTree = "<group>"; };
-		E49A351E1D4F4CCE0073E079 /* SubscriptionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubscriptionsTableViewController.m; sourceTree = "<group>"; };
-		E49A35201D4F4CD90073E079 /* AddSubscribeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddSubscribeTableViewController.h; sourceTree = "<group>"; };
-		E49A35211D4F4CD90073E079 /* AddSubscribeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddSubscribeTableViewController.m; sourceTree = "<group>"; };
 		E4ABB8E01DAF83C1008FD573 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E4ABB8E21DAF83C5008FD573 /* zh-Hans-CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans-CN"; path = "zh-Hans-CN.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		E4D057A81D544BAB0003ADA4 /* LoadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingViewController.h; sourceTree = "<group>"; };
 		E4D057A91D544BAB0003ADA4 /* LoadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingViewController.m; sourceTree = "<group>"; };
 		E4D057AD1D54586C0003ADA4 /* zh-Hans-CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans-CN"; path = "zh-Hans-CN.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		E4D057AE1D54586D0003ADA4 /* zh-Hans-CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans-CN"; path = "zh-Hans-CN.lproj/Main.strings"; sourceTree = "<group>"; };
-		E4D057B91D5498EC0003ADA4 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
-		E4D057BA1D5498EC0003ADA4 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		E4D057BC1D54BF4C0003ADA4 /* AlertTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertTool.h; sourceTree = "<group>"; };
 		E4D057BD1D54BF4C0003ADA4 /* AlertTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertTool.m; sourceTree = "<group>"; };
-		E4D25A7F1DE81B7F006D55FC /* NewsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsTableViewController.h; sourceTree = "<group>"; };
-		E4D25A801DE81B7F006D55FC /* NewsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewController.m; sourceTree = "<group>"; };
-		E4E812981D521E50003DEE58 /* LanguagesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanguagesTableViewController.h; sourceTree = "<group>"; };
-		E4E812991D521E50003DEE58 /* LanguagesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanguagesTableViewController.m; sourceTree = "<group>"; };
-		E4EC8A8B1D5229B600CECF5D /* EditSubscriptionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditSubscriptionTableViewController.h; sourceTree = "<group>"; };
-		E4EC8A8C1D5229B600CECF5D /* EditSubscriptionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditSubscriptionTableViewController.m; sourceTree = "<group>"; };
-		E4EC8A8E1D522DC900CECF5D /* FeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackViewController.h; sourceTree = "<group>"; };
-		E4EC8A8F1D522DC900CECF5D /* FeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
-		E4EEEC0E1D5730D200A50E1C /* NameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NameViewController.h; sourceTree = "<group>"; };
-		E4EEEC0F1D5730D200A50E1C /* NameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameViewController.m; sourceTree = "<group>"; };
-		E4EEEC111D5730DE00A50E1C /* TelephoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TelephoneViewController.h; sourceTree = "<group>"; };
-		E4EEEC121D5730DE00A50E1C /* TelephoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TelephoneViewController.m; sourceTree = "<group>"; };
-		E4EEEC141D5730E900A50E1C /* PasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordViewController.h; sourceTree = "<group>"; };
-		E4EEEC151D5730E900A50E1C /* PasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,14 +171,14 @@
 		E408A9861D51A81300B34655 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E43697651D58488200781223 /* Subscribe+CoreDataProperties.h */,
-				E43697661D58488200781223 /* Subscribe+CoreDataProperties.m */,
-				E43697671D58488200781223 /* Subscribe.h */,
-				E43697681D58488200781223 /* Subscribe.m */,
-				E408A9881D51A83600B34655 /* Currency+CoreDataProperties.h */,
-				E408A9891D51A83600B34655 /* Currency+CoreDataProperties.m */,
 				E408A98A1D51A83600B34655 /* Currency.h */,
 				E408A98B1D51A83600B34655 /* Currency.m */,
+				E408A9881D51A83600B34655 /* Currency+CoreDataProperties.h */,
+				E408A9891D51A83600B34655 /* Currency+CoreDataProperties.m */,
+				77EA3DD420E9C97500BCB23D /* Subscribe.h */,
+				77EA3DD520E9C97500BCB23D /* Subscribe.m */,
+				77EA3DCF20E9C91400BCB23D /* Subscribe+CoreDataProperties.h */,
+				77EA3DCE20E9C91400BCB23D /* Subscribe+CoreDataProperties.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -245,8 +192,8 @@
 				E408A98F1D51A84700B34655 /* DaoManager.m */,
 				E408A9901D51A84700B34655 /* DaoTemplate.h */,
 				E408A9911D51A84700B34655 /* DaoTemplate.m */,
-				E476EAF61D5849EE0001DCDC /* SubscribeDao.h */,
-				E476EAF71D5849EE0001DCDC /* SubscribeDao.m */,
+				77EA3DD220E9C91C00BCB23D /* SubscribeDao.h */,
+				77EA3DD120E9C91B00BCB23D /* SubscribeDao.m */,
 			);
 			name = Dao;
 			sourceTree = "<group>";
@@ -278,11 +225,8 @@
 			children = (
 				E425752B1DAA0271009F1EF5 /* Rate-iOS.entitlements */,
 				E408A9871D51A81B00B34655 /* Dao */,
-				E4D25A7E1DE81B5C006D55FC /* News */,
 				E408A9861D51A81300B34655 /* Model */,
-				E496A79C1D4F083E003B0F1D /* Me */,
 				E496A79B1D4F0831003B0F1D /* Rate */,
-				E496A79D1D4F0843003B0F1D /* Subscription */,
 				E46FB51A1D4E305800661E13 /* Supporting Files */,
 				E4852F891D50932C0039B79B /* Tool */,
 				E46FB51D1D4E305800661E13 /* AppDelegate.h */,
@@ -356,62 +300,6 @@
 				E41451981D4F8AA000AFE672 /* RateViewController.m */,
 			);
 			name = Rate;
-			sourceTree = "<group>";
-		};
-		E496A79C1D4F083E003B0F1D /* Me */ = {
-			isa = PBXGroup;
-			children = (
-				E44DC43C1DC1F0A6007F4220 /* AboutViewController.h */,
-				E44DC43D1DC1F0A6007F4220 /* AboutViewController.m */,
-				E4EC8A8E1D522DC900CECF5D /* FeedbackViewController.h */,
-				E4EC8A8F1D522DC900CECF5D /* FeedbackViewController.m */,
-				E410EEB41D51E5D50077E1D9 /* HelpViewController.h */,
-				E410EEB51D51E5D50077E1D9 /* HelpViewController.m */,
-				E4E812981D521E50003DEE58 /* LanguagesTableViewController.h */,
-				E4E812991D521E50003DEE58 /* LanguagesTableViewController.m */,
-				E414519D1D502E8200AFE672 /* LoginViewController.h */,
-				E414519E1D502E8200AFE672 /* LoginViewController.m */,
-				E49A351A1D4F35E70073E079 /* MeTableViewController.h */,
-				E49A351B1D4F35E70073E079 /* MeTableViewController.m */,
-				E496A79E1D4F095A003B0F1D /* MyProfileTableViewController.h */,
-				E496A79F1D4F095A003B0F1D /* MyProfileTableViewController.m */,
-				E4EEEC0E1D5730D200A50E1C /* NameViewController.h */,
-				E4EEEC0F1D5730D200A50E1C /* NameViewController.m */,
-				E4EEEC141D5730E900A50E1C /* PasswordViewController.h */,
-				E4EEEC151D5730E900A50E1C /* PasswordViewController.m */,
-				E498D6451D6737FB0083260F /* ProfilePhotoViewController.h */,
-				E498D6461D6737FB0083260F /* ProfilePhotoViewController.m */,
-				E4D057B91D5498EC0003ADA4 /* RegisterViewController.h */,
-				E4D057BA1D5498EC0003ADA4 /* RegisterViewController.m */,
-				E4EEEC111D5730DE00A50E1C /* TelephoneViewController.h */,
-				E4EEEC121D5730DE00A50E1C /* TelephoneViewController.m */,
-			);
-			name = Me;
-			sourceTree = "<group>";
-		};
-		E496A79D1D4F0843003B0F1D /* Subscription */ = {
-			isa = PBXGroup;
-			children = (
-				E49A351D1D4F4CCE0073E079 /* SubscriptionsTableViewController.h */,
-				E49A351E1D4F4CCE0073E079 /* SubscriptionsTableViewController.m */,
-				E49A35201D4F4CD90073E079 /* AddSubscribeTableViewController.h */,
-				E49A35211D4F4CD90073E079 /* AddSubscribeTableViewController.m */,
-				E4EC8A8B1D5229B600CECF5D /* EditSubscriptionTableViewController.h */,
-				E4EC8A8C1D5229B600CECF5D /* EditSubscriptionTableViewController.m */,
-			);
-			name = Subscription;
-			sourceTree = "<group>";
-		};
-		E4D25A7E1DE81B5C006D55FC /* News */ = {
-			isa = PBXGroup;
-			children = (
-				E4D25A7F1DE81B7F006D55FC /* NewsTableViewController.h */,
-				E4D25A801DE81B7F006D55FC /* NewsTableViewController.m */,
-				E44EB1941DE82A15006C8A8C /* NewsViewController.h */,
-				E44EB1951DE82A15006C8A8C /* NewsViewController.m */,
-				E46EBDE11DED121600B50A38 /* news.css */,
-			);
-			name = News;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -537,7 +425,6 @@
 				E46FB52D1D4E305800661E13 /* LaunchScreen.storyboard in Resources */,
 				E46FB5251D4E305800661E13 /* Main.storyboard in Resources */,
 				E46EDE2F1DABE7C400CA3DBC /* AutoGenStrings.py in Resources */,
-				E46EBDE21DED121600B50A38 /* news.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -621,42 +508,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				E41451991D4F8AA000AFE672 /* RateViewController.m in Sources */,
-				E4E8129A1D521E50003DEE58 /* LanguagesTableViewController.m in Sources */,
 				E46FB51F1D4E305800661E13 /* AppDelegate.m in Sources */,
-				E4EEEC131D5730DE00A50E1C /* TelephoneViewController.m in Sources */,
-				E476EAF81D5849EE0001DCDC /* SubscribeDao.m in Sources */,
-				E4D057BB1D5498EC0003ADA4 /* RegisterViewController.m in Sources */,
 				E408A98C1D51A83600B34655 /* Currency+CoreDataProperties.m in Sources */,
-				E49A351C1D4F35E70073E079 /* MeTableViewController.m in Sources */,
-				E44EB1961DE82A15006C8A8C /* NewsViewController.m in Sources */,
-				E410EEB61D51E5D50077E1D9 /* HelpViewController.m in Sources */,
-				E49A35221D4F4CD90073E079 /* AddSubscribeTableViewController.m in Sources */,
-				E414519F1D502E8200AFE672 /* LoginViewController.m in Sources */,
 				E408AB9E1D51B51E00B34655 /* UserTool.m in Sources */,
-				E4D25A811DE81B7F006D55FC /* NewsTableViewController.m in Sources */,
+				77EA3DD620E9C97500BCB23D /* Subscribe.m in Sources */,
 				E408A9851D519EBC00B34655 /* InternetResponse.m in Sources */,
-				E496A7A01D4F095A003B0F1D /* MyProfileTableViewController.m in Sources */,
 				E408A9931D51A84700B34655 /* DaoTemplate.m in Sources */,
 				E4852F8C1D5093590039B79B /* InternetTool.m in Sources */,
+				77EA3DD320E9C91C00BCB23D /* SubscribeDao.m in Sources */,
 				E408A9921D51A84700B34655 /* DaoManager.m in Sources */,
+				77EA3DD020E9C91400BCB23D /* Subscribe+CoreDataProperties.m in Sources */,
 				E46FB5551D4E47CF00661E13 /* RatesTableViewController.m in Sources */,
 				E46FB51C1D4E305800661E13 /* main.m in Sources */,
-				E49A351F1D4F4CCE0073E079 /* SubscriptionsTableViewController.m in Sources */,
-				E4EC8A901D522DC900CECF5D /* FeedbackViewController.m in Sources */,
-				E4EEEC161D5730E900A50E1C /* PasswordViewController.m in Sources */,
-				E43697691D58488200781223 /* Subscribe+CoreDataProperties.m in Sources */,
 				E4D057BE1D54BF4C0003ADA4 /* AlertTool.m in Sources */,
 				E408A98D1D51A83600B34655 /* Currency.m in Sources */,
-				E4EEEC101D5730D200A50E1C /* NameViewController.m in Sources */,
-				E4EC8A8D1D5229B600CECF5D /* EditSubscriptionTableViewController.m in Sources */,
 				E4D057AA1D544BAC0003ADA4 /* LoadingViewController.m in Sources */,
 				E408A9961D51A88A00B34655 /* CurrencyDao.m in Sources */,
 				E408A9991D51AF3D00B34655 /* CurrenciesTableViewController.m in Sources */,
-				E498D6471D6737FB0083260F /* ProfilePhotoViewController.m in Sources */,
-				E44DC43E1DC1F0A6007F4220 /* AboutViewController.m in Sources */,
 				E44899981D52DA4600BDD71B /* CommonTool.m in Sources */,
 				E46FB5281D4E305800661E13 /* Rate_iOS.xcdatamodeld in Sources */,
-				E436976A1D58488200781223 /* Subscribe.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
