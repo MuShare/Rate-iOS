@@ -317,35 +317,27 @@ static const int historySearchDays[5] = {30, 90, 180, 365, 3 * 365};
         [values addObject:entry];
     }
     
-    LineChartDataSet *set = nil;
-    if (_historyLineChartView.data.dataSetCount > 0) {
-        set = (LineChartDataSet *)_historyLineChartView.data.dataSets[0];
-        
-        [set addEntry:values];
-        [_historyLineChartView.data notifyDataChanged];
-        [_historyLineChartView notifyDataSetChanged];
-    } else {
-        set = [[LineChartDataSet alloc] initWithEntries:values];
-        //设置折线的样式
-        set.drawIconsEnabled = YES;
-        set.cubicIntensity = 0.2;
-        set.drawCirclesEnabled = NO;
-        //点击选中拐点的交互样式
-        set.highlightEnabled = YES;//选中拐点,是否开启高亮效果(显示十字线)
-        set.highlightColor = [UIColor colorWithRed:31/255.0 green:199/255.0 blue:149/255.0 alpha:1.0];//点击选中拐点的十字线的颜色
-        //填充样式:渐变填充
-        set.drawFilledEnabled = YES;//是否填充颜色
-        NSArray *gradientColors = @[(id)[ChartColorTemplates colorFromString:@"#FFFFFFFF"].CGColor,
-                                    (id)[ChartColorTemplates colorFromString:@"#FF007FFF"].CGColor];
-        CGGradientRef gradientRef = CGGradientCreateWithColors(nil, (CFArrayRef)gradientColors, nil);
-        set.fillAlpha = 0.3f;//透明度
-        set.fill = [ChartFill fillWithLinearGradient:gradientRef angle:90.0f];//赋值填充颜色对象
-        CGGradientRelease(gradientRef);//释放gradientRef
-        //创建 LineChartData 对象
-        LineChartData *data = [[LineChartData alloc] initWithDataSet:set];
-        [data setDrawValues:NO];
-        _historyLineChartView.data = data;
-    }
+    LineChartDataSet *set = [[LineChartDataSet alloc] initWithEntries:values];
+    //设置折线的样式
+    set.drawIconsEnabled = YES;
+    set.cubicIntensity = 0.2;
+    set.drawCirclesEnabled = NO;
+    //点击选中拐点的交互样式
+    set.highlightEnabled = YES;//选中拐点,是否开启高亮效果(显示十字线)
+    set.highlightColor = [UIColor colorWithRed:31/255.0 green:199/255.0 blue:149/255.0 alpha:1.0];//点击选中拐点的十字线的颜色
+    //填充样式:渐变填充
+    set.drawFilledEnabled = YES;//是否填充颜色
+    NSArray *gradientColors = @[(id)[ChartColorTemplates colorFromString:@"#FFFFFFFF"].CGColor,
+                                (id)[ChartColorTemplates colorFromString:@"#FF007FFF"].CGColor];
+    CGGradientRef gradientRef = CGGradientCreateWithColors(nil, (CFArrayRef)gradientColors, nil);
+    set.fillAlpha = 0.3f;//透明度
+    set.fill = [ChartFill fillWithLinearGradient:gradientRef angle:90.0f];//赋值填充颜色对象
+    CGGradientRelease(gradientRef);//释放gradientRef
+    //创建 LineChartData 对象
+    LineChartData *data = [[LineChartData alloc] initWithDataSet:set];
+    [data setDrawValues:NO];
+    _historyLineChartView.data = data;
+
 }
 
 //Create done button for keyboard
