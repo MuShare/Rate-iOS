@@ -8,8 +8,10 @@ xcuserdata/
 
 # Pod
 *.xcworkspace/
-Podfile.lock
 Pods/
 
 # R.swift
 *.generated.swift
+
+# idea
+.idea/

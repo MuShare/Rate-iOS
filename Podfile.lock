@@ -1,0 +1,44 @@
+PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
+  - Charts (3.4.0):
+    - Charts/Core (= 3.4.0)
+  - Charts/Core (3.4.0)
+  - MJRefresh (3.3.1)
+  - "UIImageView+Extension (0.2.6)"
+
+DEPENDENCIES:
+  - AFNetworking
+  - Charts
+  - MJRefresh
+  - "UIImageView+Extension"
+
+SPEC REPOS:
+  trunk:
+    - AFNetworking
+    - Charts
+    - MJRefresh
+    - "UIImageView+Extension"
+
+SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  Charts: 74c9f256eaf0460c0c416522d1cf8c634ea6b286
+  MJRefresh: eeda70fbf0ad277f3178cef1cd0c3532591d6237
+  "UIImageView+Extension": bc26c60a9c8cd6fb515ae1e37377a6f0988e76d8
+
+PODFILE CHECKSUM: afc502994d4e72b3cbccd2a25041e9e67b738d3b
+
+COCOAPODS: 1.9.0

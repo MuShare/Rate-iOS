@@ -320,11 +320,12 @@ static const int historySearchDays[5] = {30, 90, 180, 365, 3 * 365};
     LineChartDataSet *set = nil;
     if (_historyLineChartView.data.dataSetCount > 0) {
         set = (LineChartDataSet *)_historyLineChartView.data.dataSets[0];
-        set.values = values;
+        
+        [set addEntry:values];
         [_historyLineChartView.data notifyDataChanged];
         [_historyLineChartView notifyDataSetChanged];
     } else {
-        set = [[LineChartDataSet alloc] initWithValues:values];
+        set = [[LineChartDataSet alloc] initWithEntries:values];
         //设置折线的样式
         set.drawIconsEnabled = YES;
         set.cubicIntensity = 0.2;
